@@ -1,0 +1,1478 @@
+{
+  "campaign_id": "campaign_1828c0e8b136915e7ad1101433ad94102c123aaa2bcbdfd5f741fb11e07169fe",
+  "crosscheck_run_id": "crosscheck_ca94ab8258d5232e1d8827f2d55ee77c87872d1e25cff9160734f3b1c9e98990",
+  "hardware_plan_id": "hardware_plan_52296541b58d6b624af895f0ee5a4dde1b54ab795a3069b2b7d38801e96dd327",
+  "hardware_result_schema_version": "1.0",
+  "hardware_run_id": "hardware_run_b74009cdc8b6c6b38730ea47556bac8f4e973dd17782837e8f4473fe9636e03d",
+  "parameter_contract_sha256": "d6062126c2b25aec0e4168140416e5aaf86e623e3a578602d40fca5cf327e43e",
+  "resilience": {
+    "level": 2,
+    "measurement_mitigation": true,
+    "zne_extrapolator": [
+      "exponential",
+      "linear",
+      "fallback"
+    ],
+    "zne_mitigation": true,
+    "zne_noise_factors": [
+      1.0,
+      3.0,
+      5.0
+    ]
+  },
+  "results": [
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "backend": "ibm_kawasaki",
+      "candidate_id": "sample_0000_D1_NT1",
+      "expectations": {
+        "hadron_k0_imag": -0.001200122698537923,
+        "hadron_k0_real": 0.008282645269833053,
+        "hadron_k1_imag": -0.00426758141141671,
+        "hadron_k1_real": -0.015847912278820517,
+        "hadron_k2_imag": 0.0012579711138837443,
+        "hadron_k2_real": 0.0212242785039472,
+        "hadron_k3_imag": -0.010870971916655882,
+        "hadron_k3_real": 0.02484793580949916,
+        "vacuum_k0_imag": 0.01604762521030154,
+        "vacuum_k0_real": -0.018796156679682003,
+        "vacuum_k1_imag": 0.0196712825158535,
+        "vacuum_k1_real": -0.023812605150770026,
+        "vacuum_k2_imag": 7.531429275794245e-18,
+        "vacuum_k2_real": -3.0844289272779716e-17,
+        "vacuum_k3_imag": 0.0196712825158535,
+        "vacuum_k3_real": 4.9903442213540185e-17
+      },
+      "hardware_error_imag": -0.17157127853447152,
+      "hardware_error_real": 0.03856178595905054,
+      "hardware_observable_imag": -0.030524793986673283,
+      "hardware_observable_real": 0.03856178640008406,
+      "hardware_standard_error_imag": 0.01988312386259967,
+      "hardware_standard_error_real": 0.0350320279730134,
+      "ideal_observable_imag": 0.14104648454779822,
+      "ideal_observable_real": 4.410335158783865e-10,
+      "job_id": "datktajg95ks73eh4nog",
+      "mitigation_status": {
+        "hadron_k0_imag": "zne_extrapolated",
+        "hadron_k0_real": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k1_imag": "zne_extrapolated",
+        "hadron_k1_real": "zne_extrapolated",
+        "hadron_k2_imag": "zne_extrapolated",
+        "hadron_k2_real": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k3_imag": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k3_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k0_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k0_real": "zne_extrapolated",
+        "vacuum_k1_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k1_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k2_imag": "zne_extrapolated",
+        "vacuum_k2_real": "zne_extrapolated",
+        "vacuum_k3_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k3_real": "zne_extrapolated"
+      },
+      "noise_factor_data": {
+        "hadron_k0_imag": {
+          "expectations": [
+            0.004658987964281092,
+            -0.007764979940468487,
+            -0.010353306587291316
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.020449215876451862,
+            0.015786412814007597,
+            0.017258542178609636
+          ]
+        },
+        "hadron_k0_real": {
+          "expectations": [
+            0.008282645269833053,
+            -0.027436262456321987,
+            0.008800310599197619
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014949695833326995,
+            0.014870871444252849,
+            0.013851488449746993
+          ]
+        },
+        "hadron_k1_imag": {
+          "expectations": [
+            -0.005694318623010224,
+            -0.017600621198395238,
+            0.005176653293645658
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01302645126843102,
+            0.01917374920041774,
+            0.014539627487362306
+          ]
+        },
+        "hadron_k1_real": {
+          "expectations": [
+            -0.015012294551572408,
+            -0.008282645269833053,
+            -0.00983564125792675
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01703364320725223,
+            0.018287592687519318,
+            0.01456581933195504
+          ]
+        },
+        "hadron_k2_imag": {
+          "expectations": [
+            0.0015529959880936975,
+            -0.01604762521030154,
+            0.013976963892843277
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014902278331440214,
+            0.01874329113533256,
+            0.01628978141295182
+          ]
+        },
+        "hadron_k2_real": {
+          "expectations": [
+            0.0212242785039472,
+            0.024330270480134593,
+            -0.015012294551572408
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015892200073873604,
+            0.018169810507162838,
+            0.01709645635966059
+          ]
+        },
+        "hadron_k3_imag": {
+          "expectations": [
+            -0.010870971916655882,
+            -0.03727190371424874,
+            0.013459298563478711
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.016591318513846615,
+            0.01753976349559273,
+            0.016212742241122957
+          ]
+        },
+        "hadron_k3_real": {
+          "expectations": [
+            0.02484793580949916,
+            -0.017600621198395238,
+            0.005694318623010224
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014383354393055492,
+            0.016995508371097326,
+            0.013128907288158805
+          ]
+        },
+        "vacuum_k0_imag": {
+          "expectations": [
+            0.01604762521030154,
+            0.02588326646822829,
+            -0.00983564125792675
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.017879866615362467,
+            0.015937741570068154,
+            0.016530636360004763
+          ]
+        },
+        "vacuum_k0_real": {
+          "expectations": [
+            -0.008282645269833053,
+            -0.03261291574996764,
+            -0.013976963892843277
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.016885739721759396,
+            0.01613076869520585,
+            0.017233058663000983
+          ]
+        },
+        "vacuum_k1_imag": {
+          "expectations": [
+            0.0196712825158535,
+            -0.02329493982140546,
+            -0.00983564125792675
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.017983789381590773,
+            0.016318584907168764,
+            0.014584205415366563
+          ]
+        },
+        "vacuum_k1_real": {
+          "expectations": [
+            -0.023812605150770026,
+            -0.010353306587291316,
+            0.01863595185712437
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01934076237333917,
+            0.01681816113938099,
+            0.016382328080294255
+          ]
+        },
+        "vacuum_k2_imag": {
+          "expectations": [
+            0.008282645269833053,
+            -0.019153617186488933,
+            0.025365601138863724
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015633158419866157,
+            0.015112139064757254,
+            0.01857818458718917
+          ]
+        },
+        "vacuum_k2_real": {
+          "expectations": [
+            -0.015529959880936974,
+            0.024330270480134593,
+            -0.03727190371424874
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01607164031472377,
+            0.019382935038704696,
+            0.016533063755649873
+          ]
+        },
+        "vacuum_k3_imag": {
+          "expectations": [
+            0.0196712825158535,
+            -0.015012294551572408,
+            -0.015012294551572408
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01596290912883767,
+            0.017817931839050085,
+            0.01599512096168785
+          ]
+        },
+        "vacuum_k3_real": {
+          "expectations": [
+            -0.00621198395237479,
+            -0.0020706613174582634,
+            0.009317975928562185
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.017133866472014512,
+            0.017672794573226056,
+            0.01796139228383226
+          ]
+        }
+      },
+      "sample_values": {
+        "z_index": -2
+      },
+      "standard_errors": {
+        "hadron_k0_imag": 0.0063060051481845444,
+        "hadron_k0_real": 0.014949695833326995,
+        "hadron_k1_imag": 0.028626232391424554,
+        "hadron_k1_real": 0.008073765959971835,
+        "hadron_k2_imag": 0.040027994098469154,
+        "hadron_k2_real": 0.015892200073873604,
+        "hadron_k3_imag": 0.016591318513846615,
+        "hadron_k3_real": 0.014383354393055492,
+        "vacuum_k0_imag": 0.017879866615362467,
+        "vacuum_k0_real": 0.04163507503903899,
+        "vacuum_k1_imag": 0.017983789381590773,
+        "vacuum_k1_real": 0.01934076237333917,
+        "vacuum_k2_imag": 4.604023573796598e-11,
+        "vacuum_k2_real": 1.2596888129931073e-10,
+        "vacuum_k3_imag": 0.01596290912883767,
+        "vacuum_k3_real": 8.465814011805309e-11
+      }
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "backend": "ibm_kawasaki",
+      "candidate_id": "sample_0001_D1_NT1",
+      "expectations": {
+        "hadron_k0_imag": -0.011667632056551235,
+        "hadron_k0_real": -0.032006096399314156,
+        "hadron_k1_imag": 0.02438559725662031,
+        "hadron_k1_real": 0.006631480612061352,
+        "hadron_k2_imag": 0.025909697085159077,
+        "hadron_k2_real": 0.036378114835128504,
+        "hadron_k3_imag": -1.3478595616714451e-16,
+        "hadron_k3_real": -0.008260018453858766,
+        "vacuum_k0_imag": -0.0012195008636972362,
+        "vacuum_k0_real": -0.0024546926162455677,
+        "vacuum_k1_imag": 0.03403822950403251,
+        "vacuum_k1_real": -0.0015213913396672633,
+        "vacuum_k2_imag": -0.0020751515162644903,
+        "vacuum_k2_real": -0.02087093300047003,
+        "vacuum_k3_imag": 0.031498063123134565,
+        "vacuum_k3_real": -1.8431151391899342e-17
+      },
+      "hardware_error_imag": 0.030586951891356184,
+      "hardware_error_real": -0.025328156822545963,
+      "hardware_observable_imag": -0.04552118509992931,
+      "hardware_observable_real": -8.69706940457779e-05,
+      "hardware_standard_error_imag": 0.03891861690301201,
+      "hardware_standard_error_real": 0.029346279538187147,
+      "ideal_observable_imag": -0.07610813699128549,
+      "ideal_observable_real": 0.025241186128500185,
+      "job_id": "datktblvr3kc73eln540",
+      "mitigation_status": {
+        "hadron_k0_imag": "zne_extrapolated",
+        "hadron_k0_real": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k1_imag": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k1_real": "zne_extrapolated",
+        "hadron_k2_imag": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k2_real": "zne_extrapolated",
+        "hadron_k3_imag": "zne_extrapolated",
+        "hadron_k3_real": "zne_extrapolated",
+        "vacuum_k0_imag": "zne_extrapolated",
+        "vacuum_k0_real": "zne_extrapolated",
+        "vacuum_k1_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k1_real": "zne_extrapolated",
+        "vacuum_k2_imag": "zne_extrapolated",
+        "vacuum_k2_real": "zne_extrapolated",
+        "vacuum_k3_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k3_real": "zne_extrapolated"
+      },
+      "noise_factor_data": {
+        "hadron_k0_imag": {
+          "expectations": [
+            0.0030481996570775388,
+            -0.02692576363751826,
+            -0.012192798628310155
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015433471402669211,
+            0.016250918264802156,
+            0.01145050487128423
+          ]
+        },
+        "hadron_k0_real": {
+          "expectations": [
+            -0.032006096399314156,
+            0.005588366037975487,
+            -0.011176732075950975
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014179305645314975,
+            0.013643498758011425,
+            0.014992372883970758
+          ]
+        },
+        "hadron_k1_imag": {
+          "expectations": [
+            0.02438559725662031,
+            -0.009652632247412205,
+            0.012700831904489744
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01675744356597901,
+            0.015852914916271856,
+            0.01669158249999465
+          ]
+        },
+        "hadron_k1_real": {
+          "expectations": [
+            0.016257064837746873,
+            -0.002540166380897949,
+            0.023369530704261128
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015822627504655525,
+            0.019064579492213452,
+            0.01703147238394577
+          ]
+        },
+        "hadron_k2_imag": {
+          "expectations": [
+            0.025909697085159077,
+            -0.010160665523591796,
+            -0.01828919794246523
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.016923878685487705,
+            0.017388554975144476,
+            0.012867423498859104
+          ]
+        },
+        "hadron_k2_real": {
+          "expectations": [
+            0.034546262780212104,
+            -0.009652632247412205,
+            -0.008636565695053026
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.018328046964921872,
+            0.016365609403982607,
+            0.017730066400146155
+          ]
+        },
+        "hadron_k3_imag": {
+          "expectations": [
+            0.006604432590334667,
+            0.0015240998285387694,
+            -0.015749031561567282
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01706053484541594,
+            0.016357715137118038,
+            0.017054875864688568
+          ]
+        },
+        "hadron_k3_real": {
+          "expectations": [
+            -0.007112465866514256,
+            -0.021845430875722358,
+            0.0030481996570775388
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.0179176321112441,
+            0.015962462190148352,
+            0.015078193908070229
+          ]
+        },
+        "vacuum_k0_imag": {
+          "expectations": [
+            -0.006604432590334667,
+            0.0005080332761795898,
+            -0.012192798628310155
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01353428848350148,
+            0.015316750442444455,
+            0.017168228597055676
+          ]
+        },
+        "vacuum_k0_real": {
+          "expectations": [
+            0.0030481996570775388,
+            -0.010160665523591796,
+            0.002032133104718359
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01753174984244739,
+            0.014894137353181028,
+            0.01969898645348927
+          ]
+        },
+        "vacuum_k1_imag": {
+          "expectations": [
+            0.03403822950403251,
+            -0.0060963993141550776,
+            0.010668698799771385
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01629456886900008,
+            0.013683934177009466,
+            0.01352952669852284
+          ]
+        },
+        "vacuum_k1_real": {
+          "expectations": [
+            -0.002540166380897949,
+            0.014224931733028513,
+            -0.010160665523591796
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014263153550226889,
+            0.01936867770685007,
+            0.015287505576185006
+          ]
+        },
+        "vacuum_k2_imag": {
+          "expectations": [
+            0.0030481996570775388,
+            -0.01676509811392646,
+            -0.002540166380897949
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015566682514020151,
+            0.016391231263767268,
+            0.012692892042619922
+          ]
+        },
+        "vacuum_k2_real": {
+          "expectations": [
+            -0.01676509811392646,
+            -0.02133739759954277,
+            -0.010160665523591796
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01643840166197846,
+            0.015846073755117356,
+            0.016473922027220162
+          ]
+        },
+        "vacuum_k3_imag": {
+          "expectations": [
+            0.031498063123134565,
+            0.014224931733028513,
+            -0.021845430875722358
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.012380643596007969,
+            0.019032624244347977,
+            0.018227164949153392
+          ]
+        },
+        "vacuum_k3_real": {
+          "expectations": [
+            -0.003556232933257128,
+            0.013716898456848923,
+            -0.034546262780212104
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014074161973245661,
+            0.021290295598848968,
+            0.01081898160262282
+          ]
+        }
+      },
+      "sample_values": {
+        "z_index": -1
+      },
+      "standard_errors": {
+        "hadron_k0_imag": 0.044623667948426746,
+        "hadron_k0_real": 0.014179305645314975,
+        "hadron_k1_imag": 0.01675744356597901,
+        "hadron_k1_real": 0.02480467531858245,
+        "hadron_k2_imag": 0.016923878685487705,
+        "hadron_k2_real": 0.043721682984146026,
+        "hadron_k3_imag": 1.0849155804315767e-10,
+        "hadron_k3_real": 0.04378192154413482,
+        "vacuum_k0_imag": 0.006860460252897348,
+        "vacuum_k0_real": 0.022229812617271093,
+        "vacuum_k1_imag": 0.01629456886900008,
+        "vacuum_k1_real": 0.03220759788643026,
+        "vacuum_k2_imag": 0.0,
+        "vacuum_k2_real": 0.01740201518298373,
+        "vacuum_k3_imag": 0.012380643596007969,
+        "vacuum_k3_real": 4.6522713033289774e-11
+      }
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "backend": "ibm_kawasaki",
+      "candidate_id": "sample_0002_D1_NT1",
+      "expectations": {
+        "hadron_z0_Z5": 0.018179584817589977,
+        "vacuum_z0_Z5": 0.0012406350481606143
+      },
+      "hardware_error_imag": 0.0,
+      "hardware_error_real": -0.016938950029838962,
+      "hardware_observable_imag": 0.0,
+      "hardware_observable_real": -0.016938949769429362,
+      "hardware_standard_error_imag": 0.0,
+      "hardware_standard_error_real": 0.04119178795899011,
+      "ideal_observable_imag": 0.0,
+      "ideal_observable_real": 2.6040959985050056e-10,
+      "job_id": "datktcbojkfs738qtss0",
+      "mitigation_status": {
+        "hadron_z0_Z5": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_z0_Z5": "zne_extrapolated"
+      },
+      "noise_factor_data": {
+        "hadron_z0_Z5": {
+          "expectations": [
+            0.018179584817589977,
+            0.015231544036359169,
+            -0.008352782213487286
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.016620223754939555,
+            0.01628827079662528,
+            0.014951350672936304
+          ]
+        },
+        "vacuum_z0_Z5": {
+          "expectations": [
+            0.008844122343692421,
+            0.005896081562461614,
+            -0.016214224296769438
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015380399025703522,
+            0.017284421561829525,
+            0.019124237731040772
+          ]
+        }
+      },
+      "sample_values": {
+        "z_index": 0
+      },
+      "standard_errors": {
+        "hadron_z0_Z5": 0.016620223754939555,
+        "vacuum_z0_Z5": 0.03768993973985824
+      }
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "backend": "ibm_kawasaki",
+      "candidate_id": "sample_0003_D1_NT1",
+      "expectations": {
+        "hadron_k0_imag": -0.02161116502657963,
+        "hadron_k0_real": 0.012837921244290828,
+        "hadron_k1_imag": 0.025392203890324927,
+        "hadron_k1_real": -0.0103255192020369,
+        "hadron_k2_imag": 0.014812986051104801,
+        "hadron_k2_real": -0.020956600493486046,
+        "hadron_k3_imag": 0.02007473070938993,
+        "hadron_k3_real": 0.03200140587464413,
+        "vacuum_k0_imag": -0.0005250997949899057,
+        "vacuum_k0_real": 0.00388019003908837,
+        "vacuum_k1_imag": -0.013644454802680514,
+        "vacuum_k1_real": -0.02320701148006419,
+        "vacuum_k2_imag": 3.4255652072449723e-16,
+        "vacuum_k2_real": -6.470745689327083e-05,
+        "vacuum_k3_imag": 0.0016829584691226555,
+        "vacuum_k3_real": 0.005166023861236141
+      },
+      "hardware_error_imag": -0.0698080544323458,
+      "hardware_error_real": -0.01762141655882855,
+      "hardware_observable_imag": 0.015539546161648808,
+      "hardware_observable_real": 0.005784720288354733,
+      "hardware_standard_error_imag": 0.039133665502981585,
+      "hardware_standard_error_real": 0.029622972667489537,
+      "ideal_observable_imag": 0.08534760059399461,
+      "ideal_observable_real": 0.023406136847183283,
+      "job_id": "datktd2hcrkc73dud9jg",
+      "mitigation_status": {
+        "hadron_k0_imag": "zne_extrapolated",
+        "hadron_k0_real": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k1_imag": "zne_extrapolated",
+        "hadron_k1_real": "zne_extrapolated",
+        "hadron_k2_imag": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k2_real": "zne_extrapolated",
+        "hadron_k3_imag": "zne_extrapolated",
+        "hadron_k3_real": "zne_extrapolated",
+        "vacuum_k0_imag": "zne_extrapolated",
+        "vacuum_k0_real": "zne_extrapolated",
+        "vacuum_k1_imag": "zne_extrapolated",
+        "vacuum_k1_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k2_imag": "zne_extrapolated",
+        "vacuum_k2_real": "zne_extrapolated",
+        "vacuum_k3_imag": "zne_extrapolated",
+        "vacuum_k3_real": "zne_extrapolated"
+      },
+      "noise_factor_data": {
+        "hadron_k0_imag": {
+          "expectations": [
+            -0.016788050857918776,
+            0.00444389581533144,
+            0.009875324034069868
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014343681220935553,
+            0.018701089702669028,
+            0.013821046750234217
+          ]
+        },
+        "hadron_k0_real": {
+          "expectations": [
+            0.012837921244290828,
+            0.04197012714479694,
+            0.005925194420441921
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.016353097289309983,
+            0.014954055926598469,
+            0.015134559124827446
+          ]
+        },
+        "hadron_k1_imag": {
+          "expectations": [
+            0.016788050857918776,
+            0.003950129613627947,
+            0.004937662017034934
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01579956018748194,
+            0.018422178399558883,
+            0.014521050917858555
+          ]
+        },
+        "hadron_k1_real": {
+          "expectations": [
+            -0.003950129613627947,
+            -0.02765090729539563,
+            0.0
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.018995565336054284,
+            0.015923498094710675,
+            0.014276590341736535
+          ]
+        },
+        "hadron_k2_imag": {
+          "expectations": [
+            0.014812986051104801,
+            0.019750648068139736,
+            -0.00444389581533144
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015169761175761942,
+            0.014361732185191906,
+            0.013687826153633991
+          ]
+        },
+        "hadron_k2_real": {
+          "expectations": [
+            -0.011850388840883842,
+            -0.00444389581533144,
+            -0.0004937662017034934
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015908166177219192,
+            0.016586934831734193,
+            0.015417597629202417
+          ]
+        },
+        "hadron_k3_imag": {
+          "expectations": [
+            0.01777558326132576,
+            0.009875324034069868,
+            0.009381557832366374
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014858186344356872,
+            0.014988876936599609,
+            0.009921125719126999
+          ]
+        },
+        "hadron_k3_real": {
+          "expectations": [
+            0.028638439698802618,
+            -0.009875324034069868,
+            -0.00888779163066288
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014537849859900852,
+            0.015069986145978188,
+            0.015249905177596149
+          ]
+        },
+        "vacuum_k0_imag": {
+          "expectations": [
+            0.007900259227255894,
+            -0.015306752252808295,
+            0.004937662017034934
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015090194527870722,
+            0.015574934326258361,
+            0.015511451812009525
+          ]
+        },
+        "vacuum_k0_real": {
+          "expectations": [
+            -0.025675842488581655,
+            0.00444389581533144,
+            0.02468831008517467
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01739782856958132,
+            0.01795618526105887,
+            0.014051763048921312
+          ]
+        },
+        "vacuum_k1_imag": {
+          "expectations": [
+            -0.009381557832366374,
+            0.0004937662017034934,
+            -0.004937662017034934
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014188533105130512,
+            0.01861288194459208,
+            0.015241908187959077
+          ]
+        },
+        "vacuum_k1_real": {
+          "expectations": [
+            -0.02320701148006419,
+            0.004937662017034934,
+            -0.019750648068139736
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015441311569885962,
+            0.01360211686440398,
+            0.014344746119582866
+          ]
+        },
+        "vacuum_k2_imag": {
+          "expectations": [
+            -0.008394025428959388,
+            -0.0009875324034069868,
+            0.020738180471546724
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01599961701771495,
+            0.0141554684118252,
+            0.017110806535186533
+          ]
+        },
+        "vacuum_k2_real": {
+          "expectations": [
+            0.002468831008517467,
+            -0.0014812986051104802,
+            -0.0019750648068139736
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014465064110063748,
+            0.014333844514245714,
+            0.011804007607204122
+          ]
+        },
+        "vacuum_k3_imag": {
+          "expectations": [
+            0.011356622639180348,
+            -0.016294284656215283,
+            0.004937662017034934
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.013652158798938658,
+            0.016619978920923636,
+            0.015714454140276578
+          ]
+        },
+        "vacuum_k3_real": {
+          "expectations": [
+            0.0004937662017034934,
+            0.013825453647697815,
+            -0.0014812986051104802
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.017561485831783984,
+            0.017411827196353372,
+            0.014179936792650642
+          ]
+        }
+      },
+      "sample_values": {
+        "z_index": 1
+      },
+      "standard_errors": {
+        "hadron_k0_imag": 0.012042434946768673,
+        "hadron_k0_real": 0.016353097289309983,
+        "hadron_k1_imag": 0.016079580238406076,
+        "hadron_k1_real": 0.0540233032935699,
+        "hadron_k2_imag": 0.015169761175761942,
+        "hadron_k2_real": 0.005999807701451048,
+        "hadron_k3_imag": 0.007165667604268306,
+        "hadron_k3_real": 0.03493741228717383,
+        "vacuum_k0_imag": 0.03261117175564055,
+        "vacuum_k0_real": 0.0,
+        "vacuum_k1_imag": 0.022268992431877688,
+        "vacuum_k1_real": 0.015441311569885962,
+        "vacuum_k2_imag": 1.851347195589602e-10,
+        "vacuum_k2_real": 0.0,
+        "vacuum_k3_imag": 0.04090196148911902,
+        "vacuum_k3_real": 0.032209515545156955
+      }
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "backend": "ibm_kawasaki",
+      "candidate_id": "sample_0004_D1_NT1",
+      "expectations": {
+        "hadron_k0_imag": 0.02761511434383283,
+        "hadron_k0_real": -3.359996752463698e-16,
+        "hadron_k1_imag": -0.020551108736709775,
+        "hadron_k1_real": -2.168810027503888e-17,
+        "hadron_k2_imag": -0.008660367969043589,
+        "hadron_k2_real": -0.01057620479306517,
+        "hadron_k3_imag": -0.010181142618096214,
+        "hadron_k3_real": -0.004882245869599548,
+        "vacuum_k0_imag": 0.01676631942304136,
+        "vacuum_k0_real": -0.010038411266383187,
+        "vacuum_k1_imag": 1.780169812445833e-15,
+        "vacuum_k1_real": -0.03012121347924918,
+        "vacuum_k2_imag": -0.022683843925291252,
+        "vacuum_k2_real": -0.022683843925291252,
+        "vacuum_k3_imag": -0.011341921962645626,
+        "vacuum_k3_real": 0.013979708841718149
+      },
+      "hardware_error_imag": 0.014927396383823243,
+      "hardware_error_real": 0.012875520623696788,
+      "hardware_observable_imag": 0.015011574306181979,
+      "hardware_observable_real": 0.012875520624012189,
+      "hardware_standard_error_imag": 0.024922653383987706,
+      "hardware_standard_error_real": 0.022594403196114547,
+      "ideal_observable_imag": 8.417792235873578e-05,
+      "ideal_observable_real": 3.1540106626686687e-13,
+      "job_id": "datkte5vr3kc73eln5a0",
+      "mitigation_status": {
+        "hadron_k0_imag": "noise_factor_1_fallback_unstable_zne",
+        "hadron_k0_real": "zne_extrapolated",
+        "hadron_k1_imag": "zne_extrapolated",
+        "hadron_k1_real": "zne_extrapolated",
+        "hadron_k2_imag": "zne_extrapolated",
+        "hadron_k2_real": "zne_extrapolated",
+        "hadron_k3_imag": "zne_extrapolated",
+        "hadron_k3_real": "zne_extrapolated",
+        "vacuum_k0_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k0_real": "zne_extrapolated",
+        "vacuum_k1_imag": "zne_extrapolated",
+        "vacuum_k1_real": "zne_extrapolated",
+        "vacuum_k2_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k2_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k3_imag": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_k3_real": "zne_extrapolated"
+      },
+      "noise_factor_data": {
+        "hadron_k0_imag": {
+          "expectations": [
+            0.02761511434383283,
+            0.02761511434383283,
+            0.0034518892929791037
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.010938108140009988,
+            0.012953405614173576,
+            0.011663979483254965
+          ]
+        },
+        "hadron_k0_real": {
+          "expectations": [
+            -0.022683843925291252,
+            0.004931270418541577,
+            -0.038957036306478454
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01647277791570611,
+            0.015061580949731689,
+            0.0177249680856592
+          ]
+        },
+        "hadron_k1_imag": {
+          "expectations": [
+            -0.001479381125562473,
+            0.020218208716020463,
+            0.008876286753374839
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.018150282564295676,
+            0.017714656564935732,
+            0.014907412335972578
+          ]
+        },
+        "hadron_k1_real": {
+          "expectations": [
+            -0.009862540837083154,
+            0.0128213030882081,
+            -0.026135733218270358
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015275005083559596,
+            0.018744506849365444,
+            0.01555673546067284
+          ]
+        },
+        "hadron_k2_imag": {
+          "expectations": [
+            -0.0004931270418541577,
+            -0.022190716883437097,
+            -0.00641065154410405
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01443581512781,
+            0.016293502389073282,
+            0.013822684828393569
+          ]
+        },
+        "hadron_k2_real": {
+          "expectations": [
+            -0.0128213030882081,
+            0.001479381125562473,
+            -0.011835049004499784
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01292402542688505,
+            0.0150603190953469,
+            0.018132063065828073
+          ]
+        },
+        "hadron_k3_imag": {
+          "expectations": [
+            0.015286938297478889,
+            -0.029094495469395302,
+            -0.011341921962645626
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.019130338041103166,
+            0.014547004253171297,
+            0.016028290779263807
+          ]
+        },
+        "hadron_k3_real": {
+          "expectations": [
+            -0.003945016334833262,
+            -0.0009862540837083154,
+            -0.001972508167416631
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.016235791583776967,
+            0.015779102189947426,
+            0.015050476525241115
+          ]
+        },
+        "vacuum_k0_imag": {
+          "expectations": [
+            0.01676631942304136,
+            0.018245700548603833,
+            -0.0128213030882081
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015277993407717433,
+            0.018187094793225524,
+            0.015522738617098216
+          ]
+        },
+        "vacuum_k0_real": {
+          "expectations": [
+            -0.009862540837083154,
+            0.0,
+            -0.0004931270418541577
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.017994071586010907,
+            0.01591815313228771,
+            0.016495587883102562
+          ]
+        },
+        "vacuum_k1_imag": {
+          "expectations": [
+            -0.015780065339333047,
+            -0.005917524502249892,
+            0.028601368427541147
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.013736935335092995,
+            0.018101860755679183,
+            0.012386003047212634
+          ]
+        },
+        "vacuum_k1_real": {
+          "expectations": [
+            -0.02810824138568699,
+            0.009369413795228996,
+            -0.0009862540837083154
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.012213938847131504,
+            0.016691596235027386,
+            0.013157115593683901
+          ]
+        },
+        "vacuum_k2_imag": {
+          "expectations": [
+            -0.022683843925291252,
+            -0.011341921962645626,
+            0.004438143376687419
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.013647029510755576,
+            0.016667906087259637,
+            0.018000614992408556
+          ]
+        },
+        "vacuum_k2_real": {
+          "expectations": [
+            -0.022683843925291252,
+            0.018245700548603833,
+            -0.017752573506749678
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014426610815230945,
+            0.011333552688828626,
+            0.018722604402429947
+          ]
+        },
+        "vacuum_k3_imag": {
+          "expectations": [
+            -0.011341921962645626,
+            -0.01084879492079147,
+            0.012328176046353941
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.013899440423980428,
+            0.01745471417578487,
+            0.012547822091401335
+          ]
+        },
+        "vacuum_k3_real": {
+          "expectations": [
+            0.0128213030882081,
+            0.022190716883437097,
+            0.004438143376687419
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01451901523961529,
+            0.014840748098828441,
+            0.017326022645805243
+          ]
+        }
+      },
+      "sample_values": {
+        "z_index": 2
+      },
+      "standard_errors": {
+        "hadron_k0_imag": 0.010938108140009988,
+        "hadron_k0_real": 3.567558297359058e-10,
+        "hadron_k1_imag": 0.0,
+        "hadron_k1_real": 7.23983241072837e-11,
+        "hadron_k2_imag": 0.03245428494594582,
+        "hadron_k2_real": 0.022262266195646554,
+        "hadron_k3_imag": 0.0,
+        "hadron_k3_real": 0.005111852000568517,
+        "vacuum_k0_imag": 0.015277993407717433,
+        "vacuum_k0_real": 0.010088574067509697,
+        "vacuum_k1_imag": 1.1842681736937678e-09,
+        "vacuum_k1_real": 0.03513638106955551,
+        "vacuum_k2_imag": 0.013647029510755576,
+        "vacuum_k2_real": 0.014426610815230945,
+        "vacuum_k3_imag": 0.013899440423980428,
+        "vacuum_k3_real": 0.025972982881119735
+      }
+    }
+  ],
+  "run_record_path": "benchmarks/njl/analysis/hardware_run.json",
+  "run_record_sha256": "75cf5c80998fd4ed19473a31f55954891e6f415481ada510d8e97b47a58bf17e",
+  "status": "retrieved"
+}

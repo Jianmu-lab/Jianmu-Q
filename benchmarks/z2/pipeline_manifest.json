@@ -1,0 +1,294 @@
+{
+  "ansatz_search": {
+    "attempts": [
+      {
+        "artifacts": {
+          "agent4_state_design_contract": "benchmarks/z2/contracts/Agent4_StatePreparationContract_20260920T073518Z_799c77bd.json",
+          "agent4_state_report": "benchmarks/z2/reports/Agent4_StatePreparation_20260920T073518Z_799c77bd.tex",
+          "state_adapter": "benchmarks/z2/adapters/StatePreparationAdapter_20260920T073518Z_799c77bd.py",
+          "vqe_config": "benchmarks/z2/runtime/VQE_RunConfig_20260920T073518Z_799c77bd.json",
+          "vqe_parameter_bundle": "benchmarks/z2/runtime/VQE_ParameterBundle_20260920T073518Z_799c77bd.json",
+          "vqe_result": "benchmarks/z2/runtime/VQE_Runtime_Result_20260920T073518Z_799c77bd.json"
+        },
+        "attempt": 1,
+        "stage_logs": {
+          "agent4_state": "benchmarks/z2/audit/stage_logs/agent4_state.log",
+          "agent5_state": "benchmarks/z2/audit/stage_logs/agent5_state.log",
+          "vqe": "benchmarks/z2/audit/stage_logs/vqe.log"
+        },
+        "status": "promising_state",
+        "vqe_result": "benchmarks/z2/runtime/VQE_Runtime_Result_20260920T073518Z_799c77bd.json"
+      }
+    ],
+    "current_attempt": 1,
+    "maximum_attempts": 3
+  },
+  "artifacts": {
+    "agent1_observable": {
+      "path": "benchmarks/z2/inputs/agent1_observable.json"
+    },
+    "agent1_report": {
+      "path": "benchmarks/z2/reports/Agent1_Verified_Report_20260920T073518Z_799c77bd.tex"
+    },
+    "agent1_theory_contract": {
+      "path": "benchmarks/z2/contracts/Agent1_TheoryContract_20260920T073518Z_799c77bd.json"
+    },
+    "agent2_discretization_contract": {
+      "path": "benchmarks/z2/contracts/Agent2_DiscretizationContract_20260920T073518Z_799c77bd.json"
+    },
+    "agent2_parameter_contract": {
+      "path": "benchmarks/z2/contracts/Agent2_ParameterContract_20260920T073518Z_799c77bd.json"
+    },
+    "agent2_report": {
+      "path": "benchmarks/z2/reports/Agent2_Verified_20260920T073518Z_799c77bd.tex"
+    },
+    "agent3_mapping_contract": {
+      "path": "benchmarks/z2/contracts/Agent3_MappingContract_20260920T073518Z_799c77bd.json"
+    },
+    "agent3_report": {
+      "path": "benchmarks/z2/reports/Agent3_Verified_20260920T073518Z_799c77bd.tex"
+    },
+    "agent4_observable_design_contract": {
+      "path": "benchmarks/z2/contracts/Agent4_ObservableContract_20260920T073518Z_799c77bd.json"
+    },
+    "agent4_observable_report": {
+      "path": "benchmarks/z2/reports/Agent4_Observable_20260920T073518Z_799c77bd.tex"
+    },
+    "agent4_state_design_contract": {
+      "path": "benchmarks/z2/contracts/Agent4_StatePreparationContract_20260920T073518Z_799c77bd.json"
+    },
+    "agent4_state_report": {
+      "path": "benchmarks/z2/reports/Agent4_StatePreparation_20260920T073518Z_799c77bd.tex"
+    },
+    "agent8_review": {
+      "path": "benchmarks/z2/analysis/agent8_review.md"
+    },
+    "agent9_review": {
+      "path": "benchmarks/z2/analysis/agent9_hardware_review.md"
+    },
+    "controller_settings": {
+      "path": "benchmarks/z2/inputs/controller_settings.json"
+    },
+    "crosscheck_result": {
+      "path": "benchmarks/z2/analysis/crosscheck_result.json"
+    },
+    "final_report_evidence": {
+      "path": "benchmarks/z2/audit/Final_Academic_Report_20260920T073518Z_799c77bd_evidence.json"
+    },
+    "final_report_latex": {
+      "path": "benchmarks/z2/reports/Final_Academic_Report_20260920T073518Z_799c77bd.tex"
+    },
+    "final_report_markdown": {
+      "path": "benchmarks/z2/reports/Final_Academic_Report_20260920T073518Z_799c77bd.md"
+    },
+    "final_report_status": {
+      "path": "benchmarks/z2/audit/Final_Academic_Report_20260920T073518Z_799c77bd_status.json"
+    },
+    "hardware_plan": {
+      "path": "benchmarks/z2/analysis/hardware_plan.json"
+    },
+    "hardware_result": {
+      "path": "benchmarks/z2/analysis/hardware_result.json"
+    },
+    "hardware_run": {
+      "path": "benchmarks/z2/analysis/hardware_run.json"
+    },
+    "itensor_reference": {
+      "path": "benchmarks/z2/references/itensor_reference.json"
+    },
+    "itensor_script": {
+      "path": "benchmarks/z2/references/reference_itensor.jl"
+    },
+    "measurement_result": {
+      "path": "benchmarks/z2/runtime/measurement_result.json"
+    },
+    "observable_adapter": {
+      "path": "benchmarks/z2/adapters/ObservableAdapter_20260920T073518Z_799c77bd.py"
+    },
+    "run_spec": {
+      "path": "benchmarks/z2/inputs/run_spec.json"
+    },
+    "runtime_settings": {
+      "path": "benchmarks/z2/inputs/resolved_runtime_settings.json"
+    },
+    "scipy_reference": {
+      "path": "benchmarks/z2/references/scipy_reference.json"
+    },
+    "scipy_script": {
+      "path": "benchmarks/z2/references/reference_scipy.py"
+    },
+    "state_adapter": {
+      "path": "benchmarks/z2/adapters/StatePreparationAdapter_20260920T073518Z_799c77bd.py"
+    },
+    "vqe_config": {
+      "path": "benchmarks/z2/runtime/VQE_RunConfig_20260920T073518Z_799c77bd.json"
+    },
+    "vqe_parameter_bundle": {
+      "path": "benchmarks/z2/runtime/VQE_ParameterBundle_20260920T073518Z_799c77bd.json"
+    },
+    "vqe_result": {
+      "path": "benchmarks/z2/runtime/VQE_Runtime_Result_20260920T073518Z_799c77bd.json"
+    }
+  },
+  "completed_through": "final_report",
+  "config_path": "workflow/user_configs/2_1_dimensional_pure_z2_gauge_theory_in_kogut-susskind_formalism_20260920T073518Z.json",
+  "pipeline_schema_version": "2.0",
+  "project_root": "workflow",
+  "run_directory": "benchmarks/z2",
+  "run_id": "20260920T073518Z_799c77bd",
+  "stages": {
+    "agent1": {
+      "artifacts": [
+        "agent1_report",
+        "agent1_theory_contract"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent1.log",
+      "status": "completed"
+    },
+    "agent2": {
+      "artifacts": [
+        "agent2_report",
+        "agent2_parameter_contract",
+        "agent2_discretization_contract",
+        "runtime_settings"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent2.log",
+      "status": "completed"
+    },
+    "agent3": {
+      "artifacts": [
+        "agent3_report",
+        "agent3_mapping_contract"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent3.log",
+      "status": "completed"
+    },
+    "agent4_observable": {
+      "artifacts": [
+        "agent4_observable_report",
+        "agent4_observable_design_contract"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent4_observable.log",
+      "status": "completed"
+    },
+    "agent4_state": {
+      "artifacts": [
+        "agent4_state_report",
+        "agent4_state_design_contract"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent4_state.log",
+      "status": "completed"
+    },
+    "agent5_observable": {
+      "artifacts": [
+        "observable_adapter"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent5_observable.log",
+      "status": "completed"
+    },
+    "agent5_state": {
+      "artifacts": [
+        "state_adapter",
+        "vqe_config"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent5_state.log",
+      "status": "completed"
+    },
+    "agent6": {
+      "artifacts": [
+        "scipy_script"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent6.log",
+      "status": "completed"
+    },
+    "agent7": {
+      "artifacts": [
+        "itensor_script"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent7.log",
+      "status": "completed"
+    },
+    "agent8": {
+      "artifacts": [
+        "agent8_review"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent8.log",
+      "status": "completed"
+    },
+    "agent9": {
+      "artifacts": [
+        "agent9_review"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/agent9.log",
+      "status": "completed"
+    },
+    "crosscheck": {
+      "artifacts": [
+        "crosscheck_result"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/crosscheck.log",
+      "status": "completed"
+    },
+    "final_report": {
+      "artifacts": [
+        "final_report_markdown",
+        "final_report_latex",
+        "final_report_status",
+        "final_report_evidence"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/final_report.log",
+      "status": "completed"
+    },
+    "hardware_plan": {
+      "artifacts": [
+        "hardware_plan"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/hardware_plan.log",
+      "status": "completed"
+    },
+    "hardware_retrieve": {
+      "artifacts": [
+        "hardware_result"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/hardware_retrieve.log",
+      "status": "completed"
+    },
+    "hardware_submit": {
+      "artifacts": [
+        "hardware_run"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/hardware_submit.log",
+      "status": "completed"
+    },
+    "itensor_reference": {
+      "artifacts": [
+        "itensor_reference"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/itensor_reference_attempt2.log",
+      "status": "completed"
+    },
+    "measurement": {
+      "artifacts": [
+        "measurement_result"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/measurement.log",
+      "status": "completed"
+    },
+    "scipy_reference": {
+      "artifacts": [
+        "scipy_reference"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/scipy_reference.log",
+      "status": "completed"
+    },
+    "vqe": {
+      "artifacts": [
+        "vqe_result",
+        "vqe_parameter_bundle"
+      ],
+      "stage_log": "benchmarks/z2/audit/stage_logs/vqe.log",
+      "status": "completed"
+    }
+  },
+  "status": "completed_through_final_report"
+}

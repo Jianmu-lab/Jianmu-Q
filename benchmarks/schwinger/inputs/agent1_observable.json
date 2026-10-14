@@ -1,0 +1,56 @@
+{
+  "coordinate_convention": {
+    "mode": "lattice_indices",
+    "spacing_parameter": "lattice_spacing_a",
+    "temporal_spacing": "same_as_spatial",
+    "units": "natural_units_c_1"
+  },
+  "expression": "\\bar{\\psi}(zn) \\gamma^- W(zn,0) \\psi(0), n = (1,1), \\gamma^- = \\gamma^0 - \\gamma^1",
+  "gauge_transporters": [
+    {
+      "from": "\\psi",
+      "id": "Wlison line",
+      "path": "straight lattice path",
+      "to": "\\bar{\\psi}"
+    }
+  ],
+  "insertions": [
+    {
+      "id": "psibar",
+      "operator": "\\bar{\\psi}",
+      "position": {
+        "t1": "z1"
+      }
+    },
+    {
+      "id": "psi",
+      "operator": "\\psi",
+      "position": {
+        "t2": "z2"
+      }
+    }
+  ],
+  "name": "user_observable",
+  "observable_schema_version": "1.0",
+  "ordering": "as_written",
+  "requested_components": [
+    "real",
+    "imag"
+  ],
+  "sampling": {
+    "maximum_points": 10000,
+    "mode": "cartesian_product",
+    "variables": {
+      "z1": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "z2": [
+        0
+      ]
+    }
+  }
+}

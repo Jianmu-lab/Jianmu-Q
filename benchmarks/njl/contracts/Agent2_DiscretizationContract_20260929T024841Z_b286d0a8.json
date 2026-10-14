@@ -1,0 +1,218 @@
+{
+  "contract_type": "lattice_discretization",
+  "definitions": [
+    {
+      "canonical_expression": "H_lat=sum_{x=-2}^{2} c_x^dagger*beta*(m+r/a)*c_x + sum_{x=-2}^{1}[c_x^dagger*(-i*alpha1/(2*a)-r*beta/(2*a))*c_{x+1}+c_{x+1}^dagger*(i*alpha1/(2*a)-r*beta/(2*a))*c_x]-(g/a)*sum_{x=-2}^{2}(c_x^dagger*beta*c_x)^2; beta=sigma_1; alpha1=sigma_3; a=1; m=0.5; g=0.5; r=1; no additive energy shift",
+      "dependencies": [
+        "lattice_charge",
+        "gamma_matrix_definition"
+      ],
+      "display_latex": "H_{\\rm lat}=\\sum_{x=-2}^{2}c_x^\\dagger\\beta\\left(m+\\frac{r}{a}\\right)c_x+\\sum_{x=-2}^{1}\\left[c_x^\\dagger\\left(-\\frac{i\\alpha^1}{2a}-\\frac{r\\beta}{2a}\\right)c_{x+1}+c_{x+1}^\\dagger\\left(\\frac{i\\alpha^1}{2a}-\\frac{r\\beta}{2a}\\right)c_x\\right]-\\frac{g}{a}\\sum_{x=-2}^{2}(c_x^\\dagger\\beta c_x)^2",
+      "id": "lattice_hamiltonian",
+      "kind": "lattice_hamiltonian"
+    },
+    {
+      "canonical_expression": "gamma0=beta=sigma_1; gamma1=-i*sigma_2; alpha1=gamma0*gamma1=sigma_3; gamma_minus=gamma0-gamma1; beta*gamma_minus=I-alpha1",
+      "dependencies": [],
+      "display_latex": "\\gamma^0=\\beta=\\sigma_1,\\quad\\gamma^1=-i\\sigma_2,\\quad\\alpha^1=\\sigma_3,\\quad\\gamma^-=\\gamma^0-\\gamma^1,\\quad\\beta\\gamma^-=\\mathbf1-\\alpha^1",
+      "id": "gamma_matrix_definition",
+      "kind": "lattice_operator_convention"
+    },
+    {
+      "canonical_expression": "Q_lat=sum_{x=-2}^{2}sum_{s=1}^{2} c_{x,s}^dagger*c_{x,s}-5",
+      "dependencies": [],
+      "display_latex": "Q_{\\rm lat}=\\sum_{x=-2}^{2}\\sum_{s=1}^{2}c_{x,s}^\\dagger c_{x,s}-5",
+      "id": "lattice_charge",
+      "kind": "conserved_charge"
+    },
+    {
+      "canonical_expression": "fermion_parity=exp(i*pi*(Q_lat+5))",
+      "dependencies": [
+        "lattice_charge"
+      ],
+      "display_latex": "(-1)^F=e^{i\\pi(Q_{\\rm lat}+5)}",
+      "id": "fermion_parity",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "P*c_x*P^-1=beta*c_{-x}",
+      "dependencies": [
+        "gamma_matrix_definition"
+      ],
+      "display_latex": "\\mathsf P c_x\\mathsf P^{-1}=\\beta c_{-x}",
+      "id": "spatial_reflection_operator",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "T*c_x*T^-1=beta*c_x; T*i*T^-1=-i",
+      "dependencies": [
+        "gamma_matrix_definition"
+      ],
+      "display_latex": "\\mathsf T c_x\\mathsf T^{-1}=\\beta c_x,\\qquad \\mathsf T i\\mathsf T^{-1}=-i",
+      "id": "time_reversal_operator",
+      "kind": "antiunitary_symmetry_operator"
+    },
+    {
+      "canonical_expression": "C*c_x*C^-1=-sigma_3*c_x^dagger; C*Q_lat*C^-1=-Q_lat",
+      "dependencies": [
+        "lattice_charge"
+      ],
+      "display_latex": "\\mathsf C c_x\\mathsf C^{-1}=-\\sigma_3c_x^\\dagger,\\qquad \\mathsf C Q_{\\rm lat}\\mathsf C^{-1}=-Q_{\\rm lat}",
+      "id": "charge_conjugation_operator",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "PT*c_x*(PT)^-1=c_{-x}; PT*i*(PT)^-1=-i",
+      "dependencies": [
+        "spatial_reflection_operator",
+        "time_reversal_operator"
+      ],
+      "display_latex": "\\mathsf{PT}c_x(\\mathsf{PT})^{-1}=c_{-x},\\qquad \\mathsf{PT}i(\\mathsf{PT})^{-1}=-i",
+      "id": "combined_PT_operator",
+      "kind": "antiunitary_symmetry_operator"
+    },
+    {
+      "canonical_expression": "No exact finite-lattice translation generator exists for the selected open boundary condition.",
+      "dependencies": [],
+      "display_latex": "\\text{No exact translation generator exists under the selected OBC.}",
+      "id": "spatial_translation_generator",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "No exact Lorentz-boost generator exists on the fixed-spacing finite spatial lattice.",
+      "dependencies": [],
+      "display_latex": "\\text{Lorentz boosts are continuum-only at finite }a\\text{ and }L.",
+      "id": "lorentz_boost_generator",
+      "kind": "continuum_symmetry_operator"
+    },
+    {
+      "canonical_expression": "O_lat(z_index)=(1/a)*c_{z_index}^dagger(t=z_index*a)*(I-alpha1)*c_0; c_x^dagger(t)=exp(i*H_lat*t)*c_x^dagger*exp(-i*H_lat*t); z_index in {-2,-1,0,1,2}; ordered_as_written",
+      "dependencies": [
+        "lattice_hamiltonian",
+        "gamma_matrix_definition"
+      ],
+      "display_latex": "O_{\\rm lat}(z)=\\frac1a\\,c_z^\\dagger(za)(\\mathbf1-\\sigma_3)c_0,\\qquad c_x^\\dagger(t)=e^{iH_{\\rm lat}t}c_x^\\dagger e^{-iH_{\\rm lat}t}",
+      "id": "lattice_observable",
+      "kind": "lattice_observable"
+    },
+    {
+      "canonical_expression": "Q_lat=0 --c_0--> Q_lat=-1 --exp(-i*H_lat*t)--> Q_lat=-1 --c_z^dagger--> Q_lat=0",
+      "dependencies": [
+        "lattice_charge",
+        "lattice_observable"
+      ],
+      "display_latex": "0\\xrightarrow{c_0}-1\\xrightarrow{e^{-iH_{\\rm lat}t}}-1\\xrightarrow{c_z^\\dagger}0",
+      "id": "operator_sector_path",
+      "kind": "charge_sector_path"
+    },
+    {
+      "canonical_expression": "<hadron|O_lat(z_index)|hadron>-<vacuum|O_lat(z_index)|vacuum>",
+      "dependencies": [
+        "lattice_observable"
+      ],
+      "display_latex": "\\langle\\mathrm{hadron}|O_{\\rm lat}(z)|\\mathrm{hadron}\\rangle-\\langle\\mathrm{vacuum}|O_{\\rm lat}(z)|\\mathrm{vacuum}\\rangle",
+      "id": "requested_matrix_element_combination",
+      "kind": "matrix_element_linear_combination"
+    }
+  ],
+  "experience_selection": {
+    "decision": "none",
+    "reason": "No historical candidate was supplied. The available library gauge-theory constructions are not applicable to a model with no local gauge group, so a cohesive matter-only Wilson discretization is derived directly.",
+    "source_record_id": null
+  },
+  "field_encodings": [
+    {
+      "degrees_of_freedom": "Two canonical fermion modes at every site of the authoritative spacetime geometry; ten modes total, kinematic dimension 2^10=1024, Q_lat=0 dimension C(10,5)=252, Q_lat=-1 dimension C(10,4)=210, and ten qubits under Jordan-Wigner encoding.",
+      "scheme": "two-component Wilson fermions with optional Jordan-Wigner encoding",
+      "sector": "fermion",
+      "truncation": "No approximate local truncation: each canonical fermionic mode has exact occupations 0 and 1."
+    }
+  ],
+  "lattice": {
+    "geometry": "One spatial dimension with five sites x in {-2,-1,0,1,2}, spacing a=1, continuous Hamiltonian time, and requested pullback (t,x)=(z_index*a,z_index*a).",
+    "spatial_boundary_condition": "open"
+  },
+  "lattice_symmetries": [
+    {
+      "commutator_result": "[H_lat,Q_lat]=0 exactly",
+      "id": "global_vector_U1",
+      "operator_definition_id": "lattice_charge",
+      "status": "exact",
+      "target_eigenvalues": {
+        "hadron": "0",
+        "vacuum": "0"
+      }
+    },
+    {
+      "commutator_result": "[H_lat,exp(i*pi*(Q_lat+5))]=0 exactly",
+      "id": "fermion_parity_symmetry",
+      "operator_definition_id": "fermion_parity",
+      "status": "exact",
+      "target_eigenvalues": {
+        "hadron": "-1",
+        "vacuum": "-1"
+      }
+    },
+    {
+      "commutator_result": "C*H_lat*C^-1=H_lat and C*Q_lat*C^-1=-Q_lat",
+      "id": "charge_conjugation_C",
+      "operator_definition_id": "charge_conjugation_operator",
+      "status": "exact",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "P*H_lat*P^-1=H_lat",
+      "id": "spatial_reflection_P",
+      "operator_definition_id": "spatial_reflection_operator",
+      "status": "exact",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "T*H_lat*T^-1=H_lat",
+      "id": "time_reversal_T",
+      "operator_definition_id": "time_reversal_operator",
+      "status": "exact",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "PT*H_lat*(PT)^-1=H_lat",
+      "id": "combined_PT",
+      "operator_definition_id": "combined_PT_operator",
+      "status": "exact",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "A one-site translation does not preserve the open-chain Hamiltonian because it changes the retained-link set.",
+      "id": "spatial_translations",
+      "operator_definition_id": "spatial_translation_generator",
+      "status": "broken_by_boundary_or_discretization",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "No exact finite-lattice Lorentz-boost commutator exists at fixed nonzero spacing and finite open volume.",
+      "id": "proper_Lorentz_transformations",
+      "operator_definition_id": "lorentz_boost_generator",
+      "status": "continuum_only",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    }
+  ],
+  "schema_version": "1.0"
+}

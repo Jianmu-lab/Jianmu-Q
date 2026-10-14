@@ -1,0 +1,387 @@
+{
+  "method": {
+    "statistical": "Original reconstructed standard error of the selected recipe-level ZNE or scale-1 fallback estimates.",
+    "mitigation_model": "Recipe-level RMS spread of valid exponential, linear, and lowest-noise fallback zero-noise estimates relative to the selected estimate, propagated through the observable reconstruction.",
+    "combined": "Quadrature sum of statistical and mitigation-model components; shown as a 68%-scale uncertainty band."
+  },
+  "limitations": [
+    "The band does not include independent-job calibration drift, temporal drift, correlations between recipes, residual depth-dependent signal attenuation, or a bound on hardware bias.",
+    "The band is not enlarged using the noiseless target and therefore is not guaranteed to cover it."
+  ],
+  "results": [
+    {
+      "z_index": -2,
+      "ideal_real": 4.410335158783865e-10,
+      "ideal_imag": 0.14104648454779822,
+      "hardware_real": 0.03856178640008406,
+      "hardware_imag": -0.030524793986673283,
+      "statistical_se_real": 0.0350320279730134,
+      "statistical_se_imag": 0.01988312386259967,
+      "zne_model_se_real": 0.011132516251023891,
+      "zne_model_se_imag": 0.017085868259214956,
+      "combined_se_real": 0.03675834465779579,
+      "combined_se_imag": 0.026215749249386897,
+      "valid_models_by_recipe": {
+        "hadron_k0_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k0_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_imag": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ]
+      }
+    },
+    {
+      "z_index": -1,
+      "ideal_real": 0.025241186128500185,
+      "ideal_imag": -0.07610813699128549,
+      "hardware_real": -8.69706940457779e-05,
+      "hardware_imag": -0.04552118509992931,
+      "statistical_se_real": 0.029346279538187147,
+      "statistical_se_imag": 0.03891861690301201,
+      "zne_model_se_real": 0.0073787666630960235,
+      "zne_model_se_imag": 0.018612774663002783,
+      "combined_se_real": 0.03025971447654189,
+      "combined_se_imag": 0.04314040011751317,
+      "valid_models_by_recipe": {
+        "hadron_k0_imag": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k0_real": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_imag": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_imag": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_real": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_real": [
+          "linear",
+          "fallback"
+        ]
+      }
+    },
+    {
+      "z_index": 0,
+      "ideal_real": 2.6040959985050056e-10,
+      "ideal_imag": 0.0,
+      "hardware_real": -0.016938949769429362,
+      "hardware_imag": 0.0,
+      "statistical_se_real": 0.04119178795899011,
+      "statistical_se_imag": 0.0,
+      "zne_model_se_real": 0.01935164775482502,
+      "zne_model_se_imag": 0.0,
+      "combined_se_real": 0.04551098401578708,
+      "combined_se_imag": 0.0,
+      "valid_models_by_recipe": {
+        "hadron_z0_Z5": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_z0_Z5": [
+          "exponential",
+          "linear",
+          "fallback"
+        ]
+      }
+    },
+    {
+      "z_index": 1,
+      "ideal_real": 0.023406136847183283,
+      "ideal_imag": 0.08534760059399461,
+      "hardware_real": 0.005784720288354733,
+      "hardware_imag": 0.015539546161648808,
+      "statistical_se_real": 0.029622972667489537,
+      "statistical_se_imag": 0.039133665502981585,
+      "zne_model_se_real": 0.020733095407789708,
+      "zne_model_se_imag": 0.008053636400821183,
+      "combined_se_real": 0.03615773437104906,
+      "combined_se_imag": 0.03995378373791252,
+      "valid_models_by_recipe": {
+        "hadron_k0_imag": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k0_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ]
+      }
+    },
+    {
+      "z_index": 2,
+      "ideal_real": 3.1540106626686687e-13,
+      "ideal_imag": 8.417792235873578e-05,
+      "hardware_real": 0.012875520624012189,
+      "hardware_imag": 0.015011574306181979,
+      "statistical_se_real": 0.022594403196114547,
+      "statistical_se_imag": 0.024922653383987706,
+      "zne_model_se_real": 0.019090566202471123,
+      "zne_model_se_imag": 0.014793092698891203,
+      "combined_se_real": 0.029579668248976763,
+      "combined_se_imag": 0.028982309143620388,
+      "valid_models_by_recipe": {
+        "hadron_k0_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k0_real": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_imag": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k1_real": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "hadron_k2_real": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_imag": [
+          "linear",
+          "fallback"
+        ],
+        "hadron_k3_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k0_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_imag": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k1_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k2_real": [
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_imag": [
+          "exponential",
+          "linear",
+          "fallback"
+        ],
+        "vacuum_k3_real": [
+          "exponential",
+          "linear",
+          "fallback"
+        ]
+      }
+    }
+  ]
+}

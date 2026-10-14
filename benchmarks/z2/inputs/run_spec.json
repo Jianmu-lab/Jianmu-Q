@@ -1,0 +1,103 @@
+{
+  "execution_request": {
+    "hardware_mode": "full_d1_nt1",
+    "hardware_validation": true,
+    "llm": "gpt-5.6-sol",
+    "max_ansatz_retries": 2,
+    "through": "final_report",
+    "vqe_runtime": {
+      "target_kind_by_state": {
+        "glueball": "sector_eigenstate",
+        "vacuum": "ground"
+      },
+      "target_spec_by_state": {
+        "glueball": {
+          "kind": "sector_eigenstate",
+          "level_index": 1,
+          "quantum_numbers": {
+            "Gauss's law": 0
+          }
+        },
+        "vacuum": {
+          "kind": "ground",
+          "level_index": 0,
+          "quantum_numbers": {}
+        }
+      }
+    }
+  },
+  "run_id": "20260920T073518Z_799c77bd",
+  "schema_version": "1.0",
+  "user_input": {
+    "clarifications": [],
+    "continuum_conventions": {},
+    "external_states": {
+      "glueball": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"Gauss's law\": 0}",
+      "vacuum": "Ground state / vacuum"
+    },
+    "model": "2+1 dimensional pure Z2 gauge theory in Kogut-Susskind formalism",
+    "observable": {
+      "coordinate_convention": {
+        "mode": "lattice_indices",
+        "spacing_parameter": "lattice_spacing_a",
+        "temporal_spacing": "same_as_spatial",
+        "units": "natural_units_c_1"
+      },
+      "expression": "Hamiltonian: H",
+      "insertions": [
+        {
+          "id": "Hamiltonian",
+          "operator": "H",
+          "position": "global"
+        }
+      ],
+      "matrix_elements": [
+        {
+          "bra": "glueball",
+          "coefficient": 1.0,
+          "id": "glueball energy",
+          "ket": "glueball"
+        },
+        {
+          "bra": "vacuum",
+          "coefficient": -1.0,
+          "id": "vacuum energy",
+          "ket": "vacuum"
+        }
+      ],
+      "name": "user_observable",
+      "observable_schema_version": "1.0",
+      "ordering": "as_written",
+      "requested_components": [
+        "real",
+        "imag"
+      ],
+      "sampling": {
+        "mode": "explicit_points",
+        "points": [
+          {
+            "sample_id": "default",
+            "values": {}
+          }
+        ]
+      }
+    },
+    "parameter_groups": {
+      "physical": {
+        "bare copuling: g": "g = 1",
+        "number of lattice site [L,L]:": [
+          4,
+          4
+        ]
+      },
+      "simulation": {}
+    },
+    "parameters": {
+      "bare copuling: g": "g = 1",
+      "number of lattice site [L,L]:": [
+        4,
+        4
+      ]
+    }
+  }
+}

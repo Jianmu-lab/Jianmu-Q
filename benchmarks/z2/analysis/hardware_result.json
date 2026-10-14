@@ -1,0 +1,1212 @@
+{
+  "campaign_id": "campaign_22d41426ef3380d88bccb88233472b517055f802ec1d27543758f9919ba578df",
+  "crosscheck_run_id": "crosscheck_78729414219e9c3f0bf888ebe49166f421ef92237060f04f8c4a81593c9f48d8",
+  "hardware_plan_id": "hardware_plan_1b265ea3f968a1ea4035c1427c82b39906216e852cb7b3165157cf17ae00ee6b",
+  "hardware_result_schema_version": "1.0",
+  "hardware_run_id": "hardware_run_10f9b7882f7b80a35ca2fea6080dc49845db9df15a0be84c762262614ef8ef96",
+  "parameter_contract_sha256": "7af97647c1881aeebf563fac830ccfd1d7ff01f8e599604374a00f82f8879f08",
+  "resilience": {
+    "level": 2,
+    "measurement_mitigation": true,
+    "zne_extrapolator": [
+      "exponential",
+      "linear",
+      "fallback"
+    ],
+    "zne_mitigation": true,
+    "zne_noise_factors": [
+      1.0,
+      3.0,
+      5.0
+    ]
+  },
+  "results": [
+    {
+      "D_ans": 1,
+      "N_T": 0,
+      "backend": "ibm_kawasaki",
+      "candidate_id": "default_D1_NT0",
+      "expectations": {
+        "glueball_b_z_q0_real": 0.24330837231958322,
+        "glueball_b_z_q1_real": 0.4703951850866398,
+        "glueball_b_z_q2_real": 0.2445042900983278,
+        "glueball_b_z_q3_real": 0.46102064987354663,
+        "glueball_b_z_q4_real": -0.18134306380835316,
+        "glueball_b_z_q5_real": 0.40905370254102896,
+        "glueball_b_z_q6_real": 0.2614880213718101,
+        "glueball_b_z_q7_real": 0.45461220953586523,
+        "glueball_b_z_q8_real": 0.24772851474086233,
+        "glueball_e_x_q0_m2_real": 0.9655143560537066,
+        "glueball_e_x_q1_q0_real": 0.8025777667616805,
+        "glueball_e_x_q1_real": 0.8540140158973325,
+        "glueball_e_x_q2_m2_real": 0.9620527832919582,
+        "glueball_e_x_q2_q1_real": 0.8393850412861728,
+        "glueball_e_x_q3_real": 0.8279252704031466,
+        "glueball_e_x_q4_q1_real": -0.8099836409422245,
+        "glueball_e_x_q4_q3_real": -0.7712272895810159,
+        "glueball_e_x_q5_q0_real": 0.7868852459016393,
+        "glueball_e_x_q5_q2_real": 0.8495980775783524,
+        "glueball_e_x_q5_q4_real": -0.805457965898531,
+        "glueball_e_x_q5_real": 0.8432432432432433,
+        "glueball_e_x_q6_m2_real": 0.9153959665518937,
+        "glueball_e_x_q6_q3_real": 0.7957495963105549,
+        "glueball_e_x_q7_q4_real": -0.8187084304440588,
+        "glueball_e_x_q7_q6_real": 0.7956838258215913,
+        "glueball_e_x_q7_real": 0.85228542290167,
+        "glueball_e_x_q8_m2_real": 0.9542501971507463,
+        "glueball_e_x_q8_q5_real": 0.8167119870019197,
+        "glueball_e_x_q8_q7_real": 0.7943815454759656,
+        "vacuum_b_z_q0_real": 0.26755031909671084,
+        "vacuum_b_z_q1_real": 0.24039237598559632,
+        "vacuum_b_z_q2_real": 0.20611447553719386,
+        "vacuum_b_z_q3_real": 0.19216182048040456,
+        "vacuum_b_z_q4_real": 0.19955456570155902,
+        "vacuum_b_z_q5_real": 0.2522079721425913,
+        "vacuum_b_z_q6_real": 0.2468796307346472,
+        "vacuum_b_z_q7_real": 0.2323299129243506,
+        "vacuum_b_z_q8_real": 0.22091020910209103,
+        "vacuum_e_x_q0_m2_real": 0.9563605744466309,
+        "vacuum_e_x_q1_q0_real": 0.9304980446943597,
+        "vacuum_e_x_q1_real": 0.9831330243941266,
+        "vacuum_e_x_q2_m2_real": 0.9546656824752414,
+        "vacuum_e_x_q2_q1_real": 0.9369380977899614,
+        "vacuum_e_x_q3_real": 0.9884810413445625,
+        "vacuum_e_x_q4_q1_real": 0.9742888851330546,
+        "vacuum_e_x_q4_q3_real": 0.9624560703614646,
+        "vacuum_e_x_q5_q0_real": 0.9511293056125677,
+        "vacuum_e_x_q5_q2_real": 0.9360131543835976,
+        "vacuum_e_x_q5_q4_real": 0.9650347909950312,
+        "vacuum_e_x_q5_real": 0.9766886311138406,
+        "vacuum_e_x_q6_m2_real": 0.9746495744522716,
+        "vacuum_e_x_q6_q3_real": 0.9426982279135946,
+        "vacuum_e_x_q7_q4_real": 0.9612646106740965,
+        "vacuum_e_x_q7_q6_real": 0.9178216860184353,
+        "vacuum_e_x_q7_real": 0.9561891517054499,
+        "vacuum_e_x_q8_m2_real": 0.9662663903938815,
+        "vacuum_e_x_q8_q5_real": 0.9576160075115779,
+        "vacuum_e_x_q8_q7_real": 0.9042830540037244
+      },
+      "hardware_error_imag": 0.0,
+      "hardware_error_real": 0.3981047107898137,
+      "hardware_observable_imag": 0.0,
+      "hardware_observable_real": 8.148261309317277,
+      "hardware_standard_error_imag": 0.0,
+      "hardware_standard_error_real": 0.13502523067843758,
+      "ideal_observable_imag": 0.0,
+      "ideal_observable_real": 7.750156598527464,
+      "job_id": "danpihdr85ps73fecltg",
+      "mitigation_status": {
+        "glueball_b_z_q0_real": "zne_extrapolated",
+        "glueball_b_z_q1_real": "zne_extrapolated",
+        "glueball_b_z_q2_real": "noise_factor_1_fallback_unstable_zne",
+        "glueball_b_z_q3_real": "zne_extrapolated",
+        "glueball_b_z_q4_real": "zne_extrapolated",
+        "glueball_b_z_q5_real": "zne_extrapolated",
+        "glueball_b_z_q6_real": "zne_extrapolated",
+        "glueball_b_z_q7_real": "zne_extrapolated",
+        "glueball_b_z_q8_real": "zne_extrapolated",
+        "glueball_e_x_q0_m2_real": "zne_extrapolated",
+        "glueball_e_x_q1_q0_real": "noise_factor_1_fallback_unstable_zne",
+        "glueball_e_x_q1_real": "zne_extrapolated",
+        "glueball_e_x_q2_m2_real": "zne_extrapolated",
+        "glueball_e_x_q2_q1_real": "zne_extrapolated",
+        "glueball_e_x_q3_real": "noise_factor_1_fallback_unstable_zne",
+        "glueball_e_x_q4_q1_real": "zne_extrapolated",
+        "glueball_e_x_q4_q3_real": "noise_factor_1_fallback_unstable_zne",
+        "glueball_e_x_q5_q0_real": "noise_factor_1_fallback_unstable_zne",
+        "glueball_e_x_q5_q2_real": "zne_extrapolated",
+        "glueball_e_x_q5_q4_real": "zne_extrapolated",
+        "glueball_e_x_q5_real": "noise_factor_1_fallback_unstable_zne",
+        "glueball_e_x_q6_m2_real": "noise_factor_1_fallback_unstable_zne",
+        "glueball_e_x_q6_q3_real": "zne_extrapolated",
+        "glueball_e_x_q7_q4_real": "zne_extrapolated",
+        "glueball_e_x_q7_q6_real": "zne_extrapolated",
+        "glueball_e_x_q7_real": "zne_extrapolated",
+        "glueball_e_x_q8_m2_real": "zne_extrapolated",
+        "glueball_e_x_q8_q5_real": "zne_extrapolated",
+        "glueball_e_x_q8_q7_real": "zne_extrapolated",
+        "vacuum_b_z_q0_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_b_z_q1_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_b_z_q2_real": "zne_extrapolated",
+        "vacuum_b_z_q3_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_b_z_q4_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_b_z_q5_real": "zne_extrapolated",
+        "vacuum_b_z_q6_real": "zne_extrapolated",
+        "vacuum_b_z_q7_real": "zne_extrapolated",
+        "vacuum_b_z_q8_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_e_x_q0_m2_real": "zne_extrapolated",
+        "vacuum_e_x_q1_q0_real": "zne_extrapolated",
+        "vacuum_e_x_q1_real": "zne_extrapolated",
+        "vacuum_e_x_q2_m2_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_e_x_q2_q1_real": "zne_extrapolated",
+        "vacuum_e_x_q3_real": "zne_extrapolated",
+        "vacuum_e_x_q4_q1_real": "zne_extrapolated",
+        "vacuum_e_x_q4_q3_real": "zne_extrapolated",
+        "vacuum_e_x_q5_q0_real": "zne_extrapolated",
+        "vacuum_e_x_q5_q2_real": "zne_extrapolated",
+        "vacuum_e_x_q5_q4_real": "zne_extrapolated",
+        "vacuum_e_x_q5_real": "zne_extrapolated",
+        "vacuum_e_x_q6_m2_real": "zne_extrapolated",
+        "vacuum_e_x_q6_q3_real": "noise_factor_1_fallback_unstable_zne",
+        "vacuum_e_x_q7_q4_real": "zne_extrapolated",
+        "vacuum_e_x_q7_q6_real": "zne_extrapolated",
+        "vacuum_e_x_q7_real": "zne_extrapolated",
+        "vacuum_e_x_q8_m2_real": "zne_extrapolated",
+        "vacuum_e_x_q8_q5_real": "zne_extrapolated",
+        "vacuum_e_x_q8_q7_real": "noise_factor_1_fallback_unstable_zne"
+      },
+      "noise_factor_data": {
+        "glueball_b_z_q0_real": {
+          "expectations": [
+            0.24684983711352879,
+            0.24980023357305303,
+            0.25815969020837176
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.018961919188362836,
+            0.017186827783593584,
+            0.024249146409227037
+          ]
+        },
+        "glueball_b_z_q1_real": {
+          "expectations": [
+            0.44266633840093556,
+            0.4032744506678156,
+            0.35255739521142365
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01910313938303722,
+            0.016435092569986216,
+            0.023562005829769847
+          ]
+        },
+        "glueball_b_z_q2_real": {
+          "expectations": [
+            0.2445042900983278,
+            0.20141541930231102,
+            0.2179495208868291
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015446011303110605,
+            0.017342819886692527,
+            0.02300405884272232
+          ]
+        },
+        "glueball_b_z_q3_real": {
+          "expectations": [
+            0.45624385447394294,
+            0.40707964601769914,
+            0.4031465093411996
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.019470286851033,
+            0.01646662675309218,
+            0.016319136449975926
+          ]
+        },
+        "glueball_b_z_q4_real": {
+          "expectations": [
+            -0.1684055480544986,
+            -0.14631152571498712,
+            -0.12519945992389836
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01425113408745015,
+            0.017323290341318253,
+            0.024661534879455896
+          ]
+        },
+        "glueball_b_z_q5_real": {
+          "expectations": [
+            0.3941031941031941,
+            0.3808353808353808,
+            0.34250614250614253
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.022075461354784755,
+            0.032244649149774283,
+            0.03535235946096144
+          ]
+        },
+        "glueball_b_z_q6_real": {
+          "expectations": [
+            0.25823905558288246,
+            0.2233152975897688,
+            0.22725036891293654
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.02273250618262412,
+            0.024687320806820668,
+            0.02224909798450783
+          ]
+        },
+        "glueball_b_z_q7_real": {
+          "expectations": [
+            0.4307162195422102,
+            0.4075806054639429,
+            0.35244892936254
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014632245755835199,
+            0.02375999462701431,
+            0.018218165701514404
+          ]
+        },
+        "glueball_b_z_q8_real": {
+          "expectations": [
+            0.23675935631050002,
+            0.23774585362846046,
+            0.2101239287255688
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.019243929320802846,
+            0.019668317272932598,
+            0.021539713501614863
+          ]
+        },
+        "glueball_e_x_q0_m2_real": {
+          "expectations": [
+            0.9490441944803,
+            0.9215071608580736,
+            0.8851189378572746
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.005168757648976688,
+            0.007283548100169925,
+            0.012158859436705529
+          ]
+        },
+        "glueball_e_x_q1_q0_real": {
+          "expectations": [
+            0.8025777667616805,
+            0.7673813359771967,
+            0.6935184037675053
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01035311836597214,
+            0.011366544792578122,
+            0.01337816356657646
+          ]
+        },
+        "glueball_e_x_q1_real": {
+          "expectations": [
+            0.8420016002954391,
+            0.8139348802855911,
+            0.7947313350156952
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.00811167899536418,
+            0.014988915476178671,
+            0.013131647089626152
+          ]
+        },
+        "glueball_e_x_q2_m2_real": {
+          "expectations": [
+            0.9314210559278512,
+            0.8808166844115989,
+            0.819690611887017
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.006343553844134078,
+            0.00833683623920375,
+            0.010790520044526212
+          ]
+        },
+        "glueball_e_x_q2_q1_real": {
+          "expectations": [
+            0.797877716018191,
+            0.7281455280444669,
+            0.6558868115209702
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01544795676398598,
+            0.016353996276085383,
+            0.013016138224605196
+          ]
+        },
+        "glueball_e_x_q3_real": {
+          "expectations": [
+            0.8279252704031466,
+            0.7300884955752213,
+            0.7369714847590954
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009617799160465958,
+            0.015269807678416215,
+            0.012054417999494447
+          ]
+        },
+        "glueball_e_x_q4_q1_real": {
+          "expectations": [
+            -0.7768768954632667,
+            -0.6966639846506159,
+            -0.6496255492975181
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.012478100230322722,
+            0.016839746517311256,
+            0.012887823264049438
+          ]
+        },
+        "glueball_e_x_q4_q3_real": {
+          "expectations": [
+            -0.7712272895810159,
+            -0.6654307254974663,
+            -0.6080830552465702
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01198662351355708,
+            0.012142594234812348,
+            0.018372155530179624
+          ]
+        },
+        "glueball_e_x_q5_q0_real": {
+          "expectations": [
+            0.7868852459016393,
+            0.7458088462728116,
+            0.6705845963501392
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.010671641797209051,
+            0.01022184941937282,
+            0.011593123102718428
+          ]
+        },
+        "glueball_e_x_q5_q2_real": {
+          "expectations": [
+            0.8002521273242987,
+            0.6953671604160101,
+            0.6363693665300977
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.00897558780736942,
+            0.014267624996019112,
+            0.021882019977369875
+          ]
+        },
+        "glueball_e_x_q5_q4_real": {
+          "expectations": [
+            -0.7584928968499074,
+            -0.6562075355157505,
+            -0.5944410129709697
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.011989222460386972,
+            0.014752122005736721,
+            0.01874307604890545
+          ]
+        },
+        "glueball_e_x_q5_real": {
+          "expectations": [
+            0.8432432432432433,
+            0.8103194103194103,
+            0.7297297297297297
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009042994841062132,
+            0.014929458350910817,
+            0.017488482493018685
+          ]
+        },
+        "glueball_e_x_q6_m2_real": {
+          "expectations": [
+            0.9153959665518937,
+            0.8622725036891293,
+            0.8544023610427939
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009760942137713741,
+            0.009921650143626209,
+            0.00912086609809033
+          ]
+        },
+        "glueball_e_x_q6_q3_real": {
+          "expectations": [
+            0.7591927695926706,
+            0.693326730221617,
+            0.6304320911229417
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.013659606323000199,
+            0.01135495080086899,
+            0.015239088630985049
+          ]
+        },
+        "glueball_e_x_q7_q4_real": {
+          "expectations": [
+            -0.7721816606855587,
+            -0.7033782947654993,
+            -0.6132904343521841
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009925153437361998,
+            0.012159225327718216,
+            0.015822325313369988
+          ]
+        },
+        "glueball_e_x_q7_q6_real": {
+          "expectations": [
+            0.7612199355318622,
+            0.7051822464666502,
+            0.6436895611207538
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.012300464669758232,
+            0.0111531850835561,
+            0.011193638290018956
+          ]
+        },
+        "glueball_e_x_q7_real": {
+          "expectations": [
+            0.829928624169333,
+            0.7816884075806054,
+            0.7432931331528427
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.011184845344650285,
+            0.012672425329891967,
+            0.012549983709713566
+          ]
+        },
+        "glueball_e_x_q8_m2_real": {
+          "expectations": [
+            0.939638695357297,
+            0.9130032677723657,
+            0.882915099574573
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.006548023519702043,
+            0.008855935779680166,
+            0.016042905083182173
+          ]
+        },
+        "glueball_e_x_q8_q5_real": {
+          "expectations": [
+            0.7888302823456407,
+            0.7198262488364877,
+            0.6816009928637915
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.011953732537721959,
+            0.01642758305023415,
+            0.016559225434317367
+          ]
+        },
+        "glueball_e_x_q8_q7_real": {
+          "expectations": [
+            0.7707129094412332,
+            0.7314314127664864,
+            0.6841941699297657
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009203376874980993,
+            0.01030382064865598,
+            0.01563038972245196
+          ]
+        },
+        "vacuum_b_z_q0_real": {
+          "expectations": [
+            0.26755031909671084,
+            0.20716740304369172,
+            0.23760432007854687
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01471990403010941,
+            0.020518575262046153,
+            0.025947129939779094
+          ]
+        },
+        "vacuum_b_z_q1_real": {
+          "expectations": [
+            0.24039237598559632,
+            0.1807909604519774,
+            0.23294219904389396
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.014444277334582726,
+            0.015370094179796975,
+            0.019052339936717223
+          ]
+        },
+        "vacuum_b_z_q2_real": {
+          "expectations": [
+            0.2194746878267823,
+            0.22095097496463062,
+            0.260810727686535
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.015607816211016938,
+            0.019103617296576485,
+            0.020831461004897273
+          ]
+        },
+        "vacuum_b_z_q3_real": {
+          "expectations": [
+            0.19216182048040456,
+            0.24879898862199748,
+            0.23463969658659925
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01864765345959663,
+            0.01686331503069202,
+            0.01933873243690742
+          ]
+        },
+        "vacuum_b_z_q4_real": {
+          "expectations": [
+            0.19955456570155902,
+            0.24282532612153993,
+            0.20769965001590837
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01941416400407801,
+            0.0210960688851434,
+            0.027866249429165046
+          ]
+        },
+        "vacuum_b_z_q5_real": {
+          "expectations": [
+            0.24706394084384514,
+            0.27390791027154665,
+            0.24706394084384514
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.021009869093253915,
+            0.019945267327050143,
+            0.03315486532770775
+          ]
+        },
+        "vacuum_b_z_q6_real": {
+          "expectations": [
+            0.24181863602298276,
+            0.23332500624531602,
+            0.2233325006245316
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.013934405188265334,
+            0.01679537474299407,
+            0.015230422307624536
+          ]
+        },
+        "vacuum_b_z_q7_real": {
+          "expectations": [
+            0.23016264169541645,
+            0.2252341054706752,
+            0.2212912764908822
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.016770382736113105,
+            0.0199747965779318,
+            0.018169425055587968
+          ]
+        },
+        "vacuum_b_z_q8_real": {
+          "expectations": [
+            0.22091020910209103,
+            0.27552275522755226,
+            0.21500615006150062
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.01801747910273997,
+            0.01572990225225462,
+            0.016723159493009638
+          ]
+        },
+        "vacuum_e_x_q0_m2_real": {
+          "expectations": [
+            0.9548355424644085,
+            0.9401080019636721,
+            0.9386352479135984
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.006026885665657473,
+            0.005879360004176796,
+            0.004987305966668243
+          ]
+        },
+        "vacuum_e_x_q1_q0_real": {
+          "expectations": [
+            0.9275941775473231,
+            0.8961079527706628,
+            0.8976072968076466
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009416736861758994,
+            0.011193814191868672,
+            0.007745667111624847
+          ]
+        },
+        "vacuum_e_x_q1_real": {
+          "expectations": [
+            0.9794499286024709,
+            0.9630595393307257,
+            0.9610728254796052
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.004203231319029092,
+            0.004543972283232234,
+            0.006808892494308655
+          ]
+        },
+        "vacuum_e_x_q2_m2_real": {
+          "expectations": [
+            0.9546656824752414,
+            0.9709048409915728,
+            0.9467921510733838
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.005595661078150329,
+            0.004996215648797004,
+            0.005931170852820629
+          ]
+        },
+        "vacuum_e_x_q2_q1_real": {
+          "expectations": [
+            0.9300463020898511,
+            0.9235389813540232,
+            0.909022650481792
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.007411741806961116,
+            0.007399373868114004,
+            0.005904240527476984
+          ]
+        },
+        "vacuum_e_x_q3_real": {
+          "expectations": [
+            0.9724399494310999,
+            0.9461441213653603,
+            0.9132743362831859
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.00604523151887171,
+            0.0075637589167889775,
+            0.007654112636390945
+          ]
+        },
+        "vacuum_e_x_q4_q1_real": {
+          "expectations": [
+            0.9543042071197411,
+            0.9273786407766991,
+            0.8880258899676375
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009860379037036585,
+            0.008463478824020406,
+            0.009644132196282334
+          ]
+        },
+        "vacuum_e_x_q4_q3_real": {
+          "expectations": [
+            0.9466675456523173,
+            0.910277539719164,
+            0.8817984046410442
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.010899297123016323,
+            0.010508493881756552,
+            0.010444670664552784
+          ]
+        },
+        "vacuum_e_x_q5_q0_real": {
+          "expectations": [
+            0.9366895499618612,
+            0.9061784897025171,
+            0.8802440884820748
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.008334657869973639,
+            0.012279139342449548,
+            0.011330422632764932
+          ]
+        },
+        "vacuum_e_x_q5_q2_real": {
+          "expectations": [
+            0.9273547094188377,
+            0.9048096192384769,
+            0.8912825651302605
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.0061306290596033755,
+            0.008893722124314675,
+            0.008183629617656885
+          ]
+        },
+        "vacuum_e_x_q5_q4_real": {
+          "expectations": [
+            0.944530844997408,
+            0.9077242094349404,
+            0.8683255572835666
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.009513230773243996,
+            0.010294831029575381,
+            0.012114548675230421
+          ]
+        },
+        "vacuum_e_x_q5_real": {
+          "expectations": [
+            0.969365562666998,
+            0.9574349095880197,
+            0.9415273721493818
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.0043934453691379044,
+            0.006268444166490554,
+            0.006611194424633557
+          ]
+        },
+        "vacuum_e_x_q6_m2_real": {
+          "expectations": [
+            0.9702722957781664,
+            0.9642767924056957,
+            0.9552835373469898
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.005702844086744026,
+            0.005197502621530148,
+            0.005409907760606959
+          ]
+        },
+        "vacuum_e_x_q6_q3_real": {
+          "expectations": [
+            0.9426982279135946,
+            0.9328676755917734,
+            0.8749191566420903
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.010377880883474832,
+            0.007972001051934465,
+            0.008196076111270855
+          ]
+        },
+        "vacuum_e_x_q7_q4_real": {
+          "expectations": [
+            0.9333761644715708,
+            0.8881464824927723,
+            0.833665274654674
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.008075602118406784,
+            0.009803863093918898,
+            0.009498735343599974
+          ]
+        },
+        "vacuum_e_x_q7_q6_real": {
+          "expectations": [
+            0.9046898638426626,
+            0.8940998487140696,
+            0.8668683812405447
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.008798598722927048,
+            0.0063809855510188,
+            0.01004122148966075
+          ]
+        },
+        "vacuum_e_x_q7_real": {
+          "expectations": [
+            0.9443075406604239,
+            0.9181862986692952,
+            0.897486446525382
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.00520673677136453,
+            0.007753039339750146,
+            0.008402003648614717
+          ]
+        },
+        "vacuum_e_x_q8_m2_real": {
+          "expectations": [
+            0.9579335793357934,
+            0.9525215252152521,
+            0.9328413284132842
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.005821271626983236,
+            0.0063342884143453146,
+            0.00629457986312938
+          ]
+        },
+        "vacuum_e_x_q8_q5_real": {
+          "expectations": [
+            0.9358131379547874,
+            0.9057549001189805,
+            0.8581626902122863
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.007615853462500796,
+            0.008189795114907703,
+            0.011605702838667567
+          ]
+        },
+        "vacuum_e_x_q8_q7_real": {
+          "expectations": [
+            0.9042830540037244,
+            0.8595903165735568,
+            0.8491620111731844
+          ],
+          "noise_factors": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "standard_errors": [
+            0.007061137748654561,
+            0.008825489493075028,
+            0.009943336388055609
+          ]
+        }
+      },
+      "sample_values": {},
+      "standard_errors": {
+        "glueball_b_z_q0_real": 0.004876533103897742,
+        "glueball_b_z_q1_real": 0.017222767851773926,
+        "glueball_b_z_q2_real": 0.015446011303110605,
+        "glueball_b_z_q3_real": 0.0460639340706586,
+        "glueball_b_z_q4_real": 0.0018452427068632693,
+        "glueball_b_z_q5_real": 0.01923506410946245,
+        "glueball_b_z_q6_real": 0.03435664295397248,
+        "glueball_b_z_q7_real": 0.024628709835213,
+        "glueball_b_z_q8_real": 0.02722760811688431,
+        "glueball_e_x_q0_m2_real": 0.0067576520049156446,
+        "glueball_e_x_q1_q0_real": 0.01035311836597214,
+        "glueball_e_x_q1_real": 0.004815832989184316,
+        "glueball_e_x_q2_m2_real": 0.01072555120417959,
+        "glueball_e_x_q2_q1_real": 0.009012304879137966,
+        "glueball_e_x_q3_real": 0.009617799160465958,
+        "glueball_e_x_q4_q1_real": 0.02174351846328634,
+        "glueball_e_x_q4_q3_real": 0.01198662351355708,
+        "glueball_e_x_q5_q0_real": 0.010671641797209051,
+        "glueball_e_x_q5_q2_real": 0.02415897233962249,
+        "glueball_e_x_q5_q4_real": 0.025491642023838842,
+        "glueball_e_x_q5_real": 0.009042994841062132,
+        "glueball_e_x_q6_m2_real": 0.009760942137713741,
+        "glueball_e_x_q6_q3_real": 0.0032137114249545405,
+        "glueball_e_x_q7_q4_real": 0.02510109700089362,
+        "glueball_e_x_q7_q6_real": 0.010705999417966473,
+        "glueball_e_x_q7_real": 0.006477764783591799,
+        "glueball_e_x_q8_m2_real": 0.002969193987786636,
+        "glueball_e_x_q8_q5_real": 0.020457473106971092,
+        "glueball_e_x_q8_q7_real": 0.008780706123935304,
+        "vacuum_b_z_q0_real": 0.01471990403010941,
+        "vacuum_b_z_q1_real": 0.014444277334582726,
+        "vacuum_b_z_q2_real": 0.0270290175124891,
+        "vacuum_b_z_q3_real": 0.01864765345959663,
+        "vacuum_b_z_q4_real": 0.01941416400407801,
+        "vacuum_b_z_q5_real": 0.047006842194581164,
+        "vacuum_b_z_q6_real": 0.001540201331664834,
+        "vacuum_b_z_q7_real": 0.0007370596082649274,
+        "vacuum_b_z_q8_real": 0.01801747910273997,
+        "vacuum_e_x_q0_m2_real": 0.012289241139925022,
+        "vacuum_e_x_q1_q0_real": 0.027041607075500615,
+        "vacuum_e_x_q1_real": 0.011934081750924225,
+        "vacuum_e_x_q2_m2_real": 0.005595661078150329,
+        "vacuum_e_x_q2_q1_real": 0.007502000277063603,
+        "vacuum_e_x_q3_real": 0.0059501478222577266,
+        "vacuum_e_x_q4_q1_real": 0.013858293722497198,
+        "vacuum_e_x_q4_q3_real": 0.006452944653025766,
+        "vacuum_e_x_q5_q0_real": 0.0026058384378387246,
+        "vacuum_e_x_q5_q2_real": 0.00612826172559224,
+        "vacuum_e_x_q5_q4_real": 0.0036765341494843394,
+        "vacuum_e_x_q5_real": 0.0029602113620226665,
+        "vacuum_e_x_q6_m2_real": 0.0029451062423036193,
+        "vacuum_e_x_q6_q3_real": 0.010377880883474832,
+        "vacuum_e_x_q7_q4_real": 0.009985194186112748,
+        "vacuum_e_x_q7_q6_real": 0.018284090067204366,
+        "vacuum_e_x_q7_real": 0.003325813463897306,
+        "vacuum_e_x_q8_m2_real": 0.012496314796569716,
+        "vacuum_e_x_q8_q5_real": 0.01652562150128295,
+        "vacuum_e_x_q8_q7_real": 0.007061137748654561
+      }
+    }
+  ],
+  "run_record_path": "benchmarks/z2/analysis/hardware_run.json",
+  "run_record_sha256": "39162ea7c3645219248b387eb436dc6a8e524d4d5f49e2f5d926f6addb36a0e4",
+  "status": "retrieved"
+}

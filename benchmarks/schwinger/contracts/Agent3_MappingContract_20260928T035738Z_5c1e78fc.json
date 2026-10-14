@@ -1,0 +1,820 @@
+{
+  "circuit_definitions": [
+    {
+      "definitions": [
+        "c_j=(Z_0 Z_1 ... Z_{j-1})(X_j+iY_j)/2",
+        "c_j^dagger=(Z_0 Z_1 ... Z_{j-1})(X_j-iY_j)/2",
+        "n_j=(I-Z_j)/2"
+      ],
+      "id": "jordan_wigner_mapping",
+      "type": "exact_fermion_to_qubit_mapping"
+    },
+    {
+      "component_rule": "Each site coefficient multiplies both Z operators at that site.",
+      "id": "scalar_potential_pauli_sums",
+      "operators": {
+        "A0_0": [
+          "-1/4",
+          "-1/8",
+          "0",
+          "1/8",
+          "1/4"
+        ],
+        "A0_1": [
+          "-1/8",
+          "-1/4",
+          "-1/8",
+          "0",
+          "1/8"
+        ],
+        "A0_2": [
+          "0",
+          "-1/8",
+          "-1/4",
+          "-1/8",
+          "0"
+        ],
+        "A0_3": [
+          "1/8",
+          "0",
+          "-1/8",
+          "-1/4",
+          "-1/8"
+        ],
+        "A0_4": [
+          "1/4",
+          "1/8",
+          "0",
+          "-1/8",
+          "-1/4"
+        ]
+      },
+      "site_coefficient_order": [
+        "site 0",
+        "site 1",
+        "site 2",
+        "site 3",
+        "site 4"
+      ],
+      "type": "diagonal_pauli_operators"
+    },
+    {
+      "definition": "A0_N(t)=exp(+i H_qc t) A0_N exp(-i H_qc t)",
+      "id": "exact_heisenberg_scalar_potential",
+      "type": "continuous_exact_target_operator"
+    },
+    {
+      "definitions": {
+        "U_-1": "exp(-i A0_1(-1)/2)",
+        "U_-2": "exp(-i A0_0(-2)/2)",
+        "U_0": "exp(-i A0_2(0)/2)",
+        "U_1": "exp(-i A0_3(1)/2)"
+      },
+      "id": "wilson_factors",
+      "ordered_products": {
+        "W_-1": "U_-1^-1",
+        "W_-2": "U_-2^-1 U_-1^-1",
+        "W_0": "I",
+        "W_1": "U_0",
+        "W_2": "U_1 U_0"
+      },
+      "type": "continuous_exact_target_unitaries"
+    }
+  ],
+  "conserved_quantities": [
+    {
+      "id": "local_U1_gauss_law",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "constraint_family": [
+          "G_0=E_0-E_-1-q_0/2",
+          "G_1=E_1-E_0-q_1/2",
+          "G_2=E_2-E_1-q_2/2",
+          "G_3=E_3-E_2-q_3/2",
+          "G_4=E_4-E_3-q_4/2"
+        ],
+        "electric_fields": {
+          "E_-1": "-Q_lat/4",
+          "E_0": "(S_0-Q_lat/2)/2",
+          "E_1": "(S_1-Q_lat/2)/2",
+          "E_2": "(S_2-Q_lat/2)/2",
+          "E_3": "(S_3-Q_lat/2)/2",
+          "E_4": "Q_lat/4"
+        },
+        "mode_charge_rule": "q_N=-(Z[2N]+Z[2N+1])/2",
+        "partial_charge_rule": "S_ell=sum_{N=0}^{ell} q_N",
+        "total_charge": "Q_lat=-(Z[0]+Z[1]+Z[2]+Z[3]+Z[4]+Z[5]+Z[6]+Z[7]+Z[8]+Z[9])/2",
+        "verified_relation": "Every expanded Pauli coefficient of every G_N cancels exactly, and [H_qc,G_N]=0 for N=0,...,4."
+      },
+      "representation": "five-member Pauli-sum constraint family reconstructed without gauge-link qubits",
+      "target_eigenvalues": {
+        "phi": "0 at every lattice vertex",
+        "psi": "0 at every lattice vertex"
+      }
+    },
+    {
+      "id": "vector_charge",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "terms": [
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIIIIIIIIZ"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIIIIIIIZI"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIIIIIIZII"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIIIIIZIII"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIIIIZIIII"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIIIZIIIII"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIIZIIIIII"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IIZIIIIIII"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "IZIIIIIIII"
+          },
+          {
+            "coefficient": "-1/2",
+            "pauli": "ZIIIIIIIII"
+          }
+        ],
+        "verified_relation": "[H_qc,Q_lat]=0 exactly."
+      },
+      "representation": "single diagonal Pauli-sum conserved operator",
+      "target_eigenvalues": {
+        "phi": "0",
+        "psi": "0"
+      }
+    },
+    {
+      "id": "C",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "generator_action": [
+          "C c[0,1] C^-1=-i c[0,1]^dagger",
+          "C c[0,2] C^-1=+i c[0,2]^dagger",
+          "C c[1,1] C^-1=-i c[1,1]^dagger",
+          "C c[1,2] C^-1=+i c[1,2]^dagger",
+          "C c[2,1] C^-1=-i c[2,1]^dagger",
+          "C c[2,2] C^-1=+i c[2,2]^dagger",
+          "C c[3,1] C^-1=-i c[3,1]^dagger",
+          "C c[3,2] C^-1=+i c[3,2]^dagger",
+          "C c[4,1] C^-1=-i c[4,1]^dagger",
+          "C c[4,2] C^-1=+i c[4,2]^dagger"
+        ],
+        "occupation_action": "n_j maps to 1-n_j for every j",
+        "verified_relation": "C H_qc C^-1=H_qc and C Q_lat C^-1=-Q_lat."
+      },
+      "representation": "fermionic particle-hole Clifford symmetry defined by its exact action on all Jordan-Wigner generators",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "id": "P",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "elementary_gate": "FSWAP(a,b) has occupation-basis matrix [[1,0,0,0],[0,0,1,0],[0,1,0,0],[0,0,0,-1]]",
+        "mode_permutation": {
+          "0": 9,
+          "1": 8,
+          "2": 7,
+          "3": 6,
+          "4": 5,
+          "5": 4,
+          "6": 3,
+          "7": 2,
+          "8": 1,
+          "9": 0
+        },
+        "verified_relation": "P H_qc P^-1=H_qc and P E_ell P^-1=-E_{3-ell}."
+      },
+      "representation": "fermionic mode permutation implemented by FSWAP gates",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "id": "T",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "antiunitary_form": "T=U_T K",
+        "complex_conjugation": "K is complex conjugation in the ten-qubit computational basis",
+        "unitary_implementation": "U_T is the product of FSWAP(0,1), FSWAP(2,3), FSWAP(4,5), FSWAP(6,7), and FSWAP(8,9)",
+        "unitary_mode_action": [
+          "U_T c[0,1] U_T^-1=c[0,2]",
+          "U_T c[0,2] U_T^-1=c[0,1]",
+          "U_T c[1,1] U_T^-1=c[1,2]",
+          "U_T c[1,2] U_T^-1=c[1,1]",
+          "U_T c[2,1] U_T^-1=c[2,2]",
+          "U_T c[2,2] U_T^-1=c[2,1]",
+          "U_T c[3,1] U_T^-1=c[3,2]",
+          "U_T c[3,2] U_T^-1=c[3,1]",
+          "U_T c[4,1] U_T^-1=c[4,2]",
+          "U_T c[4,2] U_T^-1=c[4,1]"
+        ],
+        "verified_relation": "U_T H_qc^* U_T^-1=H_qc."
+      },
+      "representation": "antiunitary fermionic component swap followed by computational-basis complex conjugation",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "id": "PT",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "antiunitary_form": "PT=U_P U_T K",
+        "unitary_parts": "U_P and U_T are the explicit FSWAP transformations given in the P and T entries",
+        "verified_relation": "U_P U_T H_qc^* U_T^-1 U_P^-1=H_qc; no z-to-minus-z matrix-element identity is imposed."
+      },
+      "representation": "antiunitary composition of the declared fermionic parity permutation with time reversal",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "id": "spatial_translations",
+      "lattice_symmetry_status": "broken_by_boundary_or_discretization",
+      "operators_or_generators": {
+        "candidate_mode_map": {
+          "0": 2,
+          "1": 3,
+          "2": 4,
+          "3": 5,
+          "4": 6,
+          "5": 7,
+          "6": 8,
+          "7": 9,
+          "8": 0,
+          "9": 1
+        },
+        "verified_relation": "The corresponding fermionic permutation does not commute with H_qc because the open-boundary Hamiltonian has no wrap-around hopping or link term."
+      },
+      "representation": "candidate cyclic fermionic one-site mode permutation, recorded only to test its failure as a symmetry",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "id": "continuous_spacetime_translations",
+      "lattice_symmetry_status": "continuum_only",
+      "operators_or_generators": {
+        "spatial_generator": "not defined on the finite open lattice",
+        "time_generator": "H_qc"
+      },
+      "representation": "no finite-lattice continuous spatial-translation generator; exact time translation is generated by H_qc",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "id": "Lorentz_boost",
+      "lattice_symmetry_status": "continuum_only",
+      "operators_or_generators": {
+        "boost_generator": "not defined at finite spatial and temporal lattice spacing"
+      },
+      "representation": "no exact finite-lattice continuous boost generator",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    }
+  ],
+  "contract_type": "qubit_mapping",
+  "hamiltonian": {
+    "representation": "pauli_sum",
+    "terms": [
+      {
+        "coefficient": "5/16",
+        "pauli": "IIIIIIIIII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIIIIIIIXX"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIIIIIIIYY"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIIIIIXXII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIIIIIYYII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIIIXXIIII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIIIYYIIII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIXXIIIIII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "IIYYIIIIII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "XXIIIIIIII"
+      },
+      {
+        "coefficient": "3/4",
+        "pauli": "YYIIIIIIII"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "IIIIIIIYZX"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIIIXZY"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIIYZXI"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "IIIIIIXZYI"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIIXZZX"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIIYZZY"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIIIXXI"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIIIYYI"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "IIIIIYZXII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIXZYII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIYZXIII"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "IIIIXZYIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIXZZXII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIYZZYII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIXXIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIIIYYIII"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "IIIYZXIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIXZYIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIYZXIIIII"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "IIXZYIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIXZZXIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIYZZYIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIXXIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IIIYYIIIII"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "IYZXIIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IXZYIIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "YZXIIIIIII"
+      },
+      {
+        "coefficient": "1/4",
+        "pauli": "XZYIIIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "XZZXIIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "YZZYIIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IXXIIIIIII"
+      },
+      {
+        "coefficient": "-1/4",
+        "pauli": "IYYIIIIIII"
+      },
+      {
+        "coefficient": "1/16",
+        "pauli": "IIIIIIIIZZ"
+      },
+      {
+        "coefficient": "1/16",
+        "pauli": "IIIIIIZZII"
+      },
+      {
+        "coefficient": "1/16",
+        "pauli": "IIIIZZIIII"
+      },
+      {
+        "coefficient": "1/16",
+        "pauli": "IIZZIIIIII"
+      },
+      {
+        "coefficient": "1/16",
+        "pauli": "ZZIIIIIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIIIIZIZ"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIIIZIIZ"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIIIIZZI"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIIIZIZI"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIIZIZII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIZIIZII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIIZZIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIIZIZIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIZIZIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIZIIZIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIIZZIIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IIZIZIIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IZIZIIIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "ZIIZIIIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "IZZIIIIIII"
+      },
+      {
+        "coefficient": "1/32",
+        "pauli": "ZIZIIIIIII"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "IIIZIIIIIZ"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "IIZIIIIIIZ"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "IIIZIIIIZI"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "IIZIIIIIZI"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "IZIIIIIZII"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "ZIIIIIIZII"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "IZIIIIZIII"
+      },
+      {
+        "coefficient": "-1/32",
+        "pauli": "ZIIIIIZIII"
+      },
+      {
+        "coefficient": "-1/16",
+        "pauli": "IZIIIIIIIZ"
+      },
+      {
+        "coefficient": "-1/16",
+        "pauli": "ZIIIIIIIIZ"
+      },
+      {
+        "coefficient": "-1/16",
+        "pauli": "IZIIIIIIZI"
+      },
+      {
+        "coefficient": "-1/16",
+        "pauli": "ZIIIIIIIZI"
+      }
+    ]
+  },
+  "observable": {
+    "matrix_elements": [
+      {
+        "bra": "phi",
+        "ket": "psi",
+        "operator": "O_qc(z,0)",
+        "output": [
+          "Re(<phi|O_qc(z,0)|psi>)",
+          "Im(<phi|O_qc(z,0)|psi>)"
+        ]
+      }
+    ],
+    "representation": "explicit_operator_sum",
+    "sample_labels": [
+      {
+        "term_index": 0,
+        "z": -2
+      },
+      {
+        "term_index": 1,
+        "z": -1
+      },
+      {
+        "term_index": 2,
+        "z": 0
+      },
+      {
+        "term_index": 3,
+        "z": 1
+      },
+      {
+        "term_index": 4,
+        "z": 2
+      }
+    ],
+    "terms": [
+      {
+        "coefficient": "2",
+        "operations": [
+          {
+            "definition": "exp(+i H_qc*(-2)) c[0,2]^dagger exp(-i H_qc*(-2))",
+            "mode": 1,
+            "operation": "heisenberg_creation",
+            "time": -2
+          },
+          {
+            "factors_left_to_right": [
+              "U_-2^-1",
+              "U_-1^-1"
+            ],
+            "operation": "ordered_wilson_transporter",
+            "orientation": "X(0) to X(-2)"
+          },
+          {
+            "definition": "c[2,2]",
+            "mode": 5,
+            "operation": "annihilation",
+            "time": 0
+          }
+        ]
+      },
+      {
+        "coefficient": "2",
+        "operations": [
+          {
+            "definition": "exp(+i H_qc*(-1)) c[1,2]^dagger exp(-i H_qc*(-1))",
+            "mode": 3,
+            "operation": "heisenberg_creation",
+            "time": -1
+          },
+          {
+            "factors_left_to_right": [
+              "U_-1^-1"
+            ],
+            "operation": "ordered_wilson_transporter",
+            "orientation": "X(0) to X(-1)"
+          },
+          {
+            "definition": "c[2,2]",
+            "mode": 5,
+            "operation": "annihilation",
+            "time": 0
+          }
+        ]
+      },
+      {
+        "coefficient": "2",
+        "operations": [
+          {
+            "definition": "c[2,2]^dagger",
+            "mode": 5,
+            "operation": "creation",
+            "time": 0
+          },
+          {
+            "operation": "identity_transporter",
+            "orientation": "X(0) to X(0)"
+          },
+          {
+            "definition": "c[2,2]",
+            "mode": 5,
+            "operation": "annihilation",
+            "time": 0
+          }
+        ]
+      },
+      {
+        "coefficient": "2",
+        "operations": [
+          {
+            "definition": "exp(+i H_qc) c[3,2]^dagger exp(-i H_qc)",
+            "mode": 7,
+            "operation": "heisenberg_creation",
+            "time": 1
+          },
+          {
+            "factors_left_to_right": [
+              "U_0"
+            ],
+            "operation": "ordered_wilson_transporter",
+            "orientation": "X(0) to X(1)"
+          },
+          {
+            "definition": "c[2,2]",
+            "mode": 5,
+            "operation": "annihilation",
+            "time": 0
+          }
+        ]
+      },
+      {
+        "coefficient": "2",
+        "operations": [
+          {
+            "definition": "exp(+2i H_qc) c[4,2]^dagger exp(-2i H_qc)",
+            "mode": 9,
+            "operation": "heisenberg_creation",
+            "time": 2
+          },
+          {
+            "factors_left_to_right": [
+              "U_1",
+              "U_0"
+            ],
+            "operation": "ordered_wilson_transporter",
+            "orientation": "X(0) to X(2)"
+          },
+          {
+            "definition": "c[2,2]",
+            "mode": 5,
+            "operation": "annihilation",
+            "time": 0
+          }
+        ]
+      }
+    ]
+  },
+  "physical_sector": {
+    "basis_rule": "Use exactly the 252 computational-basis states |b9...b0> satisfying sum_{j=0}^{9} b_j=5, equivalently Q_lat=0. Restrict the unshifted H_qc Pauli sum to this ordered basis, diagonalize it, sort eigenpairs by nondecreasing eigenvalue with zero-based indexing, assign phi to level_index 0 and psi to the distinct level_index 1 eigenvector. The reconstructed Gauss operators act consistently in the full 1024-dimensional space and in every charge sector reached by the observable.",
+    "required": true,
+    "validation_tests": [
+      {
+        "id": "external_state_sector_and_level_check",
+        "rule": "Pass iff the Q_lat=0 basis contains exactly 252 states, Q_lat|phi>=0 and Q_lat|psi>=0, phi and psi are orthonormal, and they are respectively zero-based restricted-spectrum levels 0 and 1 without identifying the two vectors."
+      },
+      {
+        "id": "physical_gauss_sector_check",
+        "rule": "Expand each of G_0,...,G_4 from the declared E and q Pauli sums. Pass iff every Pauli coefficient cancels exactly on the full 1024-dimensional qubit space; repeat the action check on all computational states with Q_lat=-1."
+      },
+      {
+        "id": "charge_commutator_check",
+        "rule": "Pass iff exact Pauli multiplication and coefficient collection gives [H_qc,Q_lat] with no nonzero Pauli coefficient in the full ten-qubit space."
+      },
+      {
+        "id": "ordered_sector_path_check",
+        "rule": "Pass iff right-to-left application gives Q=0 before c[2,2], Q=-1 after c[2,2], Q=-1 after every U_k or U_k^-1 factor, and Q=0 after the final creation operator."
+      },
+      {
+        "id": "no_energy_shift_check",
+        "rule": "Pass iff H_qc is exactly the listed state-independent Pauli sum, including its Coulomb identity coefficient 5/16, with no additional identity subtraction and no coefficient depending on phi, psi, or an eigenvalue."
+      }
+    ]
+  },
+  "qubits": {
+    "count": 10,
+    "ordering": [
+      "c[0,1]",
+      "c[0,2]",
+      "c[1,1]",
+      "c[1,2]",
+      "c[2,1]",
+      "c[2,2]",
+      "c[3,1]",
+      "c[3,2]",
+      "c[4,1]",
+      "c[4,2]"
+    ],
+    "pauli_label_order": "qiskit_little_endian"
+  },
+  "schema_version": "1.0"
+}

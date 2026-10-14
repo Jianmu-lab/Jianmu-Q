@@ -1,0 +1,284 @@
+{
+  "ansatz_search": {
+    "attempts": [
+      {
+        "artifacts": {
+          "agent4_state_design_contract": "benchmarks/schwinger/contracts/Agent4_StatePreparationContract_20260928T035738Z_5c1e78fc.json",
+          "agent4_state_report": "benchmarks/schwinger/reports/Agent4_StatePreparation_20260928T035738Z_5c1e78fc.tex",
+          "state_adapter": "benchmarks/schwinger/adapters/StatePreparationAdapter_20260928T035738Z_5c1e78fc.py",
+          "vqe_config": "benchmarks/schwinger/runtime/VQE_RunConfig_20260928T035738Z_5c1e78fc.json",
+          "vqe_parameter_bundle": "benchmarks/schwinger/runtime/VQE_ParameterBundle_20260928T035738Z_5c1e78fc.json",
+          "vqe_result": "benchmarks/schwinger/runtime/VQE_Runtime_Result_20260928T035738Z_5c1e78fc.json"
+        },
+        "attempt": 1,
+        "stage_logs": {
+          "agent4_state": "benchmarks/schwinger/audit/stage_logs/agent4_state.log",
+          "agent5_state": "benchmarks/schwinger/audit/stage_logs/agent5_state.log",
+          "vqe": "benchmarks/schwinger/audit/stage_logs/vqe_attempt2.log"
+        },
+        "status": "converged_state",
+        "vqe_result": "benchmarks/schwinger/runtime/VQE_Runtime_Result_20260928T035738Z_5c1e78fc.json"
+      }
+    ],
+    "current_attempt": 1,
+    "maximum_attempts": 3
+  },
+  "artifacts": {
+    "agent1_observable": {
+      "path": "benchmarks/schwinger/inputs/agent1_observable.json"
+    },
+    "agent1_report": {
+      "path": "benchmarks/schwinger/reports/Agent1_Verified_Report_20260928T035738Z_5c1e78fc.tex"
+    },
+    "agent1_theory_contract": {
+      "path": "benchmarks/schwinger/contracts/Agent1_TheoryContract_20260928T035738Z_5c1e78fc.json"
+    },
+    "agent2_discretization_contract": {
+      "path": "benchmarks/schwinger/contracts/Agent2_DiscretizationContract_20260928T035738Z_5c1e78fc.json"
+    },
+    "agent2_parameter_contract": {
+      "path": "benchmarks/schwinger/contracts/Agent2_ParameterContract_20260928T035738Z_5c1e78fc.json"
+    },
+    "agent2_report": {
+      "path": "benchmarks/schwinger/reports/Agent2_Verified_20260928T035738Z_5c1e78fc.tex"
+    },
+    "agent3_mapping_contract": {
+      "path": "benchmarks/schwinger/contracts/Agent3_MappingContract_20260928T035738Z_5c1e78fc.json"
+    },
+    "agent3_report": {
+      "path": "benchmarks/schwinger/reports/Agent3_Verified_20260928T035738Z_5c1e78fc.tex"
+    },
+    "agent4_observable_design_contract": {
+      "path": "benchmarks/schwinger/contracts/Agent4_ObservableContract_20260928T035738Z_5c1e78fc.json"
+    },
+    "agent4_observable_report": {
+      "path": "benchmarks/schwinger/reports/Agent4_Observable_20260928T035738Z_5c1e78fc.tex"
+    },
+    "agent4_state_design_contract": {
+      "path": "benchmarks/schwinger/contracts/Agent4_StatePreparationContract_20260928T035738Z_5c1e78fc.json"
+    },
+    "agent4_state_report": {
+      "path": "benchmarks/schwinger/reports/Agent4_StatePreparation_20260928T035738Z_5c1e78fc.tex"
+    },
+    "agent8_review": {
+      "path": "benchmarks/schwinger/analysis/agent8_review.md"
+    },
+    "agent9_review": {
+      "path": "benchmarks/schwinger/analysis/agent9_hardware_review.md"
+    },
+    "controller_settings": {
+      "path": "benchmarks/schwinger/inputs/controller_settings.json"
+    },
+    "crosscheck_result": {
+      "path": "benchmarks/schwinger/analysis/crosscheck_result.json"
+    },
+    "final_report_evidence": {
+      "path": "benchmarks/schwinger/audit/Final_Academic_Report_20260928T035738Z_5c1e78fc_evidence.json"
+    },
+    "final_report_latex": {
+      "path": "benchmarks/schwinger/reports/Final_Academic_Report_20260928T035738Z_5c1e78fc.tex"
+    },
+    "final_report_markdown": {
+      "path": "benchmarks/schwinger/reports/Final_Academic_Report_20260928T035738Z_5c1e78fc.md"
+    },
+    "final_report_status": {
+      "path": "benchmarks/schwinger/audit/Final_Academic_Report_20260928T035738Z_5c1e78fc_status.json"
+    },
+    "hardware_plan": {
+      "path": "benchmarks/schwinger/analysis/hardware_plan.json"
+    },
+    "itensor_reference": {
+      "path": "benchmarks/schwinger/references/itensor_reference.json"
+    },
+    "itensor_script": {
+      "path": "benchmarks/schwinger/references/reference_itensor.jl"
+    },
+    "measurement_result": {
+      "path": "benchmarks/schwinger/runtime/measurement_result.json"
+    },
+    "observable_adapter": {
+      "path": "benchmarks/schwinger/adapters/ObservableAdapter_20260928T035738Z_5c1e78fc.py"
+    },
+    "run_spec": {
+      "path": "benchmarks/schwinger/inputs/run_spec.json"
+    },
+    "runtime_settings": {
+      "path": "benchmarks/schwinger/inputs/resolved_runtime_settings.json"
+    },
+    "scipy_reference": {
+      "path": "benchmarks/schwinger/references/scipy_reference.json"
+    },
+    "scipy_script": {
+      "path": "benchmarks/schwinger/references/reference_scipy.py"
+    },
+    "state_adapter": {
+      "path": "benchmarks/schwinger/adapters/StatePreparationAdapter_20260928T035738Z_5c1e78fc.py"
+    },
+    "vqe_config": {
+      "path": "benchmarks/schwinger/runtime/VQE_RunConfig_20260928T035738Z_5c1e78fc.json"
+    },
+    "vqe_parameter_bundle": {
+      "path": "benchmarks/schwinger/runtime/VQE_ParameterBundle_20260928T035738Z_5c1e78fc.json"
+    },
+    "vqe_result": {
+      "path": "benchmarks/schwinger/runtime/VQE_Runtime_Result_20260928T035738Z_5c1e78fc.json"
+    }
+  },
+  "completed_through": "final_report",
+  "config_path": "workflow/user_configs/schwinger_model_20260928T035738Z.json",
+  "pipeline_schema_version": "2.0",
+  "project_root": "workflow",
+  "run_directory": "benchmarks/schwinger",
+  "run_id": "20260928T035738Z_5c1e78fc",
+  "stages": {
+    "agent1": {
+      "artifacts": [
+        "agent1_report",
+        "agent1_theory_contract"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent1.log",
+      "status": "completed"
+    },
+    "agent2": {
+      "artifacts": [
+        "agent2_report",
+        "agent2_parameter_contract",
+        "agent2_discretization_contract",
+        "runtime_settings"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent2.log",
+      "status": "completed"
+    },
+    "agent3": {
+      "artifacts": [
+        "agent3_report",
+        "agent3_mapping_contract"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent3.log",
+      "status": "completed"
+    },
+    "agent4_observable": {
+      "artifacts": [
+        "agent4_observable_report",
+        "agent4_observable_design_contract"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent4_observable.log",
+      "status": "completed"
+    },
+    "agent4_state": {
+      "artifacts": [
+        "agent4_state_report",
+        "agent4_state_design_contract"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent4_state.log",
+      "status": "completed"
+    },
+    "agent5_observable": {
+      "artifacts": [
+        "observable_adapter"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent5_observable.log",
+      "status": "completed"
+    },
+    "agent5_state": {
+      "artifacts": [
+        "state_adapter",
+        "vqe_config"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent5_state.log",
+      "status": "completed"
+    },
+    "agent6": {
+      "artifacts": [
+        "scipy_script"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent6.log",
+      "status": "completed"
+    },
+    "agent7": {
+      "artifacts": [
+        "itensor_script"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent7.log",
+      "status": "completed"
+    },
+    "agent8": {
+      "artifacts": [
+        "agent8_review"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent8.log",
+      "status": "completed"
+    },
+    "agent9": {
+      "artifacts": [
+        "agent9_review"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/agent9.log",
+      "status": "completed"
+    },
+    "crosscheck": {
+      "artifacts": [
+        "crosscheck_result"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/crosscheck.log",
+      "status": "completed"
+    },
+    "final_report": {
+      "artifacts": [
+        "final_report_markdown",
+        "final_report_latex",
+        "final_report_status",
+        "final_report_evidence"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/final_report.log",
+      "status": "completed"
+    },
+    "hardware_plan": {
+      "artifacts": [
+        "hardware_plan"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/hardware_plan.log",
+      "status": "completed"
+    },
+    "hardware_retrieve": {
+      "artifacts": [],
+      "reason": "D_ans=N_T=1 did not pass the current backend ISA resource gate; no IBM job was submitted.",
+      "status": "skipped"
+    },
+    "hardware_submit": {
+      "artifacts": [],
+      "reason": "D_ans=N_T=1 did not pass the current backend ISA resource gate; no IBM job was submitted.",
+      "status": "skipped"
+    },
+    "itensor_reference": {
+      "artifacts": [
+        "itensor_reference"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/itensor_reference_attempt2.log",
+      "status": "completed"
+    },
+    "measurement": {
+      "artifacts": [
+        "measurement_result"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/measurement.log",
+      "status": "completed"
+    },
+    "scipy_reference": {
+      "artifacts": [
+        "scipy_reference"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/scipy_reference.log",
+      "status": "completed"
+    },
+    "vqe": {
+      "artifacts": [
+        "vqe_result",
+        "vqe_parameter_bundle"
+      ],
+      "stage_log": "benchmarks/schwinger/audit/stage_logs/vqe_attempt2.log",
+      "status": "completed"
+    }
+  },
+  "status": "completed_through_final_report"
+}

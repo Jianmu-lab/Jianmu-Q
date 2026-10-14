@@ -1,0 +1,57 @@
+{
+  "adaptive_depth": {
+    "enabled": true,
+    "minimum_relative_improvement": 0.01,
+    "plateau_window": 3
+  },
+  "checkpoint_file": "benchmarks/z2/runtime/VQE_Runtime_Checkpoint_20260920T073518Z_799c77bd.json",
+  "depth_schedule": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "energy_tie_tolerance": 1e-10,
+  "energy_tolerance": 0.001,
+  "equivalent_state_groups": [],
+  "experience_database": "workflow/simulation_database/simulation_knowledge.sqlite3",
+  "first_depth_lower_bound": -0.05,
+  "first_depth_upper_bound": 0.05,
+  "gradient_check_step": 1e-06,
+  "gradient_check_tolerance": 1e-05,
+  "max_iterations": 200,
+  "max_same_depth_continuations": 1,
+  "nested_by_depth": true,
+  "new_layer_value": 0.0,
+  "parameter_bundle_file": "benchmarks/z2/runtime/VQE_ParameterBundle_20260920T073518Z_799c77bd.json",
+  "perturbation_scale": 0.01,
+  "random_seed": 12345,
+  "record_experience": true,
+  "restart_count": 2,
+  "result_file": "benchmarks/z2/runtime/VQE_Runtime_Result_20260920T073518Z_799c77bd.json",
+  "scan_all_depths": true,
+  "state_labels": [
+    "glueball",
+    "vacuum"
+  ],
+  "stop_restarts_on_convergence": true,
+  "target_kind_by_state": {
+    "glueball": "sector_eigenstate",
+    "vacuum": "ground"
+  },
+  "target_spec_by_state": {
+    "glueball": {
+      "kind": "sector_eigenstate",
+      "level_index": 1,
+      "quantum_numbers": {
+        "Gauss's law": 0
+      }
+    },
+    "vacuum": {
+      "kind": "ground",
+      "level_index": 0,
+      "quantum_numbers": {}
+    }
+  },
+  "variance_tolerance": 0.01
+}

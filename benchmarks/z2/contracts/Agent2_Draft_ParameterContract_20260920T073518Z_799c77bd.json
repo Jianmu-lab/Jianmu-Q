@@ -1,0 +1,248 @@
+{
+  "constraints": [
+    {
+      "applies_when": "always",
+      "id": "positive_hamiltonian_scales",
+      "parameters": [
+        "bare_coupling_g",
+        "lattice_spacing_a"
+      ],
+      "reason": "The Hamiltonian contains g^(-2) and a^(-1).",
+      "requirement": "bare_coupling_g > 0 and lattice_spacing_a > 0",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "the selected exact plaquette-dual gauge scheme is used",
+      "id": "open_boundary_dual_reduction",
+      "parameters": [],
+      "reason": "The selected one-qubit-per-plaquette reduction contains no independent noncontractible holonomy degrees of freedom.",
+      "requirement": "The spatial boundary condition must be open and the lattice must be connected and simply connected.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "constructing either external state",
+      "id": "physical_gauss_sector",
+      "parameters": [],
+      "reason": "Gauss's law zero denotes zero gauge charge, not eigenvalue zero.",
+      "requirement": "The state must satisfy G_v=+1 at every lattice vertex; in the reduced representation each eliminated G_v must act as the identity.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "constructing the glueball state",
+      "id": "glueball_level_preservation",
+      "parameters": [],
+      "reason": "The external-state level index is authoritative.",
+      "requirement": "Use zero-based level_index=1 within the G_v=+1 physical sector and do not replace it by the sector ground state.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "constructing the Hamiltonian",
+      "id": "no_vacuum_energy_shift",
+      "parameters": [
+        "bare_coupling_g",
+        "lattice_spacing_a"
+      ],
+      "reason": "Vacuum subtraction belongs only to the requested matrix-element combination.",
+      "requirement": "Use the unshifted Hamiltonian with coefficients determined only by bare_coupling_g and lattice_spacing_a; do not add or subtract a target-state expectation value.",
+      "severity": "fatal"
+    }
+  ],
+  "discretizations": [
+    {
+      "parameter_references": [
+        "lattice_spacing_a"
+      ],
+      "scheme": "finite square spatial lattice with continuous Hamiltonian time",
+      "sector": "spacetime",
+      "settings": {
+        "horizontal_link_indices": {
+          "x": [
+            0,
+            2
+          ],
+          "y": [
+            0,
+            3
+          ]
+        },
+        "independent_gauss_constraint_count": 15,
+        "link_count": 24,
+        "plaquette_count": 9,
+        "plaquette_indices": {
+          "x": [
+            0,
+            2
+          ],
+          "y": [
+            0,
+            2
+          ]
+        },
+        "spatial_boundary_condition": "open",
+        "spatial_shape": [
+          4,
+          4
+        ],
+        "time_realization": "continuous",
+        "vertex_count": 16,
+        "vertex_indices": {
+          "x": [
+            0,
+            3
+          ],
+          "y": [
+            0,
+            3
+          ]
+        },
+        "vertical_link_indices": {
+          "x": [
+            0,
+            3
+          ],
+          "y": [
+            0,
+            2
+          ]
+        }
+      },
+      "truncation": {
+        "reason": "The theory is intrinsically a finite spatial-lattice Hamiltonian theory with continuous time.",
+        "scheme": "none",
+        "settings": {}
+      }
+    },
+    {
+      "parameter_references": [
+        "bare_coupling_g",
+        "lattice_spacing_a"
+      ],
+      "scheme": "exact Gauss-law reduction to open-boundary plaquette-dual variables",
+      "sector": "gauge",
+      "settings": {
+        "dual_degrees_of_freedom": "one Pauli qubit tau_p for each plaquette defined by the spacetime settings",
+        "effective_qubit_count": 9,
+        "electric_mapping": "X_l maps to the product of tau_p^x over plaquettes incident on link l",
+        "explicit_embedding_complex128_bytes": 137438953472,
+        "full_dense_complex128_bytes": 4503599627370496,
+        "gauge_fixing": "none",
+        "gauge_group": "Z2",
+        "gauss_sector": "G_v=+1 at every lattice vertex",
+        "maximum_reduced_term_support": 2,
+        "original_kinematic_dimension": 16777216,
+        "original_link_local_dimension": 2,
+        "physical_dimension": 512,
+        "plaquette_mapping": "B_p maps to tau_p^z",
+        "reduced_dense_complex128_bytes": 4194304
+      },
+      "truncation": {
+        "reason": "Z2 links are intrinsically finite-dimensional, and the plaquette-dual reduction is exactly unitarily equivalent to the full charge-free physical sector under OBC.",
+        "scheme": "none",
+        "settings": {
+          "finite_group_representation": "complete two-dimensional Z2 link representation",
+          "reduction_exact": true
+        }
+      }
+    }
+  ],
+  "external_states": {
+    "definitions": {
+      "glueball": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"Gauss's law\": 0}",
+      "vacuum": "Ground state / vacuum"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "glueball",
+      "vacuum"
+    ]
+  },
+  "model": {
+    "gauge_structure": "local Z2",
+    "name": "2+1 dimensional pure Z2 gauge theory in Kogut-Susskind formalism",
+    "spacetime_dimension": "2+1"
+  },
+  "parameters": [
+    {
+      "domain": {
+        "minimum_exclusive": 0
+      },
+      "name": "bare_coupling_g",
+      "required_for_run": true,
+      "role": "Bare coupling in the coefficients g^2 and g^(-2).",
+      "selected_value": 1,
+      "symbol": "g",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "minimum_exclusive": 0
+      },
+      "name": "lattice_spacing_a",
+      "required_for_run": true,
+      "role": "Spatial lattice spacing and inverse overall Hamiltonian energy scale; temporal spacing is the same if a downstream time discretization is introduced.",
+      "selected_value": 1,
+      "symbol": "a",
+      "type": "real",
+      "unit": "chosen natural length unit"
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "bare copuling: g",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": "g = 1",
+      "source_ref": "/user_input/parameters/bare copuling: g",
+      "symbol": "bare copuling: g",
+      "type": "string",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "number of lattice site [L,L]:",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": [
+        4,
+        4
+      ],
+      "source_ref": "/user_input/parameters/number of lattice site [L,L]:",
+      "symbol": "number of lattice site [L,L]:",
+      "type": "list",
+      "unit": null
+    }
+  ],
+  "schema_version": "1.1",
+  "validation_obligations": [
+    {
+      "description": "Confirm that both named external states lie in the zero-charge sector G_v=+1 at every lattice vertex, or equivalently in the exact reduced physical Hilbert space.",
+      "id": "validate_physical_sector",
+      "severity": "fatal",
+      "stage": "pre_simulation"
+    },
+    {
+      "description": "Confirm that the reduced plaquette and electric operators reproduce the physical-sector algebra of B_p and X_l, including all link-to-incident-plaquette relations at the open boundary.",
+      "id": "validate_dual_operator_algebra",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that glueball is the zero-based level-1 Hamiltonian eigenstate in the physical Gauss sector, without imposing an unspecified D4 or other discrete-symmetry eigenvalue.",
+      "id": "validate_glueball_level",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that no vacuum-energy subtraction or state-dependent coefficient has been inserted into the constructed Hamiltonian.",
+      "id": "validate_unshifted_hamiltonian",
+      "severity": "fatal",
+      "stage": "post_construction"
+    }
+  ]
+}

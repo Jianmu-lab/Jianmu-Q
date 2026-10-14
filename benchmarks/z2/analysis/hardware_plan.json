@@ -1,0 +1,4361 @@
+{
+  "all_deployments": [
+    {
+      "D_ans": 1,
+      "N_T": 0,
+      "algorithm_error_vs_scipy": 0.1946762050630566,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-20T17:16:54+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "default_D1_NT0",
+      "error_metric_complete": true,
+      "ideal_observable_imag": 0.0,
+      "ideal_observable_real": 7.750156598527464,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 113476,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 252524
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": 0.9664249690900153,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q0_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q0_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198913925131,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q0_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.851019891084568,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q6_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q6_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9664249687403101,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q6_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q6_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855800643033,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q1_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380299362825,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q4_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q4_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380294943148,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q7_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855796042328,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.966424968766119,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q2_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q2_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198925271905,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIXIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q2_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198931480003,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_q5_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q8_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.966424969471116,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_m2_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q8_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855794411351,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198919947578,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q1_q0_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q1_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380293376342,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q4_q3_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q4_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198912421895,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIXIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_q6_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q7_q6_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198917095396,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q2_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q2_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380307490515,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198918857264,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_q7_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q8_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855809103604,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.25694898148157114,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q0_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_b_z_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.4580560083539837,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2569489826997068,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_b_z_q2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.45805600951516595,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.17803902474339262,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.4580560081667077,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q5_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.25694898279683304,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q6_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q6_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.45805600938767105,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q7_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2569489800481577,
+          "isa_observable": [
+            [
+              "IIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q8_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q8_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564621755698,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q0_m2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q0_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025393877607,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q0_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025384518103,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q6_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q6_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564612102874,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q6_m2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q6_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.969611833883777,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q1_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126205401744,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q4_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q4_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126236789584,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_q4_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q7_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9696118371148638,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564615343426,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q2_m2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q2_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025386969991,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_q2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025394481522,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_q5_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q8_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564623090367,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_m2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q8_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.969611837591777,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025357937576,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q1_q0_real.qpy",
+          "isa_qpy_sha256": "4be053095b44be6314c199a58a8709b0828451cd8f8d06e165112eb6e47f4c2d",
+          "recipe_id": "vacuum_e_x_q1_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126241422464,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q4_q3_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q4_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025379895592,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_q6_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q7_q6_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025351720155,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q2_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q2_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126240730719,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q4_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q5_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025390549207,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_q7_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q8_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9696118375205689,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2460526580447581,
+          "isa_observable": [
+            [
+              "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q0_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363765152270003,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605266057070022,
+          "isa_observable": [
+            [
+              "IIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763128551427,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.23295559911921174,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q4_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763258129992,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q5_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605266184722718,
+          "isa_observable": [
+            [
+              "IZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q6_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q6_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763436691785,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q7_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605265751900812,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q8_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q8_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 69,
+          "maximum_recipe_two_qubit_error_sum": 0.02815792992629426,
+          "total_isa_two_qubit_gates": 1189,
+          "two_qubit_error_sum": 1.4465075248587058,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": true,
+        "rejection_reasons": []
+      },
+      "sample_values": {},
+      "score": 1.5684815248587063
+    }
+  ],
+  "campaign_id": "campaign_22d41426ef3380d88bccb88233472b517055f802ec1d27543758f9919ba578df",
+  "candidate_class": "hardware_demonstration_candidate",
+  "crosscheck_run_id": "crosscheck_78729414219e9c3f0bf888ebe49166f421ef92237060f04f8c4a81593c9f48d8",
+  "discarded_unselected_isa_files": 0,
+  "full_observable_reconstruction_available": true,
+  "hardware_plan_id": "hardware_plan_1b265ea3f968a1ea4035c1427c82b39906216e852cb7b3165157cf17ae00ee6b",
+  "hardware_plan_schema_version": "1.0",
+  "parameter_contract_sha256": "7af97647c1881aeebf563fac830ccfd1d7ff01f8e599604374a00f82f8879f08",
+  "pareto_deployments": [
+    {
+      "D_ans": 1,
+      "N_T": 0,
+      "algorithm_error_vs_scipy": 0.1946762050630566,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-20T17:16:54+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "default_D1_NT0",
+      "error_metric_complete": true,
+      "ideal_observable_imag": 0.0,
+      "ideal_observable_real": 7.750156598527464,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 113476,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 252524
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": 0.9664249690900153,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q0_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q0_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198913925131,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q0_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.851019891084568,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q6_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q6_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9664249687403101,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q6_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q6_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855800643033,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q1_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380299362825,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q4_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q4_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380294943148,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q7_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855796042328,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.966424968766119,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q2_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q2_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198925271905,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIXIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q2_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198931480003,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_q5_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q8_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.966424969471116,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_m2_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q8_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855794411351,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198919947578,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q1_q0_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q1_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380293376342,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q4_q3_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q4_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198912421895,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIXIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_q6_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q7_q6_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198917095396,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q2_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q2_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380307490515,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198918857264,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_q7_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q8_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855809103604,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.25694898148157114,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q0_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_b_z_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.4580560083539837,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2569489826997068,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_b_z_q2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.45805600951516595,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.17803902474339262,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.4580560081667077,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q5_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.25694898279683304,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q6_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q6_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.45805600938767105,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q7_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2569489800481577,
+          "isa_observable": [
+            [
+              "IIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q8_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q8_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564621755698,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q0_m2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q0_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025393877607,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q0_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025384518103,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q6_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q6_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564612102874,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q6_m2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q6_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.969611833883777,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q1_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126205401744,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q4_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q4_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126236789584,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_q4_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q7_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9696118371148638,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564615343426,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q2_m2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q2_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025386969991,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_q2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025394481522,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_q5_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q8_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564623090367,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_m2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q8_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.969611837591777,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025357937576,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q1_q0_real.qpy",
+          "isa_qpy_sha256": "4be053095b44be6314c199a58a8709b0828451cd8f8d06e165112eb6e47f4c2d",
+          "recipe_id": "vacuum_e_x_q1_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126241422464,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q4_q3_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q4_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025379895592,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_q6_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q7_q6_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025351720155,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q2_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q2_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126240730719,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q4_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q5_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025390549207,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_q7_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q8_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9696118375205689,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2460526580447581,
+          "isa_observable": [
+            [
+              "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q0_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363765152270003,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605266057070022,
+          "isa_observable": [
+            [
+              "IIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763128551427,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.23295559911921174,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q4_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763258129992,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q5_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605266184722718,
+          "isa_observable": [
+            [
+              "IZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q6_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q6_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763436691785,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q7_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605265751900812,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q8_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q8_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 69,
+          "maximum_recipe_two_qubit_error_sum": 0.02815792992629426,
+          "total_isa_two_qubit_gates": 1189,
+          "two_qubit_error_sum": 1.4465075248587058,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": true,
+        "rejection_reasons": []
+      },
+      "sample_values": {},
+      "score": 1.5684815248587063
+    }
+  ],
+  "plan_kind": "full_demo_observable",
+  "planning_policy": {
+    "automatic_demo_recipe_rule": null,
+    "demo_mode": "full_d1_nt1",
+    "max_backends": 5,
+    "max_demo_recipes": 2,
+    "max_selections": 1,
+    "minimum_instance_remaining_seconds": 600,
+    "optimization_level": 3,
+    "resource_limits": {
+      "maximum_isa_depth_per_recipe": 5000,
+      "maximum_recipe_two_qubit_error_sum": 1.0,
+      "require_complete_two_qubit_errors": true,
+      "total_isa_two_qubit_gates": 20000
+    },
+    "score_rule": "error_sum + missing_error_count + 1e-4*n2q + 1e-6*depth + 1e-8*queue",
+    "seed_transpiler": 17,
+    "selection_rule": "one backend must pass every D1_NT1 sample, then lowest total hardware score"
+  },
+  "selected_deployments": [
+    {
+      "D_ans": 1,
+      "N_T": 0,
+      "algorithm_error_vs_scipy": 0.1946762050630566,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-20T17:16:54+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "default_D1_NT0",
+      "error_metric_complete": true,
+      "ideal_observable_imag": 0.0,
+      "ideal_observable_real": 7.750156598527464,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 113476,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 252524
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": 0.9664249690900153,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q0_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q0_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198913925131,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q0_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.851019891084568,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q6_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q6_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9664249687403101,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q6_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q6_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855800643033,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q1_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380299362825,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q4_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q4_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380294943148,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q7_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855796042328,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.966424968766119,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q2_m2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q2_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198925271905,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIXIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q2_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198931480003,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_q5_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q8_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.966424969471116,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_m2_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q8_m2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855794411351,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198919947578,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q1_q0_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q1_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380293376342,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q4_q3_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q4_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198912421895,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIXIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q7_q6_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q7_q6_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198917095396,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q2_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q2_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8459380307490515,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8510198918857264,
+          "isa_observable": [
+            [
+              "IIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q8_q7_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_e_x_q8_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8805855809103604,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_e_x_q5_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_e_x_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.25694898148157114,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q0_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_b_z_q0_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.4580560083539837,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q1_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q1_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2569489826997068,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q2_real.qpy",
+          "isa_qpy_sha256": "e66d4c65d89c096d27c9aaaa85496e60e2fb7a9bbdef43c2e727fa171b5cb7a4",
+          "recipe_id": "glueball_b_z_q2_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.45805600951516595,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q3_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q3_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.17803902474339262,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q4_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q4_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.4580560081667077,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q5_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q5_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.25694898279683304,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q6_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q6_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.45805600938767105,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q7_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q7_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2569489800481577,
+          "isa_observable": [
+            [
+              "IIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_glueball_b_z_q8_real.qpy",
+          "isa_qpy_sha256": "dd22edb928123006e5b9b26b534fca82a04c51acd314261c0f812033973a8a0f",
+          "recipe_id": "glueball_b_z_q8_real",
+          "resources": {
+            "isa_depth": 69,
+            "isa_operation_count": 158,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 30,
+            "two_qubit_error_sum": 0.02815792992629426,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564621755698,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q0_m2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q0_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025393877607,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q0_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025384518103,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q6_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q6_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564612102874,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q6_m2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q6_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.969611833883777,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q1_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126205401744,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q4_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q4_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126236789584,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_q4_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q7_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9696118371148638,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564615343426,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q2_m2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q2_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025386969991,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q2_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_q2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025394481522,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_q5_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q8_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9692564623090367,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_m2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q8_m2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.969611837591777,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025357937576,
+          "isa_observable": [
+            [
+              "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q1_q0_real.qpy",
+          "isa_qpy_sha256": "4be053095b44be6314c199a58a8709b0828451cd8f8d06e165112eb6e47f4c2d",
+          "recipe_id": "vacuum_e_x_q1_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126241422464,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q4_q3_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q4_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025379895592,
+          "isa_observable": [
+            [
+              "IXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q7_q6_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q7_q6_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025351720155,
+          "isa_observable": [
+            [
+              "IIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q2_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q2_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9419126240730719,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_q4_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q5_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9398025390549207,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q8_q7_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_e_x_q8_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.9696118375205689,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_e_x_q5_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_e_x_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.2460526580447581,
+          "isa_observable": [
+            [
+              "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q0_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q0_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363765152270003,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q1_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q1_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605266057070022,
+          "isa_observable": [
+            [
+              "IIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q2_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q2_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763128551427,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q3_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q3_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.23295559911921174,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q4_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q4_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763258129992,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q5_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q5_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605266184722718,
+          "isa_observable": [
+            [
+              "IZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q6_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q6_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24363763436691785,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q7_real.qpy",
+          "isa_qpy_sha256": "b1aeb1ce55669f4db6ba2c9d55c13534aa0c784d229f1d59fbf5b2a7e34c87b9",
+          "recipe_id": "vacuum_b_z_q7_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.24605265751900812,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_qpy_path": "benchmarks/z2/circuits/hardware_isa/default_D1_NT0_ibm_kawasaki_vacuum_b_z_q8_real.qpy",
+          "isa_qpy_sha256": "6703bfebfda102c94c9628b6cda16019b8f8d35922a1fc28d6db341ec909ce72",
+          "recipe_id": "vacuum_b_z_q8_real",
+          "resources": {
+            "isa_depth": 37,
+            "isa_operation_count": 97,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 11,
+            "two_qubit_error_sum": 0.02172163989641973,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 69,
+          "maximum_recipe_two_qubit_error_sum": 0.02815792992629426,
+          "total_isa_two_qubit_gates": 1189,
+          "two_qubit_error_sum": 1.4465075248587058,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": true,
+        "rejection_reasons": []
+      },
+      "sample_values": {},
+      "score": 1.5684815248587063
+    }
+  ],
+  "source": {
+    "crosscheck_path": "benchmarks/z2/analysis/crosscheck_result.json",
+    "crosscheck_sha256": "c83ebea16902be28121e1e76ed1fc4231c500ce4bf8a53793fabc629a1dfdeec",
+    "measurement_path": "benchmarks/z2/runtime/measurement_result.json",
+    "measurement_sha256": "032bec84f5c890cce73d90343c1817ea538b7598029a7aa4de2bec7a0448b96d",
+    "observable_adapter_path": "benchmarks/z2/adapters/ObservableAdapter_20260920T073518Z_799c77bd.py",
+    "observable_adapter_sha256": "6a8c110e44b968bf3f10e388c4103f7f3636f7abfd1989a81141e56ee4b7b4d4"
+  },
+  "status": "ready_for_explicit_submission"
+}

@@ -1,0 +1,348 @@
+{
+  "constraints": [
+    {
+      "applies_when": "always",
+      "id": "equal_temporal_spatial_spacing",
+      "parameters": [
+        "temporal_lattice_spacing",
+        "lattice_spacing"
+      ],
+      "reason": "The continuum contract requires equal temporal and spatial spacing.",
+      "requirement": "temporal_lattice_spacing must equal lattice_spacing",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "open_boundary_gauss_reconstruction",
+      "parameters": [
+        "bare_gauge_coupling"
+      ],
+      "reason": "The ordered fermion insertions visit an intermediate charge-minus-one sector.",
+      "requirement": "Use the declared reflection-symmetric open-boundary electric-field reconstruction in every total-charge sector visited by the ordered observable.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "preserve_unshifted_hamiltonian",
+      "parameters": [],
+      "reason": "The requested lattice Hamiltonian is the direct unshifted discretization.",
+      "requirement": "Do not subtract any vacuum or target-state energy and do not introduce state-dependent Hamiltonian coefficients.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "fixed_gamma_convention",
+      "parameters": [
+        "lightcone_normalization"
+      ],
+      "reason": "These continuum conventions are immutable.",
+      "requirement": "Use gamma_0=sigma_1, gamma_1=-i*sigma_2, alpha=sigma_3, beta=sigma_1 and gamma_minus=gamma_0-gamma_1 with normalization one.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "observable_range_fit",
+      "parameters": [
+        "lattice_spacing"
+      ],
+      "reason": "No requested observable sample may be dropped.",
+      "requirement": "The site map s(z)=z+2 must be valid for every supplied z, including both endpoints.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "no_gauge_flux_truncation",
+      "parameters": [],
+      "reason": "Reintroducing links would change the selected finite representation.",
+      "requirement": "Do not introduce independent gauge-link variables or an electric-flux cutoff after exact Gauss-law elimination.",
+      "severity": "fatal"
+    }
+  ],
+  "discretizations": [
+    {
+      "parameter_references": [
+        "lattice_spacing",
+        "temporal_lattice_spacing"
+      ],
+      "scheme": "centered one-dimensional spatial lattice with equal temporal spacing",
+      "sector": "spacetime",
+      "settings": {
+        "gauss_relation_count": 5,
+        "observable_site_map": "s(z)=z+2",
+        "plaquette_count": 0,
+        "spatial_boundary_condition": "open",
+        "spatial_coordinate": "x_N=a*(N-2)",
+        "spatial_dimension": 1,
+        "spatial_link_count": 4,
+        "spatial_link_index_range": "ell=0,...,3",
+        "spatial_site_count": 5,
+        "spatial_site_index_range": "N=0,...,4",
+        "temporal_spacing_relation": "a_t=a"
+      },
+      "truncation": {
+        "reason": "The immutable five-site lattice supports every requested separation.",
+        "scheme": "finite spatial volume",
+        "settings": {
+          "coordinate_interval": "[-2a,2a]"
+        }
+      }
+    },
+    {
+      "parameter_references": [
+        "bare_fermion_mass",
+        "wilson_parameter",
+        "charge_reference_occupancy"
+      ],
+      "scheme": "two-component Wilson fermions",
+      "sector": "fermion",
+      "settings": {
+        "alpha": "sigma_3",
+        "beta": "sigma_1",
+        "charge_density": "q_N=sum_alpha c_dagger[N,alpha]*c[N,alpha]-1",
+        "component_count_per_site": 2,
+        "fermionic_mode_count": 10,
+        "gamma_0": "sigma_1",
+        "gamma_1": "-i*sigma_2",
+        "wilson_parameter": 1
+      },
+      "truncation": {
+        "reason": "Fermionic occupation is intrinsically finite and is not an approximate field truncation.",
+        "scheme": "exact fermionic occupation",
+        "settings": {
+          "local_mode_occupations": [
+            0,
+            1
+          ],
+          "neutral_sector_dimension": 252,
+          "total_fock_dimension": 1024
+        }
+      }
+    },
+    {
+      "parameter_references": [
+        "bare_gauge_coupling"
+      ],
+      "scheme": "spatial axial gauge with exact open-boundary Gauss-law elimination",
+      "sector": "gauge",
+      "settings": {
+        "effective_degree_count": 10,
+        "effective_qubit_count": 10,
+        "electric_field_reconstruction": "E_-1=-(g/2)*Q_lat; E_ell=g*(S_ell-Q_lat/2) for ell=0,...,3; E_4=(g/2)*Q_lat",
+        "external_neutral_sector_dimension": 252,
+        "gauge_condition": "A_1=0",
+        "gauss_identity": "E_N-E_{N-1}=g*q_N at every lattice vertex",
+        "independent_constraint_count": 4,
+        "independent_gauge_degree_count": 0,
+        "kinematic_dimension_after_reduction": 1024,
+        "locality_change": "Local link-electric energy becomes a long-range fermionic Coulomb interaction.",
+        "partial_charge": "S_ell=sum_{N=0}^{ell} q_N",
+        "physical_dimension_with_all_required_charge_sectors": 1024,
+        "scalar_potential_reconstruction": "A0_N=a*g*sum_{ell=0}^{3}(indicator(N<=ell)-1/2)*(S_ell-Q_lat/2)",
+        "total_charge": "Q_lat=sum_{N=0}^{4} q_N"
+      },
+      "truncation": {
+        "reason": "No independent infinite-dimensional gauge Hilbert space remains after exact Gauss-law elimination.",
+        "scheme": "none",
+        "settings": {
+          "electric_flux_cutoff": "none",
+          "gauge_links": "exactly eliminated"
+        }
+      }
+    }
+  ],
+  "external_states": {
+    "definitions": {
+      "phi": "Quantum-number-sector eigenstate; level_index=0; quantum_numbers={\"charge\": 0}",
+      "psi": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"charge\": 0}"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "phi",
+      "psi"
+    ]
+  },
+  "model": {
+    "gauge_structure": "local U(1)",
+    "name": "Schwinger model",
+    "spacetime_dimension": "1+1"
+  },
+  "parameters": [
+    {
+      "domain": {
+        "minimum": 0
+      },
+      "name": "bare_gauge_coupling",
+      "required_for_run": true,
+      "role": "Bare U(1) gauge coupling.",
+      "selected_value": 0.5,
+      "symbol": "g",
+      "type": "real",
+      "unit": "inverse_length"
+    },
+    {
+      "domain": {
+        "rule": "finite real number"
+      },
+      "name": "bare_fermion_mass",
+      "required_for_run": true,
+      "role": "Bare Dirac fermion mass.",
+      "selected_value": 0.5,
+      "symbol": "m",
+      "type": "real",
+      "unit": "inverse_length"
+    },
+    {
+      "domain": {
+        "exclusive_minimum": 0
+      },
+      "name": "lattice_spacing",
+      "required_for_run": true,
+      "role": "Spatial lattice spacing.",
+      "selected_value": 1.0,
+      "symbol": "a",
+      "type": "real",
+      "unit": "length"
+    },
+    {
+      "domain": {
+        "exclusive_minimum": 0
+      },
+      "name": "temporal_lattice_spacing",
+      "required_for_run": true,
+      "role": "Temporal spacing, fixed equal to the spatial spacing.",
+      "selected_value": 1.0,
+      "symbol": "a_t",
+      "type": "real",
+      "unit": "time"
+    },
+    {
+      "domain": {
+        "rule": "nonzero finite real number"
+      },
+      "name": "wilson_parameter",
+      "required_for_run": true,
+      "role": "Wilson term coefficient used to remove fermion doublers.",
+      "selected_value": 1.0,
+      "symbol": "r",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "allowed_values": [
+          1
+        ]
+      },
+      "name": "charge_reference_occupancy",
+      "required_for_run": true,
+      "role": "Fixed state-independent occupancy reference in q_N=c_N^dagger c_N-n_ref.",
+      "selected_value": 1,
+      "symbol": "n_ref",
+      "type": "integer",
+      "unit": null
+    },
+    {
+      "domain": {
+        "allowed_values": [
+          1.0
+        ]
+      },
+      "name": "lightcone_normalization",
+      "required_for_run": true,
+      "role": "Normalization in gamma^-=gamma^0-gamma^1 and X(z)=az(1,1).",
+      "selected_value": 1.0,
+      "symbol": "c_lc",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "bare coupling: g",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 0.5,
+      "source_ref": "/user_input/parameters/bare coupling: g",
+      "symbol": "bare coupling: g",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "bare quark mass: m",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 0.5,
+      "source_ref": "/user_input/parameters/bare quark mass: m",
+      "symbol": "bare quark mass: m",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "lattice spacing: a",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 1.0,
+      "source_ref": "/user_input/parameters/lattice spacing: a",
+      "symbol": "lattice spacing: a",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "number of lattice site: L",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 5,
+      "source_ref": "/user_input/parameters/number of lattice site: L",
+      "symbol": "number of lattice site: L",
+      "type": "integer",
+      "unit": null
+    }
+  ],
+  "schema_version": "1.1",
+  "validation_obligations": [
+    {
+      "description": "Confirm that phi is the zero-based level 0 eigenstate and psi is the zero-based level 1 eigenstate of H_lat within the Q_lat=0 sector, without identifying the two states.",
+      "id": "external_state_sector_and_level_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that E_N-E_{N-1}-g*q_N vanishes as an operator identity at every lattice vertex under the declared reconstruction, including the intermediate charge-minus-one sector.",
+      "id": "physical_gauss_sector_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that [H_lat,Q_lat]=0 in the full 1024-dimensional reduced Fock space.",
+      "id": "charge_commutator_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm the ordered path Q=0 -> Q=-1 -> Q=-1 -> Q=0 for the right-to-left action of psi insertion, Wilson transporter, and bar-psi insertion.",
+      "id": "ordered_sector_path_check",
+      "severity": "fatal",
+      "stage": "pre_simulation"
+    },
+    {
+      "description": "Confirm that the constructed Hamiltonian contains no additive vacuum-energy subtraction or target-state-dependent coefficient.",
+      "id": "no_energy_shift_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    }
+  ]
+}

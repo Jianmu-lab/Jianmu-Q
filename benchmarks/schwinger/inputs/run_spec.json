@@ -1,0 +1,119 @@
+{
+  "execution_request": {
+    "hardware_mode": "full_d1_nt1",
+    "hardware_validation": true,
+    "llm": "gpt-5.6-sol",
+    "max_ansatz_retries": 2,
+    "through": "final_report",
+    "vqe_runtime": {
+      "target_kind_by_state": {
+        "phi": "sector_eigenstate",
+        "psi": "sector_eigenstate"
+      },
+      "target_spec_by_state": {
+        "phi": {
+          "kind": "sector_eigenstate",
+          "level_index": 0,
+          "quantum_numbers": {
+            "charge": 0
+          }
+        },
+        "psi": {
+          "kind": "sector_eigenstate",
+          "level_index": 1,
+          "quantum_numbers": {
+            "charge": 0
+          }
+        }
+      }
+    }
+  },
+  "run_id": "20260928T035738Z_5c1e78fc",
+  "schema_version": "1.0",
+  "user_input": {
+    "clarifications": [],
+    "continuum_conventions": {
+      "lightcone": {
+        "coordinate_definition": "x^plus/minus=x^0 plus/minus x^1",
+        "gamma_definition": "gamma^plus/minus=gamma^0 plus/minus gamma^1",
+        "normalization": 1.0
+      }
+    },
+    "external_states": {
+      "phi": "Quantum-number-sector eigenstate; level_index=0; quantum_numbers={\"charge\": 0}",
+      "psi": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"charge\": 0}"
+    },
+    "model": "Schwinger model",
+    "observable": {
+      "coordinate_convention": {
+        "mode": "lattice_indices",
+        "spacing_parameter": "lattice_spacing_a",
+        "temporal_spacing": "same_as_spatial",
+        "units": "natural_units_c_1"
+      },
+      "expression": "\\bar{\\psi}(zn) \\gamma^- W(zn,0) \\psi(0), n = (1,1), \\gamma^- = \\gamma^0 - \\gamma^1",
+      "gauge_transporters": [
+        {
+          "from": "\\psi",
+          "id": "Wlison line",
+          "path": "straight lattice path",
+          "to": "\\bar{\\psi}"
+        }
+      ],
+      "insertions": [
+        {
+          "id": "psibar",
+          "operator": "\\bar{\\psi}",
+          "position": {
+            "t1": "z1"
+          }
+        },
+        {
+          "id": "psi",
+          "operator": "\\psi",
+          "position": {
+            "t2": "z2"
+          }
+        }
+      ],
+      "name": "user_observable",
+      "observable_schema_version": "1.0",
+      "ordering": "as_written",
+      "requested_components": [
+        "real",
+        "imag"
+      ],
+      "sampling": {
+        "maximum_points": 10000,
+        "mode": "cartesian_product",
+        "variables": {
+          "z1": [
+            -2,
+            -1,
+            0,
+            1,
+            2
+          ],
+          "z2": [
+            0
+          ]
+        }
+      }
+    },
+    "parameter_groups": {
+      "physical": {
+        "bare coupling: g": 0.5,
+        "bare quark mass: m": 0.5,
+        "lattice spacing: a": 1.0,
+        "number of lattice site: L": 5
+      },
+      "simulation": {}
+    },
+    "parameters": {
+      "bare coupling: g": 0.5,
+      "bare quark mass: m": 0.5,
+      "lattice spacing: a": 1.0,
+      "number of lattice site: L": 5
+    }
+  }
+}

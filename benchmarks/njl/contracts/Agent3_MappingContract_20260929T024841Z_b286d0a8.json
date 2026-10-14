@@ -1,0 +1,875 @@
+{
+  "circuit_definitions": [],
+  "conserved_quantities": [
+    {
+      "id": "global_vector_U1",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "id": "Q_qc",
+        "terms": [
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIIIIIIIIZ"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIIIIIIIZI"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIIIIIIZII"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIIIIIZIII"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIIIIZIIII"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIIIZIIIII"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIIZIIIIII"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IIZIIIIIII"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "IZIIIIIIII"
+          },
+          {
+            "coefficient": "-0.5",
+            "pauli": "ZIIIIIIIII"
+          }
+        ],
+        "verified_relation": "[H_qc,Q_qc]=0"
+      },
+      "representation": "additive_pauli_sum",
+      "target_eigenvalues": {
+        "hadron": "0",
+        "vacuum": "0"
+      }
+    },
+    {
+      "id": "fermion_parity_symmetry",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "identity": "exp(i*pi*(Q_qc+5))",
+        "operator": {
+          "coefficient": "1",
+          "pauli": "ZZZZZZZZZZ"
+        },
+        "verified_relation": "[H_qc,ZZZZZZZZZZ]=0"
+      },
+      "representation": "single_pauli_operator",
+      "target_eigenvalues": {
+        "hadron": "-1",
+        "vacuum": "-1"
+      }
+    },
+    {
+      "id": "charge_conjugation_C",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "mode_action": {
+          "even_j_component_1": "U_C*c_j*U_C^dagger=-c_j^dagger",
+          "odd_j_component_2": "U_C*c_j*U_C^dagger=+c_j^dagger"
+        },
+        "unitary": {
+          "coefficient": "1",
+          "pauli": "YYYYYYYYYY"
+        },
+        "verified_relations": [
+          "U_C*H_qc*U_C^dagger=H_qc",
+          "U_C*Q_qc*U_C^dagger=-Q_qc"
+        ]
+      },
+      "representation": "unitary_pauli_conjugation",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "spatial_reflection_P",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "circuit_realization": "Implement the reversal permutation with adjacent FSWAP gates; each FSWAP maps |00>->|00>, |01>->|10>, |10>->|01>, |11>->-|11>.",
+        "computational_basis_action": "For occupation bits n_j, set n'_{pi(j)}=n_j and multiply by (-1)^Ninv, where Ninv is the number of occupied pairs j<k satisfying pi(j)>pi(k).",
+        "mode_action": "U_P*c_j*U_P^dagger=c_(9-j)",
+        "mode_permutation": {
+          "0": 9,
+          "1": 8,
+          "2": 7,
+          "3": 6,
+          "4": 5,
+          "5": 4,
+          "6": 3,
+          "7": 2,
+          "8": 1,
+          "9": 0
+        },
+        "verified_relation": "U_P*H_qc*U_P^dagger=H_qc"
+      },
+      "representation": "fermionic_mode_permutation_unitary",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "time_reversal_T",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "antiunitary": "T_qc=U_T*K",
+        "complex_conjugation": "K in the ten-qubit computational basis",
+        "mode_action": "T_qc*c_(x,1)*T_qc^-1=c_(x,2); T_qc*c_(x,2)*T_qc^-1=c_(x,1); T_qc*i*T_qc^-1=-i",
+        "mode_permutation": {
+          "0": 1,
+          "1": 0,
+          "2": 3,
+          "3": 2,
+          "4": 5,
+          "5": 4,
+          "6": 7,
+          "7": 6,
+          "8": 9,
+          "9": 8
+        },
+        "unitary_part_circuit": "U_T is the product of FSWAP gates on mode pairs (0,1),(2,3),(4,5),(6,7),(8,9).",
+        "verified_relation": "U_T*H_qc^**U_T^dagger=H_qc"
+      },
+      "representation": "antiunitary_fermionic_permutation",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "combined_PT",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "antiunitary": "PT_qc=U_PT*K",
+        "circuit_realization": "Implement the stated mode permutation using adjacent FSWAP gates.",
+        "complex_conjugation": "K in the ten-qubit computational basis",
+        "computational_basis_action_of_U_PT": "For occupation bits n_j, set n'_{pi(j)}=n_j and multiply by (-1)^Ninv, where Ninv is the number of occupied pairs j<k satisfying pi(j)>pi(k).",
+        "mode_action": "PT_qc*c_(x,s)*PT_qc^-1=c_(-x,s); PT_qc*i*PT_qc^-1=-i",
+        "mode_permutation": {
+          "0": 8,
+          "1": 9,
+          "2": 6,
+          "3": 7,
+          "4": 4,
+          "5": 5,
+          "6": 2,
+          "7": 3,
+          "8": 0,
+          "9": 1
+        },
+        "verified_relation": "U_PT*H_qc^**U_PT^dagger=H_qc"
+      },
+      "representation": "antiunitary_fermionic_permutation",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "spatial_translations",
+      "lattice_symmetry_status": "broken_by_boundary_or_discretization",
+      "operators_or_generators": {
+        "exact_generator": null,
+        "reason": "A one-site translation changes the retained open-chain link set {(-2,-1),(-1,0),(0,1),(1,2)} and therefore does not commute with H_qc."
+      },
+      "representation": "no_exact_finite_open_chain_generator",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "proper_Lorentz_transformations",
+      "lattice_symmetry_status": "continuum_only",
+      "operators_or_generators": {
+        "exact_generator": null,
+        "reason": "The finite open spatial lattice at fixed nonzero spacing has no exact Lorentz-boost generator."
+      },
+      "representation": "no_exact_fixed_lattice_boost_generator",
+      "target_eigenvalues": {
+        "hadron": "unspecified",
+        "vacuum": "unspecified"
+      }
+    }
+  ],
+  "contract_type": "qubit_mapping",
+  "hamiltonian": {
+    "representation": "pauli_sum",
+    "terms": [
+      {
+        "coefficient": "-1.25",
+        "pauli": "IIIIIIIIII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIIIIIIIXX"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIIIIIIIYY"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIIIIIIZZ"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIIIIIXXII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIIIIIYYII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIIIIZZII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIIIXXIIII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIIIYYIIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIIZZIIII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIXXIIIIII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "IIYYIIIIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIZZIIIIII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "XXIIIIIIII"
+      },
+      {
+        "coefficient": "0.75",
+        "pauli": "YYIIIIIIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "ZZIIIIIIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIIIIIYZX"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIIIXZY"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIIYZXI"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIIIIXZYI"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIIIYZXII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIXZYII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIYZXIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIIXZYIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIIYZXIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIXZYIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIYZXIIIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IIXZYIIIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "IYZXIIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IXZYIIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "YZXIIIIIII"
+      },
+      {
+        "coefficient": "0.25",
+        "pauli": "XZYIIIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIIXZZX"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIIYZZY"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIIIXXI"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIIIYYI"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIXZZXII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIYZZYII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIXXIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIIIYYIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIXZZXIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIYZZYIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIXXIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IIIYYIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "XZZXIIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "YZZYIIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IXXIIIIIII"
+      },
+      {
+        "coefficient": "-0.25",
+        "pauli": "IYYIIIIIII"
+      }
+    ]
+  },
+  "observable": {
+    "matrix_elements": [
+      {
+        "bra": "hadron",
+        "coefficient": "1",
+        "ket": "hadron",
+        "operator": "O_qc(z_index)"
+      },
+      {
+        "bra": "vacuum",
+        "coefficient": "-1",
+        "ket": "vacuum",
+        "operator": "O_qc(z_index)"
+      }
+    ],
+    "operation_order": "operations are multiplied from left to right exactly as listed",
+    "parameter_domain": {
+      "time": "t=z_index",
+      "z_index": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ]
+    },
+    "representation": "explicit_operator_sum",
+    "terms": [
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIIIXZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -2
+      },
+      {
+        "coefficient": "0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIIIXZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -2
+      },
+      {
+        "coefficient": "-0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIIIYZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -2
+      },
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIIIYZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-2))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -2
+      },
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIXZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -1
+      },
+      {
+        "coefficient": "0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIXZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -1
+      },
+      {
+        "coefficient": "-0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIYZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -1
+      },
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIIIYZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*(-1))",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": -1
+      },
+      {
+        "coefficient": "1",
+        "operations": [
+          {
+            "pauli": "IIIIIIIIII",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 0
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIZIIIII",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 0
+      },
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIXZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 1
+      },
+      {
+        "coefficient": "0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIXZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 1
+      },
+      {
+        "coefficient": "-0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIYZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 1
+      },
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIYZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 1
+      },
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "XZZZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 2
+      },
+      {
+        "coefficient": "0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "XZZZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 2
+      },
+      {
+        "coefficient": "-0.5*i",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "YZZZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIXZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 2
+      },
+      {
+        "coefficient": "0.5",
+        "operations": [
+          {
+            "operator": "exp(+i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "YZZZZZZZZZ",
+            "type": "pauli"
+          },
+          {
+            "operator": "exp(-i*H_qc*2)",
+            "type": "exact_time_evolution"
+          },
+          {
+            "pauli": "IIIIYZZZZZ",
+            "type": "pauli"
+          }
+        ],
+        "z_index": 2
+      }
+    ]
+  },
+  "physical_sector": {
+    "basis_rule": "Use computational basis states |n9...n0> with n_j in {0,1}. The Q_qc=0 basis is exactly the 252 states satisfying sum_j n_j=5. The intermediate Q_qc=-1 basis is exactly the 210 states satisfying sum_j n_j=4. Restrict H_qc separately to these bases. Order eigenvalues of the Q_qc=0 block nondecreasingly with multiplicity; vacuum is zero-based level_index 0 and hadron is zero-based level_index 1. The rightmost c_(0,2) maps every supported Q_qc=0 vector into the Q_qc=-1 basis, exact evolution preserves that basis, and the left creation insertion maps it back to Q_qc=0.",
+    "mapped_constraints": [
+      {
+        "allowed_eigenvalues": [
+          "0",
+          "-1"
+        ],
+        "operator": "Q_qc=-0.5*sum_j Z_j",
+        "subspace_dimensions": {
+          "-1": 210,
+          "0": 252
+        }
+      }
+    ],
+    "nonempty_pass_criterion": "The enumerated popcount-5 and popcount-4 basis sets have cardinalities 252 and 210 respectively, and all required restricted operators have the stated source and destination dimensions.",
+    "required": true,
+    "validation_tests": [
+      {
+        "id": "charge_commutator_check",
+        "rule": "Construct the full 1024-by-1024 matrices from the listed Pauli terms and pass iff H_qc*Q_qc-Q_qc*H_qc is exactly zero over the listed rational coefficients."
+      },
+      {
+        "id": "external_state_sector_and_level_check",
+        "rule": "Pass iff the Q_qc=0 block uses exactly the popcount-5 basis, has dimension 252, vacuum is its zero-based energy level 0, and hadron is its distinct zero-based energy level 1 without identifying their state vectors."
+      },
+      {
+        "id": "intermediate_sector_check",
+        "rule": "Pass iff c_(0,2) has zero matrix elements outside the map from popcount 5 to popcount 4, the Q_qc=-1 Hamiltonian block has dimension 210 and preserves popcount 4, and each c_(z_index,2)^dagger returns popcount 4 to popcount 5."
+      },
+      {
+        "id": "coincident_composite_check",
+        "rule": "Pass iff O_qc(0)=IIIIIIIIII-IIIIZIIIII=2*n_q5 and each local interaction contribution is exactly -0.25*IIIIIIIIII+0.25*Z_(2l)*Z_(2l+1), equivalent to -0.5*(c_x^dagger*sigma_1*c_x)^2."
+      },
+      {
+        "id": "no_gauge_sector_check",
+        "rule": "Pass iff the mapping contains exactly ten fermionic qubits, zero gauge qubits, no link-variable registers, no Gauss-law constraints, no gauge fixing, and no gauge transporter."
+      }
+    ]
+  },
+  "qubits": {
+    "count": 10,
+    "fermion_mapping": {
+      "annihilation_operator": "c_j=(Z_0*...*Z_{j-1})*(X_j+i*Y_j)/2",
+      "creation_operator": "c_j^dagger=(Z_0*...*Z_{j-1})*(X_j-i*Y_j)/2",
+      "mode_rule": "j=2*(x+2)+(s-1)",
+      "number_operator": "n_j=(I-Z_j)/2",
+      "scheme": "Jordan-Wigner"
+    },
+    "gauge_qubits": 0,
+    "ordering": [
+      "q0=(-2,1)",
+      "q1=(-2,2)",
+      "q2=(-1,1)",
+      "q3=(-1,2)",
+      "q4=(0,1)",
+      "q5=(0,2)",
+      "q6=(1,1)",
+      "q7=(1,2)",
+      "q8=(2,1)",
+      "q9=(2,2)"
+    ],
+    "pauli_label_order": "qiskit_little_endian"
+  },
+  "schema_version": "1.0"
+}

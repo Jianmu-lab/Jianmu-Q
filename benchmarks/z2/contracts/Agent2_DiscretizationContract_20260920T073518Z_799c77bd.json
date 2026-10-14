@@ -1,0 +1,161 @@
+{
+  "contract_type": "lattice_discretization",
+  "definitions": [
+    {
+      "canonical_expression": "A(h(x,y))={p(x,y) if y<=2} union {p(x,y-1) if y>=1}; A(v(x,y))={p(x,y) if x<=2} union {p(x-1,y) if x>=1}",
+      "dependencies": [],
+      "display_latex": "A(h_{x,y})=\\{p_{x,y}:y\\le2\\}\\cup\\{p_{x,y-1}:y\\ge1\\},\\quad A(v_{x,y})=\\{p_{x,y}:x\\le2\\}\\cup\\{p_{x-1,y}:x\\ge1\\}",
+      "id": "incident_plaquette_set",
+      "kind": "operator_index_definition"
+    },
+    {
+      "canonical_expression": "B_p -> tau_z(p); X_l -> product_{p in A(l)} tau_x(p)",
+      "dependencies": [
+        "incident_plaquette_set"
+      ],
+      "display_latex": "B_p\\mapsto\\tau_p^z,\\qquad X_\\ell\\mapsto\\prod_{p\\in A(\\ell)}\\tau_p^x",
+      "id": "dual_operator_map",
+      "kind": "exact_operator_mapping"
+    },
+    {
+      "canonical_expression": "G(x,y)=product_{links l incident on vertex (x,y)} X_l; G(x,y)=I in the reduced physical representation",
+      "dependencies": [
+        "dual_operator_map"
+      ],
+      "display_latex": "G_{x,y}=\\prod_{\\ell\\ni(x,y)}X_\\ell,\\qquad G_{x,y}\\big|_{\\mathcal H_{\\rm phys}}=\\mathbf 1",
+      "id": "gauss_operator",
+      "kind": "conserved_operator"
+    },
+    {
+      "canonical_expression": "Theta=K in the real Pauli basis",
+      "dependencies": [],
+      "display_latex": "\\Theta=K",
+      "id": "time_reversal_operator",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "For s in D4, U_s tau_alpha(p) U_s^(-1)=tau_alpha(s(p)) for alpha in {x,z}",
+      "dependencies": [],
+      "display_latex": "U_s\\tau_p^\\alpha U_s^{-1}=\\tau_{s(p)}^\\alpha,\\qquad s\\in D_4,\\ \\alpha\\in\\{x,z\\}",
+      "id": "d4_operator",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "T(gamma_star)=product_{links l intersecting gamma_star} X_l; for every closed dual curve available under OBC, T(gamma_star) is a product of enclosed Gauss operators and equals I on the physical sector",
+      "dependencies": [
+        "gauss_operator"
+      ],
+      "display_latex": "T(\\gamma^\\star)=\\prod_{\\ell\\cap\\gamma^\\star\\ne\\varnothing}X_\\ell=\\prod_{v\\in\\mathrm{inside}(\\gamma^\\star)}G_v=\\mathbf 1\\ \\text{on }\\mathcal H_{\\rm phys}",
+      "id": "electric_one_form_curve_operator",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "H_lat=-(1/a)*(g^2*sum_{x=0..2,y=0..3} product_{p in A(h(x,y))} tau_x(p) + g^2*sum_{x=0..3,y=0..2} product_{p in A(v(x,y))} tau_x(p) + g^(-2)*sum_{x=0..2,y=0..2} tau_z(p(x,y)))",
+      "dependencies": [
+        "incident_plaquette_set",
+        "dual_operator_map"
+      ],
+      "display_latex": "H_{\\rm lat}=-\\frac1a\\left[g^2\\sum_{x=0}^{2}\\sum_{y=0}^{3}\\prod_{p\\in A(h_{x,y})}\\tau_p^x+g^2\\sum_{x=0}^{3}\\sum_{y=0}^{2}\\prod_{p\\in A(v_{x,y})}\\tau_p^x+g^{-2}\\sum_{x=0}^{2}\\sum_{y=0}^{2}\\tau_{x,y}^z\\right]",
+      "id": "lattice_hamiltonian",
+      "kind": "lattice_hamiltonian"
+    },
+    {
+      "canonical_expression": "O_lat=H_lat",
+      "dependencies": [
+        "lattice_hamiltonian"
+      ],
+      "display_latex": "O_{\\rm lat}=H_{\\rm lat}",
+      "id": "lattice_observable",
+      "kind": "lattice_observable"
+    },
+    {
+      "canonical_expression": "<glueball|H_lat|glueball>-<vacuum|H_lat|vacuum>",
+      "dependencies": [
+        "lattice_observable"
+      ],
+      "display_latex": "\\langle\\mathrm{glueball}|H_{\\rm lat}|\\mathrm{glueball}\\rangle-\\langle\\mathrm{vacuum}|H_{\\rm lat}|\\mathrm{vacuum}\\rangle",
+      "id": "requested_matrix_element_combination",
+      "kind": "matrix_element_linear_combination"
+    }
+  ],
+  "experience_selection": {
+    "decision": "none",
+    "reason": "No historical candidate was supplied. An exact Z2-specific open-boundary Gauss-law reduction was derived because it preserves the requested physical sector and lowers the representation from the infeasible full link space to the complete 512-dimensional physical space.",
+    "source_record_id": null
+  },
+  "field_encodings": [
+    {
+      "degrees_of_freedom": "One dual Pauli degree of freedom tau_p for every indexed plaquette p; this is exactly the G_v=+1 subspace of the complete Z2 link Hilbert space.",
+      "scheme": "exact physical-sector plaquette-dual Pauli encoding",
+      "sector": "gauge",
+      "truncation": "None. The local Z2 link representation is already finite, and Gauss-law elimination is exact."
+    }
+  ],
+  "lattice": {
+    "geometry": "Two-dimensional square lattice with vertices (x,y), x,y in {0,1,2,3}; horizontal links h(x,y) for x=0..2,y=0..3; vertical links v(x,y) for x=0..3,y=0..2; plaquettes p(x,y) for x,y=0..2.",
+    "spatial_boundary_condition": "open in both spatial directions"
+  },
+  "lattice_symmetries": [
+    {
+      "commutator_result": "[H_lat,G(x,y)]=0 at every lattice vertex; after exact reduction G(x,y)=I",
+      "id": "local_z2_gauge_symmetry",
+      "operator_definition_id": "gauss_operator",
+      "status": "exact",
+      "target_eigenvalues": {
+        "glueball": "+1 at every lattice vertex",
+        "vacuum": "+1 at every lattice vertex"
+      }
+    },
+    {
+      "commutator_result": "[H_lat,H_lat]=0",
+      "id": "continuous_time_translation",
+      "operator_definition_id": "lattice_hamiltonian",
+      "status": "exact",
+      "target_eigenvalues": {
+        "glueball": "zero-based level-1 energy in the physical sector",
+        "vacuum": "ground-state energy"
+      }
+    },
+    {
+      "commutator_result": "Theta H_lat Theta^(-1)=H_lat because all Pauli coefficients and matrices appearing in H_lat are real",
+      "id": "time_reversal",
+      "operator_definition_id": "time_reversal_operator",
+      "status": "exact",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "[H_lat,U_s]=0 for every s in D4",
+      "id": "open_square_dihedral_symmetry",
+      "operator_definition_id": "d4_operator",
+      "status": "exact",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "No nontrivial lattice translation maps the selected open-link and boundary-term sets to themselves",
+      "id": "spatial_translation_symmetry",
+      "operator_definition_id": "d4_operator",
+      "status": "broken_by_boundary_or_discretization",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "Contractible closed-curve operators commute with H_lat but reduce to I in the physical sector; OBC admits no noncontractible generators",
+      "id": "nontrivial_electric_z2_one_form_symmetry",
+      "operator_definition_id": "electric_one_form_curve_operator",
+      "status": "broken_by_boundary_or_discretization",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    }
+  ],
+  "schema_version": "1.0"
+}

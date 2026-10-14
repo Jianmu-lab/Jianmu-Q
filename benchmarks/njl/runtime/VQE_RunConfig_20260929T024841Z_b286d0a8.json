@@ -1,0 +1,60 @@
+{
+  "adaptive_depth": {
+    "enabled": true,
+    "minimum_relative_improvement": 0.01,
+    "plateau_window": 3
+  },
+  "checkpoint_file": "benchmarks/njl/runtime/VQE_Runtime_Checkpoint_20260929T024841Z_b286d0a8.json",
+  "depth_schedule": [
+    1,
+    2,
+    4,
+    6,
+    8
+  ],
+  "energy_tie_tolerance": 1e-10,
+  "energy_tolerance": 0.001,
+  "equivalent_state_groups": [],
+  "experience_database": "workflow/simulation_database/simulation_knowledge.sqlite3",
+  "first_depth_lower_bound": -0.05,
+  "first_depth_upper_bound": 0.05,
+  "gradient_check_step": 1e-06,
+  "gradient_check_tolerance": 1e-05,
+  "max_iterations": 200,
+  "max_same_depth_continuations": 2,
+  "nested_by_depth": true,
+  "new_layer_value": 0.0,
+  "parameter_bundle_file": "benchmarks/njl/runtime/VQE_ParameterBundle_20260929T024841Z_b286d0a8.json",
+  "perturbation_scale": 0.01,
+  "random_seed": 12345,
+  "record_experience": true,
+  "restart_count": 2,
+  "result_file": "benchmarks/njl/runtime/VQE_Runtime_Result_20260929T024841Z_b286d0a8.json",
+  "scan_all_depths": true,
+  "state_labels": [
+    "hadron",
+    "vacuum"
+  ],
+  "stop_restarts_on_convergence": true,
+  "target_kind_by_state": {
+    "hadron": "sector_eigenstate",
+    "vacuum": "sector_eigenstate"
+  },
+  "target_spec_by_state": {
+    "hadron": {
+      "kind": "sector_eigenstate",
+      "level_index": 1,
+      "quantum_numbers": {
+        "charge": 0
+      }
+    },
+    "vacuum": {
+      "kind": "sector_eigenstate",
+      "level_index": 0,
+      "quantum_numbers": {
+        "charge": 0
+      }
+    }
+  },
+  "variance_tolerance": 0.01
+}

@@ -1,0 +1,1230 @@
+{
+  "all_deployments": [
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "algorithm_error_vs_scipy": 0.9447030042458429,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-28T14:12:05+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "sample_0002_D1_NT1",
+      "error_metric_complete": true,
+      "ideal_observable_imag": -0.8953506627319933,
+      "ideal_observable_real": -1.3745345736181774e-15,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 77458,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 288542
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": 1.5725590182249713e-16,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_real",
+          "resources": {
+            "isa_depth": 3352,
+            "isa_operation_count": 5493,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 2.6717970843154236e-15,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_imag",
+          "resources": {
+            "isa_depth": 3351,
+            "isa_operation_count": 5493,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.8953506627319961,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_real",
+          "resources": {
+            "isa_depth": 3352,
+            "isa_operation_count": 5492,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 1.4488557855091115e-15,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_imag",
+          "resources": {
+            "isa_depth": 3351,
+            "isa_operation_count": 5492,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.8953506627319959,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_real",
+          "resources": {
+            "isa_depth": 3350,
+            "isa_operation_count": 5489,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -1.5654617291599275e-15,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_imag",
+          "resources": {
+            "isa_depth": 3350,
+            "isa_operation_count": 5489,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 1.0799246561018701e-16,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_real",
+          "resources": {
+            "isa_depth": 3351,
+            "isa_operation_count": 5492,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 2.8020029889673547e-15,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_imag",
+          "resources": {
+            "isa_depth": 3351,
+            "isa_operation_count": 5492,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 1171,
+            "two_qubit_error_sum": 1.4169723375526087,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 3352,
+          "maximum_recipe_two_qubit_error_sum": 1.4169723375526087,
+          "total_isa_two_qubit_gates": 9368,
+          "two_qubit_error_sum": 11.33577870042087,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": false,
+        "rejection_reasons": [
+          "maximum recipe two-qubit calibration error exceeds limit"
+        ]
+      },
+      "sample_values": {
+        "z1": 0,
+        "z2": 0
+      },
+      "score": 12.299386700420872
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "algorithm_error_vs_scipy": 0.32656775667715277,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-28T14:12:05+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "sample_0003_D1_NT1",
+      "error_metric_complete": true,
+      "ideal_observable_imag": -0.05531603959523154,
+      "ideal_observable_real": 0.04829383083743845,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 77458,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 288542
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": 0.039017902028173464,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_real",
+          "resources": {
+            "isa_depth": 7856,
+            "isa_operation_count": 13567,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.0021942361825211024,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_imag",
+          "resources": {
+            "isa_depth": 7856,
+            "isa_operation_count": 13566,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.05751027577775264,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_real",
+          "resources": {
+            "isa_depth": 7856,
+            "isa_operation_count": 13567,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.009275928809264823,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_imag",
+          "resources": {
+            "isa_depth": 7856,
+            "isa_operation_count": 13566,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.057510275777752744,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_real",
+          "resources": {
+            "isa_depth": 7853,
+            "isa_operation_count": 13564,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.009275928809265248,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_imag",
+          "resources": {
+            "isa_depth": 7853,
+            "isa_operation_count": 13563,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.03901790202817337,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_real",
+          "resources": {
+            "isa_depth": 7853,
+            "isa_operation_count": 13564,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.002194236182521197,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_imag",
+          "resources": {
+            "isa_depth": 7853,
+            "isa_operation_count": 13563,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 3287,
+            "two_qubit_error_sum": 4.163535529235156,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 7856,
+          "maximum_recipe_two_qubit_error_sum": 4.163535529235156,
+          "total_isa_two_qubit_gates": 26296,
+          "two_qubit_error_sum": 33.308284233881245,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": false,
+        "rejection_reasons": [
+          "maximum recipe ISA depth exceeds limit",
+          "total ISA two-qubit gate count exceeds limit",
+          "maximum recipe two-qubit calibration error exceeds limit"
+        ]
+      },
+      "sample_values": {
+        "z1": 1,
+        "z2": 0
+      },
+      "score": 36.000720233881246
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "algorithm_error_vs_scipy": 0.22148364573969404,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-28T14:12:05+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "sample_0001_D1_NT1",
+      "error_metric_complete": true,
+      "ideal_observable_imag": -0.0055068968346381406,
+      "ideal_observable_real": -0.026418889746836302,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 77458,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 288542
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": -0.07473022727131626,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_real",
+          "resources": {
+            "isa_depth": 12649,
+            "isa_operation_count": 23287,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.041636222485625034,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_imag",
+          "resources": {
+            "isa_depth": 12649,
+            "isa_operation_count": 23286,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.047143119320262855,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_real",
+          "resources": {
+            "isa_depth": 12650,
+            "isa_operation_count": 23291,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.048311337524480066,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_imag",
+          "resources": {
+            "isa_depth": 12650,
+            "isa_operation_count": 23290,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.04714311932026313,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_real",
+          "resources": {
+            "isa_depth": 12653,
+            "isa_operation_count": 23292,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.048311337524480094,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_imag",
+          "resources": {
+            "isa_depth": 12653,
+            "isa_operation_count": 23291,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.07473022727131651,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_real",
+          "resources": {
+            "isa_depth": 12654,
+            "isa_operation_count": 23296,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.04163622248562467,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_imag",
+          "resources": {
+            "isa_depth": 12654,
+            "isa_operation_count": 23295,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5865,
+            "two_qubit_error_sum": 7.033644152231598,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 12654,
+          "maximum_recipe_two_qubit_error_sum": 7.033644152231598,
+          "total_isa_two_qubit_gates": 46920,
+          "two_qubit_error_sum": 56.26915321785278,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": false,
+        "rejection_reasons": [
+          "maximum recipe ISA depth exceeds limit",
+          "total ISA two-qubit gate count exceeds limit",
+          "maximum recipe two-qubit calibration error exceeds limit"
+        ]
+      },
+      "sample_values": {
+        "z1": -1,
+        "z2": 0
+      },
+      "score": 61.06236521785277
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "algorithm_error_vs_scipy": 0.21415437822292985,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-28T14:12:05+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "sample_0004_D1_NT1",
+      "error_metric_complete": true,
+      "ideal_observable_imag": -0.013218820010801558,
+      "ideal_observable_real": 0.10199503605360202,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 77458,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 288542
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": 0.11083573213406765,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_real",
+          "resources": {
+            "isa_depth": 12750,
+            "isa_operation_count": 23647,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.016828025183376335,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_imag",
+          "resources": {
+            "isa_depth": 12750,
+            "isa_operation_count": 23646,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.0036092051725744663,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_real",
+          "resources": {
+            "isa_depth": 12750,
+            "isa_operation_count": 23648,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.008840696080465392,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_imag",
+          "resources": {
+            "isa_depth": 12750,
+            "isa_operation_count": 23647,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.003609205172574779,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_real",
+          "resources": {
+            "isa_depth": 12753,
+            "isa_operation_count": 23651,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.008840696080465837,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_imag",
+          "resources": {
+            "isa_depth": 12753,
+            "isa_operation_count": 23650,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.11083573213406764,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_real",
+          "resources": {
+            "isa_depth": 12753,
+            "isa_operation_count": 23652,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.016828025183376026,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_imag",
+          "resources": {
+            "isa_depth": 12753,
+            "isa_operation_count": 23651,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 5983,
+            "two_qubit_error_sum": 7.0533382000176035,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 12753,
+          "maximum_recipe_two_qubit_error_sum": 7.0533382000176035,
+          "total_isa_two_qubit_gates": 47864,
+          "two_qubit_error_sum": 56.42670560014083,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": false,
+        "rejection_reasons": [
+          "maximum recipe ISA depth exceeds limit",
+          "total ISA two-qubit gate count exceeds limit",
+          "maximum recipe two-qubit calibration error exceeds limit"
+        ]
+      },
+      "sample_values": {
+        "z1": 2,
+        "z2": 0
+      },
+      "score": 61.31511760014084
+    },
+    {
+      "D_ans": 1,
+      "N_T": 1,
+      "algorithm_error_vs_scipy": 0.19376276566165163,
+      "backend": "ibm_kawasaki",
+      "backend_calibration_time": "2026-09-28T14:12:05+09:00",
+      "backend_instance": "[redacted-ibm-instance]",
+      "backend_instance_name": "Riken internal-dedicated",
+      "backend_instance_plan": "on-prem",
+      "backend_num_qubits": 156,
+      "backend_pending_jobs": 0,
+      "candidate_class": "hardware_demonstration_candidate",
+      "candidate_id": "sample_0000_D1_NT1",
+      "error_metric_complete": true,
+      "ideal_observable_imag": 0.01393432279633035,
+      "ideal_observable_real": 0.02074677250893572,
+      "instance_usage": {
+        "time_available_at": null,
+        "usage_allocation_seconds": 366000,
+        "usage_consumed_seconds": 77458,
+        "usage_limit_reached": null,
+        "usage_limit_seconds": null,
+        "usage_remaining_seconds": 288542
+      },
+      "interpretation": "same_circuit_noiseless_comparison_only",
+      "recipes": [
+        {
+          "component": "real",
+          "ideal_expectation": 0.01295511308581598,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_real",
+          "resources": {
+            "isa_depth": 17385,
+            "isa_operation_count": 32445,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.01734171083639541,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XX_imag",
+          "resources": {
+            "isa_depth": 17385,
+            "isa_operation_count": 32444,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.03127603363272577,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_real",
+          "resources": {
+            "isa_depth": 17385,
+            "isa_operation_count": 32445,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.007791659423119294,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__XY_imag",
+          "resources": {
+            "isa_depth": 17385,
+            "isa_operation_count": 32444,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": -0.0312760336327257,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_real",
+          "resources": {
+            "isa_depth": 17389,
+            "isa_operation_count": 32449,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": 0.00779165942312034,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YX_imag",
+          "resources": {
+            "isa_depth": 17389,
+            "isa_operation_count": 32448,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "real",
+          "ideal_expectation": 0.012955113085815827,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_real",
+          "resources": {
+            "isa_depth": 17389,
+            "isa_operation_count": 32449,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        },
+        {
+          "component": "imag",
+          "ideal_expectation": -0.017341710836395362,
+          "isa_observable": [
+            [
+              "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          ],
+          "isa_retained": false,
+          "recipe_id": "sample_z1__YY_imag",
+          "resources": {
+            "isa_depth": 17389,
+            "isa_operation_count": 32448,
+            "isa_swaps": 0,
+            "isa_two_qubit_gates": 8273,
+            "two_qubit_error_sum": 9.955391962361583,
+            "two_qubit_errors_missing": 0
+          }
+        }
+      ],
+      "resource_gate": {
+        "limits": {
+          "maximum_isa_depth_per_recipe": 5000,
+          "maximum_recipe_two_qubit_error_sum": 1.0,
+          "require_complete_two_qubit_errors": true,
+          "total_isa_two_qubit_gates": 20000
+        },
+        "observed": {
+          "maximum_isa_depth_per_recipe": 17389,
+          "maximum_recipe_two_qubit_error_sum": 9.955391962361583,
+          "total_isa_two_qubit_gates": 66184,
+          "two_qubit_error_sum": 79.64313569889266,
+          "two_qubit_errors_missing": 0
+        },
+        "passed": false,
+        "rejection_reasons": [
+          "maximum recipe ISA depth exceeds limit",
+          "total ISA two-qubit gate count exceeds limit",
+          "maximum recipe two-qubit calibration error exceeds limit"
+        ]
+      },
+      "sample_values": {
+        "z1": -2,
+        "z2": 0
+      },
+      "score": 86.40063169889265
+    }
+  ],
+  "campaign_id": "campaign_1af8c0d74a95775561292295103c2a4b5709060177bded68c1ec25842055c9e5",
+  "candidate_class": "hardware_demonstration_candidate",
+  "crosscheck_run_id": "crosscheck_c2b22e96b6bb54b11e85ed2f62b8728a1e67037a22a59073ddf3f80a4cf368cd",
+  "discarded_unselected_isa_files": 40,
+  "full_observable_reconstruction_available": true,
+  "hardware_plan_id": "hardware_plan_b4fbb852ebc77a387dd963d9b9ffac1d33047b958a096236a11e139e27079ab0",
+  "hardware_plan_schema_version": "1.0",
+  "parameter_contract_sha256": "6a3891735e881bac359ffcb68158147af7889a2bae026c90d4b3f28291ccd1bc",
+  "pareto_deployments": [],
+  "plan_kind": "full_demo_observable",
+  "planning_policy": {
+    "automatic_demo_recipe_rule": null,
+    "demo_mode": "full_d1_nt1",
+    "max_backends": 5,
+    "max_demo_recipes": 2,
+    "max_selections": 1,
+    "minimum_instance_remaining_seconds": 600,
+    "optimization_level": 3,
+    "resource_limits": {
+      "maximum_isa_depth_per_recipe": 5000,
+      "maximum_recipe_two_qubit_error_sum": 1.0,
+      "require_complete_two_qubit_errors": true,
+      "total_isa_two_qubit_gates": 20000
+    },
+    "score_rule": "error_sum + missing_error_count + 1e-4*n2q + 1e-6*depth + 1e-8*queue",
+    "seed_transpiler": 17,
+    "selection_rule": "one backend must pass every D1_NT1 sample, then lowest total hardware score"
+  },
+  "selected_deployments": [],
+  "source": {
+    "crosscheck_path": "benchmarks/schwinger/analysis/crosscheck_result.json",
+    "crosscheck_sha256": "12af26b758773fd8f0bc24cc8a0437d70bc5622c5eac1d49c7546ef78d3cca37",
+    "measurement_path": "benchmarks/schwinger/runtime/measurement_result.json",
+    "measurement_sha256": "cce297c23b44c5ec5be8f834a8dc44ded4b525f7bb95b5e9e1db88f8e0aeef24",
+    "observable_adapter_path": "benchmarks/schwinger/adapters/ObservableAdapter_20260928T035738Z_5c1e78fc.py",
+    "observable_adapter_sha256": "7b9cc3881d80005a5793fb2b410b94a6f88a95abeda60710151dd50a1821464a"
+  },
+  "status": "no_hardware_feasible_candidate"
+}

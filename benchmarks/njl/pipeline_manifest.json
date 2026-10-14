@@ -1,0 +1,298 @@
+{
+  "ansatz_search": {
+    "attempts": [
+      {
+        "artifacts": {
+          "agent4_state_design_contract": "benchmarks/njl/contracts/Agent4_StatePreparationContract_20260929T024841Z_b286d0a8.json",
+          "agent4_state_report": "benchmarks/njl/reports/Agent4_StatePreparation_20260929T024841Z_b286d0a8.tex",
+          "state_adapter": "benchmarks/njl/adapters/StatePreparationAdapter_20260929T024841Z_b286d0a8.py",
+          "vqe_config": "benchmarks/njl/runtime/VQE_RunConfig_20260929T024841Z_b286d0a8.json",
+          "vqe_parameter_bundle": "benchmarks/njl/runtime/VQE_ParameterBundle_20260929T024841Z_b286d0a8.json",
+          "vqe_result": "benchmarks/njl/runtime/VQE_Runtime_Result_20260929T024841Z_b286d0a8.json"
+        },
+        "attempt": 1,
+        "stage_logs": {
+          "agent4_state": "benchmarks/njl/audit/stage_logs/agent4_state_attempt2.log",
+          "agent5_state": "benchmarks/njl/audit/stage_logs/agent5_state.log",
+          "vqe": "benchmarks/njl/audit/stage_logs/vqe.log"
+        },
+        "status": "converged_state",
+        "vqe_result": "benchmarks/njl/runtime/VQE_Runtime_Result_20260929T024841Z_b286d0a8.json"
+      }
+    ],
+    "current_attempt": 1,
+    "maximum_attempts": 3
+  },
+  "artifacts": {
+    "agent1_observable": {
+      "path": "benchmarks/njl/inputs/agent1_observable.json"
+    },
+    "agent1_report": {
+      "path": "benchmarks/njl/reports/Agent1_Verified_Report_20260929T024841Z_b286d0a8.tex"
+    },
+    "agent1_theory_contract": {
+      "path": "benchmarks/njl/contracts/Agent1_TheoryContract_20260929T024841Z_b286d0a8.json"
+    },
+    "agent2_discretization_contract": {
+      "path": "benchmarks/njl/contracts/Agent2_DiscretizationContract_20260929T024841Z_b286d0a8.json"
+    },
+    "agent2_parameter_contract": {
+      "path": "benchmarks/njl/contracts/Agent2_ParameterContract_20260929T024841Z_b286d0a8.json"
+    },
+    "agent2_report": {
+      "path": "benchmarks/njl/reports/Agent2_Verified_20260929T024841Z_b286d0a8.tex"
+    },
+    "agent3_mapping_contract": {
+      "path": "benchmarks/njl/contracts/Agent3_MappingContract_20260929T024841Z_b286d0a8.json"
+    },
+    "agent3_report": {
+      "path": "benchmarks/njl/reports/Agent3_Verified_20260929T024841Z_b286d0a8.tex"
+    },
+    "agent4_observable_design_contract": {
+      "path": "benchmarks/njl/contracts/Agent4_ObservableContract_20260929T024841Z_b286d0a8.json"
+    },
+    "agent4_observable_report": {
+      "path": "benchmarks/njl/reports/Agent4_Observable_20260929T024841Z_b286d0a8.tex"
+    },
+    "agent4_state_design_contract": {
+      "path": "benchmarks/njl/contracts/Agent4_StatePreparationContract_20260929T024841Z_b286d0a8.json"
+    },
+    "agent4_state_report": {
+      "path": "benchmarks/njl/reports/Agent4_StatePreparation_20260929T024841Z_b286d0a8.tex"
+    },
+    "agent8_review": {
+      "path": "benchmarks/njl/analysis/agent8_review.md"
+    },
+    "agent9_review": {
+      "path": "benchmarks/njl/analysis/agent9_hardware_review.md"
+    },
+    "controller_settings": {
+      "path": "benchmarks/njl/inputs/controller_settings.json"
+    },
+    "crosscheck_result": {
+      "path": "benchmarks/njl/analysis/crosscheck_result.json"
+    },
+    "final_report_evidence": {
+      "path": "benchmarks/njl/audit/Final_Academic_Report_20260929T024841Z_b286d0a8_evidence.json"
+    },
+    "final_report_latex": {
+      "path": "benchmarks/njl/reports/Final_Academic_Report_20260929T024841Z_b286d0a8.tex"
+    },
+    "final_report_markdown": {
+      "path": "benchmarks/njl/reports/Final_Academic_Report_20260929T024841Z_b286d0a8.md"
+    },
+    "final_report_status": {
+      "path": "benchmarks/njl/audit/Final_Academic_Report_20260929T024841Z_b286d0a8_status.json"
+    },
+    "hardware_plan": {
+      "path": "benchmarks/njl/analysis/hardware_plan.json"
+    },
+    "hardware_result": {
+      "path": "benchmarks/njl/analysis/hardware_result.json"
+    },
+    "hardware_run": {
+      "path": "benchmarks/njl/analysis/hardware_run.json"
+    },
+    "itensor_reference": {
+      "path": "benchmarks/njl/references/itensor_reference.json"
+    },
+    "itensor_script": {
+      "path": "benchmarks/njl/references/reference_itensor.jl"
+    },
+    "measurement_result": {
+      "path": "benchmarks/njl/runtime/measurement_result.json"
+    },
+    "observable_adapter": {
+      "path": "benchmarks/njl/adapters/ObservableAdapter_20260929T024841Z_b286d0a8.py"
+    },
+    "run_spec": {
+      "path": "benchmarks/njl/inputs/run_spec.json"
+    },
+    "runtime_settings": {
+      "path": "benchmarks/njl/inputs/resolved_runtime_settings.json"
+    },
+    "scipy_reference": {
+      "path": "benchmarks/njl/references/scipy_reference.json"
+    },
+    "scipy_script": {
+      "path": "benchmarks/njl/references/reference_scipy.py"
+    },
+    "state_adapter": {
+      "path": "benchmarks/njl/adapters/StatePreparationAdapter_20260929T024841Z_b286d0a8.py"
+    },
+    "vqe_config": {
+      "path": "benchmarks/njl/runtime/VQE_RunConfig_20260929T024841Z_b286d0a8.json"
+    },
+    "vqe_parameter_bundle": {
+      "path": "benchmarks/njl/runtime/VQE_ParameterBundle_20260929T024841Z_b286d0a8.json"
+    },
+    "vqe_result": {
+      "path": "benchmarks/njl/runtime/VQE_Runtime_Result_20260929T024841Z_b286d0a8.json"
+    }
+  },
+  "completed_through": "final_report",
+  "config_path": "workflow/user_configs/one_flavor_njl_model_in_1_1-dimensional_spacetime_mathcal_l_bar_psi_i_gamma_mu_partial_mu_-_m_psi_g_bar_psi_psi_2_20260929T024841Z.json",
+  "pipeline_schema_version": "2.0",
+  "program_reuse_approval": {
+    "recorded_at": "2026-10-01T07:07:26.459221+00:00",
+    "status": "not_approved"
+  },
+  "project_root": "workflow",
+  "run_directory": "benchmarks/njl",
+  "run_id": "20260929T024841Z_b286d0a8",
+  "stages": {
+    "agent1": {
+      "artifacts": [
+        "agent1_report",
+        "agent1_theory_contract"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent1.log",
+      "status": "completed"
+    },
+    "agent2": {
+      "artifacts": [
+        "agent2_report",
+        "agent2_parameter_contract",
+        "agent2_discretization_contract",
+        "runtime_settings"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent2.log",
+      "status": "completed"
+    },
+    "agent3": {
+      "artifacts": [
+        "agent3_report",
+        "agent3_mapping_contract"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent3.log",
+      "status": "completed"
+    },
+    "agent4_observable": {
+      "artifacts": [
+        "agent4_observable_report",
+        "agent4_observable_design_contract"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent4_observable.log",
+      "status": "completed"
+    },
+    "agent4_state": {
+      "artifacts": [
+        "agent4_state_report",
+        "agent4_state_design_contract"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent4_state_attempt2.log",
+      "status": "completed"
+    },
+    "agent5_observable": {
+      "artifacts": [
+        "observable_adapter"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent5_observable_attempt2.log",
+      "status": "completed"
+    },
+    "agent5_state": {
+      "artifacts": [
+        "state_adapter",
+        "vqe_config"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent5_state.log",
+      "status": "completed"
+    },
+    "agent6": {
+      "artifacts": [
+        "scipy_script"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent6.log",
+      "status": "completed"
+    },
+    "agent7": {
+      "artifacts": [
+        "itensor_script"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent7.log",
+      "status": "completed"
+    },
+    "agent8": {
+      "artifacts": [
+        "agent8_review"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent8.log",
+      "status": "completed"
+    },
+    "agent9": {
+      "artifacts": [
+        "agent9_review"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/agent9.log",
+      "status": "completed"
+    },
+    "crosscheck": {
+      "artifacts": [
+        "crosscheck_result"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/crosscheck.log",
+      "status": "completed"
+    },
+    "final_report": {
+      "artifacts": [
+        "final_report_markdown",
+        "final_report_latex",
+        "final_report_status",
+        "final_report_evidence"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/final_report.log",
+      "status": "completed"
+    },
+    "hardware_plan": {
+      "artifacts": [
+        "hardware_plan"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/hardware_plan.log",
+      "status": "completed"
+    },
+    "hardware_retrieve": {
+      "artifacts": [
+        "hardware_result"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/hardware_retrieve.log",
+      "status": "completed"
+    },
+    "hardware_submit": {
+      "artifacts": [
+        "hardware_run"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/hardware_submit.log",
+      "status": "completed"
+    },
+    "itensor_reference": {
+      "artifacts": [
+        "itensor_reference"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/itensor_reference.log",
+      "status": "completed"
+    },
+    "measurement": {
+      "artifacts": [
+        "measurement_result"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/measurement_attempt2.log",
+      "status": "completed"
+    },
+    "scipy_reference": {
+      "artifacts": [
+        "scipy_reference"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/scipy_reference.log",
+      "status": "completed"
+    },
+    "vqe": {
+      "artifacts": [
+        "vqe_result",
+        "vqe_parameter_bundle"
+      ],
+      "stage_log": "benchmarks/njl/audit/stage_logs/vqe.log",
+      "status": "completed"
+    }
+  },
+  "status": "completed_through_final_report"
+}

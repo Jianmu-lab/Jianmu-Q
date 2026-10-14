@@ -1,0 +1,190 @@
+{
+  "assumptions": [
+    "The model is an intrinsically spatial-lattice Kogut-Susskind Hamiltonian theory; no unique local continuum Lagrangian is inferred.",
+    "The otherwise unspecified Hamiltonian normalization is resolved as H = -(1/a)*(g^2 sum X + g^(-2) sum B).",
+    "No gauge fixing or vacuum-energy subtraction is applied.",
+    "The phrase Gauss's law: 0 denotes zero gauge charge and hence G_v=+1, not an eigenvalue G_v=0.",
+    "Boundary conditions are not selected here and remain a downstream realization choice.",
+    "The 4 by 4 lattice size is a finite-lattice realization parameter rather than a continuum coupling."
+  ],
+  "clarifications_required": [],
+  "contract_type": "continuum_theory",
+  "definitions": [
+    {
+      "canonical_expression": "H = -(1/a)*(g^2*sum_{ell} X_ell + g^(-2)*sum_{p} B_p), with B_p = product_{ell in boundary(p)} Z_ell",
+      "dependencies": [
+        "bare_coupling_g",
+        "lattice_spacing_a",
+        "plaquette_operator"
+      ],
+      "display_latex": "H=-\\frac{1}{a}\\left(g^2\\sum_{\\ell}X_\\ell+g^{-2}\\sum_p B_p\\right),\\qquad B_p=\\prod_{\\ell\\in\\partial p}Z_\\ell",
+      "id": "continuum_hamiltonian",
+      "kind": "hamiltonian"
+    },
+    {
+      "canonical_expression": "B_p = product_{ell in boundary(p)} Z_ell",
+      "dependencies": [],
+      "display_latex": "B_p=\\prod_{\\ell\\in\\partial p}Z_\\ell",
+      "id": "plaquette_operator",
+      "kind": "operator_definition"
+    },
+    {
+      "canonical_expression": "G_v = product_{ell incident on v} X_ell",
+      "dependencies": [],
+      "display_latex": "G_v=\\prod_{\\ell\\ni v}X_\\ell",
+      "id": "gauss_operator",
+      "kind": "operator_definition"
+    },
+    {
+      "canonical_expression": "H",
+      "dependencies": [
+        "continuum_hamiltonian"
+      ],
+      "display_latex": "H",
+      "id": "requested_observable",
+      "kind": "observable"
+    },
+    {
+      "canonical_expression": "<glueball|H|glueball> - <vacuum|H|vacuum>",
+      "dependencies": [
+        "requested_observable"
+      ],
+      "display_latex": "\\langle\\mathrm{glueball}|H|\\mathrm{glueball}\\rangle-\\langle\\mathrm{vacuum}|H|\\mathrm{vacuum}\\rangle",
+      "id": "requested_matrix_element_combination",
+      "kind": "matrix_element_linear_combination"
+    }
+  ],
+  "directly_derived_relations": {
+    "L": 4,
+    "hamiltonian_at_g_1": "H = -(1/a)*(sum_{ell} X_ell + sum_{p} B_p)",
+    "number_of_spatial_sites": 16
+  },
+  "external_states": {
+    "definitions": {
+      "glueball": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"Gauss's law\": 0}",
+      "vacuum": "Ground state / vacuum"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "glueball",
+      "vacuum"
+    ]
+  },
+  "independent_physical_parameters": {
+    "bare copuling: g": "g = 1",
+    "number of lattice site [L,L]:": [
+      4,
+      4
+    ]
+  },
+  "model": {
+    "gauge_structure": "local Z2 gauge symmetry generated at each spatial-lattice vertex v by G_v = product_{ell incident on v} X_ell",
+    "name": "2+1 dimensional pure Z2 gauge theory in Kogut-Susskind formalism",
+    "spacetime_dimension": "2+1"
+  },
+  "observable_contract": {
+    "expression": "Hamiltonian: H",
+    "gauge_invariance": "Gauge invariant because [G_v,H]=0 for every vertex v",
+    "hermiticity_consequence": "For the specified diagonal matrix elements, the imaginary component is exactly zero",
+    "insertions": [
+      {
+        "id": "Hamiltonian",
+        "operator": "H",
+        "position": "global"
+      }
+    ],
+    "matrix_elements": [
+      {
+        "bra": "glueball",
+        "coefficient": 1.0,
+        "id": "glueball energy",
+        "ket": "glueball"
+      },
+      {
+        "bra": "vacuum",
+        "coefficient": -1.0,
+        "id": "vacuum energy",
+        "ket": "vacuum"
+      }
+    ],
+    "name": "user_observable",
+    "ordering": "as_written",
+    "requested_components": [
+      "real",
+      "imag"
+    ],
+    "sampling": {
+      "mode": "explicit_points",
+      "points": [
+        {
+          "sample_id": "default",
+          "values": {}
+        }
+      ]
+    }
+  },
+  "resolved_conventions": {
+    "boundary_conditions": "unspecified and delegated downstream",
+    "coordinate_mode": "lattice_indices",
+    "gamma_algebra": {
+      "clifford_relation": "{gamma^mu,gamma^nu}=2*eta^(mu nu)",
+      "representation": "representation independent"
+    },
+    "lightcone": {
+      "coordinate_definition": "x^plus/minus=x^0 plus/minus x^1",
+      "gamma_definition": "gamma^plus/minus=gamma^0 plus/minus gamma^1",
+      "normalization": 1.0
+    },
+    "link_algebra": "X_ell^2=Z_ell^2=1 and X_ell Z_ell=-Z_ell X_ell; operators on distinct links commute",
+    "metric": "eta_mu_nu = diag(+1,-1,-1)",
+    "metric_signature": "mostly minus",
+    "spatial_spacing": "a = lattice_spacing_a",
+    "temporal_spacing": "same_as_spatial",
+    "time_realization": "continuous Hamiltonian time; if downstream time discretization is introduced, the supplied convention requires a_t=a",
+    "units": "natural units with c=1",
+    "vacuum_energy": "No zero-vacuum-energy convention is imposed"
+  },
+  "schema_version": "1.0",
+  "simulation_and_discretization_controls": {},
+  "symmetries": [
+    {
+      "conservation_law": "[H,G_v]=0",
+      "name": "local Z2 gauge symmetry",
+      "operator": "G_v = product_{ell incident on v} X_ell",
+      "physical_sector": "G_v=+1 for every vertex v",
+      "type": "local_discrete"
+    },
+    {
+      "conservation_law": "dH/dt = i[H,H] = 0",
+      "name": "continuous time translations",
+      "operator": "H",
+      "type": "continuous_spacetime"
+    },
+    {
+      "boundary_dependence": "Noncontractible generators exist when supported by the downstream boundary geometry; on a periodic square lattice there are two independent generators",
+      "conservation_law": "[H,T(gamma_star)]=0",
+      "name": "electric Z2 one-form symmetry",
+      "operator": "T(gamma_star) = product_{ell intersecting gamma_star} X_ell for a closed dual-lattice curve gamma_star",
+      "type": "global_discrete_higher_form"
+    },
+    {
+      "conservation_law": "Theta H Theta^(-1) = H",
+      "name": "time reversal",
+      "operator": "Theta = K in the real Pauli basis",
+      "type": "antiunitary_discrete"
+    },
+    {
+      "conservation_law": "U_s H U_s^(-1) = H whenever the chosen boundary realization preserves the automorphism",
+      "name": "square-lattice automorphisms",
+      "operator": "unitary link permutations induced by translations, quarter-turn rotations, and reflections",
+      "type": "discrete_spatial"
+    }
+  ],
+  "user_input_refs": {
+    "continuum_conventions": "/user_input/continuum_conventions",
+    "external_states": "/user_input/external_states",
+    "model": "/user_input/model",
+    "observable": "/user_input/observable",
+    "parameters": "/user_input/parameters"
+  }
+}

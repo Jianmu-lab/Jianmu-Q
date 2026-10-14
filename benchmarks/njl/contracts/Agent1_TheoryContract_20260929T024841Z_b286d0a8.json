@@ -1,0 +1,274 @@
+{
+  "assumptions": [],
+  "clarifications_required": [],
+  "contract_type": "continuum_theory",
+  "definitions": [
+    {
+      "canonical_expression": "L = bar(psi)*(i*gamma^mu*partial_mu - m)*psi + g*(bar(psi)*psi)^2",
+      "dependencies": [
+        "bare coupling: g",
+        "bare quark mass: m"
+      ],
+      "display_latex": "\\mathcal L=\\bar\\psi(i\\gamma^\\mu\\partial_\\mu-m)\\psi+g(\\bar\\psi\\psi)^2",
+      "id": "continuum_lagrangian",
+      "kind": "lagrangian"
+    },
+    {
+      "canonical_expression": "H = integral_dx[psi^dagger*(-i*alpha^1*partial_x + beta*m)*psi - g*(bar(psi)*psi)^2], alpha^1=gamma^0*gamma^1, beta=gamma^0",
+      "dependencies": [
+        "continuum_lagrangian"
+      ],
+      "display_latex": "H=\\int dx\\,\\left[\\psi^\\dagger(-i\\alpha^1\\partial_x+\\beta m)\\psi-g(\\bar\\psi\\psi)^2\\right],\\quad \\alpha^1=\\gamma^0\\gamma^1,\\ \\beta=\\gamma^0",
+      "id": "continuum_hamiltonian",
+      "kind": "hamiltonian"
+    },
+    {
+      "canonical_expression": "O(z_index)=bar(psi)(t=z_index*a,x=z_index*a)*(gamma^0-gamma^1)*psi(t=0,x=0), ordered_as_written",
+      "dependencies": [
+        "gamma_minus_definition",
+        "observable_sampling"
+      ],
+      "display_latex": "O(z_{\\rm index})=\\bar\\psi(z_{\\rm index}a,z_{\\rm index}a)(\\gamma^0-\\gamma^1)\\psi(0,0)",
+      "id": "requested_observable",
+      "kind": "observable"
+    },
+    {
+      "canonical_expression": "<hadron|O(z_index)|hadron> - <vacuum|O(z_index)|vacuum>",
+      "dependencies": [
+        "requested_observable",
+        "hadron",
+        "vacuum"
+      ],
+      "display_latex": "\\langle\\mathrm{hadron}|O(z_{\\rm index})|\\mathrm{hadron}\\rangle-\\langle\\mathrm{vacuum}|O(z_{\\rm index})|\\mathrm{vacuum}\\rangle",
+      "id": "requested_matrix_element_combination",
+      "kind": "matrix_element_linear_combination"
+    },
+    {
+      "canonical_expression": "gamma^- = gamma^0 - gamma^1",
+      "dependencies": [],
+      "display_latex": "\\gamma^-=\\gamma^0-\\gamma^1",
+      "id": "gamma_minus_definition",
+      "kind": "convention"
+    },
+    {
+      "canonical_expression": "Q=integral_dx[bar(psi)*gamma^0*psi]=integral_dx[psi^dagger*psi]",
+      "dependencies": [
+        "continuum_lagrangian"
+      ],
+      "display_latex": "Q=\\int dx\\,\\bar\\psi\\gamma^0\\psi=\\int dx\\,\\psi^\\dagger\\psi",
+      "id": "vector_charge",
+      "kind": "conserved_charge"
+    }
+  ],
+  "downstream_compatibility_requirements": [
+    "Enforce lattice spacing a=1.",
+    "Enforce number of lattice sites L=5.",
+    "Use equal temporal and spatial spacing for the requested coordinate assignment.",
+    "Preserve all five z_index samples and both requested real and imaginary components.",
+    "Preserve the unshifted Hamiltonian without vacuum-energy subtraction.",
+    "Choose a regulator/discretization capable of defining the local four-fermion interaction and the coincident z_index=0 composite operator."
+  ],
+  "external_states": {
+    "definitions": {
+      "hadron": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"charge\": 0}",
+      "vacuum": "Quantum-number-sector eigenstate; level_index=0; quantum_numbers={\"charge\": 0}"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "hadron",
+      "vacuum"
+    ]
+  },
+  "model": {
+    "gauge_structure": "none; global vector U(1) only",
+    "name": "one flavor NJL model in 1+1-dimensional spacetime, $\\mathcal{L} = \\bar{\\psi} (i\\gamma^\\mu \\partial_mu - m) \\psi + g(\\bar{\\psi} \\psi)^2$",
+    "spacetime_dimension": "1+1"
+  },
+  "observable_specification": {
+    "coordinate_convention": {
+      "mode": "lattice_indices",
+      "spacing_parameter": "lattice_spacing_a",
+      "temporal_spacing": "same_as_spatial",
+      "units": "natural_units_c_1"
+    },
+    "expression": "\\bar{\\psi}(z n) \\gamma^- \\psi(0), n^mu=(1,1), \\gamma^- = \\gamma^0 - \\gamma^1",
+    "gauge_transporter": null,
+    "insertions": [
+      {
+        "id": "bar_psi_zn",
+        "operator": "\\bar{\\psi}",
+        "position": {
+          "t_index": "z_index",
+          "x_index": "z_index"
+        }
+      },
+      {
+        "id": "psi_0",
+        "operator": "\\psi",
+        "position": {
+          "t_index": 0,
+          "x_index": 0
+        }
+      }
+    ],
+    "matrix_elements": [
+      {
+        "bra": "hadron",
+        "coefficient": 1.0,
+        "id": "hadron_term",
+        "ket": "hadron"
+      },
+      {
+        "bra": "vacuum",
+        "coefficient": -1.0,
+        "id": "vacuum_subtraction",
+        "ket": "vacuum"
+      }
+    ],
+    "name": "user_observable",
+    "observable_schema_version": "1.0",
+    "ordering": "as_written",
+    "requested_components": [
+      "real",
+      "imag"
+    ],
+    "sampling": {
+      "maximum_points": 10000,
+      "mode": "cartesian_product",
+      "physical_coordinate_assignment": "(t,x)=(z_index*a,z_index*a)",
+      "variables": {
+        "z_index": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ]
+      }
+    }
+  },
+  "parameter_classification": {
+    "continuum_inputs": {
+      "bare coupling: g": 0.5,
+      "bare quark mass: m": 0.5
+    },
+    "directly_implied_relations": [
+      "m*a=0.5",
+      "g=0.5",
+      "L*a=5"
+    ],
+    "downstream_discretization_controls_supplied_in_parameter_list": {
+      "lattice spacing: a": 1,
+      "number of lattice site: L": 5
+    }
+  },
+  "resolved_conventions": {
+    "clifford_algebra": "{gamma^mu,gamma^nu}=2*eta^(mu nu)",
+    "gamma_algebra": {
+      "clifford_relation": "{gamma^mu,gamma^nu}=2*eta^(mu nu)",
+      "representation": "representation independent"
+    },
+    "gamma_representation": {
+      "gamma^0": "sigma_1",
+      "gamma^1": "-i*sigma_2",
+      "gamma^5": "gamma^0*gamma^1=sigma_3"
+    },
+    "lightcone": {
+      "coordinate_definition": "x^plus/minus=x^0 plus/minus x^1",
+      "gamma_definition": "gamma^plus/minus=gamma^0 plus/minus gamma^1",
+      "normalization": 1.0
+    },
+    "lightcone_coordinates": "x^plus=x^0+x^1; x^minus=x^0-x^1",
+    "lightcone_gamma_matrices": "gamma^plus=gamma^0+gamma^1; gamma^minus=gamma^0-gamma^1",
+    "lightcone_normalization": 1.0,
+    "metric": "eta_mu_nu=diag(1,-1)",
+    "metric_signature": "mostly minus",
+    "observable_coordinate_assignment": "(t,x)=(z_index*a,z_index*a)",
+    "regulator_and_discretization": "not fixed at the continuum-theory stage; delegated to downstream realization",
+    "units": "natural units with c=1",
+    "vacuum_energy_convention": "no energy shift or vacuum-energy subtraction"
+  },
+  "schema_version": "1.0",
+  "state_consistency_checks": {
+    "hadron": {
+      "charge_sector": 0,
+      "discrete_symmetry_eigenvalues_inferred": false,
+      "level_index": 1,
+      "result": "compatible with conserved vector U(1) charge"
+    },
+    "vacuum": {
+      "charge_sector": 0,
+      "discrete_symmetry_eigenvalues_inferred": false,
+      "level_index": 0,
+      "result": "compatible with conserved vector U(1) charge; no vacuum-energy-zero convention imposed"
+    }
+  },
+  "symmetries": [
+    {
+      "conserved_current": "j^mu=bar(psi)*gamma^mu*psi",
+      "conserved_operator": "Q=integral_dx[psi^dagger*psi]",
+      "field_action": "psi -> exp(i*theta)*psi; bar(psi) -> bar(psi)*exp(-i*theta)",
+      "name": "global vector U(1)",
+      "status": "exact",
+      "type": "continuous_internal_global"
+    },
+    {
+      "conserved_operator": "P^nu=integral_dx[T^(0 nu)]",
+      "name": "spacetime translations",
+      "status": "exact",
+      "type": "continuous_spacetime"
+    },
+    {
+      "conserved_operator": "M^(01)=integral_dx[x^0*T^(01)-x^1*T^(00)]",
+      "name": "proper Lorentz transformations",
+      "status": "exact",
+      "type": "continuous_spacetime"
+    },
+    {
+      "charge_action": "U_C*Q*U_C^-1=-Q",
+      "field_action": "U_C*psi(t,x)*U_C^-1=gamma^1*bar(psi)(t,x)^T",
+      "name": "charge conjugation C",
+      "sampling_grid_relevance": false,
+      "status": "exact for real m and g",
+      "type": "discrete_internal"
+    },
+    {
+      "name": "spatial reflection P",
+      "relevance_reason": "For z_index != 0, P maps (z_index*a,z_index*a) to (z_index*a,-z_index*a), which is not among the requested sampling points; only z_index=0 is fixed.",
+      "sampling_grid_relevance": false
+    },
+    {
+      "name": "time reversal T",
+      "relevance_reason": "For z_index != 0, T maps (z_index*a,z_index*a) to (-z_index*a,z_index*a), which is not among the requested sampling points; only z_index=0 is fixed.",
+      "sampling_grid_relevance": false
+    },
+    {
+      "field_action": "(t,x) -> (-t,-x) with the combined P and T spinor action",
+      "name": "combined PT",
+      "relevance_reason": "sampled points (z_index*a,z_index*a) occur in simultaneous sign-reversed pairs",
+      "sampling_grid_relevance": true,
+      "status": "exact",
+      "type": "discrete_spacetime_antiunitary"
+    },
+    {
+      "conserved_operator": "(-1)^F=exp(i*pi*Q)",
+      "name": "fermion parity",
+      "status": "exact",
+      "type": "discrete_internal_subgroup"
+    }
+  ],
+  "user_input_refs": {
+    "continuum_conventions": "/user_input/continuum_conventions",
+    "external_states": "/user_input/external_states",
+    "model": "/user_input/model",
+    "observable": "/user_input/observable",
+    "parameters": "/user_input/parameters"
+  },
+  "user_specified_independent_physical_parameters": {
+    "bare coupling: g": 0.5,
+    "bare quark mass: m": 0.5,
+    "lattice spacing: a": 1,
+    "number of lattice site: L": 5
+  },
+  "user_specified_simulation_and_discretization_controls": {}
+}

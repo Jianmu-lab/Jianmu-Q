@@ -1,0 +1,241 @@
+{
+  "assumptions": [
+    "The model name is resolved as the standard one-flavour massive U(1) Schwinger model with the displayed Lagrangian.",
+    "No gauge fixing, boundary condition, regulator, field truncation, or simulation algorithm is fixed at the continuum-theory stage.",
+    "No discrete-symmetry eigenvalue is inferred for either external state."
+  ],
+  "clarifications_required": [],
+  "contract_type": "continuum_theory",
+  "definitions": [
+    {
+      "canonical_expression": "L = -(1/4) F_{mu nu} F^{mu nu} + bar(psi) (i gamma^mu D_mu - m) psi; D_mu = partial_mu + i g A_mu; F_{mu nu} = partial_mu A_nu - partial_nu A_mu",
+      "dependencies": [],
+      "display_latex": "\\mathcal L=-\\frac14F_{\\mu\\nu}F^{\\mu\\nu}+\\bar\\psi\\bigl(i\\gamma^\\mu D_\\mu-m\\bigr)\\psi,\\quad D_\\mu=\\partial_\\mu+igA_\\mu",
+      "id": "continuum_lagrangian",
+      "kind": "lagrangian"
+    },
+    {
+      "canonical_expression": "H = integral_Sigma dx [ (1/2) E^2 + psi^dagger (-i alpha partial_1 + g alpha A_1 + m beta) psi + A_0 (g psi^dagger psi - partial_1 E) ]; E = F_01; alpha = gamma^0 gamma^1; beta = gamma^0",
+      "dependencies": [
+        "continuum_lagrangian"
+      ],
+      "display_latex": "H=\\int_{\\Sigma}dx\\left[\\frac12E^2+\\psi^\\dagger\\left(-i\\alpha\\partial_1+g\\alpha A_1+m\\beta\\right)\\psi+A_0\\left(g\\psi^\\dagger\\psi-\\partial_1E\\right)\\right]",
+      "id": "continuum_hamiltonian",
+      "kind": "hamiltonian"
+    },
+    {
+      "canonical_expression": "O(z1,z2) = bar(psi)(X(z1)) gamma^- W(X(z1),X(z2)) psi(X(z2)); X(z)^mu = a z n^mu; n=(1,1); gamma^- = gamma^0-gamma^1; z1 in [-2,-1,0,1,2]; z2 in [0]",
+      "dependencies": [
+        "wilson_line"
+      ],
+      "display_latex": "\\mathcal O(z_1,z_2)=\\bar\\psi(az_1n)(\\gamma^0-\\gamma^1)W(az_1n,az_2n)\\psi(az_2n),\\quad n=(1,1)",
+      "id": "requested_observable",
+      "kind": "observable"
+    },
+    {
+      "canonical_expression": "W(x,y) = path_ordered_exp[-i g integral_y^x A_mu(xi) dxi^mu], oriented from the psi insertion y to the bar(psi) insertion x along the supplied straight lattice path",
+      "dependencies": [
+        "continuum_lagrangian"
+      ],
+      "display_latex": "W(x,y)=\\mathcal P\\exp\\left[-ig\\int_y^x A_\\mu(\\xi)\\,d\\xi^\\mu\\right]",
+      "id": "wilson_line",
+      "kind": "gauge_transporter"
+    },
+    {
+      "canonical_expression": "M(z1,z2) = <phi|O(z1,z2)|psi>; requested components = [real, imag]",
+      "dependencies": [
+        "requested_observable"
+      ],
+      "display_latex": "\\mathcal M(z_1,z_2)=\\langle\\phi|\\mathcal O(z_1,z_2)|\\psi\\rangle",
+      "id": "requested_matrix_element",
+      "kind": "matrix_element"
+    }
+  ],
+  "downstream_compatibility_requirements": [
+    "Preserve lattice spacing: a = 1.0.",
+    "Preserve number of lattice site: L = 5.",
+    "Use temporal spacing equal to spatial spacing.",
+    "Support z1 = [-2,-1,0,1,2] and z2 = [0] without dropping samples.",
+    "Preserve the ordered bar(psi)-Wilson-line-psi observable and the supplied straight lattice path.",
+    "Return both real and imaginary components.",
+    "Do not subtract vacuum energy from the simulated Hamiltonian."
+  ],
+  "external_states": {
+    "definitions": {
+      "phi": "Quantum-number-sector eigenstate; level_index=0; quantum_numbers={\"charge\": 0}",
+      "psi": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"charge\": 0}"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "phi",
+      "psi"
+    ]
+  },
+  "model": {
+    "gauge_structure": "local U(1) gauge theory with one Dirac fermion flavour",
+    "name": "Schwinger model",
+    "spacetime_dimension": "1+1"
+  },
+  "observable_specification": {
+    "coordinate_convention": {
+      "mode": "lattice_indices",
+      "spacing_parameter": "lattice_spacing_a",
+      "temporal_spacing": "same_as_spatial",
+      "units": "natural_units_c_1"
+    },
+    "gauge_invariance": "gauge invariant because the oriented Wilson line cancels the endpoint transformations of bar(psi)(X_1) and psi(X_2)",
+    "gauge_transporters": [
+      {
+        "from": "\\psi",
+        "id": "Wlison line",
+        "orientation": "from X_2 to X_1",
+        "path": "straight lattice path",
+        "to": "\\bar{\\psi}"
+      }
+    ],
+    "insertions": [
+      {
+        "id": "psibar",
+        "operator": "\\bar{\\psi}",
+        "position": {
+          "t1": "z1"
+        },
+        "resolved_spacetime_position": "X_1^mu = a z1 (1,1)^mu"
+      },
+      {
+        "id": "psi",
+        "operator": "\\psi",
+        "position": {
+          "t2": "z2"
+        },
+        "resolved_spacetime_position": "X_2^mu = a z2 (1,1)^mu"
+      }
+    ],
+    "name": "user_observable",
+    "observable_schema_version": "1.0",
+    "ordering": "as_written",
+    "requested_components": [
+      "real",
+      "imag"
+    ],
+    "sampling": {
+      "maximum_points": 10000,
+      "mode": "cartesian_product",
+      "sample_count": 5,
+      "variables": {
+        "z1": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "z2": [
+          0
+        ]
+      }
+    }
+  },
+  "resolved_conventions": {
+    "coordinate_resolution": "X(z)^mu = a z (1,1)^mu",
+    "covariant_derivative": "D_mu=partial_mu+i g A_mu",
+    "electric_field": "E=F_01=F^{10}",
+    "gamma_algebra": "{gamma^mu,gamma^nu}=2 eta^{mu nu}",
+    "gamma_representation": "gamma^0=sigma_1; gamma^1=-i sigma_2; gamma^5=gamma^0 gamma^1=sigma_3",
+    "gauge_transformation": "psi->exp(-i g lambda)psi; bar(psi)->bar(psi)exp(i g lambda); A_mu->A_mu+partial_mu lambda",
+    "hamiltonian_energy_shift": "none",
+    "lightcone": {
+      "coordinate_definition": "x^plus/minus=x^0 plus/minus x^1",
+      "gamma_definition": "gamma^plus/minus=gamma^0 plus/minus gamma^1",
+      "normalization": 1.0
+    },
+    "lightcone_coordinates": "x^plus=x^0+x^1; x^minus=x^0-x^1",
+    "lightcone_gamma_matrices": "gamma^plus=gamma^0+gamma^1; gamma^minus=gamma^0-gamma^1",
+    "metric": "eta_mu_nu = diag(1,-1)",
+    "units": "natural units with c=1"
+  },
+  "schema_version": "1.0",
+  "symmetries": [
+    {
+      "id": "local_U1",
+      "operator_expression": "G[lambda] = integral_Sigma dx lambda(x) [partial_1 E(x) - g psi^dagger(x) psi(x)]",
+      "physical_state_condition": "G[lambda]|physical> = 0",
+      "type": "local gauge redundancy"
+    },
+    {
+      "conservation_law": "partial_mu j^mu = 0",
+      "current": "j^mu = bar(psi) gamma^mu psi",
+      "id": "vector_charge",
+      "operator_expression": "Q = integral_Sigma dx psi^dagger psi",
+      "type": "continuous conserved charge"
+    },
+    {
+      "id": "spacetime_translations",
+      "operator_expression": "P^nu = integral_Sigma dx T^{0 nu}; H=P^0",
+      "type": "continuous spacetime symmetry"
+    },
+    {
+      "id": "Lorentz_boost",
+      "operator_expression": "M^{01} = integral_Sigma dx [x^0 T^{01} - x^1 T^{00}]",
+      "type": "continuous spacetime symmetry"
+    },
+    {
+      "field_action": "psi -> C bar(psi)^T; A_mu -> -A_mu; C gamma^{mu T} C^{-1} = -gamma^mu",
+      "grid_relevance": false,
+      "id": "C",
+      "type": "discrete unitary symmetry"
+    },
+    {
+      "field_action": "psi(t,x) -> gamma^0 psi(t,-x); A_0(t,x) -> A_0(t,-x); A_1(t,x) -> -A_1(t,-x)",
+      "grid_relevance": true,
+      "id": "P",
+      "relevance_note": "The sampled spatial coordinate values occur in x to -x pairs, but P alone need not map the correlated points (z,z) into the sampled null line, and it exchanges gamma^- with gamma^+.",
+      "type": "discrete unitary symmetry"
+    },
+    {
+      "field_action": "psi(t,x) -> gamma^0 psi(-t,x); A_0(t,x) -> A_0(-t,x); A_1(t,x) -> -A_1(-t,x), with complex conjugation",
+      "grid_relevance": true,
+      "id": "T",
+      "relevance_note": "The sampled temporal coordinate values occur in t to -t pairs, but T alone need not map the correlated points (z,z) into the sampled null line, and it exchanges gamma^- with gamma^+.",
+      "type": "discrete antiunitary symmetry"
+    },
+    {
+      "field_action": "combined parity and time reversal",
+      "grid_relevance": true,
+      "id": "PT",
+      "relevance_note": "PT maps X(z)=a z(1,1) to X(-z), which is sampled. No matrix-element identity is inferred because external-state PT eigenvalues were not supplied.",
+      "type": "discrete antiunitary symmetry"
+    }
+  ],
+  "user_input_refs": {
+    "continuum_conventions": "/user_input/continuum_conventions",
+    "external_states": "/user_input/external_states",
+    "model": "/user_input/model",
+    "observable": "/user_input/observable",
+    "parameters": "/user_input/parameters"
+  },
+  "user_specified_independent_physical_parameters": {
+    "classification": {
+      "continuum_inputs": {
+        "bare coupling: g": 0.5,
+        "bare quark mass: m": 0.5
+      },
+      "downstream_discretization_controls": {
+        "lattice spacing: a": 1.0,
+        "number of lattice site: L": 5
+      }
+    },
+    "directly_implied_relations": {
+      "L*a": 5.0,
+      "g*a": 0.5,
+      "m*a": 0.5
+    },
+    "entries_as_supplied": {
+      "bare coupling: g": 0.5,
+      "bare quark mass: m": 0.5,
+      "lattice spacing: a": 1.0,
+      "number of lattice site: L": 5
+    }
+  },
+  "user_specified_simulation_and_discretization_controls": {}
+}

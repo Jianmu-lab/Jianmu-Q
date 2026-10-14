@@ -1,0 +1,743 @@
+{
+  "adapter_interface": {
+    "builder": "build_observable_measurements"
+  },
+  "contract_type": "observable_measurement",
+  "literature_sources": [
+    {
+      "applicability": "incompatible for the measurement circuit itself: it supports finite product-formula real-time execution but does not provide the unequal-time same-state interferometer required here",
+      "locator": "section \"Real-time Simulations using IBM's Digital Quantum Computers\", especially the paragraph defining forward-backward mitigation evolution",
+      "source_path": "arXiv-2401.08044v2/main_v6.tex"
+    }
+  ],
+  "measurement": {
+    "ancilla_qubits": 1,
+    "circuit_recipe_ids": [
+      "hadron_k0_real",
+      "hadron_k0_imag",
+      "hadron_k1_real",
+      "hadron_k1_imag",
+      "hadron_k2_real",
+      "hadron_k2_imag",
+      "hadron_k3_real",
+      "hadron_k3_imag",
+      "vacuum_k0_real",
+      "vacuum_k0_imag",
+      "vacuum_k1_real",
+      "vacuum_k1_imag",
+      "vacuum_k2_real",
+      "vacuum_k2_imag",
+      "vacuum_k3_real",
+      "vacuum_k3_imag",
+      "hadron_z0_Z5",
+      "vacuum_z0_Z5"
+    ],
+    "circuit_recipes": [
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "hadron",
+              "trajectory": 0
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k0_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "hadron",
+              "trajectory": 0
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k0_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "hadron",
+              "trajectory": 1
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k1_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "hadron",
+              "trajectory": 1
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k1_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "hadron",
+              "trajectory": 2
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k2_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "hadron",
+              "trajectory": 2
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k2_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "hadron",
+              "trajectory": 3
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k3_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "hadron",
+              "trajectory": 3
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "hadron_k3_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "vacuum",
+              "trajectory": 0
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k0_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "vacuum",
+              "trajectory": 0
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k0_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "vacuum",
+              "trajectory": 1
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k1_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "vacuum",
+              "trajectory": 1
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k1_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "vacuum",
+              "trajectory": 2
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k2_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "vacuum",
+              "trajectory": 2
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k2_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "real",
+              "state": "vacuum",
+              "trajectory": 3
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k3_real"
+      },
+      {
+        "component": "imag",
+        "operations": [
+          {
+            "activation": "z_index in {-2,-1,1,2}",
+            "bindings": {
+              "component": "imag",
+              "state": "vacuum",
+              "trajectory": 3
+            },
+            "operation": "instantiate",
+            "reference": "same_state_interferometer"
+          }
+        ],
+        "recipe_id": "vacuum_k3_imag"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index=0",
+            "bindings": {
+              "state": "hadron"
+            },
+            "operation": "instantiate",
+            "reference": "coincident_Z5_direct"
+          }
+        ],
+        "recipe_id": "hadron_z0_Z5"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "activation": "z_index=0",
+            "bindings": {
+              "state": "vacuum"
+            },
+            "operation": "instantiate",
+            "reference": "coincident_Z5_direct"
+          }
+        ],
+        "recipe_id": "vacuum_z0_Z5"
+      }
+    ],
+    "components": [
+      "real",
+      "imag"
+    ],
+    "protocol_id": "njl5_same_state_uncontrolled_evolution_interferometer_v1"
+  },
+  "operator_recipes": [
+    {
+      "id": "endpoint_A_from_z_and_trajectory",
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PAULI_STRING",
+          "operation": "lookup_exact_pauli",
+          "targets": [
+            "if z_index=-2: k=0,1 use IIIIIIIIXZ; k=2,3 use IIIIIIIIYZ",
+            "if z_index=-1: k=0,1 use IIIIIIXZZZ; k=2,3 use IIIIIIYZZZ",
+            "if z_index=1: k=0,1 use IIXZZZZZZZ; k=2,3 use IIYZZZZZZZ",
+            "if z_index=2: k=0,1 use XZZZZZZZZZ; k=2,3 use YZZZZZZZZZ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "endpoint_B_from_trajectory",
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PAULI_STRING",
+          "operation": "lookup_exact_pauli",
+          "targets": [
+            "k=0,2 use IIIIXZZZZZ",
+            "k=1,3 use IIIIYZZZZZ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "controlled_pauli_factorwise",
+      "operations": [
+        {
+          "angle": null,
+          "controls": [
+            "measurement_ancilla"
+          ],
+          "gate": "CX",
+          "operation": "for_each_nonidentity_factor_X",
+          "targets": [
+            "factor qubit"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [
+            "measurement_ancilla"
+          ],
+          "gate": "CY_AS_SDG_CX_S",
+          "operation": "for_each_nonidentity_factor_Y",
+          "targets": [
+            "factor qubit"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [
+            "measurement_ancilla"
+          ],
+          "gate": "CZ",
+          "operation": "for_each_nonidentity_factor_Z",
+          "targets": [
+            "factor qubit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onsite_block_h_on_s",
+      "operations": [
+        {
+          "angle": "h_on(s)=((bare_quark_mass+wilson_parameter/lattice_spacing)/2)*(X_(2s)X_(2s+1)+Y_(2s)Y_(2s+1))+(bare_four_fermion_coupling/2)*Z_(2s)Z_(2s+1), s=0,1,2,3,4",
+          "controls": [],
+          "gate": "PAULI_SUM",
+          "operation": "define_local_generator",
+          "targets": [
+            "q_(2s)",
+            "q_(2s+1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "link_block_h_link_l",
+      "operations": [
+        {
+          "angle": "h_link(l)=(1/(4*lattice_spacing))*(X_b Z_(b+1) Y_(b+2)-Y_b Z_(b+1) X_(b+2)-X_(b+1) Z_(b+2) Y_(b+3)+Y_(b+1) Z_(b+2) X_(b+3))-(wilson_parameter/(4*lattice_spacing))*(X_b Z_(b+1) Z_(b+2) X_(b+3)+Y_b Z_(b+1) Z_(b+2) Y_(b+3)+X_(b+1)X_(b+2)+Y_(b+1)Y_(b+2))",
+          "controls": [],
+          "gate": "PAULI_SUM",
+          "operation": "define_local_generator",
+          "targets": [
+            "q_b",
+            "q_(b+1)",
+            "q_(b+2)",
+            "q_(b+3)",
+            "b=2*l, l=0,1,2,3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exact_local_block_exponential",
+      "operations": [
+        {
+          "angle": "V=exp(-i*tau*h_local), with h_local exactly onsite_block_h_on_s or link_block_h_link_l",
+          "controls": [],
+          "gate": "MATRIX_EXPONENTIAL",
+          "operation": "construct_fixed_width_matrix",
+          "targets": [
+            "the two or four qubits of the selected local block"
+          ]
+        },
+        {
+          "angle": "all RZ and RY angles are deterministically obtained from the exact matrix V; no opaque evolution primitive remains",
+          "controls": [],
+          "gate": "QUANTUM_SHANNON_DECOMPOSITION_TO_RZ_RY_CX",
+          "operation": "finite_exact_synthesis",
+          "targets": [
+            "the same ordered local qubits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "same_state_interferometer",
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "U_state",
+          "operation": "compose_bound_state_preparation",
+          "targets": [
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6",
+            "q7",
+            "q8",
+            "q9"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "H",
+          "operation": "gate",
+          "targets": [
+            "measurement_ancilla"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [
+            "measurement_ancilla"
+          ],
+          "gate": "controlled_pauli_factorwise",
+          "operation": "compose",
+          "targets": [
+            "B_k from endpoint_B_from_trajectory"
+          ]
+        },
+        {
+          "angle": "total time z_index*lattice_spacing, N_T steps",
+          "controls": [],
+          "gate": "S2_PRODUCT_FORMULA_EVOLUTION",
+          "operation": "compose",
+          "targets": [
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6",
+            "q7",
+            "q8",
+            "q9"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [
+            "measurement_ancilla"
+          ],
+          "gate": "controlled_pauli_factorwise",
+          "operation": "compose",
+          "targets": [
+            "A_k(z_index) from endpoint_A_from_z_and_trajectory"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "H",
+          "operation": "if_component_real",
+          "targets": [
+            "measurement_ancilla"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "SDG",
+          "operation": "if_component_imag_first",
+          "targets": [
+            "measurement_ancilla"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "H",
+          "operation": "if_component_imag_second",
+          "targets": [
+            "measurement_ancilla"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "READOUT_PAULI_Z",
+          "operation": "estimator_readout",
+          "targets": [
+            "measurement_ancilla"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coincident_Z5_direct",
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "U_state",
+          "operation": "compose_bound_state_preparation",
+          "targets": [
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6",
+            "q7",
+            "q8",
+            "q9"
+          ]
+        },
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "READOUT_PAULI",
+          "operation": "estimator_readout",
+          "targets": [
+            "IIIIZIIIII"
+          ]
+        }
+      ]
+    }
+  ],
+  "reconstruction": {
+    "output_components": [
+      "real",
+      "imag"
+    ],
+    "rule": "Validate sample_values has exactly one key z_index with value in {-2,-1,0,1,2}. If z_index!=0, define R_state,k=expectation(state_k_real), I_state,k=expectation(state_k_imag), s_hadron=+1, s_vacuum=-1. Return Re=sum_state s_state*(R_state,0-I_state,1+I_state,2+R_state,3)/2 and Im=sum_state s_state*(I_state,0+R_state,1-R_state,2+I_state,3)/2. If z_index=0, return Re=expectation(vacuum_z0_Z5)-expectation(hadron_z0_Z5) and Im=0. Identity contributions cancel exactly between the hadron and vacuum coefficients.",
+    "terms": [
+      {
+        "coefficient": "for z_index!=0: Re +1/2; Im 0",
+        "recipe_id": "hadron_k0_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im +1/2",
+        "recipe_id": "hadron_k0_imag"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im +1/2",
+        "recipe_id": "hadron_k1_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re -1/2; Im 0",
+        "recipe_id": "hadron_k1_imag"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im -1/2",
+        "recipe_id": "hadron_k2_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re +1/2; Im 0",
+        "recipe_id": "hadron_k2_imag"
+      },
+      {
+        "coefficient": "for z_index!=0: Re +1/2; Im 0",
+        "recipe_id": "hadron_k3_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im +1/2",
+        "recipe_id": "hadron_k3_imag"
+      },
+      {
+        "coefficient": "for z_index!=0: Re -1/2; Im 0",
+        "recipe_id": "vacuum_k0_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im -1/2",
+        "recipe_id": "vacuum_k0_imag"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im -1/2",
+        "recipe_id": "vacuum_k1_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re +1/2; Im 0",
+        "recipe_id": "vacuum_k1_imag"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im +1/2",
+        "recipe_id": "vacuum_k2_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re -1/2; Im 0",
+        "recipe_id": "vacuum_k2_imag"
+      },
+      {
+        "coefficient": "for z_index!=0: Re -1/2; Im 0",
+        "recipe_id": "vacuum_k3_real"
+      },
+      {
+        "coefficient": "for z_index!=0: Re 0; Im -1/2",
+        "recipe_id": "vacuum_k3_imag"
+      },
+      {
+        "coefficient": "for z_index=0: Re -1; Im 0",
+        "recipe_id": "hadron_z0_Z5"
+      },
+      {
+        "coefficient": "for z_index=0: Re +1; Im 0",
+        "recipe_id": "vacuum_z0_Z5"
+      }
+    ]
+  },
+  "schema_version": "1.1",
+  "state_labels": [
+    "hadron",
+    "vacuum"
+  ],
+  "state_preparation_interface": {
+    "required_operations": [
+      "prepare_hadron",
+      "prepare_vacuum"
+    ],
+    "treat_as_black_box": true
+  },
+  "time_evolution": {
+    "method": "charge-preserving even-odd grouped second-order Suzuki product formula with exact fixed-width local-block synthesis",
+    "recommended_test_steps": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "required": true,
+    "step_operations": [
+      {
+        "angle": "tau=(z_index*lattice_spacing)/(2*N_T)",
+        "gate": "exact_local_block_exponential",
+        "operation": "parallel_local_exponentials",
+        "targets": [
+          "onsite blocks s=0,1,2,3,4"
+        ]
+      },
+      {
+        "angle": "tau=(z_index*lattice_spacing)/(2*N_T)",
+        "gate": "exact_local_block_exponential",
+        "operation": "parallel_local_exponentials",
+        "targets": [
+          "link blocks l=0,2"
+        ]
+      },
+      {
+        "angle": "tau=(z_index*lattice_spacing)/N_T",
+        "gate": "exact_local_block_exponential",
+        "operation": "parallel_local_exponentials",
+        "targets": [
+          "link blocks l=1,3"
+        ]
+      },
+      {
+        "angle": "tau=(z_index*lattice_spacing)/(2*N_T)",
+        "gate": "exact_local_block_exponential",
+        "operation": "parallel_local_exponentials",
+        "targets": [
+          "link blocks l=0,2"
+        ]
+      },
+      {
+        "angle": "tau=(z_index*lattice_spacing)/(2*N_T)",
+        "gate": "exact_local_block_exponential",
+        "operation": "parallel_local_exponentials",
+        "targets": [
+          "onsite blocks s=0,1,2,3,4"
+        ]
+      }
+    ],
+    "step_symbol": "N_T",
+    "symmetry_preservation_rule": "For z_index!=0 require positive integer N_T. Every onsite and link block commutes with Q_qc, so each completed local exponential and every finite-N_T product preserve the mandatory Q_qc=0 and Q_qc=-1 sectors and fermion parity exactly. No gauge sector exists. The even/odd ordering can break spatial reflection and antiunitary lattice symmetries at finite N_T; compare their diagnostics across increasing N_T and require convergence. Broken translations and continuum-only Lorentz boosts are not imposed. For z_index=0 accept trotter_steps=0 and build no evolution."
+  }
+}

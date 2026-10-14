@@ -1,0 +1,523 @@
+{
+  "adapter_interface": {
+    "builder": "build_state_preparation",
+    "returns": [
+      "QuantumCircuit",
+      "ordered_parameters"
+    ],
+    "supports_controlled": true,
+    "supports_inverse": true,
+    "unitary": true
+  },
+  "ansatz": {
+    "depth_extension_rule": "For an existing depth D_ans circuit, append one complete layer with layer index d=D_ans and 27 fresh parameters; do not alter, reorder, or reparameterize any earlier layer.",
+    "depth_symbol": "D_ans",
+    "family_id": "NJL1D_Wilson10_shared_U1_local_HVA_v1",
+    "layer_operations": [
+      {
+        "angle": "alpha[d,j]",
+        "controls": [],
+        "gate": "rz",
+        "index_ranges": {
+          "d": "0 <= d < D_ans",
+          "iteration_order": "ascending j",
+          "j": "0 <= j <= 8"
+        },
+        "operation": "gate_or_indexed_loop",
+        "targets": [
+          "q[j]"
+        ]
+      },
+      {
+        "angle": "beta[d,j]",
+        "controls": [],
+        "gate": "rzz",
+        "index_ranges": {
+          "d": "0 <= d < D_ans",
+          "iteration_order": "ascending j after all rz gates of layer d",
+          "j": "0 <= j <= 8"
+        },
+        "operation": "gate_or_indexed_loop",
+        "targets": [
+          "q[j]",
+          "q[j+1]"
+        ]
+      },
+      {
+        "angle": "gamma[d,j]",
+        "controls": [],
+        "gate": "rxx",
+        "index_ranges": {
+          "d": "0 <= d < D_ans",
+          "iteration_order": "ascending j after all rzz gates of layer d; immediately precedes the matching ryy gate",
+          "j": "0 <= j <= 8"
+        },
+        "operation": "gate_or_indexed_loop",
+        "targets": [
+          "q[j]",
+          "q[j+1]"
+        ]
+      },
+      {
+        "angle": "gamma[d,j]",
+        "controls": [],
+        "gate": "ryy",
+        "index_ranges": {
+          "d": "0 <= d < D_ans",
+          "iteration_order": "apply immediately after rxx(gamma[d,j]) on the same edge, then advance j",
+          "j": "0 <= j <= 8"
+        },
+        "operation": "gate_or_indexed_loop",
+        "targets": [
+          "q[j]",
+          "q[j+1]"
+        ]
+      }
+    ],
+    "nested_by_depth": true,
+    "parameter_order_rule": "Use ascending layer index d=0,...,D_ans-1. Within each layer order alpha[d,0:9] for rz on q0 through q8, then beta[d,0:9] for rzz on edges (q0,q1) through (q8,q9), then gamma[d,0:9] for the shared-angle rxx followed by ryy exchange blocks on those same ascending edges. Qiskit conventions are rz(theta)=exp(-i*theta*Z/2) and rpp(theta)=exp(-i*theta*P tensor P/2).",
+    "physical_sector": {
+      "preserved_exactly": true,
+      "required": true,
+      "rule": "Both references have sum_j n_j=5 and Q_qc=0. Every rz and rzz gate commutes with total number. For each edge, rxx(gamma) followed by ryy(gamma) equals exp[-i*gamma*(XX+YY)/2] and commutes with Z_j+Z_(j+1). Therefore every complete layer preserves the exact 252-dimensional popcount-five sector for arbitrary parameters."
+    },
+    "recommended_test_depths": [
+      1,
+      2,
+      4,
+      6,
+      8
+    ],
+    "reference_state_rule": "Initialize |n9...n0>=|1010101010>. For each site pair (q[2*l],q[2*l+1]), h on the even qubit followed by cx(even,odd) creates (|01>+|10>)/sqrt(2); a subsequent z on the even qubit changes it to (|01>-|10>)/sqrt(2). Vacuum uses the minus state on all five pairs. Hadron omits z only on the central pair (q4,q5). Both references have popcount five, are orthogonal, and receive the identical shared unitary with identical parameters.",
+    "reference_states": {
+      "hadron": {
+        "basis_state": "1010101010",
+        "operations": [
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q0"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q0"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q1"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q0"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q2"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q2"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q3"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q2"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q4"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q4"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q5"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q6"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q6"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q7"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q6"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q8"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q8"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q9"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q8"
+            ]
+          }
+        ]
+      },
+      "vacuum": {
+        "basis_state": "1010101010",
+        "operations": [
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q0"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q0"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q1"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q0"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q2"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q2"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q3"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q2"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q4"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q4"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q5"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q4"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q6"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q6"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q7"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q6"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "h",
+            "operation": "gate",
+            "targets": [
+              "q8"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [
+              "q8"
+            ],
+            "gate": "cx",
+            "operation": "gate",
+            "targets": [
+              "q9"
+            ]
+          },
+          {
+            "angle": null,
+            "controls": [],
+            "gate": "z",
+            "operation": "gate",
+            "targets": [
+              "q8"
+            ]
+          }
+        ]
+      }
+    },
+    "symmetry_preservation": [
+      {
+        "conserved_quantity_id": "global_vector_U1",
+        "gate_level_reason": "The references have popcount five, diagonal rotations conserve occupation, and each shared-angle rxx-ryy block is a number-preserving nearest-neighbor exchange.",
+        "preserved_exactly": true,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "exact_circuit",
+        "target_eigenvalues": {
+          "hadron": "0",
+          "vacuum": "0"
+        }
+      },
+      {
+        "conserved_quantity_id": "fermion_parity_symmetry",
+        "gate_level_reason": "Exact preservation of five-fermion number fixes ZZZZZZZZZZ to eigenvalue (-1)^5=-1 without additional gates.",
+        "preserved_exactly": true,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "exact_circuit",
+        "target_eigenvalues": {
+          "hadron": "-1",
+          "vacuum": "-1"
+        }
+      },
+      {
+        "conserved_quantity_id": "charge_conjugation_C",
+        "gate_level_reason": "No charge-conjugation eigenvalue defines either target, and enforcing commutation with YYYYYYYYYY would unnecessarily constrain independent local phases.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "hadron": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "spatial_reflection_P",
+        "gate_level_reason": "Reflection eigenvalues are unspecified; independent open-chain edge parameters are retained to avoid an unjustified parity restriction.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "hadron": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "time_reversal_T",
+        "gate_level_reason": "The antiunitary symmetry does not define either requested sector, and generic variational angles need not satisfy a time-reversal parameter constraint.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "hadron": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "combined_PT",
+        "gate_level_reason": "No PT eigenvalue is specified, so no antiunitary hard constraint is imposed.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "hadron": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "spatial_translations",
+        "gate_level_reason": "One-site translation is not an exact symmetry of the authoritative open-chain Hamiltonian; no momentum projection or translation parameter sharing is used.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "hadron": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "proper_Lorentz_transformations",
+        "gate_level_reason": "The finite fixed-spacing lattice has no exact Lorentz-boost generator, so Lorentz symmetry cannot be a circuit-sector constraint.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "hadron",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "hadron": "unspecified",
+          "vacuum": "unspecified"
+        }
+      }
+    ]
+  },
+  "contract_type": "state_preparation",
+  "literature_sources": [
+    {
+      "applicability": "modified: its local two-mode singlet reference motif preserves the required half-filled U(1) sector, but its periodic Schwinger-model gauge dynamics, momentum projection, and long-range ansatz are not applicable to the open Wilson-NJL mapping",
+      "locator": "Section \"Preparation of hadronic state\", Eq. (reference-state equation labeled refst)",
+      "source_path": "arXiv-2606.22602v1/GPDs_v2.tex"
+    },
+    {
+      "applicability": "modified: supports a minimal localized charge-neutral excitation as a hadron reference, but the staggered Schwinger-model gauge Hamiltonian and adiabatic wavepacket circuit are not used",
+      "locator": "Section \"Hadron Wavepacket Preparation\", initial localized pair state and Eq. (adiabaticWP)",
+      "source_path": "arXiv-2401.08044v2/main_v6.tex"
+    },
+    {
+      "applicability": "modified: provides evidence for scalable symmetry-preserving local adaptive circuits, but its staggered gauge discretization and operator sequence are incompatible with the supplied Wilson-NJL Hamiltonian",
+      "locator": "Section \"Building Scalable State Preparation Quantum Circuits using SC-ADAPT-VQE with Classical Computing\", Table Echifmp5gp3 and associated convergence discussion",
+      "source_path": "arXiv-2308.04481v3/Schwinger-v5.tex"
+    }
+  ],
+  "schema_version": "1.1",
+  "state_labels": [
+    "hadron",
+    "vacuum"
+  ]
+}

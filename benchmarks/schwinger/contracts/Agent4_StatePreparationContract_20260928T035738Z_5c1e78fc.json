@@ -1,0 +1,338 @@
+{
+  "adapter_interface": {
+    "builder": "build_state_preparation",
+    "returns": [
+      "QuantumCircuit",
+      "ordered_parameters"
+    ],
+    "supports_controlled": true,
+    "supports_inverse": true,
+    "unitary": true
+  },
+  "ansatz": {
+    "depth_extension_rule": "Prepare each label's reference once and apply complete shared-parameter layers ell=1,...,D_ans in increasing ell. Extend D_ans to D_ans+1 by appending one complete layer with fresh theta[D_ans+1,j], zeta[D_ans+1,j], and rho[D_ans+1,j]. The earlier gate sequence is an exact prefix. Setting every appended angle to 0 makes every appended gate exactly the identity.",
+    "depth_symbol": "D_ans",
+    "family_id": "wilson_schwinger_qc10_shared_local_number_conserving_xxyy_zz_z",
+    "layer_operations": [
+      {
+        "angle": "2*theta[ell,j] in the Qiskit XXPlusYYGate angle convention",
+        "controls": [],
+        "gate": "Qiskit XXPlusYYGate(2*theta[ell,j],0), exactly exp[-i*theta[ell,j]*(X_j*X_(j+1)+Y_j*Y_(j+1))/2]",
+        "index_ranges": {
+          "ell": "1,...,D_ans in increasing order",
+          "iteration_order": "Within each layer apply all XXPlusYYGate instances first, sequentially in increasing j",
+          "j": "0,...,8 in increasing order",
+          "parameter_sharing": "theta[ell,j] is shared between the phi and psi circuit instances"
+        },
+        "operation": "gate_or_indexed_loop",
+        "targets": [
+          "q_j",
+          "q_(j+1)"
+        ]
+      },
+      {
+        "angle": "zeta[ell,j]",
+        "controls": [],
+        "gate": "Qiskit RZZGate(zeta[ell,j]) with RZZ(alpha)=exp(-i*alpha*Z_j*Z_(j+1)/2)",
+        "index_ranges": {
+          "ell": "1,...,D_ans in increasing order",
+          "iteration_order": "After all XXPlusYYGate instances of layer ell, apply all RZZGate instances sequentially in increasing j",
+          "j": "0,...,8 in increasing order",
+          "parameter_sharing": "zeta[ell,j] is shared between the phi and psi circuit instances"
+        },
+        "operation": "gate_or_indexed_loop",
+        "targets": [
+          "q_j",
+          "q_(j+1)"
+        ]
+      },
+      {
+        "angle": "rho[ell,j]",
+        "controls": [],
+        "gate": "Qiskit RZGate(rho[ell,j]) with RZ(alpha)=exp(-i*alpha*Z_j/2)",
+        "index_ranges": {
+          "ell": "1,...,D_ans in increasing order",
+          "iteration_order": "After all RZZGate instances of layer ell, apply RZGate instances in increasing j",
+          "j": "0,...,9 in increasing order",
+          "parameter_sharing": "rho[ell,j] is shared between the phi and psi circuit instances"
+        },
+        "operation": "gate_or_indexed_loop",
+        "targets": [
+          "q_j"
+        ]
+      }
+    ],
+    "nested_by_depth": true,
+    "parameter_order_rule": "Use one shared parameter vector for phi and psi. Order layers by ell=1,...,D_ans. Within layer ell, first list theta[ell,j] for j=0,...,8 in increasing j, then zeta[ell,j] for j=0,...,8 in increasing j, then rho[ell,j] for j=0,...,9 in increasing j. Distinct indices and layers share no parameter. Each layer has 9 theta, 9 zeta, and 10 rho parameters, totaling 28 independent shared parameters.",
+    "physical_sector": {
+      "preserved_exactly": true,
+      "required": true,
+      "rule": "Both references have Hamming weight 5 and Q_lat=-(1/2)*sum_j Z_j=0. Every adjacent XXPlusYY gate mixes only |01> and |10> and commutes with n_j+n_(j+1); every RZZ and RZ gate is occupation diagonal. Therefore every intermediate gate, complete ordered layer, and repeated-layer circuit remains in the full 252-dimensional weight-5 sector. The authoritative reconstructed G_0,...,G_4 Pauli sums cancel identically on the full ten-qubit space, so the mapped Gauss constraints are also preserved exactly. Adjacent exchanges connect the complete weight-5 configuration graph, while RZZ and RZ phases provide non-Gaussian interacting phases."
+    },
+    "recommended_test_depths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "reference_state_rule": "Use two mutually orthogonal weight-5 computational references. For phi initialize |0>^10 and apply X to q1, q3, q5, q7, q9. For psi initialize |0>^10 and apply X to q1, q3, q4, q7, q9. Apply the same parameterized unitary to both references, so their orthogonality is preserved exactly while they represent distinct requested levels.",
+    "reference_states": {
+      "phi": {
+        "basis_state": "0101010101 in declared logical order q0=c[0,1], q1=c[0,2], q2=c[1,1], q3=c[1,2], q4=c[2,1], q5=c[2,2], q6=c[3,1], q7=c[3,2], q8=c[4,1], q9=c[4,2]; equivalently |1010101010> in Qiskit b9...b0 display order",
+        "operations": [
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q1_mode_c[0,2]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q3_mode_c[1,2]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q5_mode_c[2,2]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q7_mode_c[3,2]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q9_mode_c[4,2]"
+            ]
+          }
+        ]
+      },
+      "psi": {
+        "basis_state": "0101100101 in declared logical order q0=c[0,1], q1=c[0,2], q2=c[1,1], q3=c[1,2], q4=c[2,1], q5=c[2,2], q6=c[3,1], q7=c[3,2], q8=c[4,1], q9=c[4,2]; equivalently |1010011010> in Qiskit b9...b0 display order",
+        "operations": [
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q1_mode_c[0,2]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q3_mode_c[1,2]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q4_mode_c[2,1]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q7_mode_c[3,2]"
+            ]
+          },
+          {
+            "angle": "not_applicable",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q9_mode_c[4,2]"
+            ]
+          }
+        ]
+      }
+    },
+    "symmetry_preservation": [
+      {
+        "conserved_quantity_id": "local_U1_gauss_law",
+        "gate_level_reason": "Under the authoritative electric-field reconstruction every expanded G_N is the zero operator after exact Pauli collection. Both references and every number-conserving layer therefore satisfy all five mapped Gauss constraints without gauge-link qubits or penalties.",
+        "preserved_exactly": true,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "exact_circuit",
+        "target_eigenvalues": {
+          "phi": "0 at every lattice vertex",
+          "psi": "0 at every lattice vertex"
+        }
+      },
+      {
+        "conserved_quantity_id": "vector_charge",
+        "gate_level_reason": "The references have five occupations. XXPlusYY preserves pair occupation and RZZ and RZ are occupation diagonal, so every gate commutes with Q_lat. Adjacent exchanges connect all weight-5 basis configurations, so exact charge preservation does not obstruct access to either requested level.",
+        "preserved_exactly": true,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "exact_circuit",
+        "target_eigenvalues": {
+          "phi": "0",
+          "psi": "0"
+        }
+      },
+      {
+        "conserved_quantity_id": "C",
+        "gate_level_reason": "No charge-conjugation eigenvalue is assigned. Generic local RZ and RZZ parameters need not commute with the particle-hole Clifford, so imposing C would add an unsupported restriction.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "phi": "unspecified",
+          "psi": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "P",
+        "gate_level_reason": "Fermionic reflection is an exact Hamiltonian symmetry but neither level has an assigned parity eigenvalue. The ordered open-chain layer is not constrained to commute with the FSWAP reflection.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "phi": "unspecified",
+          "psi": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "T",
+        "gate_level_reason": "T is antiunitary and has no assigned target eigenvalue. Generic exchange and phase angles do not enforce the required FSWAP component exchange followed by complex conjugation.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "phi": "unspecified",
+          "psi": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "PT",
+        "gate_level_reason": "No PT eigenvalue is supplied, and the generic shared layer is not constrained to commute with the declared antiunitary composition.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "phi": "unspecified",
+          "psi": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "spatial_translations",
+        "gate_level_reason": "The authoritative open-boundary Hamiltonian explicitly breaks the candidate cyclic spatial translation, so translation is not imposed on either reference or layer.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "phi": "unspecified",
+          "psi": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "continuous_spacetime_translations",
+        "gate_level_reason": "There is no finite-lattice continuous spatial-translation generator. Requiring the variational layer to commute with the time-translation generator H_qc would obstruct exploration from the references and is not a target-sector requirement.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "phi": "unspecified",
+          "psi": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "Lorentz_boost",
+        "gate_level_reason": "The contract supplies no exact finite-lattice boost generator, so no boost constraint is placed on the circuit.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "phi",
+          "psi"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "phi": "unspecified",
+          "psi": "unspecified"
+        }
+      }
+    ]
+  },
+  "contract_type": "state_preparation",
+  "literature_sources": [
+    {
+      "applicability": "modified: supports orthogonal same-sector references followed by a shared symmetry-preserving unitary, but its periodic-boundary Schwinger discretization and Hamiltonian groups do not match the authoritative open-boundary two-component Wilson Hamiltonian",
+      "locator": "Section \"Preparation of hadronic state\", Eq. (refst) and the displayed definition U(theta)=product_j product_i exp(i Hbar_i theta_ij)",
+      "source_path": "arXiv-2606.22602v1/GPDs_v2.tex"
+    },
+    {
+      "applicability": "modified: provides same-model evidence for compact scalable symmetry-preserving circuits, but the supplied extract does not define a complete gate pool for the present Wilson encoding",
+      "locator": "Section \"Building Scalable State Preparation Quantum Circuits using SC-ADAPT-VQE with Classical Computing\", Table tab:Echifmp5gp3 and Fig. fig:ClassConvXCirc",
+      "source_path": "arXiv-2308.04481v3/Schwinger-v5.tex"
+    },
+    {
+      "applicability": "incompatible: prepares localized hadron wave packets by adiabatic evolution rather than the two lowest eigenlevels of the authoritative open-boundary Wilson Hamiltonian",
+      "locator": "Section \"Hadron Wavepacket Preparation\", Eq. (adiabaticWP)",
+      "source_path": "arXiv-2401.08044v2/main_v6.tex"
+    },
+    {
+      "applicability": "incompatible: defines a nonunitary mesonic wave-packet creation-operator ansatz for a periodic staggered lattice, not a unitary eigenstate-preparation layer for this encoding",
+      "locator": "Section \"Ansatz for interacting wave-packet creation operator\", Eqs. (ansatz1) and (B-def)",
+      "source_path": "arXiv-2402.00840v3/arxiv_v3_published.tex"
+    }
+  ],
+  "schema_version": "1.1",
+  "state_labels": [
+    "phi",
+    "psi"
+  ]
+}

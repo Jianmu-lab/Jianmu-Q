@@ -1,0 +1,71 @@
+{
+  "model": "2+1 dimensional pure Z2 gauge theory with H=-(1/a)(g^2 sum_l X_l + g^(-2) sum_p product_{l in boundary(p)} Z_l), in the charge-free physical sector G_v=+1 at every vertex.",
+  "parameters": {
+    "gauge_coupling_g": 1.0,
+    "lattice_spacing_a": 1.0,
+    "lattice_shape": [
+      4,
+      4
+    ]
+  },
+  "observable": {
+    "coordinate_convention": {
+      "mode": "lattice_indices",
+      "spacing_parameter": "lattice_spacing_a",
+      "temporal_spacing": "same_as_spatial",
+      "units": "natural_units_c_1"
+    },
+    "expression": "Hamiltonian: H",
+    "insertions": [
+      {
+        "id": "Hamiltonian",
+        "operator": "H",
+        "position": "global"
+      }
+    ],
+    "matrix_elements": [
+      {
+        "bra": "glueball",
+        "coefficient": 1.0,
+        "id": "glueball energy",
+        "ket": "glueball"
+      },
+      {
+        "bra": "vacuum",
+        "coefficient": -1.0,
+        "id": "vacuum energy",
+        "ket": "vacuum"
+      }
+    ],
+    "name": "user_observable",
+    "observable_schema_version": "1.0",
+    "ordering": "as_written",
+    "requested_components": [
+      "real",
+      "imag"
+    ],
+    "sampling": {
+      "mode": "explicit_points",
+      "points": [
+        {
+          "sample_id": "default",
+          "values": {}
+        }
+      ]
+    }
+  },
+  "states": {
+    "glueball": {
+      "kind": "sector_eigenstate",
+      "level_index": 1,
+      "quantum_numbers": {
+        "gauss_law_eigenvalue": 1
+      }
+    },
+    "vacuum": "Ground state / vacuum"
+  },
+  "continuum_conventions": {},
+  "llm": "gpt-5.6-sol",
+  "hardware_validation": false,
+  "through": "crosscheck"
+}

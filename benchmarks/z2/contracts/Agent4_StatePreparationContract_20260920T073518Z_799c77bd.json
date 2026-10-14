@@ -1,0 +1,366 @@
+{
+  "adapter_interface": {
+    "builder": "build_state_preparation",
+    "returns": [
+      "QuantumCircuit",
+      "ordered_parameters"
+    ],
+    "supports_controlled": false,
+    "supports_inverse": true,
+    "unitary": true
+  },
+  "ansatz": {
+    "depth_extension_rule": "For each state label independently, prepare its fixed reference and then apply complete layers ell=1,...,D_ans in increasing circuit-time order. Extend depth D_ans to D_ans+1 by appending one complete layer with 29 fresh parameters. The depth-D_ans circuit is therefore an exact prefix of the depth-(D_ans+1) circuit. For the present nine-qubit grid, one layer contains 9 RZ gates, 8 RX gates, and 12 RXX gates. Using RXX(phi) = (H tensor H) CX RZ(phi) CX (H tensor H), a layer contains 24 CX gates and 77 one-qubit gates before cancellation. Every parameterized primitive has control arity zero.",
+    "depth_symbol": "D_ans",
+    "family_id": "independent_term_open_z2_dual_hamiltonian_variational_ansatz",
+    "layer_operations": [
+      {
+        "angle": "-2*alpha_Z[ell,q_index]",
+        "controls": [],
+        "gate": "RZGate",
+        "index_ranges": {
+          "ell": "1..D_ans in increasing order",
+          "q_index": "0,1,2,3,4,5,6,7,8 in increasing order"
+        },
+        "operation": "indexed_loop",
+        "targets": [
+          "q[q_index]"
+        ]
+      },
+      {
+        "angle": "-2*boundary_weight[q_index]*alpha_X[ell,q_index]",
+        "controls": [],
+        "gate": "RXGate",
+        "index_ranges": {
+          "boundary_weight": "boundary_weight[0]=2, boundary_weight[1]=1, boundary_weight[2]=2, boundary_weight[3]=1, boundary_weight[5]=1, boundary_weight[6]=2, boundary_weight[7]=1, boundary_weight[8]=2",
+          "ell": "1..D_ans in increasing order",
+          "q_index": "0,1,2,3,5,6,7,8 in increasing order"
+        },
+        "operation": "indexed_loop",
+        "targets": [
+          "q[q_index]"
+        ]
+      },
+      {
+        "angle": "-2*alpha_XX[ell,edge_first,edge_second]",
+        "controls": [],
+        "gate": "RXXGate",
+        "index_ranges": {
+          "ell": "1..D_ans in increasing order",
+          "ordered_edges": "(0,1),(0,3),(1,2),(1,4),(2,5),(3,4),(3,6),(4,5),(4,7),(5,8),(6,7),(7,8)"
+        },
+        "operation": "indexed_loop",
+        "targets": [
+          "q[edge_first]",
+          "q[edge_second]"
+        ]
+      }
+    ],
+    "nested_by_depth": true,
+    "parameter_order_rule": "Glueball and vacuum use separate parameter objects and parameter vectors; no parameter is shared between labels. Within either label, order first by layer ell=1,...,D_ans and within each layer as [alpha_Z[ell,0], alpha_Z[ell,1], alpha_Z[ell,2], alpha_Z[ell,3], alpha_Z[ell,4], alpha_Z[ell,5], alpha_Z[ell,6], alpha_Z[ell,7], alpha_Z[ell,8], alpha_X[ell,0], alpha_X[ell,1], alpha_X[ell,2], alpha_X[ell,3], alpha_X[ell,5], alpha_X[ell,6], alpha_X[ell,7], alpha_X[ell,8], alpha_XX[ell,0,1], alpha_XX[ell,0,3], alpha_XX[ell,1,2], alpha_XX[ell,1,4], alpha_XX[ell,2,5], alpha_XX[ell,3,4], alpha_XX[ell,3,6], alpha_XX[ell,4,5], alpha_XX[ell,4,7], alpha_XX[ell,5,8], alpha_XX[ell,6,7], alpha_XX[ell,7,8]]. Qiskit conventions are RZ(phi)=exp(-i*phi*Z/2), RX(phi)=exp(-i*phi*X/2), and RXX(phi)=exp(-i*phi*X tensor X/2). Implemented angles are -2*alpha_Z on every qubit; -4*alpha_X on corner qubits 0,2,6,8; -2*alpha_X on edge-noncorner qubits 1,3,5,7; and -2*alpha_XX on every listed nearest-neighbour edge. These factors retain the exact aggregated Hamiltonian coefficients -1 for Z, -2 for corner X, -1 for noncorner boundary X, and -1 for XX.",
+    "physical_sector": {
+      "preserved_exactly": true,
+      "required": true,
+      "rule": "The complete 512-dimensional nine-qubit Hilbert space is the exact charge-free physical space after the open-boundary plaquette-dual reduction. For every one of the 16 supplied vertex generators, the ordered product of mapped link operators is IIIIIIIII with eigenvalue +1. Therefore both references and every RZ, RX, and RXX layer remain exactly in the G_v=+1 sector without penalties or basis filtering."
+    },
+    "recommended_test_depths": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "reference_state_rule": "Computational bitstrings are written as |q8 q7 q6 q5 q4 q3 q2 q1 q0>, where q[x+3*y] is plaquette p(x,y). Both circuits initialize |000000000>. Vacuum applies H to q0 through q8 and prepares |+> tensor 9. Glueball applies X to central plaquette q4 before applying H to q0 through q8, preparing q4 in |-> and every other qubit in |+>. The two reference states are orthogonal. Each label then receives its own independent variational parameters; the glueball is targeted as zero-based distinct-energy level 1 through the external sequential lower-level orthogonality procedure, without supplying its exact energy or imposing a D4 sector.",
+    "reference_states": {
+      "glueball": {
+        "basis_state": "000000000 in |q8 q7 q6 q5 q4 q3 q2 q1 q0> order",
+        "operations": [
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "XGate",
+            "operation": "gate",
+            "targets": [
+              "q4"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q0"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q1"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q2"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q3"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q4"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q5"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q6"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q7"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q8"
+            ]
+          }
+        ]
+      },
+      "vacuum": {
+        "basis_state": "000000000 in |q8 q7 q6 q5 q4 q3 q2 q1 q0> order",
+        "operations": [
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q0"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q1"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q2"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q3"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q4"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q5"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q6"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q7"
+            ]
+          },
+          {
+            "angle": "not_applicable_fixed_gate",
+            "controls": [],
+            "gate": "HGate",
+            "operation": "gate",
+            "targets": [
+              "q8"
+            ]
+          }
+        ]
+      }
+    },
+    "symmetry_preservation": [
+      {
+        "conserved_quantity_id": "local_z2_gauge_symmetry",
+        "gate_level_reason": "Every mapped Gauss generator is IIIIIIIII on the reduced register, so every reference gate and every parameterized gate commutes with it. Exact preservation has zero gate overhead and leaves the full 512-dimensional physical space available, so it does not restrict access to either requested energy level.",
+        "preserved_exactly": true,
+        "state_labels": [
+          "glueball",
+          "vacuum"
+        ],
+        "strategy": "exact_circuit",
+        "target_eigenvalues": {
+          "glueball": "+1 at every lattice vertex",
+          "vacuum": "+1 at every lattice vertex"
+        }
+      },
+      {
+        "conserved_quantity_id": "continuous_time_translation",
+        "gate_level_reason": "Energy labels specify the optimized output eigenstates, not a gatewise symmetry sector. Requiring all gates to commute with H_qc would preserve the references' energy distributions and prevent preparation of the desired eigenstates.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "glueball",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "glueball": "zero-based level-1 distinct energy in the physical sector",
+          "vacuum": "ground-state energy"
+        }
+      },
+      {
+        "conserved_quantity_id": "time_reversal",
+        "gate_level_reason": "No time-reversal eigenvalue is provided. General RZ, RX, and RXX angles can produce complex amplitudes, so K symmetry is not imposed as a circuit restriction.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "glueball",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "glueball": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "open_square_dihedral_symmetry",
+        "gate_level_reason": "No D4 irrep or eigenvalue is specified. Independent site and edge parameters intentionally avoid enforcing D4, ensuring that no component of the authoritative level-1 eigenspace is excluded.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "glueball",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "glueball": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "spatial_translation_symmetry",
+        "gate_level_reason": "The open boundary breaks every nonidentity spatial translation, so no translation constraint is imposed on either reference or layer.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "glueball",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "glueball": "unspecified",
+          "vacuum": "unspecified"
+        }
+      },
+      {
+        "conserved_quantity_id": "nontrivial_electric_z2_one_form_symmetry",
+        "gate_level_reason": "Open boundaries provide no noncontractible one-form generator. Contractible curve products reduce to Gauss identities already preserved by the exact physical encoding, so no additional circuit constraint is imposed.",
+        "preserved_exactly": false,
+        "state_labels": [
+          "glueball",
+          "vacuum"
+        ],
+        "strategy": "diagnostic_only",
+        "target_eigenvalues": {
+          "glueball": "unspecified",
+          "vacuum": "unspecified"
+        }
+      }
+    ]
+  },
+  "contract_type": "state_preparation",
+  "literature_sources": [
+    {
+      "applicability": "modified: the HVA is applied to the authoritative open-boundary dual Z2 Hamiltonian, with separate parameters for every unique Z, boundary-X, and nearest-neighbour-XX generator.",
+      "locator": "Hamiltonian Variational Ansatz definition, Eq. (hva)",
+      "source_path": "arXiv-2008.02941v2.tar/main.tex"
+    },
+    {
+      "applicability": "incompatible as the fixed handoff ansatz: it requires adaptive operator selection and does not supply a predetermined scalable gate sequence for this nine-qubit Z2 dual Hamiltonian.",
+      "locator": "Section II, SC-ADAPT-VQE algorithm steps 1--6",
+      "source_path": "arXiv-2308.04481v3/Schwinger-v5.tex"
+    },
+    {
+      "applicability": "incompatible as the selected family: the generic hardware-efficient alternative does not encode the supplied interaction graph and offers no physical-sector or model-specific advantage over the HVA.",
+      "locator": "Discussion of chemistry-inspired, ADAPT-VQE, and hardware-based ansatz choices preceding the reported ansatz comparisons",
+      "source_path": "arXiv-1904.10910v3.tar/main2.tex"
+    }
+  ],
+  "schema_version": "1.1",
+  "state_labels": [
+    "glueball",
+    "vacuum"
+  ]
+}

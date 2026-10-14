@@ -1,0 +1,329 @@
+{
+  "constraints": [
+    {
+      "applies_when": "always",
+      "id": "immutable_lattice_geometry",
+      "parameters": [
+        "spatial_site_count",
+        "lattice_spacing"
+      ],
+      "reason": "Preserves the supplied lattice size and every requested coordinate while fixing the selected low-cost boundary prescription.",
+      "requirement": "spatial_site_count must equal 5, lattice_spacing must equal 1, the authoritative site indices must be {-2,-1,0,1,2}, and the boundary condition must remain open",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "fermion_mode_relation",
+      "parameters": [
+        "fermionic_mode_count",
+        "spatial_site_count"
+      ],
+      "reason": "The selected Wilson regulator retains both Dirac components at every site.",
+      "requirement": "fermionic_mode_count must equal 2*spatial_site_count",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "fixed_charge_definition",
+      "parameters": [
+        "spatial_site_count"
+      ],
+      "reason": "This fixed regulator reference supports the independently requested charge-zero level indices.",
+      "requirement": "The lattice charge must be Q_lat=sum_{x,s} n_{x,s}-spatial_site_count, with no interacting-state-dependent subtraction.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "the selected open-boundary Wilson discretization is used",
+      "id": "wilson_endpoint_rule",
+      "parameters": [
+        "wilson_parameter",
+        "lattice_spacing"
+      ],
+      "reason": "Implements the Wilson regulator as the direct spatial second difference.",
+      "requirement": "The onsite Wilson coefficient must be wilson_parameter/lattice_spacing at every retained site, including both endpoints; it must not be reduced according to endpoint coordination number.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "always",
+      "id": "unshifted_hamiltonian",
+      "parameters": [],
+      "reason": "The continuum contract requires the unshifted Hamiltonian and places vacuum subtraction only in the requested matrix-element combination.",
+      "requirement": "No additive vacuum-energy shift and no target-state expectation value may be inserted into the Hamiltonian or local interaction.",
+      "severity": "fatal"
+    },
+    {
+      "applies_when": "constructing or evolving the ordered bilocal observable",
+      "id": "observable_sector_support",
+      "parameters": [],
+      "reason": "Preserves the ordered operator-sector path.",
+      "requirement": "Both Q_lat=0 and Q_lat=-1 sectors must be represented because the rightmost annihilation operator maps charge zero to charge minus one before the left insertion restores charge zero.",
+      "severity": "fatal"
+    }
+  ],
+  "discretizations": [
+    {
+      "parameter_references": [
+        "lattice_spacing",
+        "spatial_site_count"
+      ],
+      "scheme": "centered one-dimensional spatial lattice with continuous real time",
+      "sector": "spacetime",
+      "settings": {
+        "independent_constraint_count": 0,
+        "link_count": 4,
+        "nearest_neighbor_link_indices": [
+          [
+            -2,
+            -1
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "observable_coordinate_pullback": "t=z_index*lattice_spacing and x=z_index*lattice_spacing",
+        "plaquette_count": 0,
+        "spatial_boundary_condition": "open",
+        "spatial_dimension": 1,
+        "spatial_site_indices": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "time_representation": "continuous Hamiltonian real time",
+        "vertex_count": 5
+      },
+      "truncation": {
+        "reason": "Contains every requested coordinate while avoiding a Jordan-Wigner wrap-around hopping.",
+        "scheme": "finite spatial volume",
+        "settings": {
+          "endpoint_prescription": "open Wilson second-difference with full onsite Wilson coefficient at every retained site"
+        }
+      }
+    },
+    {
+      "parameter_references": [
+        "bare_quark_mass",
+        "bare_four_fermion_coupling",
+        "lattice_spacing",
+        "wilson_parameter",
+        "fermionic_mode_count"
+      ],
+      "scheme": "two-component Wilson fermions",
+      "sector": "fermion",
+      "settings": {
+        "alpha_1": "sigma_3",
+        "beta": "sigma_1",
+        "charge_zero_sector_dimension": 252,
+        "components_per_site": 2,
+        "fermionic_mode_count": 10,
+        "finite_fock_dimension": 1024,
+        "gamma_0": "sigma_1",
+        "gamma_1": "-i*sigma_2",
+        "intermediate_charge_minus_one_sector_dimension": 210,
+        "optional_qubit_encoding": "Jordan-Wigner in increasing site index and then spinor-component order",
+        "qubit_count": 10,
+        "wilson_second_derivative_prescription": "onsite r/a at every site and hopping -r*beta/(2a) on every retained nearest-neighbor link"
+      },
+      "truncation": {
+        "reason": "Canonical fermion modes are exactly finite-dimensional; no occupation approximation is introduced.",
+        "scheme": "finite fermionic Fock space",
+        "settings": {
+          "occupation_per_mode": [
+            0,
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "external_states": {
+    "definitions": {
+      "hadron": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"charge\": 0}",
+      "vacuum": "Quantum-number-sector eigenstate; level_index=0; quantum_numbers={\"charge\": 0}"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "hadron",
+      "vacuum"
+    ]
+  },
+  "model": {
+    "gauge_structure": "none",
+    "name": "one flavor NJL model",
+    "spacetime_dimension": "1+1"
+  },
+  "parameters": [
+    {
+      "domain": {
+        "rule": "finite real number"
+      },
+      "name": "bare_quark_mass",
+      "required_for_run": true,
+      "role": "Bare mass in the continuum and Wilson lattice Hamiltonian.",
+      "selected_value": 0.5,
+      "symbol": "m",
+      "type": "real",
+      "unit": "inverse_length"
+    },
+    {
+      "domain": {
+        "rule": "finite real number"
+      },
+      "name": "bare_four_fermion_coupling",
+      "required_for_run": true,
+      "role": "Coefficient of the direct local scalar four-fermion interaction.",
+      "selected_value": 0.5,
+      "symbol": "g",
+      "type": "real",
+      "unit": "dimensionless"
+    },
+    {
+      "domain": {
+        "exclusive_minimum": 0
+      },
+      "name": "lattice_spacing",
+      "required_for_run": true,
+      "role": "Common spatial spacing and observable coordinate-conversion scale.",
+      "selected_value": 1.0,
+      "symbol": "a",
+      "type": "real",
+      "unit": "length"
+    },
+    {
+      "domain": {
+        "minimum": 1
+      },
+      "name": "spatial_site_count",
+      "required_for_run": true,
+      "role": "Immutable number of spatial lattice sites.",
+      "selected_value": 5,
+      "symbol": "L",
+      "type": "integer",
+      "unit": null
+    },
+    {
+      "domain": {
+        "minimum": 0
+      },
+      "name": "wilson_parameter",
+      "required_for_run": true,
+      "role": "Wilson doubler-removal coefficient.",
+      "selected_value": 1.0,
+      "symbol": "r",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "minimum": 2
+      },
+      "name": "fermionic_mode_count",
+      "required_for_run": true,
+      "role": "Derived number of canonical fermionic modes, equal to two times the spatial site count.",
+      "selected_value": 10,
+      "symbol": "N_f^{modes}",
+      "type": "integer",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "bare coupling: g",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 0.5,
+      "source_ref": "/user_input/parameters/bare coupling: g",
+      "symbol": "bare coupling: g",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "bare quark mass: m",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 0.5,
+      "source_ref": "/user_input/parameters/bare quark mass: m",
+      "symbol": "bare quark mass: m",
+      "type": "real",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "lattice spacing: a",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 1,
+      "source_ref": "/user_input/parameters/lattice spacing: a",
+      "symbol": "lattice spacing: a",
+      "type": "integer",
+      "unit": null
+    },
+    {
+      "domain": {
+        "source": "immutable RunSpec value"
+      },
+      "immutable": true,
+      "name": "number of lattice site: L",
+      "required_for_run": true,
+      "role": "Immutable user input; downstream stages must reference this path.",
+      "selected_value": 5,
+      "source_ref": "/user_input/parameters/number of lattice site: L",
+      "symbol": "number of lattice site: L",
+      "type": "integer",
+      "unit": null
+    }
+  ],
+  "schema_version": "1.1",
+  "validation_obligations": [
+    {
+      "description": "Confirm after construction that [H_lat,Q_lat]=0 exactly up to numerical representation tolerance.",
+      "id": "charge_commutator_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that vacuum is level_index 0 and hadron is level_index 1 of the Q_lat=0 Hamiltonian block, without identifying the two states.",
+      "id": "external_state_sector_and_level_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that every ordered observable insertion and real-time evolution is defined on the visited Q_lat=-1 intermediate sector and returns to Q_lat=0.",
+      "id": "intermediate_sector_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that z_index=0 is represented by the direct finite operator a^{-1} c_0^dagger (I-sigma_3) c_0 and that the interaction uses the direct finite S_x^2 operator.",
+      "id": "coincident_composite_check",
+      "severity": "fatal",
+      "stage": "post_construction"
+    },
+    {
+      "description": "Confirm that no link variables, Gauss-law constraints, gauge fixing, or gauge transporter are introduced for this non-gauge model.",
+      "id": "no_gauge_sector_check",
+      "severity": "fatal",
+      "stage": "pre_simulation"
+    }
+  ]
+}

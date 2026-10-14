@@ -1,0 +1,8 @@
+{
+  "agent2_library": "workflow/A2_library",
+  "agent4_library": "workflow/A4_library",
+  "database": "workflow/simulation_database/simulation_knowledge.sqlite3",
+  "julia_executable": "julia",
+  "max_ansatz_retries": 2,
+  "python_executable": "python"
+}

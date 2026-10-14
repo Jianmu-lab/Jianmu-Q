@@ -1,0 +1,779 @@
+{
+  "circuit_definitions": [],
+  "conserved_quantities": [
+    {
+      "id": "local_z2_gauge_symmetry",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "generator_family": [
+          {
+            "ordered_link_factors": [
+              "h(0,0)",
+              "v(0,0)"
+            ],
+            "vertex": [
+              0,
+              0
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(0,0)",
+              "h(1,0)",
+              "v(1,0)"
+            ],
+            "vertex": [
+              1,
+              0
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(1,0)",
+              "h(2,0)",
+              "v(2,0)"
+            ],
+            "vertex": [
+              2,
+              0
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(2,0)",
+              "v(3,0)"
+            ],
+            "vertex": [
+              3,
+              0
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(0,1)",
+              "v(0,0)",
+              "v(0,1)"
+            ],
+            "vertex": [
+              0,
+              1
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(0,1)",
+              "h(1,1)",
+              "v(1,0)",
+              "v(1,1)"
+            ],
+            "vertex": [
+              1,
+              1
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(1,1)",
+              "h(2,1)",
+              "v(2,0)",
+              "v(2,1)"
+            ],
+            "vertex": [
+              2,
+              1
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(2,1)",
+              "v(3,0)",
+              "v(3,1)"
+            ],
+            "vertex": [
+              3,
+              1
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(0,2)",
+              "v(0,1)",
+              "v(0,2)"
+            ],
+            "vertex": [
+              0,
+              2
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(0,2)",
+              "h(1,2)",
+              "v(1,1)",
+              "v(1,2)"
+            ],
+            "vertex": [
+              1,
+              2
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(1,2)",
+              "h(2,2)",
+              "v(2,1)",
+              "v(2,2)"
+            ],
+            "vertex": [
+              2,
+              2
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(2,2)",
+              "v(3,1)",
+              "v(3,2)"
+            ],
+            "vertex": [
+              3,
+              2
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(0,3)",
+              "v(0,2)"
+            ],
+            "vertex": [
+              0,
+              3
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(0,3)",
+              "h(1,3)",
+              "v(1,2)"
+            ],
+            "vertex": [
+              1,
+              3
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(1,3)",
+              "h(2,3)",
+              "v(2,2)"
+            ],
+            "vertex": [
+              2,
+              3
+            ]
+          },
+          {
+            "ordered_link_factors": [
+              "h(2,3)",
+              "v(3,2)"
+            ],
+            "vertex": [
+              3,
+              3
+            ]
+          }
+        ],
+        "link_operators": {
+          "h(0,0)": "IIIIIIIIX",
+          "h(0,1)": "IIIIIXIIX",
+          "h(0,2)": "IIXIIXIII",
+          "h(0,3)": "IIXIIIIII",
+          "h(1,0)": "IIIIIIIXI",
+          "h(1,1)": "IIIIXIIXI",
+          "h(1,2)": "IXIIXIIII",
+          "h(1,3)": "IXIIIIIII",
+          "h(2,0)": "IIIIIIXII",
+          "h(2,1)": "IIIXIIXII",
+          "h(2,2)": "XIIXIIIII",
+          "h(2,3)": "XIIIIIIII",
+          "v(0,0)": "IIIIIIIIX",
+          "v(0,1)": "IIIIIXIII",
+          "v(0,2)": "IIXIIIIII",
+          "v(1,0)": "IIIIIIIXX",
+          "v(1,1)": "IIIIXXIII",
+          "v(1,2)": "IXXIIIIII",
+          "v(2,0)": "IIIIIIXXI",
+          "v(2,1)": "IIIXXIIII",
+          "v(2,2)": "XXIIIIIII",
+          "v(3,0)": "IIIIIIXII",
+          "v(3,1)": "IIIXIIIII",
+          "v(3,2)": "XIIIIIIII"
+        },
+        "mapped_relation_with_hamiltonian": "Every listed generator product commutes with every Hamiltonian Pauli term; each product evaluates to the identity on the exact reduced nine-qubit representation."
+      },
+      "representation": "family_of_local_gauss_generators_as_products_of_explicit_mapped_link_operators",
+      "target_eigenvalues": {
+        "glueball": "+1 at every lattice vertex",
+        "vacuum": "+1 at every lattice vertex"
+      }
+    },
+    {
+      "id": "continuous_time_translation",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "evolution": "U(t)=exp(-i*t*H_qc)",
+        "generator_reference": "hamiltonian",
+        "mapped_relation_with_hamiltonian": "[H_qc,H_qc]=0"
+      },
+      "representation": "continuous_time_translation_generator",
+      "target_eigenvalues": {
+        "glueball": "zero-based level-1 energy in the physical sector",
+        "vacuum": "ground-state energy"
+      }
+    },
+    {
+      "id": "time_reversal",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "antiunitary": "Theta=K",
+        "complex_conjugation_basis": "nine-qubit computational basis ordered by qubits.ordering",
+        "mapped_relation_with_hamiltonian": "K H_qc K^(-1)=H_qc because every coefficient and every Hamiltonian Pauli matrix is real",
+        "unitary_part": "IIIIIIIII"
+      },
+      "representation": "antiunitary_complex_conjugation_in_the_computational_basis",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "open_square_dihedral_symmetry",
+      "lattice_symmetry_status": "exact",
+      "operators_or_generators": {
+        "generators": [
+          {
+            "destination_by_source_qubit_index": [
+              2,
+              5,
+              8,
+              1,
+              4,
+              7,
+              0,
+              3,
+              6
+            ],
+            "id": "rotation_90_degrees",
+            "plaquette_action": "(x,y)->(2-y,x)"
+          },
+          {
+            "destination_by_source_qubit_index": [
+              2,
+              1,
+              0,
+              5,
+              4,
+              3,
+              8,
+              7,
+              6
+            ],
+            "id": "reflection_vertical_axis",
+            "plaquette_action": "(x,y)->(2-x,y)"
+          }
+        ],
+        "mapped_relation_with_hamiltonian": "Conjugation by either generator permutes the explicit Hamiltonian terms with their coefficients unchanged; therefore every generated D4 permutation commutes with H_qc.",
+        "permutation_convention": "destination_by_source_qubit_index"
+      },
+      "representation": "qubit_permutation_representation_of_D4",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "spatial_translation_symmetry",
+      "lattice_symmetry_status": "broken_by_boundary_or_discretization",
+      "operators_or_generators": {
+        "generators": [],
+        "mapped_relation_with_hamiltonian": "No nonidentity spatial translation preserves the explicit boundary single-X terms and interior two-X terms."
+      },
+      "representation": "no_nontrivial_qubit_permutation_preserving_the_open_boundary_hamiltonian",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    },
+    {
+      "id": "nontrivial_electric_z2_one_form_symmetry",
+      "lattice_symmetry_status": "broken_by_boundary_or_discretization",
+      "operators_or_generators": {
+        "contractible_curve_construction": "For any available closed dual curve, multiply the explicit mapped link Pauli strings intersected by that curve; the resulting operator is a product of the enclosed listed Gauss generators.",
+        "mapped_relation_with_hamiltonian": "Contractible curve products commute with H_qc and reduce within this physical representation, while open boundaries provide no noncontractible generator.",
+        "nontrivial_generators": []
+      },
+      "representation": "no_noncontractible_open_boundary_generator",
+      "target_eigenvalues": {
+        "glueball": "unspecified",
+        "vacuum": "unspecified"
+      }
+    }
+  ],
+  "contract_type": "qubit_mapping",
+  "hamiltonian": {
+    "representation": "pauli_sum",
+    "terms": [
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIIIX"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIXIIX"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIXIIXIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIXIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIIXI"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIXIIXI"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IXIIXIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IXIIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIXII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIXIIXII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "XIIXIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "XIIIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIIIX"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIXIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIXIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIIXX"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIXXIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IXXIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIXXI"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIXXIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "XXIIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIXII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIXIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "XIIIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIIIZ"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIIZI"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIIZII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIIZIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIIZIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIIZIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IIZIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "IZIIIIIII"
+      },
+      {
+        "coefficient": "-1",
+        "pauli": "ZIIIIIIII"
+      }
+    ]
+  },
+  "observable": {
+    "matrix_elements": [
+      {
+        "bra": "glueball",
+        "coefficient": "+1",
+        "ket": "glueball"
+      },
+      {
+        "bra": "vacuum",
+        "coefficient": "-1",
+        "ket": "vacuum"
+      }
+    ],
+    "representation": "explicit_operator_sum",
+    "terms": [
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIIIX"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIXIIX"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIXIIXIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIXIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIIXI"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIXIIXI"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IXIIXIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IXIIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIXII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIXIIXII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "XIIXIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "XIIIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIIIX"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIXIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIXIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIIXX"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIXXIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IXXIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIXXI"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIXXIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "XXIIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIXII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIXIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "XIIIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIIIZ"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIIZI"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIIZII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIIZIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIIZIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIIZIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IIZIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "IZIIIIIII"
+          }
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "operations": [
+          {
+            "pauli": "ZIIIIIIII"
+          }
+        ]
+      }
+    ]
+  },
+  "physical_sector": {
+    "basis_rule": "Use the complete 512-dimensional nine-qubit computational basis {|b8 b7 b6 b5 b4 b3 b2 b1 b0>: bj in {0,1}} with qj assigned by qubits.ordering. This basis is exactly the G_v=+1 charge-free physical Hilbert space after the open-boundary plaquette-dual reduction; no additional computational-basis filtering is applied. Construct the vacuum from the lowest eigenspace of the explicit H_qc. Construct glueball from the zero-based level_index=1 energy eigenspace of H_qc within this same 512-dimensional physical space, ordered by increasing distinct energy, without imposing any D4, time-reversal, translation, or one-form eigenvalue.",
+    "required": true,
+    "validation_tests": [
+      {
+        "id": "validate_physical_sector",
+        "rule": "Pass iff the working basis has dimension 512 and, for each of the 16 listed vertex generators, multiplying its explicit ordered link Pauli factors yields IIIIIIIII with target eigenvalue +1 on every working-basis vector."
+      },
+      {
+        "id": "validate_dual_operator_algebra",
+        "rule": "Pass iff B_p is the single-Z string on the qubit assigned to p, every one of the 24 X_l operators equals its explicit link_operators Pauli string, all mapped X_l commute mutually, all mapped B_p commute mutually, and B_p anticommutes with mapped X_l exactly when p is incident on l and commutes otherwise."
+      },
+      {
+        "id": "validate_glueball_level",
+        "rule": "Pass iff the glueball state is normalized, lies in the complete reduced physical space, satisfies H_qc|glueball>=E_1|glueball> where E_1 is the zero-based level-1 distinct energy in increasing order, and no unprovided D4 or other discrete-symmetry eigenvalue is imposed."
+      },
+      {
+        "id": "validate_unshifted_hamiltonian",
+        "rule": "Pass iff H_qc contains exactly the 24 electric terms with coefficient -(bare_coupling_g^2/lattice_spacing_a)=-1 and exactly the 9 plaquette-Z terms with coefficient -(bare_coupling_g^(-2)/lattice_spacing_a)=-1 for bare_coupling_g=1 and lattice_spacing_a=1, with no identity energy shift and no state-dependent coefficient."
+      }
+    ]
+  },
+  "qubits": {
+    "count": 9,
+    "ordering": [
+      "p(0,0)",
+      "p(1,0)",
+      "p(2,0)",
+      "p(0,1)",
+      "p(1,1)",
+      "p(2,1)",
+      "p(0,2)",
+      "p(1,2)",
+      "p(2,2)"
+    ],
+    "pauli_label_order": "qiskit_little_endian"
+  },
+  "schema_version": "1.0"
+}

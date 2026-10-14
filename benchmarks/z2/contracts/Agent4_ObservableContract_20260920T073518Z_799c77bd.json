@@ -1,0 +1,1466 @@
+{
+  "adapter_interface": {
+    "builder": "build_observable_measurements",
+    "call_signature": "build_observable_measurements(state_circuits, trotter_steps, sample_values)",
+    "reconstructor": "reconstruct_observable",
+    "reconstructor_input_rule": "Receive a mapping containing one expectation for every exact circuit_recipe_id plus the same empty sample_values object, then apply reconstruction.terms and return {real: weighted_sum, imag: 0}.",
+    "required_sample_values": {},
+    "required_trotter_steps": 0,
+    "return_rule": "Return all 58 circuit recipes in measurement.circuit_recipe_ids in one call. Each circuit is the unrotated supplied preparation circuit with the listed readout_pauli; do not append Pauli-basis rotations."
+  },
+  "contract_type": "observable_measurement",
+  "literature_sources": [
+    {
+      "applicability": "direct: the requested diagonal Hamiltonian matrix elements are weighted sums of Pauli expectations",
+      "locator": "Equation (Hq) and the immediately preceding paragraph beginning \"The update of the angles...\" describing energy estimation from a weighted Pauli sum",
+      "source_path": "arXiv-1704.05018v2.tar/HardwareEffEigensolver.tex"
+    }
+  ],
+  "measurement": {
+    "ancilla_qubits": 0,
+    "circuit_recipe_ids": [
+      "glueball_e_x_q0_m2_real",
+      "glueball_e_x_q5_q0_real",
+      "glueball_e_x_q6_q3_real",
+      "glueball_e_x_q6_m2_real",
+      "glueball_e_x_q1_real",
+      "glueball_e_x_q4_q1_real",
+      "glueball_e_x_q7_q4_real",
+      "glueball_e_x_q7_real",
+      "glueball_e_x_q2_m2_real",
+      "glueball_e_x_q5_q2_real",
+      "glueball_e_x_q8_q5_real",
+      "glueball_e_x_q8_m2_real",
+      "glueball_e_x_q3_real",
+      "glueball_e_x_q1_q0_real",
+      "glueball_e_x_q4_q3_real",
+      "glueball_e_x_q7_q6_real",
+      "glueball_e_x_q2_q1_real",
+      "glueball_e_x_q5_q4_real",
+      "glueball_e_x_q8_q7_real",
+      "glueball_e_x_q5_real",
+      "glueball_b_z_q0_real",
+      "glueball_b_z_q1_real",
+      "glueball_b_z_q2_real",
+      "glueball_b_z_q3_real",
+      "glueball_b_z_q4_real",
+      "glueball_b_z_q5_real",
+      "glueball_b_z_q6_real",
+      "glueball_b_z_q7_real",
+      "glueball_b_z_q8_real",
+      "vacuum_e_x_q0_m2_real",
+      "vacuum_e_x_q5_q0_real",
+      "vacuum_e_x_q6_q3_real",
+      "vacuum_e_x_q6_m2_real",
+      "vacuum_e_x_q1_real",
+      "vacuum_e_x_q4_q1_real",
+      "vacuum_e_x_q7_q4_real",
+      "vacuum_e_x_q7_real",
+      "vacuum_e_x_q2_m2_real",
+      "vacuum_e_x_q5_q2_real",
+      "vacuum_e_x_q8_q5_real",
+      "vacuum_e_x_q8_m2_real",
+      "vacuum_e_x_q3_real",
+      "vacuum_e_x_q1_q0_real",
+      "vacuum_e_x_q4_q3_real",
+      "vacuum_e_x_q7_q6_real",
+      "vacuum_e_x_q2_q1_real",
+      "vacuum_e_x_q5_q4_real",
+      "vacuum_e_x_q8_q7_real",
+      "vacuum_e_x_q5_real",
+      "vacuum_b_z_q0_real",
+      "vacuum_b_z_q1_real",
+      "vacuum_b_z_q2_real",
+      "vacuum_b_z_q3_real",
+      "vacuum_b_z_q4_real",
+      "vacuum_b_z_q5_real",
+      "vacuum_b_z_q6_real",
+      "vacuum_b_z_q7_real",
+      "vacuum_b_z_q8_real"
+    ],
+    "circuit_recipes": [
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIIIX",
+        "recipe_id": "glueball_e_x_q0_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIXIIX",
+        "recipe_id": "glueball_e_x_q5_q0_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIXIIXIII",
+        "recipe_id": "glueball_e_x_q6_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIXIIIIII",
+        "recipe_id": "glueball_e_x_q6_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIIXI",
+        "recipe_id": "glueball_e_x_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIXIIXI",
+        "recipe_id": "glueball_e_x_q4_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IXIIXIIII",
+        "recipe_id": "glueball_e_x_q7_q4_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IXIIIIIII",
+        "recipe_id": "glueball_e_x_q7_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIXII",
+        "recipe_id": "glueball_e_x_q2_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIXIIXII",
+        "recipe_id": "glueball_e_x_q5_q2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "XIIXIIIII",
+        "recipe_id": "glueball_e_x_q8_q5_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "XIIIIIIII",
+        "recipe_id": "glueball_e_x_q8_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIXIII",
+        "recipe_id": "glueball_e_x_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIIXX",
+        "recipe_id": "glueball_e_x_q1_q0_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIXXIII",
+        "recipe_id": "glueball_e_x_q4_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IXXIIIIII",
+        "recipe_id": "glueball_e_x_q7_q6_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIXXI",
+        "recipe_id": "glueball_e_x_q2_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIXXIIII",
+        "recipe_id": "glueball_e_x_q5_q4_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "XXIIIIIII",
+        "recipe_id": "glueball_e_x_q8_q7_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIXIIIII",
+        "recipe_id": "glueball_e_x_q5_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIIIZ",
+        "recipe_id": "glueball_b_z_q0_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIIZI",
+        "recipe_id": "glueball_b_z_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIIZII",
+        "recipe_id": "glueball_b_z_q2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIIZIII",
+        "recipe_id": "glueball_b_z_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIIZIIII",
+        "recipe_id": "glueball_b_z_q4_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIIZIIIII",
+        "recipe_id": "glueball_b_z_q5_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IIZIIIIII",
+        "recipe_id": "glueball_b_z_q6_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "IZIIIIIII",
+        "recipe_id": "glueball_b_z_q7_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_glueball"
+          }
+        ],
+        "readout_pauli": "ZIIIIIIII",
+        "recipe_id": "glueball_b_z_q8_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIIIX",
+        "recipe_id": "vacuum_e_x_q0_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIXIIX",
+        "recipe_id": "vacuum_e_x_q5_q0_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIXIIXIII",
+        "recipe_id": "vacuum_e_x_q6_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIXIIIIII",
+        "recipe_id": "vacuum_e_x_q6_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIIXI",
+        "recipe_id": "vacuum_e_x_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIXIIXI",
+        "recipe_id": "vacuum_e_x_q4_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IXIIXIIII",
+        "recipe_id": "vacuum_e_x_q7_q4_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IXIIIIIII",
+        "recipe_id": "vacuum_e_x_q7_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIXII",
+        "recipe_id": "vacuum_e_x_q2_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIXIIXII",
+        "recipe_id": "vacuum_e_x_q5_q2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "XIIXIIIII",
+        "recipe_id": "vacuum_e_x_q8_q5_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "XIIIIIIII",
+        "recipe_id": "vacuum_e_x_q8_m2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIXIII",
+        "recipe_id": "vacuum_e_x_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIIXX",
+        "recipe_id": "vacuum_e_x_q1_q0_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIXXIII",
+        "recipe_id": "vacuum_e_x_q4_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IXXIIIIII",
+        "recipe_id": "vacuum_e_x_q7_q6_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIXXI",
+        "recipe_id": "vacuum_e_x_q2_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIXXIIII",
+        "recipe_id": "vacuum_e_x_q5_q4_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "XXIIIIIII",
+        "recipe_id": "vacuum_e_x_q8_q7_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIXIIIII",
+        "recipe_id": "vacuum_e_x_q5_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIIIZ",
+        "recipe_id": "vacuum_b_z_q0_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIIZI",
+        "recipe_id": "vacuum_b_z_q1_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIIZII",
+        "recipe_id": "vacuum_b_z_q2_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIIZIII",
+        "recipe_id": "vacuum_b_z_q3_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIIZIIII",
+        "recipe_id": "vacuum_b_z_q4_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIIZIIIII",
+        "recipe_id": "vacuum_b_z_q5_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IIZIIIIII",
+        "recipe_id": "vacuum_b_z_q6_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "IZIIIIIII",
+        "recipe_id": "vacuum_b_z_q7_real"
+      },
+      {
+        "component": "real",
+        "operations": [
+          {
+            "operation": "compose",
+            "reference": "prepare_vacuum"
+          }
+        ],
+        "readout_pauli": "ZIIIIIIII",
+        "recipe_id": "vacuum_b_z_q8_real"
+      }
+    ],
+    "components": [
+      "real",
+      "imag"
+    ],
+    "protocol_id": "z2_4x4_obc_direct_combined_hamiltonian_difference_v1"
+  },
+  "operator_recipes": [
+    {
+      "hamiltonian_coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q0_m2",
+      "multiplicity": 2,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIIIX)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q0"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q5_q0",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIXIIX)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q5",
+            "q0"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q6_q3",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIXIIXIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q6",
+            "q3"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q6_m2",
+      "multiplicity": 2,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIXIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q6"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q1",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIIXI)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q1"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q4_q1",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIXIIXI)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q4",
+            "q1"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q7_q4",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IXIIXIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q7",
+            "q4"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q7",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IXIIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q7"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q2_m2",
+      "multiplicity": 2,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIXII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q2"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q5_q2",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIXIIXII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q5",
+            "q2"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q8_q5",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(XIIXIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q8",
+            "q5"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q8_m2",
+      "multiplicity": 2,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(XIIIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q8"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q3",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIXIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q3"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q1_q0",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIIXX)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q1",
+            "q0"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q4_q3",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIXXIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q4",
+            "q3"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q7_q6",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IXXIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q7",
+            "q6"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q2_q1",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIXXI)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q2",
+            "q1"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q5_q4",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIXXIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q5",
+            "q4"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q8_q7",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(XXIIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q8",
+            "q7"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+      "id": "op_e_x_q5",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIXIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q5"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q0",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIIIZ)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q0"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q1",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIIZI)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q1"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q2",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIIZII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q2"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q3",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIIZIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q3"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q4",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIIZIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q4"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q5",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIIZIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q5"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q6",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IIZIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q6"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q7",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(IZIIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q7"
+          ]
+        }
+      ]
+    },
+    {
+      "hamiltonian_coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+      "id": "op_b_z_q8",
+      "multiplicity": 1,
+      "operations": [
+        {
+          "angle": null,
+          "controls": [],
+          "gate": "PauliString(ZIIIIIIII)",
+          "operation": "declare_readout_observable",
+          "targets": [
+            "q8"
+          ]
+        }
+      ]
+    }
+  ],
+  "reconstruction": {
+    "output_components": [
+      "real",
+      "imag"
+    ],
+    "rule": "Require sample_values to equal the authoritative empty object {} and reject any nonempty, missing, or extra assignment. Let e[id] be the scalar expectation returned for the exact recipe_id. The real output is the sum of all listed coefficient*e[recipe_id] terms. The imaginary output is exactly 0 because both requested matrix elements are diagonal expectations of the Hermitian H_qc. No identity shift or state-dependent Hamiltonian coefficient is added.",
+    "terms": [
+      {
+        "coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q0_m2_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q5_q0_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q6_q3_real"
+      },
+      {
+        "coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q6_m2_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q1_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q4_q1_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q7_q4_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q7_real"
+      },
+      {
+        "coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q2_m2_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q5_q2_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q8_q5_real"
+      },
+      {
+        "coefficient": "-2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q8_m2_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q3_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q1_q0_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q4_q3_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q7_q6_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q2_q1_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q5_q4_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q8_q7_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "glueball_e_x_q5_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q0_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q1_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q2_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q3_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q4_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q5_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q6_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q7_real"
+      },
+      {
+        "coefficient": "-bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "glueball_b_z_q8_real"
+      },
+      {
+        "coefficient": "+2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q0_m2_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q5_q0_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q6_q3_real"
+      },
+      {
+        "coefficient": "+2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q6_m2_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q1_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q4_q1_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q7_q4_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q7_real"
+      },
+      {
+        "coefficient": "+2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q2_m2_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q5_q2_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q8_q5_real"
+      },
+      {
+        "coefficient": "+2*bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q8_m2_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q3_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q1_q0_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q4_q3_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q7_q6_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q2_q1_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q5_q4_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q8_q7_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^2/lattice_spacing_a",
+        "recipe_id": "vacuum_e_x_q5_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q0_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q1_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q2_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q3_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q4_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q5_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q6_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q7_real"
+      },
+      {
+        "coefficient": "+bare_coupling_g^(-2)/lattice_spacing_a",
+        "recipe_id": "vacuum_b_z_q8_real"
+      }
+    ]
+  },
+  "schema_version": "1.1",
+  "state_labels": [
+    "glueball",
+    "vacuum"
+  ],
+  "state_preparation_interface": {
+    "required_operations": [
+      "prepare_glueball",
+      "prepare_vacuum"
+    ],
+    "treat_as_black_box": true
+  },
+  "time_evolution": {
+    "method": "none: direct equal-time Pauli expectation measurement",
+    "recommended_test_steps": [],
+    "required": false,
+    "step_operations": [],
+    "step_symbol": "N_T",
+    "symmetry_preservation_rule": "The runtime passes the sentinel N_T=0 and no evolution is constructed. The supplied state preparations must already satisfy every mandatory G_v=+1 constraint. Direct Pauli readout introduces no finite-step symmetry breaking."
+  }
+}

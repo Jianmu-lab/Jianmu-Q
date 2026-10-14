@@ -1,0 +1,82 @@
+{
+  "external_states": {
+    "definitions": {
+      "glueball": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"Gauss's law\": 0}",
+      "vacuum": "Ground state / vacuum"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "glueball",
+      "vacuum"
+    ]
+  },
+  "model": "2+1 dimensional pure Z2 gauge theory in Kogut-Susskind formalism",
+  "resolved_values": {
+    "bare copuling: g": "g = 1",
+    "bare_coupling_g": 1,
+    "lattice_spacing_a": 1,
+    "number of lattice site [L,L]:": [
+      4,
+      4
+    ]
+  },
+  "schema_version": "1.0",
+  "simulation_inputs": {},
+  "source": "pipeline_resolved",
+  "sources": {
+    "agent2_parameter_contract": "benchmarks/z2/contracts/Agent2_ParameterContract_20260920T073518Z_799c77bd.json",
+    "external_states": "agent2_parameter_contract.external_states",
+    "resolved_values": "agent2_parameter_contract.selected_value",
+    "simulation_parameters": "run_spec.user_input.parameter_groups.simulation",
+    "user_parameters": "run_spec.user_input.parameters"
+  },
+  "user_inputs": {
+    "bare copuling: g": "g = 1",
+    "number of lattice site [L,L]:": [
+      4,
+      4
+    ]
+  },
+  "vqe_runtime": {
+    "adaptive_depth": {
+      "enabled": true,
+      "minimum_relative_improvement": 0.01,
+      "plateau_window": 3
+    },
+    "energy_tie_tolerance": 1e-10,
+    "energy_tolerance": 0.001,
+    "experience_database": "workflow/simulation_database/simulation_knowledge.sqlite3",
+    "first_depth_lower_bound": -0.05,
+    "first_depth_upper_bound": 0.05,
+    "gradient_check_step": 1e-06,
+    "gradient_check_tolerance": 1e-05,
+    "max_iterations": 200,
+    "max_same_depth_continuations": 1,
+    "new_layer_value": 0.0,
+    "perturbation_scale": 0.01,
+    "random_seed": 12345,
+    "record_experience": true,
+    "restart_count": 2,
+    "scan_all_depths": true,
+    "stop_restarts_on_convergence": true,
+    "target_kind_by_state": {
+      "glueball": "sector_eigenstate",
+      "vacuum": "ground"
+    },
+    "target_spec_by_state": {
+      "glueball": {
+        "kind": "sector_eigenstate",
+        "level_index": 1,
+        "quantum_numbers": {
+          "Gauss's law": 0
+        }
+      },
+      "vacuum": {
+        "kind": "ground",
+        "level_index": 0,
+        "quantum_numbers": {}
+      }
+    },
+    "variance_tolerance": 0.01
+  }
+}

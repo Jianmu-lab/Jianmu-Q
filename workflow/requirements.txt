@@ -1,0 +1,9 @@
+openai>=2.37,<3
+numpy>=2.0,<3
+scipy>=1.14,<2
+matplotlib>=3.9,<4
+qiskit>=2.2,<3
+qiskit-algorithms>=0.4,<1
+qiskit-aer>=0.17,<1
+qiskit-ibm-runtime>=0.40,<1
+streamlit>=1.62,<2

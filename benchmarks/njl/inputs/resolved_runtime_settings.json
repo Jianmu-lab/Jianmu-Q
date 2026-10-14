@@ -1,0 +1,86 @@
+{
+  "external_states": {
+    "definitions": {
+      "hadron": "Quantum-number-sector eigenstate; level_index=1; quantum_numbers={\"charge\": 0}",
+      "vacuum": "Quantum-number-sector eigenstate; level_index=0; quantum_numbers={\"charge\": 0}"
+    },
+    "equivalent_groups": [],
+    "labels": [
+      "hadron",
+      "vacuum"
+    ]
+  },
+  "model": "one flavor NJL model",
+  "resolved_values": {
+    "bare coupling: g": 0.5,
+    "bare quark mass: m": 0.5,
+    "bare_four_fermion_coupling": 0.5,
+    "bare_quark_mass": 0.5,
+    "fermionic_mode_count": 10,
+    "lattice spacing: a": 1,
+    "lattice_spacing": 1.0,
+    "number of lattice site: L": 5,
+    "spatial_site_count": 5,
+    "wilson_parameter": 1.0
+  },
+  "schema_version": "1.0",
+  "simulation_inputs": {},
+  "source": "pipeline_resolved",
+  "sources": {
+    "agent2_parameter_contract": "benchmarks/njl/contracts/Agent2_ParameterContract_20260929T024841Z_b286d0a8.json",
+    "external_states": "agent2_parameter_contract.external_states",
+    "resolved_values": "agent2_parameter_contract.selected_value",
+    "simulation_parameters": "run_spec.user_input.parameter_groups.simulation",
+    "user_parameters": "run_spec.user_input.parameters"
+  },
+  "user_inputs": {
+    "bare coupling: g": 0.5,
+    "bare quark mass: m": 0.5,
+    "lattice spacing: a": 1,
+    "number of lattice site: L": 5
+  },
+  "vqe_runtime": {
+    "adaptive_depth": {
+      "enabled": true,
+      "minimum_relative_improvement": 0.01,
+      "plateau_window": 3
+    },
+    "energy_tie_tolerance": 1e-10,
+    "energy_tolerance": 0.001,
+    "experience_database": "workflow/simulation_database/simulation_knowledge.sqlite3",
+    "first_depth_lower_bound": -0.05,
+    "first_depth_upper_bound": 0.05,
+    "gradient_check_step": 1e-06,
+    "gradient_check_tolerance": 1e-05,
+    "max_iterations": 200,
+    "max_same_depth_continuations": 2,
+    "new_layer_value": 0.0,
+    "perturbation_scale": 0.01,
+    "random_seed": 12345,
+    "record_experience": true,
+    "restart_count": 2,
+    "scan_all_depths": true,
+    "stop_restarts_on_convergence": true,
+    "target_kind_by_state": {
+      "hadron": "sector_eigenstate",
+      "vacuum": "sector_eigenstate"
+    },
+    "target_spec_by_state": {
+      "hadron": {
+        "kind": "sector_eigenstate",
+        "level_index": 1,
+        "quantum_numbers": {
+          "charge": 0
+        }
+      },
+      "vacuum": {
+        "kind": "sector_eigenstate",
+        "level_index": 0,
+        "quantum_numbers": {
+          "charge": 0
+        }
+      }
+    },
+    "variance_tolerance": 0.01
+  }
+}

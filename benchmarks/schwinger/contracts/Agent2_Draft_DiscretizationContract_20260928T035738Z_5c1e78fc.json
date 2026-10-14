@@ -1,0 +1,237 @@
+{
+  "contract_type": "lattice_discretization",
+  "definitions": [
+    {
+      "canonical_expression": "q_N=sum_{alpha=1}^{2} c_dagger[N,alpha]*c[N,alpha]-1; Q_lat=sum_{N=0}^{4} q_N; S_ell=sum_{N=0}^{ell} q_N",
+      "dependencies": [],
+      "display_latex": "q_N=c_N^\\dagger c_N-1,\\quad Q_{\\rm lat}=\\sum_{N=0}^{4}q_N,\\quad S_\\ell=\\sum_{N=0}^{\\ell}q_N",
+      "id": "lattice_charge",
+      "kind": "conserved_quantity"
+    },
+    {
+      "canonical_expression": "E_-1=-(g/2)*Q_lat; E_ell=g*(S_ell-Q_lat/2) for ell=0,...,3; E_4=(g/2)*Q_lat; G_N=E_N-E_{N-1}-g*q_N=0 for N=0,...,4",
+      "dependencies": [
+        "lattice_charge"
+      ],
+      "display_latex": "E_{-1}=-\\frac g2Q_{\\rm lat},\\quad E_\\ell=g\\left(S_\\ell-\\frac12Q_{\\rm lat}\\right),\\quad E_4=\\frac g2Q_{\\rm lat},\\quad G_N=E_N-E_{N-1}-gq_N=0",
+      "id": "gauss_law_reconstruction",
+      "kind": "gauge_constraint"
+    },
+    {
+      "canonical_expression": "A0_N=a*g*sum_{ell=0}^{3}(indicator(N<=ell)-1/2)*(S_ell-Q_lat/2)",
+      "dependencies": [
+        "lattice_charge",
+        "gauss_law_reconstruction"
+      ],
+      "display_latex": "A_{0,N}=ag\\sum_{\\ell=0}^{3}\\left(\\mathbf 1_{N\\leq\\ell}-\\frac12\\right)\\left(S_\\ell-\\frac12Q_{\\rm lat}\\right)",
+      "id": "reduced_scalar_potential",
+      "kind": "gauge_potential"
+    },
+    {
+      "canonical_expression": "H_lat=sum_{N=0}^{4} c_dagger_N*((m+r/a)*beta)*c_N + sum_{N=0}^{3}[c_dagger_N*(-i*alpha/(2a)-r*beta/(2a))*c_{N+1}+c_dagger_{N+1}*(i*alpha/(2a)-r*beta/(2a))*c_N] + (a*g^2/2)*sum_{ell=0}^{3}(S_ell-Q_lat/2)^2; alpha=sigma_3; beta=sigma_1; a=1; g=0.5; m=0.5; r=1",
+      "dependencies": [
+        "lattice_charge",
+        "gauss_law_reconstruction"
+      ],
+      "display_latex": "H_{\\rm lat}=\\sum_{N=0}^{4}c_N^\\dagger\\left(m+\\frac ra\\right)\\beta c_N+\\sum_{N=0}^{3}\\left[c_N^\\dagger\\left(-\\frac{i\\alpha}{2a}-\\frac{r\\beta}{2a}\\right)c_{N+1}+c_{N+1}^\\dagger\\left(\\frac{i\\alpha}{2a}-\\frac{r\\beta}{2a}\\right)c_N\\right]+\\frac{ag^2}{2}\\sum_{\\ell=0}^{3}\\left(S_\\ell-\\frac12Q_{\\rm lat}\\right)^2",
+      "id": "lattice_hamiltonian",
+      "kind": "lattice_hamiltonian"
+    },
+    {
+      "canonical_expression": "P*c_N*P^{-1}=beta*c_{4-N}; P*E_ell*P^{-1}=-E_{3-ell}",
+      "dependencies": [
+        "gauss_law_reconstruction"
+      ],
+      "display_latex": "\\mathsf P c_N\\mathsf P^{-1}=\\beta c_{4-N},\\qquad \\mathsf P E_\\ell\\mathsf P^{-1}=-E_{3-\\ell}",
+      "id": "lattice_parity",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "T is antiunitary; T*c_N*T^{-1}=beta*c_N; T*i*T^{-1}=-i",
+      "dependencies": [],
+      "display_latex": "\\mathsf T c_N\\mathsf T^{-1}=\\beta c_N,\\qquad \\mathsf T i\\mathsf T^{-1}=-i",
+      "id": "lattice_time_reversal",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "PT=P composed with antiunitary T",
+      "dependencies": [
+        "lattice_parity",
+        "lattice_time_reversal"
+      ],
+      "display_latex": "\\mathsf{PT}=\\mathsf P\\mathsf T",
+      "id": "lattice_pt",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "C*c_N*C^{-1}=-i*sigma_3*c_dagger_N; C*q_N*C^{-1}=-q_N",
+      "dependencies": [
+        "lattice_charge"
+      ],
+      "display_latex": "\\mathsf Cc_N\\mathsf C^{-1}=-i\\sigma_3c_N^\\dagger,\\qquad \\mathsf Cq_N\\mathsf C^{-1}=-q_N",
+      "id": "lattice_charge_conjugation",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "s(k)=k+2; A0_N(t)=exp(i*H_lat*t)*A0_N*exp(-i*H_lat*t); U_k=exp(-i*g*a*A0_{s(k)}(k*a)); W_z=U_{z-1}...U_0 for z>0, identity for z=0, and U_z^{-1}...U_{-1}^{-1} for z<0",
+      "dependencies": [
+        "lattice_hamiltonian",
+        "reduced_scalar_potential"
+      ],
+      "display_latex": "U_k=\\exp[-igaA_{0,s(k)}(ka)],\\quad W_z=\\begin{cases}U_{z-1}\\cdots U_0,&z>0,\\\\ \\mathbb I,&z=0,\\\\ U_z^{-1}\\cdots U_{-1}^{-1},&z<0.\\end{cases}",
+      "id": "ordered_axial_wilson_line",
+      "kind": "gauge_transporter"
+    },
+    {
+      "canonical_expression": "O_lat(z,0)=(1/a)*c_dagger_{z+2}(z*a)*(I-sigma_3)*W_z*c_2(0), where c_N(t)=exp(i*H_lat*t)*c_N*exp(-i*H_lat*t), z in {-2,-1,0,1,2}, and W_z is oriented from X(0) to X(z)",
+      "dependencies": [
+        "lattice_hamiltonian",
+        "ordered_axial_wilson_line"
+      ],
+      "display_latex": "\\mathcal O_{\\rm lat}(z,0)=\\frac1a c_{z+2}^\\dagger(za)(\\mathbb I-\\sigma_3)W_zc_2(0),\\qquad z\\in\\{-2,-1,0,1,2\\}",
+      "id": "lattice_observable",
+      "kind": "lattice_observable"
+    },
+    {
+      "canonical_expression": "M_lat(z,0)=<phi|O_lat(z,0)|psi>; output=(Re(M_lat(z,0)),Im(M_lat(z,0)))",
+      "dependencies": [
+        "lattice_observable"
+      ],
+      "display_latex": "\\mathcal M_{\\rm lat}(z,0)=\\langle\\phi|\\mathcal O_{\\rm lat}(z,0)|\\psi\\rangle",
+      "id": "requested_lattice_matrix_element",
+      "kind": "matrix_element"
+    },
+    {
+      "canonical_expression": "No unitary one-site translation maps the open five-site Hamiltonian to itself because the boundary hopping terms are absent.",
+      "dependencies": [
+        "lattice_hamiltonian"
+      ],
+      "display_latex": "[H_{\\rm lat},\\mathsf T_x]\\neq0\\ \\text{for a putative cyclic one-site translation}",
+      "id": "broken_spatial_translation",
+      "kind": "symmetry_operator"
+    },
+    {
+      "canonical_expression": "No exact finite-lattice generator of continuous boosts or continuous spacetime translations is defined.",
+      "dependencies": [],
+      "display_latex": "M^{01}\\ \\text{and continuous }P^1\\text{ have no exact finite-OBC lattice realization}",
+      "id": "continuum_lorentz_generators",
+      "kind": "continuum_symmetry_reference"
+    }
+  ],
+  "experience_selection": {
+    "decision": "none",
+    "reason": "No historical candidate was supplied. A cohesive OBC Wilson-fermion bundle with exact axial-gauge Gauss-law elimination was derived because it preserves the required charge-sector path without gauge truncation and has lower execution cost than full-link or PBC-holonomy formulations.",
+    "source_record_id": null
+  },
+  "field_encodings": [
+    {
+      "degrees_of_freedom": "Two fermionic modes c[N,alpha] at every site, alpha=1,2; ten modes total; full Fock dimension 2^10=1024; Q_lat=0 sector dimension C(10,5)=252.",
+      "scheme": "two-component Wilson fermions in the fixed gamma representation followed by an exact fermionic occupation encoding",
+      "sector": "fermion",
+      "truncation": "No approximate fermion truncation: each fermionic mode has exact occupations 0 and 1; Wilson parameter r=1."
+    },
+    {
+      "degrees_of_freedom": "No independent gauge-link degree of freedom. Electric fields and A_0 are reconstructed from q_N, and Gauss law holds at every lattice vertex; the global sum of the vertex relations is dependent under the reflection-symmetric boundary-flux prescription. The effective reduced degree count is the ten fermionic modes.",
+      "scheme": "spatial axial gauge A_1=0 with exact Gauss-law elimination",
+      "sector": "gauge",
+      "truncation": "None. No electric-flux cutoff and no finite-group or quantum-link replacement."
+    }
+  ],
+  "lattice": {
+    "geometry": "1+1 dimensions; five spatial sites N=0,...,4 with x_N=a*(N-2), spatial links ell=0,...,3, temporal spacing a_t=a, and observable site map s(z)=z+2",
+    "spatial_boundary_condition": "open boundary conditions with reflection-symmetric boundary electric flux E_-1=-(g/2)Q_lat and E_4=(g/2)Q_lat"
+  },
+  "lattice_symmetries": [
+    {
+      "commutator_result": "G_N=0 as an operator identity at every lattice vertex after exact elimination; consequently [H_lat,G_N]=0.",
+      "id": "local_U1_gauss_law",
+      "operator_definition_id": "gauss_law_reconstruction",
+      "status": "exact",
+      "target_eigenvalues": {
+        "phi": "0 at every lattice vertex",
+        "psi": "0 at every lattice vertex"
+      }
+    },
+    {
+      "commutator_result": "[H_lat,Q_lat]=0 exactly in the full reduced Fock space.",
+      "id": "vector_charge",
+      "operator_definition_id": "lattice_charge",
+      "status": "exact",
+      "target_eigenvalues": {
+        "phi": "0",
+        "psi": "0"
+      }
+    },
+    {
+      "commutator_result": "C*H_lat*C^{-1}=H_lat.",
+      "id": "C",
+      "operator_definition_id": "lattice_charge_conjugation",
+      "status": "exact",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "P*H_lat*P^{-1}=H_lat under N->4-N and the reflection-symmetric boundary-flux reconstruction.",
+      "id": "P",
+      "operator_definition_id": "lattice_parity",
+      "status": "exact",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "T*H_lat*T^{-1}=H_lat, with T antiunitary.",
+      "id": "T",
+      "operator_definition_id": "lattice_time_reversal",
+      "status": "exact",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "PT*H_lat*(PT)^{-1}=H_lat; no relation between matrix elements at z and -z is inferred.",
+      "id": "PT",
+      "operator_definition_id": "lattice_pt",
+      "status": "exact",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "A cyclic one-site translation does not commute with H_lat because OBC omit the wrap-around hopping and link terms.",
+      "id": "spatial_translations",
+      "operator_definition_id": "broken_spatial_translation",
+      "status": "broken_by_boundary_or_discretization",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "Continuous spatial translations are not represented on the finite OBC lattice; time evolution generated by H_lat remains exact.",
+      "id": "continuous_spacetime_translations",
+      "operator_definition_id": "continuum_lorentz_generators",
+      "status": "continuum_only",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    },
+    {
+      "commutator_result": "No exact continuous boost generator exists at finite spatial and temporal lattice spacing.",
+      "id": "Lorentz_boost",
+      "operator_definition_id": "continuum_lorentz_generators",
+      "status": "continuum_only",
+      "target_eigenvalues": {
+        "phi": "unspecified",
+        "psi": "unspecified"
+      }
+    }
+  ],
+  "schema_version": "1.0"
+}
