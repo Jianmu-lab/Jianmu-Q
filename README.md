@@ -7,7 +7,7 @@ theory, maps it to qubits, designs state preparation and measurement circuits,
 generates Qiskit programs, and compares noiseless results with independent
 SciPy and Julia/ITensor references. IBM Quantum validation is optional.
 
-![Jianmu-Q workflow overview](assets/jianmu_q_fig1.png)
+![Jianmu-Q workflow overview](jianmu_q_fig1.png)
 
 ## Repository layout
 
