@@ -1,0 +1,322 @@
+\begin{thebibliography}{10}
+
+\bibitem{Preskill2018nisq}
+John Preskill.
+\newblock Quantum {C}omputing in the {NISQ} era and beyond.
+\newblock {\em {Quantum}}, 2:79, 2018.
+
+\bibitem{Kandala2017hwefficient}
+Abhinav Kandala, Antonio Mezzacapo, Kristan Temme, Maika Takita, Markus Brink,
+  Jerry~M. Chow, and Jay~M. Gambetta.
+\newblock Hardware-efficient variational quantum eigensolver for small
+  molecules and quantum magnets.
+\newblock {\em Nature}, 549(7671):242--246, 2017.
+
+\bibitem{Sim2019expressibility}
+Sukin Sim, Peter~D. Johnson, and Alán Aspuru-Guzik.
+\newblock Expressibility and entangling capability of parameterized quantum
+  circuits for hybrid quantum-classical algorithms.
+\newblock {\em Advanced Quantum Technologies}, 2(12):1900070, 2019.
+
+\bibitem{bravoprieto2020scaling}
+Carlos Bravo-Prieto, Josep Lumbreras-Zarapico, Luca Tagliacozzo, and José~I.
+  Latorre.
+\newblock Scaling of variational quantum circuit depth for condensed matter
+  systems, 2020.
+
+\bibitem{McClean2018barren}
+Jarrod~R. McClean, Sergio Boixo, Vadim~N. Smelyanskiy, Ryan Babbush, and
+  Hartmut Neven.
+\newblock Barren plateaus in quantum neural network training landscapes.
+\newblock {\em Nature Communications}, 9(1):4812, 2018.
+
+\bibitem{sharma2020trainability}
+Kunal Sharma, M.~Cerezo, Lukasz Cincio, and Patrick~J. Coles.
+\newblock Trainability of dissipative perceptron-based quantum neural networks,
+  2020.
+
+\bibitem{volkoff2020large}
+Tyler Volkoff and Patrick~J. Coles.
+\newblock Large gradients via correlation in random parameterized quantum
+  circuits, 2020.
+
+\bibitem{cerezo2020costfunctiondependent}
+M.~Cerezo, Akira Sone, Tyler Volkoff, Lukasz Cincio, and Patrick~J. Coles.
+\newblock Cost-function-dependent barren plateaus in shallow quantum neural
+  networks, 2020.
+
+\bibitem{Wecker2015}
+Dave Wecker, Matthew~B. Hastings, and Matthias Troyer.
+\newblock Progress towards practical quantum variational algorithms.
+\newblock {\em Phys. Rev. A}, 92:042303, 2015.
+
+\bibitem{Ho2019}
+Wen~Wei Ho and Timothy~H. Hsieh.
+\newblock {Efficient variational simulation of non-trivial quantum states}.
+\newblock {\em SciPost Phys.}, 6:29, 2019.
+
+\bibitem{Cade2019}
+Chris Cade, Lana Mineh, Ashley Montanaro, and Stasja Stanisic.
+\newblock Strategies for solving the fermi-hubbard model on near-term quantum
+  computers, 2019.
+
+\bibitem{Eisert2010arealaw}
+J.~Eisert, M.~Cramer, and M.~B. Plenio.
+\newblock Colloquium: Area laws for the entanglement entropy.
+\newblock {\em Rev. Mod. Phys.}, 82:277--306, 2010.
+
+\bibitem{Eisert2013tensornetworks}
+J.~Eisert.
+\newblock {Entanglement and tensor network states}.
+\newblock In {\em {Autumn School on Correlated Electrons}: {Emergent Phenomena
+  in Correlated Matter}}, 2013.
+
+\bibitem{Carleo2016nqs}
+Giuseppe Carleo and Matthias Troyer.
+\newblock Solving the quantum many-body problem with artificial neural
+  networks.
+\newblock {\em Science}, 355(6325):602--606, 2017.
+
+\bibitem{Carleo2020autoreg}
+Or~Sharir, Yoav Levine, Noam Wies, Giuseppe Carleo, and Amnon Shashua.
+\newblock Deep autoregressive models for the efficient variational simulation
+  of many-body quantum systems.
+\newblock {\em Phys. Rev. Lett.}, 124:020503, 2020.
+
+\bibitem{Carrasquilla2019transformers}
+Juan Carrasquilla, Giacomo Torlai, Roger~G. Melko, and Leandro Aolita.
+\newblock Reconstructing quantum states with generative models.
+\newblock {\em Nature Machine Intelligence}, 1(3):155--161, 2019.
+
+\bibitem{HibatAllah2020rnns}
+Mohamed Hibat-Allah, Martin Ganahl, Lauren~E. Hayward, Roger~G. Melko, and Juan
+  Carrasquilla.
+\newblock Recurrent neural network wavefunctions, 2020.
+
+\bibitem{Deng2017}
+Dong-Ling Deng, Xiaopeng Li, and S.~Das~Sarma.
+\newblock Quantum entanglement in neural network states.
+\newblock {\em Phys. Rev. X}, 7:021021, 2017.
+
+\bibitem{Peruzzo2014}
+Alberto Peruzzo, Jarrod McClean, Peter Shadbolt, Man-Hong Yung, Xiao-Qi Zhou,
+  Peter~J. Love, Al{\'a}n Aspuru-Guzik, and Jeremy~L. O'Brien.
+\newblock A variational eigenvalue solver on a photonic quantum processor.
+\newblock {\em Nature Communications}, 5(1):4213, 2014.
+
+\bibitem{farhi2014quantum}
+Edward Farhi, Jeffrey Goldstone, and Sam Gutmann.
+\newblock A quantum approximate optimization algorithm, 2014.
+
+\bibitem{farhi2000quantum}
+Edward Farhi, Jeffrey Goldstone, Sam Gutmann, and Michael Sipser.
+\newblock Quantum computation by adiabatic evolution, 2000.
+
+\bibitem{Mbeng2019}
+Glen~Bigan Mbeng, Rosario Fazio, and Giuseppe Santoro.
+\newblock Quantum annealing: a journey through digitalization, control, and
+  hybrid quantum variational schemes, 2019.
+
+\bibitem{wierichs2020avoiding}
+David Wierichs, Christian Gogolin, and Michael Kastoryano.
+\newblock Avoiding local minima in variational quantum eigensolvers with the
+  natural gradient optimizer, 2020.
+
+\bibitem{Franchini2017integrable}
+Fabio Franchini.
+\newblock {\em An Introduction to Integrable Techniques for One-Dimensional
+  Quantum Systems}.
+\newblock Springer International Publishing, 2017.
+
+\bibitem{orus2019}
+Rom{\'a}n Or{\'u}s.
+\newblock Tensor networks for complex quantum systems.
+\newblock {\em Nature Reviews Physics}, 1(9):538--550, September 2019.
+
+\bibitem{Beach2019sprint}
+Matthew J.~S. Beach, Roger~G. Melko, Tarun Grover, and Timothy~H. Hsieh.
+\newblock Making trotters sprint: A variational imaginary time ansatz for
+  quantum many-body systems.
+\newblock {\em Phys. Rev. B}, 100:094434, 2019.
+
+\bibitem{Li2008entspec}
+Hui Li and F.~D.~M. Haldane.
+\newblock Entanglement spectrum as a generalization of entanglement entropy:
+  Identification of topological order in non-abelian fractional quantum hall
+  effect states.
+\newblock {\em Phys. Rev. Lett.}, 101:010504, 2008.
+
+\bibitem{Kitaev2006topological}
+Alexei Kitaev and John Preskill.
+\newblock Topological entanglement entropy.
+\newblock {\em Phys. Rev. Lett.}, 96:110404, 2006.
+
+\bibitem{Isakov2011spinliquid}
+Sergei~V. Isakov, Matthew~B. Hastings, and Roger~G. Melko.
+\newblock Topological entanglement entropy of a bose--hubbard spin liquid.
+\newblock {\em Nature Physics}, 7(10):772--775, 2011.
+
+\bibitem{Zhang2011critspinliq}
+Yi~Zhang, Tarun Grover, and Ashvin Vishwanath.
+\newblock Entanglement entropy of critical spin liquids.
+\newblock {\em Phys. Rev. Lett.}, 107:067202, 2011.
+
+\bibitem{Yang2015mpdist}
+Zhi-Cheng Yang, Claudio Chamon, Alioscia Hamma, and Eduardo~R. Mucciolo.
+\newblock Two-component structure in the entanglement spectrum of highly
+  excited states.
+\newblock {\em Phys. Rev. Lett.}, 115:267206, 12 2015.
+
+\bibitem{Shaffer2014irrcirc}
+Daniel Shaffer, Claudio Chamon, Alioscia Hamma, and Eduardo~R Mucciolo.
+\newblock Irreversibility and entanglement spectrum statistics in quantum
+  circuits.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2014(12):P12007, 12 2014.
+
+\bibitem{Geraedts2016thermalize}
+Scott~D. Geraedts, Rahul Nandkishore, and Nicolas Regnault.
+\newblock Many-body localization and thermalization: Insights from the
+  entanglement spectrum.
+\newblock {\em Phys. Rev. B}, 93:174202, 2016.
+
+\bibitem{matos2020quantifying}
+Gabriel Matos, Sonika Johri, and Zlatko Papić.
+\newblock Quantifying the efficiency of state preparation via quantum
+  variational eigensolvers, 2020.
+
+\bibitem{Znidaric2006randomvec}
+Marko {\v{Z}}nidari{\v{c}}.
+\newblock Entanglement of random vectors.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  40(3):F105--F111, 12 2006.
+
+\bibitem{marenko_mp_1967}
+V~A Mar{\v{c}}enko and L~A Pastur.
+\newblock Distribution of eigenvalues for some sets of random matrices.
+\newblock {\em Mathematics of the {USSR}-Sbornik}, 1(4):457--483, 1967.
+
+\bibitem{page1993}
+Don~N. Page.
+\newblock Average entropy of a subsystem.
+\newblock {\em Phys. Rev. Lett.}, 71:1291--1294, 1993.
+
+\bibitem{Grant2019initialization}
+Edward Grant, Leonard Wossnig, Mateusz Ostaszewski, and Marcello Benedetti.
+\newblock An initialization strategy for addressing barren plateaus in
+  parametrized quantum circuits.
+\newblock {\em {Quantum}}, 3:214, 12 2019.
+
+\bibitem{allenzhu2018learning}
+Zeyuan Allen-Zhu, Yuanzhi Li, and Yingyu Liang.
+\newblock Learning and generalization in overparameterized neural networks,
+  going beyond two layers, 2018.
+
+\bibitem{allenZhu2019over}
+Zeyuan Allen-Zhu, Yuanzhi Li, and Zhao Song.
+\newblock A convergence theory for deep learning via over-parameterization,
+  2018.
+
+\bibitem{chen2019overparameterization}
+Zixiang Chen, Yuan Cao, Difan Zou, and Quanquan Gu.
+\newblock How much over-parameterization is sufficient to learn deep relu
+  networks?, 2019.
+
+\bibitem{chen2020meanfield}
+Zixiang Chen, Yuan Cao, Quanquan Gu, and Tong Zhang.
+\newblock Mean-field analysis of two-layer neural networks: Non-asymptotic
+  rates and generalization bounds, 2020.
+
+\bibitem{rabitz1998optimalcontrol}
+Herschel~A. Rabitz, Michael~M. Hsieh, and Carey~M. Rosenthal.
+\newblock Quantum optimally controlled transition landscapes.
+\newblock {\em Science}, 303(5666):1998--2001, 2004.
+
+\bibitem{rabitz05optimalcontrol}
+Herschel Rabitz, Michael Hsieh, and Carey Rosenthal.
+\newblock Landscape for optimal control of quantum-mechanical unitary
+  transformations.
+\newblock {\em Phys. Rev. A}, 72:052337, 11 2005.
+
+\bibitem{russell2017control}
+Benjamin Russell, Herschel Rabitz, and Re-Bing Wu.
+\newblock Control landscapes are almost always trap free: a geometric
+  assessment.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  50(20):205302, 4 2017.
+
+\bibitem{kiani2020learning}
+Bobak~Toussi Kiani, Seth Lloyd, and Reevu Maity.
+\newblock Learning unitaries by gradient descent, 2020.
+
+\bibitem{LalMehta2004irmt}
+Madan~Lal Mehta.
+\newblock {\em Random Matrices}.
+\newblock Pure and Applied Mathematics. Academic Press, 3rd edition, 2004.
+
+\bibitem{Hastings_2007_area}
+M~B Hastings.
+\newblock An area law for one-dimensional quantum systems.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2007(08):P08024–P08024, 2007.
+
+\bibitem{Arad_2012_area}
+Itai Arad, Zeph Landau, and Umesh Vazirani.
+\newblock Improved one-dimensional area law for frustration-free systems.
+\newblock {\em Phys. Rev. B}, 85:195145, May 2012.
+
+\bibitem{arad2013area}
+Itai Arad, Alexei Kitaev, Zeph Landau, and Umesh Vazirani.
+\newblock An area law and sub-exponential algorithm for 1d systems, 2013.
+
+\bibitem{Calabrese_2004}
+Pasquale Calabrese and John Cardy.
+\newblock Entanglement entropy and quantum field theory.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2004(06):P06002, 2004.
+
+\bibitem{gharibian2015quantum}
+Sevag Gharibian, Yichen Huang, Zeph Landau, and Seung~Woo Shin.
+\newblock Quantum hamiltonian complexity.
+\newblock {\em Foundations and Trends® in Theoretical Computer Science},
+  10(3):159–282, 2015.
+
+\bibitem{Haldane1988mhs}
+F.~D.~M. Haldane.
+\newblock Exact jastrow-gutzwiller resonating-valence-bond ground state of the
+  spin-$\frac{1}{2}$ antiferromagnetic heisenberg chain with
+  1/${\mathrm{r}}^{2}$ exchange.
+\newblock {\em Phys. Rev. Lett.}, 60:635--638, 1988.
+
+\bibitem{Shastry1988mhs}
+B.~Sriram Shastry.
+\newblock Exact solution of an s=1/2 heisenberg antiferromagnetic chain with
+  long-ranged interactions.
+\newblock {\em Phys. Rev. Lett.}, 60:639--642, 1988.
+
+\bibitem{wang2020noiseinduced}
+Samson Wang, Enrico Fontana, M.~Cerezo, Kunal Sharma, Akira Sone, Lukasz
+  Cincio, and Patrick~J. Coles.
+\newblock Noise-induced barren plateaus in variational quantum algorithms,
+  2020.
+
+\bibitem{Wiersema2020zyglrox}
+R.C. Wiersema.
+\newblock Zyglrox.
+\newblock \url{https://github.com/therooler/zyglrox}, 2020.
+
+\bibitem{Kingma2014}
+Diederik Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em International Conference on Learning Representations}, 2014.
+
+\bibitem{Broughton2020tfq}
+Michael Broughton, Guillaume Verdon, Trevor McCourt, Antonio~J. Martinez,
+  Jae~Hyeon Yoo, Sergei~V. Isakov, Philip Massey, Murphy~Yuezhen Niu, Ramin
+  Halavati, Evan Peters, Martin Leib, Andrea Skolik, Michael Streif, David~Von
+  Dollen, Jarrod~R. McClean, Sergio Boixo, Dave Bacon, Alan~K. Ho, Hartmut
+  Neven, and Masoud Mohseni.
+\newblock Tensorflow quantum: A software framework for quantum machine
+  learning, 2020.
+
+\end{thebibliography}

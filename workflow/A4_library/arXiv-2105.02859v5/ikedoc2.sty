@@ -1,0 +1,420 @@
+%
+% File:   ikedoc.sty
+% Date:   16-Jan-93
+% Author: I. Chuang
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% general page setup
+
+\headheight 8pt			% no header
+\headsep \headheight
+
+\setlength{\oddsidemargin}{0.25in}	% 1.25in left margin 
+\setlength{\evensidemargin}{0.25in}	% 1.25in left margin (even pages)
+\setlength{\topmargin}{0.0in}		% 1in top margin
+\setlength{\textwidth}{6.25in}		% 6.0in text - 1.25in rt margin
+\setlength{\textheight}{8.6in}		% Body ht for 1in margins
+\addtolength{\topmargin}{-\headheight}	% No header, so compensate
+\addtolength{\topmargin}{-\headsep}	% for header height and separation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% my page headings
+
+\def\pageheading#1{\def\thepageheading{#1}}
+
+\def\thepageheading{}
+
+\if@twoside					% If two-sided printing.
+\def\ps@myhstyle{\let\@mkboth\@gobbletwo
+     	\def\@oddhead{\thepageheading\hfil}
+	\def\@oddfoot{\rm\hfil\thepage\hfil}
+	\def\@evenhead{\hfil\thepageheading}
+	\let\@evenfoot\@oddfoot
+    	\setlength{\topmargin}{-0.6in}
+    	\setlength{\headheight}{0.2in}
+    	\setlength{\headsep}{0.4in}
+    	\setlength{\footskip}{0.3in}
+    	\setlength{\textheight}{8.6in}
+}
+\else						% If one-sided printing.
+\def\ps@myhstyle{\let\@mkboth\@gobbletwo
+     	\def\@oddhead{\thepageheading\hfil}
+	\def\@oddfoot{\rm\hfil\thepage\hfil}
+	\def\@evenhead{\thepageheading\hfil}
+	\let\@evenfoot\@oddfoot
+    	\setlength{\topmargin}{-0.6in}
+    	\setlength{\headheight}{0.2in}
+    	\setlength{\headsep}{0.4in}
+    	\setlength{\footskip}{0.3in}
+    	\setlength{\textheight}{8.6in}
+}
+\fi
+
+\def\apnum#1{\@apnum{\@nameuse{c@#1}}} 
+\def\@apnum#1{A\number #1}  %% changed 29 Apr 86
+
+\def\apbnum#1{\@apbnum{\@nameuse{c@#1}}} 
+\def\@apbnum#1{B\number #1}  %% changed 29 Apr 86
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Default Format Declarations
+
+\pageheading{\mbox{\tiny DRAFT: ILC \today}}
+\pagestyle{myhstyle}
+% \setstretch{1.2}
+\newif\ifikedoc \global\ikedoctrue
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stuff to be transparent to REVTEX documents
+
+\newcommand{\pacs}[1]{}
+\newcommand{\narrowtext}{}
+\newcommand{\widetext}{}
+
+\newif\ifpreprintsty \global\preprintstyfalse
+%\newif\ifpreprintsty \global\preprintstytrue
+\def\@authoraddress{}  \def\@title{} \def\@date{} \def\and{\unskip, }
+\def\@preprint{}
+
+\def\preprint#1{%
+\ifpreprintsty
+\def\@preprint{\noindent\hfill\hbox{#1}\vskip 10pt}%
+\fi
+}
+
+\def\title#1{\gdef\@title{{\large\bf\centering\ignorespaces#1\vskip2.5pt}}}
+
+\def\author#1{\expandafter\def\expandafter\@authoraddress\expandafter
+{\@authoraddress %
+%\ifpreprintsty\vskip1.5pc \fi %
+{\dimen0=-\prevdepth \advance\dimen0 by23pt
+\nointerlineskip \rm\centering
+\vrule height\dimen0 width0pt\relax\ignorespaces#1\par
+}%
+}%
+}
+
+\def\address#1{\expandafter\def\expandafter\@authoraddress\expandafter
+{\@authoraddress{\small\it\centering\ignorespaces#1\par}}}
+
+\def\date#1{\gdef\@date{{\small\rm\centering(\ignorespaces#1\unskip)\par}}}
+
+\def\maketitle{\par
+\begingroup
+\let\cite\@bylinecite
+\def\thefootnote{\fnsymbol{footnote}}%
+\if@twocolumn
+\twocolumn[\@maketitle\vskip2pc]%
+\else
+\newpage
+\global\@topnum\z@ %
+\@maketitle
+\fi
+\thispagestyle{plain}\@thanks
+\endgroup
+\def\thefootnote{\arabic{footnote}}%
+\setcounter{footnote}{0}%
+\let\maketitle\relax \let\@maketitle\relax
+\let\@thanks\relax \let\@authoraddress\relax \let\@title\relax
+\let\@date\relax \let\thanks\relax
+}
+
+\def\@maketitle{%
+\@preprint
+\@title
+\ifdim\prevdepth=-1000pt \prevdepth0pt\fi
+\@authoraddress
+\@date
+}
+
+\def\abstract{\par
+%\ifpreprintsty %
+%\vskip2.5pc
+%\begin{center}%
+%{\large \abstractname\par}%
+%\end{center}%
+\vskip.5pc
+%\fi
+\bgroup
+\ifdim\prevdepth=-1000pt \prevdepth0pt\fi
+\hsize\columnwidth
+\if@twocolumn\else\leftskip=0.10753\textwidth \rightskip\leftskip\fi
+\dimen0=-\prevdepth \advance\dimen0 by17.5pt \nointerlineskip
+\small\vrule width 0pt height\dimen0 \relax
+}
+
+\def\endabstract{\par\egroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Special indented-body paragraphs
+
+\newlength{\mylmoffset}
+\newskip\@mytempskip
+
+\def\parbindent#1{
+	\setlength{\mylmoffset}{#1}
+	\setlength{\parindent}{-\mylmoffset}
+	\addtolength{\oddsidemargin}{\mylmoffset}
+	\addtolength{\evensidemargin}{\mylmoffset}
+	\@mytempskip 0ex \relax
+	\advance \@mytempskip -\mylmoffset \relax
+	\advance \@mytempskip -\mylmoffset \relax
+	%\message{section indentation \@mytempskip}
+	%\def\mysection{\hspace*{-\mylmoffset}\section}
+	%\def\mysubsection{\hspace*{-\mylmoffset}\subsection}
+
+	\def\mysection{\@startsection {section}{1}
+		{\@mytempskip}
+		{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}{\Large\bf}}
+	\def\mysubsection{\@startsection{subsection}{2}
+		{\@mytempskip}
+		{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}{\large\bf}}
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Special indented-body paragraphs - usage
+
+%\parbindent{3.5ex}
+%\def\bul{\hspace*{-3.5ex}$\bullet$\ }
+%\def\tbul{\hspace*{-3.5ex}\hspace*{-3.5ex}$\bullet$\ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 12-Jan-93 IC: lfbox is like fbox but puts double lines on left side only
+
+\newdimen\lfboxsep
+\lfboxsep = 2pt
+
+\long\def\lfbox#1{\leavevmode\setbox\@tempboxa\hbox{#1}\@tempdima\fboxrule
+    \advance\@tempdima \fboxsep \advance\@tempdima \dp\@tempboxa
+   \hbox{\lower \@tempdima\hbox
+  {\vbox{%\hrule \@height \fboxrule
+          \hbox{\vrule \@width \fboxrule \hskip\lfboxsep
+		\vrule \@width \fboxrule \hskip\fboxsep
+          \vbox{\vskip\fboxsep \box\@tempboxa\vskip\fboxsep}
+		\hskip \fboxsep
+%		\vrule \@width \fboxrule
+		}
+%                 \hrule \@height \fboxrule
+		}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure definitions
+
+\newcommand{\mypsfig}[2]{\psfig{file=#1,#2}}
+
+\newcommand{\myfig}[4]{
+	\begin{figure}[hbtp]
+	\begin{center}
+	\mbox{{\mypsfig{#1}{#2}}}
+	\end{center}
+	\caption{#3}
+	\label{fig:#4}
+	\end{figure}
+}
+
+\newcommand{\myffig}[6]{
+	\begin{figure}[hbtp]
+	\begin{center}
+	\mbox{\mypsfig{#1}{#2}\hspace*{3ex}\mypsfig{#3}{#4}}
+	\end{center}
+	\caption{#5}
+	\label{fig:#6}
+	\end{figure}
+}
+
+\newcommand{\myffigv}[6]{
+	\begin{figure}[hbtp]
+	\begin{center}
+	\mbox{\mypsfig{#1}{#2}}
+	\vspace*{4ex}
+	\mbox{\mypsfig{#3}{#4}}
+	\end{center}
+	\caption{#5}
+	\label{fig:#6}
+	\end{figure}
+}
+
+\newcommand{\inlinepsfig}[2]{\begin{center}
+	\mbox{\mypsfig{#1}{#2}}\end{center}}
+	\def\qbul{\hspace*{2ex}$\bullet$\ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Enviroment shortcut definitions
+
+\newenvironment{ctabular}[1]{\begin{center}\begin{tabular}{#1}}%
+	{\end{tabular}\end{center}}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+
+\newcommand{\bfg}{\begin{figure}[htbp]}
+\newcommand{\efg}{\end{figure}}
+
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+
+\newcommand{\ben}{\begin{itemize}%
+	\setlength{\parsep}{0pt}\setlength{\itemsep}{-1pt}}
+\newcommand{\een}{\end{itemize}}
+
+\newcommand{\eitem}{\item[$\Box$]}
+\newcommand{\bitem}{\item[$\bullet$]}
+
+\def\btab{\begin{tabbing}}
+\def\etab{\end{tabbing}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paragraph formats (in boxes, etc.)
+
+\newcommand{\ptc}[1]{\parbox[t]{3in}{\begin{center}{#1}\end{center}}}
+
+\newlength{\myboxlen}
+\setlength{\myboxlen}{\textwidth}
+\addtolength{\myboxlen}{-1ex}
+\newcommand{\eqbox}[1]{\par
+	\noindent\fbox{\parbox[t]{\myboxlen}{#1}}\vspace*{1ex}}
+\newcommand{\smalleqbox}[1]{\par
+	\noindent\fbox{\parbox[t]{4in}{#1}}\vspace*{1ex}}
+
+\newcommand{\mybox}[1]{\fbox{#1}}
+
+\newlength{\myhalfpw}
+\newskip\@xwidth  \global\@xwidth\textwidth \global\divide\@xwidth\tw@
+			\global\advance\@xwidth -0.5ex
+\setlength{\myhalfpw}{\@xwidth}
+
+%\@xwidth=\divide\textwidth\tw@
+%\message{myhalfpw=\myhalfpw, textwidth=\textwidth, xwidth=\@xwidth}
+%\newcommand{\twoeq}[2]{\\\parbox{3in}{\be #1\ee}\parbox{3in}{\be #2 \ee}\\}
+%\newcommand{\ftwoeq}[2]{\\
+%	\fbox{\parbox{3in}{\be #1\ee}\parbox{3in}{\be #2 \ee}}\\}
+
+\newcommand{\twoeq}[2]{\\\parbox{\myhalfpw}{\be #1\ee}
+			\parbox{\myhalfpw}{\be #2 \ee}\\}
+\newcommand{\ftwoeq}[2]{\\
+	\fbox{\parbox{\myhalfpw}{\be #1\ee}\parbox{\myhalfpw}{\be #2 \ee}}\\}
+
+\newlength{\mysmallboxlen}
+\setlength{\mysmallboxlen}{\textwidth}
+\addtolength{\mysmallboxlen}{-1ex}
+\newcommand{\mysmallbox}[1]{
+ 	\begin{center}\fbox{\vspace*{-0.5ex}\parbox[t]{\mysmallboxlen}
+			{#1}\vspace*{-0.5ex}}\end{center}}
+
+%\newcommand{\mylfbox}[1]{\par{\hspace*{10ex}\lfbox{
+%		{\singlespace\parbox{5.0in}{\footnotesize#1}}}}\\}
+
+\newcommand{\mylfbox}[2]{{\lfbox{{\parbox{#1}{#2}}}}\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc. Symbols
+
+\newcommand{\degc}{\mbox{$^\circ$}C}
+\newcommand{\degk}{K}
+
+\newfont{\spfont}{cmr10}
+\newcommand{\ang}{\mbox{\spfont{\AA}\normalsize}}
+
+\newcommand{\eq}[1]{(\ref{eq:#1})}
+%\newcommand{\syssize}[1]{#1$\times$#1$\times$#1}
+\newcommand{\rcite}[1]{\raisebox{3pt}{\footnotesize[#1]}}
+
+\renewcommand{\d}[1]{\mbox{$_{#1}$}}
+\renewcommand{\u}[1]{\mbox{$^{#1}$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lines
+
+\newcommand{\myline}[1]{\begin{center}
+		\rule[-0.5ex]{#1}{0.2pt}\end{center}}	% typical #1=60ex
+
+\newcommand{\mydelim}[1]{\vspace*{0.6cm}\myline{#1}\vspace*{0.6cm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math: General Calculus
+
+\newcommand{\ex}[1]{\mbox{$\times$10$^{#1}$}}
+\newcommand{\gam}[1]{\gamma^{#1}}
+
+\def\dms{\displaystyle}
+
+\def\dmu{\partial_\mu}		\def\dnu{\partial_\nu}
+\def\lb{\left[}			\def\rb{\right]}
+\def\lp{\left(}			\def\rp{\right)}
+\def\ra{\rightarrow}
+\def\del{\nabla}
+
+\def\yhat{\hat{y}}		\def\xhat{\hat{x}}
+\def\zhat{\hat{z}}		\def\rhat{\hat{r}}
+\def\thhat{\hat{\theta}}	\def\phhat{\hat{\phi}}
+
+\def\cth{\cos\theta}		\def\sth{\sin\theta}
+
+\def\nhat{\hat{n}}		\def\nhatd{\hat{n}\cdot}
+\def\nhatx{\hat{n}\times}	
+\def\pdt{\partial_t}
+\def\delx{\del\times}		\def\deld{\del\cdot}
+
+\def\Av{\vec{A}}		\def\Jv{\vec{J}}
+\def\Sv{\vec{S}}		\def\Ev{\vec{E}}
+\def\Bv{\vec{B}}		\def\Dv{\vec{D}}
+\def\Hv{\vec{H}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math: Quantum Mechanics
+
+\newcommand{\mattwo}[4]{\left(
+	\begin{array}{rr}{#1}&{#2}\\{#3}&{#4}\end{array}\right)}
+\newcommand{\vectwo}[2]{\left(
+	\begin{array}{r}{#1}\\{#2}\end{array}\right)}
+\newcommand{\matthree}[9]{\left(
+	\begin{array}{rrr}{#1}&{#2}&{#3}\\
+			  {#4}&{#5}&{#6}\\
+			  {#7}&{#8}&{#9}
+			  \end{array}\right)}
+
+\newcommand{\mattwoc}[4]{\left(
+	\begin{array}{cc}{#1}&{#2}\\{#3}&{#4}\end{array}\right)}
+\newcommand{\vectwoc}[2]{\left(
+	\begin{array}{c}{#1}\\{#2}\end{array}\right)}
+
+\newcommand{\mattwocb}[4]{\left[
+	\begin{array}{cc}{#1}&{#2}\\{#3}&{#4}\end{array}\right]}
+
+\newcommand{\ket}[1]{\mbox{$|#1\rangle$}}
+\newcommand{\bra}[1]{\mbox{$\langle #1|$}}
+\newcommand{\brak}[1]{\mbox{$\langle #1\rangle$}}
+\newcommand{\bk}[2]{\mbox{$\langle #1 | #2 \rangle$}}
+\newcommand{\braket}[3]{\mbox{$\langle #1 | #2 | #3 \rangle$}}
+%\newcommand{\udag}[1]{\mbox{$#1^{\dagger}$}}
+\newcommand{\udag}[1]{#1^{\dagger}}
+
+\def\dt{\Delta t}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% More math/IT/Phys defs - 16-Jan-94 ILC
+
+\def\lbL{\lb\rule{0pt}{2.4ex}}
+\def\lpL{\left(\rule{0pt}{2.4ex}}
+\def\oh{\frac{1}{2}}
+\newcommand{\combin}[2]{\left(\begin{array}{c}{#1}\\{#2}\end{array}\right)}
+
+\renewcommand{\matthree}[9]{\left[
+	\begin{array}{lll}{#1}&{#2}&{#3}\\
+			  {#4}&{#5}&{#6}\\
+			  {#7}&{#8}&{#9}
+			  \end{array}\right]}
+
+\def\nlog{\,\mbox{\rm nlog}\,}
+\def\cnlog#1{\,\lceil\mbox{\rm nlog}\, #1\rceil}
+\def\prob{\mbox{\rm Pr}}
+\def\ep{\epsilon}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+
+\def\>{\rangle}
+\def\<{\langle}

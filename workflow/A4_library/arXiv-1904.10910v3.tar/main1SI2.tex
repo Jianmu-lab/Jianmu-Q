@@ -1,0 +1,686 @@
+%\documentclass[reprint,
+%superscriptaddress,
+%amsmath,amssymb,
+%aps
+%]{revtex4-1}
+%\usepackage{graphicx}
+%\usepackage{color}
+%\usepackage{hyperref}
+%\def\UrlBreaks{\do\/\do-}
+%\usepackage{physics}
+%%\usepackage{caption}
+%\usepackage{dcolumn}% Align table columns on decimal point
+%
+%
+%\usepackage{qcircuit}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+%\usetikzlibrary{pgfplots.groupplots}
+%\usepackage{varwidth}
+%\usepackage{lineno}
+%\newcommand{\beginsupplement}{%
+%        \setcounter{table}{0}
+%        \renewcommand{\thetable}{S\arabic{table}}%
+%        \setcounter{figure}{0}
+%        \renewcommand{\thefigure}{S\arabic{figure}}%
+%     }
+%
+%
+%
+%\begin{document}
+%
+%\linenumbers
+%\title{Supplementary Information for :
+%Efficient Symmetry-Preserving State Preparation Circuits for the Variational Quantum Eigensolver Algorithm}% Force line breaks with \\
+%%
+%
+%\author{Bryan T. Gard}
+%\email{bgard1@vt.edu}
+% \affiliation{%
+%Department of Physics, Virginia Tech, Blacksburg, VA 24061, U.S.A}%
+%\author{Linghua Zhu}%
+% \affiliation{%
+%Department of Physics, Virginia Tech, Blacksburg, VA 24061, U.S.A}%
+%\author{George S. Barron}%
+% \affiliation{%
+%Department of Physics, Virginia Tech, Blacksburg, VA 24061, U.S.A}%
+%\author{Nicholas J. Mayhall}%
+% \affiliation{%
+%Department of Chemistry, Virginia Tech, Blacksburg, VA 24061, U.S.A}%
+%\author{Sophia E. Economou}%
+% \affiliation{%
+%Department of Physics, Virginia Tech, Blacksburg, VA 24061, U.S.A}%
+%\author{Edwin Barnes}%
+% \affiliation{%
+%Department of Physics, Virginia Tech, Blacksburg, VA 24061, U.S.A}%
+%
+%
+%\date{\today}% It is always \today, today,
+%             %  but any date may be explicitly specified
+%\begin{abstract}
+%\end{abstract}
+%
+%
+%\maketitle
+\beginsupplement
+\section{Supplemental Information}
+%\textcolor{red}{
+\subsection{Construction of $E$ gate circuits}
+%}
+As discussed in the main text, in order to find circuits that respect total spin, we start by constructing unitaries that transform $\otimes_{i=1}^n\ket{0}$ into an arbitrary state in a particular particle-number subspace, where the coefficients in this state are specified by hyperspherical coordinates (see Eq.~(5) of the main text). A specific example of such a unitary in the case of two fermions occupying four spin-orbitals is given by
+\setcounter{MaxMatrixCols}{16}
+\begin{widetext}
+\begin{equation}\tag{S1}
+E_4 =
+\left(
+\begin{array}{cccccccccccccccc}
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+ \text{C}_4 \text{S}_1 \text{S}_2 \text{S}_3 & 0 & 0 & 0 & 0 & \text{S}_4 & -\text{C}_1 \text{C}_4 \text{S}_2 \text{S}_3 & 0 & 0 & 0 & -\text{C}_2 \text{C}_4 \text{S}_3 & 0 & 0 & 0 & 0 & -\text{C}_3 \text{C}_4 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ \text{S}_1 \text{S}_2 \text{S}_3 \text{S}_4 \text{S}_5 & 0 & 0 & 0 & 0 & -\text{C}_4 \text{S}_5 & -\text{C}_1 \text{S}_2 \text{S}_3 \text{S}_4 \text{S}_5 & 0 & 0 & -\text{C}_5 & -\text{C}_2 \text{S}_3 \text{S}_4 \text{S}_5 & 0 & 0 & 0 & 0 & -\text{C}_3 \text{S}_4 \text{S}_5 \\
+ \text{C}_3 \text{S}_1 \text{S}_2 & 0 & 0 & 0 & 0 & 0 & -\text{C}_1 \text{C}_3 \text{S}_2 & 0 & 0 & 0 & -\text{C}_2 \text{C}_3 & 0 & 0 & 0 & 0 & \text{S}_3 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ \text{C}_5 \text{S}_1 \text{S}_2 \text{S}_3 \text{S}_4 & 0 & 0 & 0 & 0 & -\text{C}_4 \text{C}_5 & -\text{C}_1 \text{C}_5 \text{S}_2 \text{S}_3 \text{S}_4 & 0 & 0 & \text{S}_5 & -\text{C}_2 \text{C}_5 \text{S}_3 \text{S}_4 & 0 & 0 & 0 & 0 & -\text{C}_3 \text{C}_5 \text{S}_4 \\
+ \text{C}_2 \text{S}_1 & 0 & 0 & 0 & 0 & 0 & -\text{C}_1 \text{C}_2 & 0 & 0 & 0 & \text{S}_2 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ \text{C}_1 & 0 & 0 & 0 & 0 & 0 & \text{S}_1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}
+\right)
+,\label{eq:E4gate}
+\end{equation}
+\end{widetext}
+where $\hbox{C}_i=\cos{u_i}, \hbox{S}_i=\sin{u_i}$. The first column of this matrix is designed to satisfy Eq.~(5) of the main text, while the remaining columns are chosen to ensure unitarity. In Fig.~\ref{fig:e-gate}, we show an explicit symbolic decomposition of this unitary in terms of $4$-qubit Toffoli gates, which have a known decomposition into elementary gates~\cite{Barenco1995}. In general, a single $4$-qubit Toffoli gate can be decomposed into $13$ CNOT's~\cite{szyprowski2013}. However, it is important to note that for all pairs of identical $4$-qubit Toffoli gates, which occur frequently in our decomposition, we can utilize the approximate decompositions described by Barenco~\textit{et. al.}~\cite{Barenco1995}. Each of these pairs can be decomposed \textit{exactly} (the relative minus signs cancel due to the fact that we are decomposing pairs of identical 4-qubit Toffoli gates) into $18$ CNOT's, rather than the $26$ that result from the standard decomposition. This means that, in total, the $E_4$ gate can be decomposed into, at most, $155$ CNOT gates. In the most basic example of simplification (for the $\ket{s=1,s_z=0}$ case), the CNOT gate count can be as little as $67$ CNOT's. Our decomposition utilizes Gray codes, but as the 4-qubit gate itself is sparse, this is fairly efficient if one desires a symbolic decomposition. We also note that each $n$-bit Toffoli decomposition to elementary gates only grows polynomially with $n$~\cite{szyprowski2013}.
+
+Alternatively, if we instead utilize numerical decompositions, then we can significantly reduce the number of required CNOT gates. In this case we use the method described in Ref.~\cite{Shende2006}, which is implemented in Qiskit~\cite{Qiskit}. A similar, but separate method is also utilized in Ref.~\cite{Tubman2018}. This method takes the ground state to an arbitrary $n$-qubit state by use of quantum multiplexers. In a typical VQE algorithm, this numerical method would need to be run at each step of the VQE. However, this algorithm itself is fairly efficient and is computationally much less expensive than the optimization step. An example of this decomposition for a random choice of our state coefficients $u_i$, is shown in Fig.~\ref{fig:multiplexdecomp} and results in, at most, $28$ CNOT gates. In the general case, the decomposition method itself gives a CNOT count of $2^{n+2}-4n-4$ CNOT gates for the generation of a $n$-qubit state. However, Qiskit's transpiler typically reduces the CNOT count of the resulting circuit by an additional factor of 2. The exact CNOT count after transpiliation depends on the target state and therefore fluctuates slightly. We note that this method is not a decomposition of our proposed $E_4$ gate but instead does produce the same output state as the $E_4$ gate when it acts on the ground state.
+\begin{figure*}[p]
+\[
+\Qcircuit @C=0.3em @R=.5em  {
+	\ket{0}~~	&	&	\gate{Y(2.7)}	&	\ctrl{1}	&	\qw	&	\ctrl{1}	&	\qw	&	\ctrl{1}	&	\qw	&	\ctrl{1}	&	\ctrl{2}	&	\qw	&	\qw	&	\qw\\
+\ket{0}~~	&	&	\qw	&	\targ	&	\gate{Y(-0.4)}	&	\targ	&	\gate{Y(1.9)}	&	\targ	&	\gate{Z(0.79)}	&	\targ	&	\qw	&	\qw	&	\ctrl{1}	&	\qw\\
+\ket{0}~~	&	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw \ar@{--}[]+<2.2em,-0.8em>;[uu]+<2.2em,0.8em> \ar@{--}[]+<2.2em,5em>;[rrrr]+<0em,5em> \ar@{--}[]+<2.2em,-1em>;[rrrr]+<0em,-1em>	& \targ	&	\gate{Y(0.93)}	&	\targ	&	\qw\\
+\ket{0}~~	&	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw\\
+		&	&	\qw 	&	\ctrl{2}	&	\qw	&	\qw	&	\qw	&	\ctrl{2}	&	\qw	&	\ctrl{2}	&	\qw	&	\qw	&	\qw	&	\qw\\
+	&	&	\qw	&	\qw	&	\qw	&	\ctrl{1}	&	\qw	&	\qw	&	\qw	&	\qw	&	\ctrl{1}	&	\qw	&	\ctrl{1}	&	\qw\\
+	&	&	\gate{Y(-0.54)}	&	\targ	&	\gate{Y(0.64)}	&	\targ	&	\gate{Y(2.1)} \ar@{--}[]+<2.2em,-0.8em>;[uu]+<2.2em,0.2em> \ar@{--}[]+<2.2em,2.4em>;[lllll]+<0em,2.4em> \ar@{--}[]+<2.2em,-1em>;[lllll]+<0em,-1em>	&	\targ	&	\gate{Z(0.79)}	&	\targ	&	\targ	&	\gate{Z(0.79)}	&	\targ	&	\qw\\
+	&	&	\qw &	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw\\
+	&	&	\ctrl{3}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\ctrl{3}	&	\qw	&	\qw	&	\qw\\
+	&	&	\qw	&	\qw	&	\qw	&	\qw	&	\ctrl{2}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw\\
+	&	&	\qw	&	\qw	&	\ctrl{1}	&	\qw	&	\qw	&	\qw	&	\ctrl{1}	&	\qw	&	\qw	&	\qw	&	\ctrl{1}	&	\qw\\
+	& \ar@{--}[]+<0em,-0.8em>;[uu]+<0em,0.8em> \ar@{--}[]+<0em,3.3em>;[rrrrrrrrrrrr]+<0em,3.3em> \ar@{--}[]+<0em,-1em>;[rrrrrrrrrrrr]+<0em,-1em>	&	\targ	&	\gate{Y(0.39)}	&	\targ	&	\gate{Y(-0.39)}	&	\targ	&	\gate{Y(-1.2)}	&	\targ	&	\gate{Y(-0.39)}	&	\targ	&	\gate{Y(0.39)}	&	\targ	&	\qw\\
+	&	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\ctrl{3}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw\\
+	&	&	\qw	&	\ctrl{2}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\ctrl{2}	&	\qw	&	\qw	&	\qw	&	\qw\\
+	&	&	\qw	&	\qw	&	\qw	&	\ctrl{1}	&	\qw	&	\qw	&	\qw	&	\qw	&	\ctrl{1}	&	\qw	&	\ctrl{1}	&	\qw\\
+	&	&	\gate{Y(-0.39)}	&	\targ	&	\gate{Y(0.39)}	&	\targ	&	\gate{Y(1.2)} \ar@{--}[]+<2.2em,-0.8em>;[uuu]+<2.2em,0.1em> \ar@{--}[]+<2.2em,3.1em>;[lllll]+<0em,3.1em> \ar@{--}[]+<2.2em,-1em>;[lllll]+<0em,-1em>	 
+	\ar@{--}[]+<2.8em,-0.8em>;[uuu]+<2.8em,0.1em> \ar@{--}[]+<2.8em,3.1em>;[rrrrrrr]+<0em,3.1em> \ar@{--}[]+<2.8em,-1em>;[rrrrrrr]+<0em,-1em>
+	&	\targ 	&	\gate{Z(0.79)}	&	\targ	&	\targ	&	\gate{Z(-2.4)}	&	\targ	&	\qw\\
+	&	&	\ctrl{3}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw\\										
+	&	&	\qw	&	\qw	&	\ctrl{2}	&	\qw	&	\qw	&	\qw	&	\qw\\										
+	&	&	\qw	&	\qw	&	\qw	&	\ctrl{1}	&	\qw	&	\ctrl{1}	&	\qw\\										
+	&	&	\targ	&	\gate{Z(0.79)}	&	\targ	&	\targ	&	\gate{Z(0.79)}	&	\targ	&	\qw \ar@{--}[]+<1em,-0.8em>;[uuu]+<1em,0.1em> \ar@{--}[]+<1em,3.1em>;[lllllll]+<0em,3.1em> \ar@{--}[]+<1em,-1em>;[lllllll]+<0em,-1em> 
+	\gategroup{1}{4}{2}{7}{1.3em}{--} \gategroup{1}{8}{2}{10}{1.3em}{--} \gategroup{5}{8}{7}{13}{1.3em}{--} \\  }
+\]
+\caption{4-qubit circuit which creates a superposition state of the form of Eq. (5) of the main text. This example relies on numerical decomposition methods in terms of quantum multiplexers as described in Ref.~\cite{Shende2006} and is found using Qiskit. Each dashed box represents a single $p$-controlled $R_y$ or $R_z$ multiplexer (where $p$ is necessarily $1\leq p\leq3$). For this random choice of parameters $u_i=(3.64084243, 5.64400577, 4.13234724, 0.73049135, 0.10130389)$, this circuit takes the ground state to the superposition state $\ket{\psi}=0.177936\ket{0011}+0.0161198\ket{0101}+0.156527 \ket{0110}+0.158578\ket{1001}+0.384251\ket{1010}+0.877942\ket{1100}$.}
+    \label{fig:multiplexdecomp}
+\end{figure*}
+
+\begin{figure*}[tb]
+% Linghua's new E gate
+\[ \Qcircuit @C=0.75em @R=.3em {
+\ket{0} &	&	\gate{X}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\gate{Y_4^\dagger}	&	\targ	&	\gate{Y_4}	&	\ctrlo{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\qw	\\
+\ket{0} &	&	\gate{X}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\gate{Y_2^\dagger}	&	\targ	&	\gate{Y_2}	&	\ctrlo{-1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{-1}	&	\gate{Y_5^\dagger}	&	\targ	&	\gate{Y_5}	&	\ctrlo{-1}	&	\qw	\\
+\ket{0} &	&	\qw	&	\ctrlo{-1}	&	\gate{Y_1^\dagger}	&	\targ	&	\gate{Y_1}	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{-1}	&	\targ	&	\qw	&	\ctrlo{-1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	\\
+\ket{0} &	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\gate{Y_3^\dagger}	&	\targ	&	\gate{Y_3}	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	
+}
+\]
+    \caption{Using Gray codes, we show the decomposition of the $E_4$ gate into elementary single and two qubit gates. Decomposition of all Toffoli gates results in a total of 155 CNOT gates and 12 single qubit gates. The notation for the single qubit $Y$ rotations is that $Y_i = R_Y(u_i-\frac{\pi}{2})$.}
+    \label{fig:e-gate}
+\end{figure*}
+\begin{table*}[!p]
+  \centering
+  \begin{tabular}{@{}cccccc@{}}
+\hline
+$n,m,s,s_z$            &~~~$N_{\rm T}$~  &~~$N_{\rm C}(E)$~~   &~~$N_{\rm C}(A)$  &~~$N_{\rm C}(N)$ \\ \hline
+$n=4,m=2$              &~~~$15$~         &~~$155$~~         &~~$135$  & 28  \\
+$n=4,m=2,s=1,s_{z}=0$  &~~~$7$~          &~~$67$~~          &~~$63$   & 14  \\
+$n=4,m=2,s=0,s_{z}=0$  &~~~$9$~          &~~$93$~~          &~~$81$  & 24   \\ \hline \hline
+$n=6,m=3$              &~~~$57$~         &~~$2337$~~         &~~- & 124   \\
+$n=6,m=3,s=\frac{3}{2},s_{z}=\frac{1}{2}$   &~~~$14$~          &~~$574$          &~~- & 62   \\
+$n=6,m=3,s=\frac{3}{2},s_{z}=-\frac{1}{2}$  &~~~$14$~          &~~$574$          &~~-    & 62 \\
+$n=6,m=3,s=\frac{1}{2},s_{z}=\frac{1}{2}$   &~~~$24$~          &~~$984$         &~~-    & 114 \\
+$n=6,m=3,s=\frac{1}{2},s_{z}=-\frac{1}{2}$  &~~~$24$~          &~~$984$         &~~-    & 106 \\ \hline \hline
+$n=8,m=4$              &~~~$207$~         &~~$17595$~         &~~-    & 508\\
+$n=8,m=4,s=2,s_{z}=1$  &~~~$21$~          &~~$1785$~          &~~-   & 254 \\
+$n=8,m=4,s=2,s_{z}=0$  &~~~$35$~          &~~$2975$~          &~~-    & 254\\
+$n=8,m=4,s=2,s_{z}=-1$  &~~~$21$~          &~~$1785$~          &~~-   & 254 \\
+$n=8,m=4,s=1,s_{z}=1$  &~~~$45$~          &~~$3825$~          &~~-   & 454 \\
+$n=8,m=4,s=1,s_{z}=0$  &~~~$71$~          &~~$6885$~          &~~-   & 508 \\
+$n=8,m=4,s=1,s_{z}=-1$  &~~~$45$~          &~~$3825$~          &~~-   & 454 \\
+$n=8,m=4,s=0,s_{z}=0$  &~~~$77$~          &~~$6545$~          &~~-   & 432 \\ \hline
+\end{tabular}
+\caption{
+For each spin configuration, we count the total number of Toffoli gates, $N_{\rm T}$, and CNOT gates required in each respective circuit using our $E$ gate construction. $N_{\rm C}(E)$ represents exact Toffoli decomposition while $N_{\rm C}(A)$ represents approximate decomposition. When $n \ge 6$, $N_{\rm C}(E) = N_{\rm T} (2n^{2}-6n+5)$~\cite{szyprowski2013}. We include $N_{\rm C}(N)$, which shows the maximum possible CNOT count using the numerical methods in Ref.~\cite{Shende2006} and after transpiling in Qiskit, for any random target state in the chosen subspace.}
+\label{Number_Table}
+\end{table*}
+Next, we consider the same problem but now for the case of three fermions in six spin-orbitals. The different spin subspaces are now given by
+\begin{equation}
+\ket{s=\frac{3}{2},s_z=+\frac{1}{2}}=\frac{1}{\sqrt{3}}(\ket{011010}+\ket{100110}+\ket{101001}),\nonumber
+\end{equation}
+\begin{equation}
+\ket{s=\frac{3}{2},s_z=-\frac{1}{2}}=\frac{1}{\sqrt{3}}(\ket{010110}+\ket{011001}+\ket{100101}),\nonumber
+\end{equation}
+\begin{equation}
+    \begin{split}
+\ket{s=\frac{1}{2},s_z=+\frac{1}{2}}=&\alpha\ket{001110}+\beta\ket{001011}+\gamma\ket{110010}\\
++&\delta\ket{111000}+\epsilon\ket{100011}+\eta\ket{101100}\\
++&\frac{\chi}{\sqrt{2}}(\ket{101001}-\ket{100110})\\
++&\frac{\xi}{\sqrt{6}}(\ket{100110}+\ket{101001}-2\ket{011010}),\nonumber
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\ket{s=\frac{1}{2},s_z=-\frac{1}{2}}=&\alpha\ket{010011}+\beta\ket{011100}+\gamma\ket{000111}\\
++&\delta\ket{110100}+\epsilon\ket{001101}+\eta\ket{110001}\\
++&\frac{\chi}{\sqrt{2}}(\ket{011001}-\ket{010110})\\
++&\frac{\xi}{\sqrt{6}}(2\ket{100101}-\ket{010110}-\ket{011001}).\nonumber
+\end{split}
+\end{equation}
+If we construct an $E_6$ unitary analogous to Eq.~\eqref{eq:E4gate} and perform a similar decomposition in terms of Toffoli gates, we obtain the circuit shown in Fig.~\ref{fig:f-gate}. A summary of gate counts for $E_4$, $E_6$, and $E_8$ is given in Table~\ref{Number_Table}.
+
+If we again consider the numerical decomposition methods that construct the desired superposition state, then we can construct such a state in only $124$ CNOT gates. Using Qiskit's transpiler, the CNOT   count for constructing an $n$-qubit state ($n\in 2\mathbb{N}$) with only $n/2$ particles is, at most, $2^{n+1}-4$ CNOT's.
+
+\begin{figure*}[tb]
+\[ \Qcircuit @C=0.75em @R=0.3em {
+\ket{0} &	&	\gate{X}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\qw	\\
+\ket{0} &	&	\gate{X}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+\ket{0} &	&	\gate{X}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{-1}	&	\gate{Y_4^\dagger}	&	\targ	&	\gate{Y_4}	&	\qw	\\
+\ket{0} &	&	\qw	&	\ctrlo{-1}	&	\gate{Y_1^\dagger}	&	\targ	&	\gate{Y_1}	&	\ctrlo{-1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\qw	\\
+\ket{0} &	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\gate{Y_2^\dagger}	&	\targ	&	\gate{Y_2}	&	\ctrlo{-1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\qw	\\
+\ket{0} &	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\gate{Y_3^\dagger}	&	\targ	&	\gate{Y_3}	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\qw	\\
+&	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\qw	\\
+&	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{-1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{-1}	&	\ctrlo{+1}	&	\gate{Y_5^\dagger}	&	\targ	&	\gate{Y_5}	&	\ctrlo{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\gate{Y_7^\dagger}	&	\targ	&	\gate{Y_7}	&	\ctrlo{-1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{-1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{-1}	&	\gate{Y_6^\dagger}	&	\targ	&	\gate{Y_6}	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+&	&	\ctrl{-1}	&	\targ	&	\qw	&	\ctrlo{-1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\gate{Y_8^\dagger}	&	\targ	&	\gate{Y_8}	&	\qw	\\
+&	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{-1}	&	\gate{Y_{10}^\dagger}	&	\targ	&	\gate{Y_{10}}	&	\ctrlo{-1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+&	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{+1}	&	\gate{Y_{11}^\dagger}	&	\targ	&	\gate{Y_{11}}	&	\ctrlo{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\qw	\\
+&	&	\targ	&	\ctrlo{-1}	&	\gate{Y_9^\dagger}	&	\targ	&	\gate{Y_9}	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\targ	&	\qw	&	\ctrlo{-1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\gate{Y_{12}^\dagger}	&	\targ	&	\gate{Y_{12}}	&	\qw	\\
+&	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\targ	&	\qw	&	\ctrlo{-1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+&	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\gate{Y_{13}^\dagger}	&	\targ	&	\gate{Y_{13}}	&	\ctrlo{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{-1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\qw	\\
+&	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{-1}	&	\gate{Y_{16}^\dagger}	&	\targ	&	\gate{Y_{16}}	&	\qw	\\
+&	&	\ctrlo{+1}	&	\targ	&	\qw	&	\ctrlo{-1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\gate{Y_{14}^\dagger}	&	\targ	&	\gate{Y_{14}}	&	\ctrlo{-1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\qw	\\
+&	&	\targ	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\qw	&	\ctrlo{-1}	&	\ctrlo{-1}	&	\gate{Y_{15}^\dagger}	&	\targ	&	\gate{Y_{15}}	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\qw	\\
+&	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	\\
+&	&	\targ	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\ctrlo{+1}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	\\
+&	&	\ctrl{-1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	\\
+&	&	\ctrlo{-1}	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{+1}	&	\targ	&	\qw	&	\ctrlo{+1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\gate{Y_{19}^\dagger}	&	\targ	&	\gate{Y_{19}}	&	\ctrlo{-1}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	\\
+&	&	\ctrlo{-1}	&	\ctrlo{+1}	&	\gate{Y_{17}^\dagger}	&	\targ	&	\gate{Y_{17}}	&	\ctrlo{+1}	&	\ctrl{-1}	&	\qw	&	\ctrl{+1}	&	\qw	&	\ctrl{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	\\
+&	&	\ctrl{-1}	&	\targ	&	\qw	&	\ctrlo{-1}	&	\qw	&	\targ	&	\ctrlo{-1}	&	\gate{Y_{18}^\dagger}	&	\targ	&	\gate{Y_{18}}	&	\ctrlo{-1}	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\ctrl{-1}	&	\qw	&	\qw	&	\qw	&	\qw	&	\qw	
+}
+\]
+    \caption{Using Gray codes, we show the decomposition of the $E_6$ gate into elementary single and two qubit gates. Decomposition of all Toffoli gates results in a total of 2337 CNOT gates and 41 single qubit gates. The notation for the single qubit $Y$ rotations is that $Y_i = R_Y(u_i-\frac{\pi}{2})$.}
+    \label{fig:f-gate}
+\end{figure*}
+
+%\textcolor{red}{
+\subsection{Numerical Verification of Circuits}
+%}
+%\textcolor{red}{
+In order to confirm the validity of our $A$ gate circuits, we compute the circuit fidelity as a function of the number of variational parameters for several example cases. We first consider one of our core examples from the main text, Fig. 3, which shows an $A$ gate circuit for $m=2$ electrons in $n=4$ orbitals. A general state in this subspace can be written as 
+\begin{equation}
+\alpha \ket{1100}+\beta\ket{1010}+\gamma\ket{1001}+\delta\ket{0110}+\eta\ket{0101}+\chi\ket{0011},
+\label{eq:gen4choose2}
+\end{equation} which involves the $\binom{4}{2}=6$ basis states that span the number conserving subspace. Following the discussion in the main text, our proposed circuit should span this space using the fewest possible parameters. For clarity, we follow the suggestions in the main text for time-reversal symmetry and therefore set all $\phi_i$ to zero and fix $\theta_5$ to zero. With these settings, this circuit then produces the following parameterized state, when it acts on the ground state $\ket{0000}$,
+\begin{equation}
+\begin{split}
+&\ket{0110}(-C_2 C_3 S_1 S_4-C_1 C_2 C_4)\\
++&\ket{1001}(C_4 S_1 S_2+C_1 C_3 S_4 S_2)\\
++&\ket{1010}(C_2 C_3 C_4 C_6 S_1+C_2 S_3 S_6 S_1-C_1 C_2 C_6 S_4)\\
++&\ket{0101}(-C_1 C_3 C_4 C_6 S_2+C_6 S_1 S_4 S_2-C_1 S_3 S_6 S_2)\\
++&\ket{1100}(-C_2 C_6 S_1 S_3+C_2 C_3 C_4 S_1 S_6-C_1 C_2 S_4 S_6)\\
++&\ket{0011}(-C_1 C_6 S_2 S_3+C_1 C_3 C_4 S_2 S_6-S_1 S_2 S_4 S_6),
+\end{split}
+\label{eq:a42}
+\end{equation}
+where $C_i=\cos(\theta_i),S_i=\sin(\theta_i)$. From here we can now sample over random choices of coefficients in Eq.~\ref{eq:gen4choose2} and calculate the fidelity, $F=\frac{1}{N}\sum_{i=1}^{N}|\langle  \Psi(\theta_j)|\psi_i\rangle|^2$, maximizing over $\theta_j$. We show in Fig.~\ref{fig:fidparams} that the fidelity of this circuit increases monotonically with the number of $\theta_j$ parameters and saturates at unity once this number equals the dimension of the symmetry subspace, which is 5 in this case. The fidelity is computed by averaging over $N=2000$ random states. We also performed similar numerical checks for the other choices of number of qubits ($n$) and the number of excitations ($m$), including all ($n>m$) permutations of $n=\{2,3,4,5,6\},m=\{1,2,3,4,5\}$, following the general construction outlined in the main text. The case $n=6$, $m=2$ is also included in the figure (green curve), where it is again evident that the fidelity reaches unity when the number of parameters equals the subspace dimension. The same behavior arose in all the examples we checked.
+%}
+
+%\textcolor{red}{
+Next we discuss the enforcement of $s_z$ symmetry using this same circuit. In order to take advantage of $s_z$ symmetry, we only require slight modifications to the base circuit as described in the main text. First, we need to assign spin labels to the qubits. We choose a block assignment for this example, where all spin-up orbitals are assigned to the top half and all spin-down orbitals are assigned to the bottom half of the qubits. If we consider the case of $n=4,m=2,s_z=0$, the states that span this spin subspace are
+\[
+\beta\ket{1010}+\gamma\ket{1001}+\delta\ket{0110}+\eta\ket{0101},
+\]
+which is just a reduced version of Eq.~\ref{eq:gen4choose2}, due to our $s_z=0$ restriction.
+With this choice, it is clear that if we start with an initial state with a quantum number of $s_z=0$ and do not mix the split spin subspaces, then the circuit will preserve this symmetry. In order to illustrate this, we include the modification of the original circuit to maintain this symmetry (also assuming time-reversal symmetry), in Fig.~\ref{fig:a42sz}. Here, we can see that we have removed some $A$ gates from the general circuit case ($n=4, m=2$, without any spin symmetry) in order to reduce the parameter count to the dimension of this reduced space, following the protocol in the main text. Similar to the previous example, this modified circuit produces the following state when it acts on the ground state,
+\begin{equation}
+\begin{split}
+&C_1 S_{2-3}\ket{1010}+C_1C_{2-3}\ket{1001}\\
+&+S_1 S_{2+3}\ket{0110}+S_1 C_{2+3}\ket{0101},
+\end{split}
+\end{equation}
+where $C_{i\pm j}$ abbreviates for $\cos(\theta_1\pm \theta_2)$.
+In this case, we only require 3 parameters to span the relevant subspace and again achieve unit fidelity in this case as shown in Fig.~\ref{fig:fidparams}(a) (yellow curve). The case $n=6$, $m=2$ is also shown in the figure (red curve).
+%}
+
+%\textcolor{red}{
+In all cases shown in Fig.~\ref{fig:fidparams}(a), we find the optimal point where we achieve unit fidelities(with minimal parameters for the chosen space) and fix parameters to zero (starting from the ``end" of the circuit) to show how the fidelity decreases when too few parameters are used. For our $A$ gate circuits, over-parameterization is also indicated by including extra parameters (inserting extra gates), which of course maintains the fidelity at unity. Although numerical verification is not necessary in the case of our $E$ gate circuits, which conserve total spin in addition to particle number, spin magnetization, and time-reversal symmetries, we also show the fidelities of these circuits in Fig. S4(b) for comparison. As expected, the fidelity again saturates at unity when the number of parameters reaches the dimenions of the symmetry subspace. Our $E_4,E_6$ gates show an approximate linear increase in subspace coverage with increasing parameters. We include these examples cases in an skeleton notebook on Github~\cite{Gardgit2019}.
+%}
+%\nolinenumbers
+\begin{figure*}[!htb]
+\centering
+    \definecolor{mmaBlue}{HTML}{5e81b5}
+    \definecolor{mmaOrange}{HTML}{e19c24}
+    \definecolor{mmaGreen}{HTML}{8fb032}
+    \definecolor{mmaRed}{HTML}{eb6235}
+    \definecolor{mmaPurple}{HTML}{8778b3}
+    \definecolor{mmaBrown}{HTML}{c56e1a}
+    
+    \begin{tikzpicture}
+          \begin{axis}[
+            xlabel = {\# Parameters},
+            ylabel = {Fidelity},
+            xmin = 0,
+            xmax = 17,
+            ymin=0,
+            ymax=1.05,
+            xtick = {2,4,6,8,10,12,14,16},
+            %ymode=log,
+            legend style={at={(1,0)},anchor=south east}
+            ]
+    \addlegendentry{$A_{4,2}$}
+    \addlegendentry{$A_{4,2,s_z=0}$}
+    \addlegendentry{$A_{6,2}$}
+    \addlegendentry{$A_{6,2,s_z=0}$}
+            \addplot[line width=0.75pt,solid,color=mmaBlue,mark=*]
+                table{
+                  0 0.16509149364639392
+                  1 0.33665252551989205 
+                  2 0.6049371516211911
+                  3 0.8404554393468447
+                  4 0.9459059543301387
+                  5 0.9999999999999871
+                  6 0.9999999999998542
+                   };
+            \addplot[line width=0.75pt,solid,color=mmaOrange,mark=o]
+                table{
+                    0 0.25878293116520046
+                    1 0.49440392074839595
+                    2 0.8115117995129308
+                    3 0.9999999999999991
+                    4 0.9999999999999994
+                    };
+            \addplot[line width=0.75pt,solid,color=mmaGreen,mark=square]
+                table{
+                    0 0.06992015337734175
+                    1 0.13686939535030176
+                    2 0.25920784546740644
+                    3 0.33821724072512843
+                    4 0.4482138636307883
+                    5 0.5790189972629262 
+                    6 0.6487788429764421
+                    7 0.7457698877589277
+                    8 0.8086253353703974
+                    9 0.860500576858853
+                    10 0.9071898143147447
+                    11 0.9438958013481336
+                    12 0.9742950314763058
+                    13 0.9918899837042585
+                    14 0.9980404361463416
+                    15 0.9997474639172255
+                };
+                \addplot[line width=0.75pt,solid,color=mmaRed,mark=x]
+                table{
+                    0 0.10014059991729667
+                    1 0.21724807938940963
+                    2 0.4157067284134691
+                    3 0.6117889916930895
+                    4 0.8869307355074671
+                    5 0.908927035628553
+                    6 0.9389732646218656
+                    7 0.9767104030228243
+                    8 0.9975587021887726
+                    9 0.9981579125185256
+                }; 
+        \end{axis}
+        \node [above right]  {(a)};
+    \end{tikzpicture}
+   \begin{tikzpicture}
+        \begin{axis}[
+            xlabel = {\# Parameters},
+            ylabel = {Fidelity},
+            xmin = 0,
+            xmax = 20,
+            ymin=0,
+            ymax=1.05,
+            xtick = {2,4,6,8,10,12,14,16,18,20},
+            %ymode=log,
+            legend style={at={(1,0)},anchor=south east}
+            ]
+    \addlegendentry{$E_{4,2}$}
+    \addlegendentry{$E_{4,2,s=0,s_z=0}$}
+    \addlegendentry{$E_{6,3}$}
+    \addlegendentry{$E_{6,3,s=1/2,s_z=1/2}$}
+                \addplot[line width=0.75pt,solid,color=mmaBlue,mark=asterisk]
+                table{
+                   0 0.1715653067999831
+                   1 0.32247880115410454
+                   2 0.4960399942562949
+                   3 0.6666999523418737
+                   4 0.8244949075978281
+                   5 1
+                };
+                \addplot[line width=0.75pt,solid,color=mmaOrange,mark=triangle]
+                table{
+                   0 0.32548269862318585
+                   1 0.6669347865633025
+                   2 1
+                };
+                \addplot[line width=0.75pt,solid,color=mmaGreen,mark=diamond]
+                table{
+                    0 0.05103360413481167
+                    1 0.09909949570780162
+                    2 0.14763594555485882
+                    3 0.2034360771691898
+                    4 0.2669254793226245
+                    5 0.3008989444203076
+                    6 0.3498767949191538
+                    7 0.3906850623433296
+                    8 0.4473183219217465
+                    9 0.5058434757034792
+                    10 0.5464702122461437
+                    11 0.5991913248879086
+                    12 0.6505214763460314
+                    13 0.706213523203654
+                    14 0.748580501381204
+                    15 0.8016026083183914
+                    16 0.855659111208211
+                    17 0.8935938125364372
+                    18 0.9494158734712603
+                    19 0.9999999999999989
+                };
+                \addplot[line width=0.75pt,solid,color=mmaRed,mark=+]
+                table{
+                    0 0.12913804148455005
+                    1 0.2471502933637832
+                    2 0.370772705929965
+                    3 0.4907368501202262
+                    4 0.6318245547097416
+                    5 0.7487032017691649
+                    6 0.8915439777152843
+                    7 0.999972
+                };
+                \node [above right]  {(b)};
+                \end{axis}
+        \end{tikzpicture}
+\caption{Fidelity $F$ (defined in the main text) of our state preparation circuits as a function of the number of variational circuit parameters. (a) Fidelity of our $A_{n,m}$ circuits for $n$ qubits and $m$ excitations (particles). For $n=4,m=2$ and spin projection left unspecified, these gates can achieve unit fidelity with only the minimal $\binom{4}{2}-1=5$ parameters (blue solid circles). Restricting to states with a spin projection eigenvalue of $s_z=0$ further reduces the number of minimal parameters to three (orange open circles). For the case $n=6,m=2$, a similar circuit achieves unit fidelity with the minimal number of parameters $\binom{6}{2}-1=14$ (green squares). Again restricting to the $s_z=0$ subspace reduces the number of minimal parameters to eight (red x's). One extra parameter is included in each case to show that additional gates are unnecessary. (b) Fidelity of our $E_{n,m}$ gates and total-spin-conserving $E_{n,m,s,s_z}$ gates. These gates also achieve unit fidelity using the minimal number of parameters needed to span the relevant Hilbert subspace.}
+\label{fig:fidparams}
+\end{figure*}
+%\linenumbers
+\begin{figure}[!tb]
+%{\includegraphics[width=1\hsize]{figures/plt-4o-2e-1.png}}
+\[ \Qcircuit @C=0.5em @R=.7em {
+\ket{0} &	&	\gate{X}	&	\multigate{1}{A(\theta_1,0)}	&	\qw	&	\multigate{1}{A(\theta_4,0)}	&	\qw	&	\qw	\\
+\ket{0} &	&	\qw	&	\ghost{A(\theta_1,0)}	&	\multigate{1}{A(0,0)}	&	\ghost{A(\theta_4,0)}	&	\qw	&	\qw	\\
+\ket{0} &	&	\qw	&	\multigate{1}{A(\theta_2,0)}	&	\ghost{A(0,0)}	&	\qw	&	\qw	&	\qw	\\
+\ket{0} &	&	\gate{X}	&	\ghost{A(\theta_2,0)}	&	\qw	&	\qw	&	\qw	&	\qw
+} \]
+\caption{An example circuit for the case of time reversal symmetry with $n=4,m=2,s_z=0$ which exactly spans the subspace defined by four basis states using the minimal number (3) of parameters.}
+\label{fig:a42sz}
+\end{figure}
+
+\raggedright
+%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (-1) disabled
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{4}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Barenco}\ \emph {et~al.}(1995)\citenamefont
+  {Barenco}, \citenamefont {Bennett}, \citenamefont {Cleve}, \citenamefont
+  {DiVincenzo}, \citenamefont {Margolus}, \citenamefont {Shor}, \citenamefont
+  {Sleator}, \citenamefont {Smolin},\ and\ \citenamefont
+  {Weinfurter}}]{Barenco1995}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Barenco}}, \bibinfo {author} {\bibfnamefont {C.~H.}\ \bibnamefont
+  {Bennett}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Cleve}},
+  \bibinfo {author} {\bibfnamefont {D.~P.}\ \bibnamefont {DiVincenzo}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Margolus}}, \bibinfo
+  {author} {\bibfnamefont {P.}~\bibnamefont {Shor}}, \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {Sleator}}, \bibinfo {author} {\bibfnamefont
+  {J.~A.}\ \bibnamefont {Smolin}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {H.}~\bibnamefont {Weinfurter}},\ }\href {\doibase 10.1103/PhysRevA.52.3457}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo
+  {volume} {52}},\ \bibinfo {pages} {3457} (\bibinfo {year}
+  {1995})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{Szyprowski}}\ and\ \citenamefont
+  {{Kerntopf}}(2013)}]{szyprowski2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {{Szyprowski}}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {{Kerntopf}}},\ }in\ \href {\doibase 10.1109/NANO.2013.6721034} {\emph
+  {\bibinfo {booktitle} {(IEEE-NANO 2013)}}}\ (\bibinfo {year} {2013})\ pp.\ \bibinfo
+  {pages} {802--807}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{Shende}}\ \emph {et~al.}(2006)\citenamefont
+  {{Shende}}, \citenamefont {{Bullock}},\ and\ \citenamefont
+  {{Markov}}}]{Shende2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.~V.}\ \bibnamefont
+  {{Shende}}}, \bibinfo {author} {\bibfnamefont {S.~S.}\ \bibnamefont
+  {{Bullock}}}, \ and\ \bibinfo {author} {\bibfnamefont {I.~L.}\ \bibnamefont
+  {{Markov}}},\ }\href {\doibase 10.1109/TCAD.2005.855930} {\bibfield
+  {journal} {\bibinfo  {journal} {IEEE Transactions on Computer-Aided Design of\\
+  Integrated Circuits and Systems}\ }\textbf {\bibinfo {volume} {25}},\
+  \bibinfo {pages} {1000} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Aleksandrowicz}\ \emph {et~al.}(2019)\citenamefont
+  {Aleksandrowicz}, \citenamefont {Alexander}, \citenamefont {Barkoutsos},
+  \citenamefont {Bello}, \citenamefont {Ben-Haim}, \citenamefont {Bucher},
+  \citenamefont {Cabrera-Hern{\'a}dez}, \citenamefont {Carballo-Franquis},
+  \citenamefont {Chen}, \citenamefont {Chen}, \citenamefont {Chow},
+  \citenamefont {C{\'o}rcoles-Gonzales}, \citenamefont {Cross}, \citenamefont
+  {Cross}, \citenamefont {Cruz-Benito}, \citenamefont {Culver}, \citenamefont
+  {Gonz{\'a}lez}, \citenamefont {Torre}, \citenamefont {Ding}, \citenamefont
+  {Dumitrescu}, \citenamefont {Duran}, \citenamefont {Eendebak}, \citenamefont
+  {Everitt}, \citenamefont {Sertage}, \citenamefont {Frisch}, \citenamefont
+  {Fuhrer}, \citenamefont {Gambetta}, \citenamefont {Gago}, \citenamefont
+  {Gomez-Mosquera}, \citenamefont {Greenberg}, \citenamefont {Hamamura},
+  \citenamefont {Havlicek}, \citenamefont {Hellmers}, \citenamefont {Herok},
+  \citenamefont {Horii}, \citenamefont {Hu}, \citenamefont {Imamichi},
+  \citenamefont {Itoko}, \citenamefont {Javadi-Abhari}, \citenamefont
+  {Kanazawa}, \citenamefont {Karazeev}, \citenamefont {Krsulich}, \citenamefont
+  {Liu}, \citenamefont {Luh}, \citenamefont {Maeng}, \citenamefont {Marques},
+  \citenamefont {Mart{\'\i}n-Fern{\'a}ndez}, \citenamefont {McClure},
+  \citenamefont {McKay}, \citenamefont {Meesala}, \citenamefont {Mezzacapo},
+  \citenamefont {Moll}, \citenamefont {Rodr{\'\i}guez}, \citenamefont
+  {Nannicini}, \citenamefont {Nation}, \citenamefont {Ollitrault},
+  \citenamefont {O'Riordan}, \citenamefont {Paik}, \citenamefont {P{\'e}rez},
+  \citenamefont {Phan}, \citenamefont {Pistoia}, \citenamefont {Prutyanov},
+  \citenamefont {Reuter}, \citenamefont {Rice}, \citenamefont {Davila},
+  \citenamefont {Rudy}, \citenamefont {Ryu}, \citenamefont {Sathaye},
+  \citenamefont {Schnabel}, \citenamefont {Schoute}, \citenamefont {Setia},
+  \citenamefont {Shi}, \citenamefont {Silva}, \citenamefont {Siraichi},
+  \citenamefont {Sivarajah}, \citenamefont {Smolin}, \citenamefont {Soeken},
+  \citenamefont {Takahashi}, \citenamefont {Tavernelli}, \citenamefont
+  {Taylor}, \citenamefont {Taylour}, \citenamefont {Trabing}, \citenamefont
+  {Treinish}, \citenamefont {Turner}, \citenamefont {Vogt-Lee}, \citenamefont
+  {Vuillot}, \citenamefont {Wildstrom}, \citenamefont {Wilson}, \citenamefont
+  {Winston}, \citenamefont {Wood}, \citenamefont {Wood}, \citenamefont
+  {W{\"o}rner}, \citenamefont {Akhalwaya},\ and\ \citenamefont
+  {Zoufal}}]{Qiskit}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Aleksandrowicz}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Alexander}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Barkoutsos}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Bello}},
+  \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Ben-Haim}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Bucher}}, \bibinfo {author}
+  {\bibfnamefont {F.~J.}\ \bibnamefont {Cabrera-Hern{\'a}dez}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Carballo-Franquis}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Chen}}, \bibinfo {author}
+  {\bibfnamefont {C.-F.}\ \bibnamefont {Chen}}, \bibinfo {author}
+  {\bibfnamefont {J.~M.}\ \bibnamefont {Chow}}, \bibinfo {author}
+  {\bibfnamefont {A.~D.}\ \bibnamefont {C{\'o}rcoles-Gonzales}}, \bibinfo
+  {author} {\bibfnamefont {A.~J.}\ \bibnamefont {Cross}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Cross}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Cruz-Benito}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Culver}}, \bibinfo {author} {\bibfnamefont {S.~D. L.~P.}\
+  \bibnamefont {Gonz{\'a}lez}}, \bibinfo {author} {\bibfnamefont {E.~D.~L.}\
+  \bibnamefont {Torre}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Ding}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Dumitrescu}},
+  \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Duran}}, \bibinfo
+  {author} {\bibfnamefont {P.}~\bibnamefont {Eendebak}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Everitt}}, \bibinfo {author} {\bibfnamefont
+  {I.~F.}\ \bibnamefont {Sertage}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Frisch}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Fuhrer}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Gambetta}}, \bibinfo {author} {\bibfnamefont {B.~G.}\
+  \bibnamefont {Gago}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Gomez-Mosquera}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Greenberg}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Hamamura}},
+  \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont {Havlicek}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Hellmers}}, \bibinfo {author}
+  {\bibfnamefont {{\L}.}~\bibnamefont {Herok}}, \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Horii}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Hu}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Imamichi}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Itoko}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Javadi-Abhari}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Kanazawa}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Karazeev}}, \bibinfo {author}
+  {\bibfnamefont {K.}~\bibnamefont {Krsulich}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Liu}}, \bibinfo {author} {\bibfnamefont
+  {Y.}~\bibnamefont {Luh}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Maeng}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Marques}},
+  \bibinfo {author} {\bibfnamefont {F.~J.}\ \bibnamefont
+  {Mart{\'\i}n-Fern{\'a}ndez}}, \bibinfo {author} {\bibfnamefont {D.~T.}\
+  \bibnamefont {McClure}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {McKay}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Meesala}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Mezzacapo}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Moll}}, \bibinfo {author}
+  {\bibfnamefont {D.~M.}\ \bibnamefont {Rodr{\'\i}guez}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Nannicini}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Nation}}, \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {Ollitrault}}, \bibinfo {author} {\bibfnamefont {L.~J.}\
+  \bibnamefont {O'Riordan}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Paik}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {P{\'e}rez}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Phan}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Pistoia}}, \bibinfo {author} {\bibfnamefont
+  {V.}~\bibnamefont {Prutyanov}}, \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Reuter}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Rice}}, \bibinfo {author} {\bibfnamefont {A.~R.}\
+  \bibnamefont {Davila}}, \bibinfo {author} {\bibfnamefont {R.~H.~P.}\
+  \bibnamefont {Rudy}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Ryu}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Sathaye}},
+  \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Schnabel}}, \bibinfo
+  {author} {\bibfnamefont {E.}~\bibnamefont {Schoute}}, \bibinfo {author}
+  {\bibfnamefont {K.}~\bibnamefont {Setia}}, \bibinfo {author} {\bibfnamefont
+  {Y.}~\bibnamefont {Shi}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Silva}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Siraichi}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Sivarajah}}, \bibinfo
+  {author} {\bibfnamefont {J.~A.}\ \bibnamefont {Smolin}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Soeken}}, \bibinfo {author} {\bibfnamefont
+  {H.}~\bibnamefont {Takahashi}}, \bibinfo {author} {\bibfnamefont
+  {I.}~\bibnamefont {Tavernelli}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Taylor}}, \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {Taylour}}, \bibinfo {author} {\bibfnamefont
+  {K.}~\bibnamefont {Trabing}}, \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Treinish}}, \bibinfo {author} {\bibfnamefont
+  {W.}~\bibnamefont {Turner}}, \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Vogt-Lee}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Vuillot}}, \bibinfo {author} {\bibfnamefont {J.~A.}\
+  \bibnamefont {Wildstrom}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Wilson}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Winston}},
+  \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Wood}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Wood}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {W{\"o}rner}}, \bibinfo {author} {\bibfnamefont {I.~Y.}\
+  \bibnamefont {Akhalwaya}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Zoufal}},\ }\href {\doibase 10.5281/zenodo.2562110}
+  {\enquote {\bibinfo {title} {Qiskit: An open-source framework for quantum
+  computing},}\ } (\bibinfo {year} {2019})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tubman}\ \emph {et~al.}(2018)\citenamefont {Tubman},
+  \citenamefont {Mejuto-Zaera}, \citenamefont {Epstein}, \citenamefont {Hait},
+  \citenamefont {Levine}, \citenamefont {Huggins}, \citenamefont {Jiang},
+  \citenamefont {McClean}, \citenamefont {Babbush},\ and\ \citenamefont {Martin
+  Head-Gordo~and}}]{Tubman2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.~M.}\ \bibnamefont
+  {Tubman}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Mejuto-Zaera}}, \bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont
+  {Epstein}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Hait}},
+  \bibinfo {author} {\bibfnamefont {D.~S.}\ \bibnamefont {Levine}}, \bibinfo
+  {author} {\bibfnamefont {W.}~\bibnamefont {Huggins}}, \bibinfo {author}
+  {\bibfnamefont {Z.}~\bibnamefont {Jiang}}, \bibinfo {author} {\bibfnamefont
+  {J.~R.}\ \bibnamefont {McClean}}, \bibinfo {author} {\bibfnamefont
+  {R.}~\bibnamefont {Babbush}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {K.~B.~W.}\ \bibnamefont {Martin Head-Gordo~and}},\ }\href@noop {} {\bibfield
+   {journal} {\bibinfo  {journal} {arXiv:1809.05523 [quant-ph]}\ } (\bibinfo
+  {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gard}(2019)}]{Gardgit2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Gard}},\ }\href@noop {} {\enquote {\bibinfo {title}
+  {Efficient-symmetry-preserving-state-preparation-circuits-for-the-vqe-algorithm},}\
+  }\bibinfo {howpublished}
+  {\url{https://github.com/bgard1/Efficient-Symmetry-Preserving-State-Preparation-Circuits-for-the-VQE-algorithm}}
+  (\bibinfo {year} {2019})\BibitemShut {NoStop}%
+\end{thebibliography}%
+
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******
