@@ -10,6 +10,7 @@ import copy
 import glob
 # 导入标准的 OpenAI 库
 from openai import OpenAI
+from llm_support import api_key_for_model, llm_connection_options
 from audit_report_support import publish_audit_report
 from machine_contracts import (
     extract_machine_contract,
@@ -309,7 +310,7 @@ def extract_translation_response(text, parameter_contract, discretization_contra
 class QuantumTranslatorAgent:
     def __init__(self, api_key, base_url=None, model_name="gpt-5.6-sol", max_retries=2):
         # 实例化标准的 OpenAI 客户端，支持传入自定义的 API 网关地址
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(**llm_connection_options(model_name, api_key=api_key, base_url=base_url))
         self.model_name = model_name
         self.max_retries = max_retries
         self.logger = setup_logger("Agent3_QuantumTranslator")
@@ -582,7 +583,7 @@ change one only when the reviewer identified a concrete error in it.
 # ==========================================
 class QuantumReviewerAgent:
     def __init__(self, api_key, base_url=None, model_name="gpt-5.6-sol"):
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(**llm_connection_options(model_name, api_key=api_key, base_url=base_url))
         self.model_name = model_name
         self.logger = setup_logger("Agent3.5_QuantumReviewer")
         
@@ -768,7 +769,7 @@ def parse_arguments():
     parser.add_argument("--discretization-contract", required=True)
     parser.add_argument("--parameter-contract", required=True)
     parser.add_argument("--model", default="gpt-5.6-sol")
-    parser.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1"))
+    parser.add_argument("--base-url", default=None)
     parser.add_argument("--output-manifest")
     parser.add_argument("--output-tag")
     parser.add_argument("--output-root")
@@ -784,9 +785,9 @@ if __name__ == "__main__":
     report_directory = categorized_output_directory(args.output_root, "reports")
     contract_directory = categorized_output_directory(args.output_root, "contracts")
     audit_directory = categorized_output_directory(args.output_root, "audit")
-    YOUR_API_KEY = os.environ.get("OPENAI_API_KEY")
+    YOUR_API_KEY = api_key_for_model(args.model, required=False)
     if not YOUR_API_KEY:
-        raise SystemExit("Set OPENAI_API_KEY before running this agent.")
+        api_key_for_model(args.model)
     parameter_contract = load_parameter_contract(args.parameter_contract)
     discretization_contract = load_machine_contract(
         args.discretization_contract,

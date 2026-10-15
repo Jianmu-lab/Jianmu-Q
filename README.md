@@ -57,9 +57,30 @@ read -s OPENAI_API_KEY
 export OPENAI_API_KEY
 ```
 
-Choose an available model using the `llm` field in the input JSON or the UI.
-The examples retain the model identifier recorded by the original workflow.
-Agent calls consume API resources; running the offline tests does not.
+The English UI includes an **LLM provider** selector. OpenAI presets include
+`gpt-6-sol` (the default for new UI inputs), `gpt-6-astra`, `gpt-6-luna`, and the
+existing GPT-5.6 choices. Gemini presets include `gemini-3.8-flash` and
+`gemini-3.1-pro-preview`. Both providers accept custom API model IDs; Gemini IDs
+must start with `gemini-`. Saved configurations keep their selected model.
+Availability depends on your API account.
+
+For Gemini, set its own key before launching the UI:
+
+```bash
+read -s GEMINI_API_KEY
+export GEMINI_API_KEY
+```
+
+All agent stages use the provider selected by the `llm` model ID. Gemini runs
+use Google's OpenAI-compatible endpoint and `GEMINI_API_KEY`; OpenAI runs use
+`OPENAI_API_KEY`. Optional `GEMINI_BASE_URL` and `OPENAI_BASE_URL` overrides are
+provider-specific. API keys are never saved in workflow JSON. The UI checks the
+selected provider's credentials, including when continuing a clarification run.
+
+See the [official GPT-6 model documentation](https://developers.openai.com/api/docs/models/gpt-6-sol)
+and [Google's compatibility documentation](https://ai.google.dev/gemini-api/docs/openai).
+The historical examples retain their original model identifiers. Agent calls
+consume API resources; offline validation does not.
 
 For literature-backed generation, place readable reference `.tex` or `.txt`
 files in `workflow/A2_library/` and `workflow/A4_library/`. Their README files
@@ -195,13 +216,14 @@ names.
 | `hardware_runtime.py`, `Agent9_hardware.py` | Optional IBM hardware branch. |
 | `agent10_final_report.py` | Final-report stage and workflow-result plots; optional when stopping at cross-check. |
 
-The other 12 modules are imported support: `audit_report_support.py`,
+The other 13 modules are imported support: `audit_report_support.py`,
 `circuit_design_support.py`, `machine_contracts.py`, `manifest_artifact.py`,
 `model_output_ingestion.py`, `observable_specification.py`, `parameter_contract.py`,
-`pipeline_support.py`, `review_protocol.py`, `run_spec.py`, `validation_policy.py`
+`pipeline_support.py`, `review_protocol.py`, `run_spec.py`, `validation_policy.py`,
+`llm_support.py` (model presets and provider credentials)
 and `vqe_experience_store.py`.
 
-All 27 remaining top-level Python modules are current entry points or their
+All 28 top-level Python modules are current entry points or their
 imported dependencies. Not all execute in every run: UI, hardware and report
 features are optional.
 

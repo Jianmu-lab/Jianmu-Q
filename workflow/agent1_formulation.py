@@ -9,6 +9,7 @@ import argparse
 import copy
 # 引入标准的 OpenAI 库
 from openai import OpenAI
+from llm_support import api_key_for_model, llm_connection_options
 from audit_report_support import publish_audit_report
 from machine_contracts import (
     extract_json_contract_candidate,
@@ -283,7 +284,7 @@ def bind_theory_to_run_spec(contract, run_spec):
 class TheoryProcessorAgent:
     def __init__(self, api_key, base_url=None, model_name="gpt-5.6-sol"):
         # 实例化标准的 OpenAI 客户端，支持传入自定义的 API 网关地址
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(**llm_connection_options(model_name, api_key=api_key, base_url=base_url))
         self.model_name = model_name
         self.logger = setup_logger("Agent1_TheoryProcessor")
         
@@ -386,7 +387,7 @@ makes a requested state absent, the observable undefined, or the requested
 quantity trivially fixed unless the user explicitly requested that replacement.
 If multiple physically inequivalent realizations remain and the supplied input
 cannot distinguish them, ask one concise physical clarification question.
-Write that question in clear, academically standard Chinese. Do not use an
+Write that question in clear, academically standard English. Do not use an
 undefined abbreviation, a newly coined model name, or jargon as the sole
 description of an option. Describe each alternative by its defining physical
 content and the consequence relevant to the requested calculation; introduce
@@ -506,7 +507,7 @@ interface; LaTeX is only a human audit view and must not contain the JSON.
 # ==========================================
 class TheoryReviewerAgent:
     def __init__(self, api_key, base_url=None, model_name="gpt-5.6-sol"):
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(**llm_connection_options(model_name, api_key=api_key, base_url=base_url))
         self.model_name = model_name
         self.logger = setup_logger("Agent1.5_TheoryReviewer")
         
@@ -589,7 +590,7 @@ Retain a concise question only for missing or contradictory PHYSICAL input that
 leaves inequivalent target theories, observables, or externally requested states.
 Do not repeat a question already answered by the user unless the answer is
 internally contradictory. Write any remaining clarification question and reason
-in concise, academically standard Chinese for direct display in the local UI.
+in concise, academically standard English for direct display in the local UI.
 Rewrite any undefined abbreviation, invented shorthand, or jargon-only option.
 Each alternative must instead be distinguished by its defining physical content
 and its consequence for the requested states or observable, with a standard
@@ -666,7 +667,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Run Agent1 formulation and review.")
     parser.add_argument("--run-spec", required=True, help="Immutable controller-owned RunSpec.")
     parser.add_argument("--model", default="gpt-5.6-sol")
-    parser.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1"))
+    parser.add_argument("--base-url", default=None)
     parser.add_argument("--output-manifest")
     parser.add_argument("--output-tag")
     parser.add_argument("--output-root")
@@ -682,9 +683,9 @@ if __name__ == "__main__":
     report_directory = categorized_output_directory(args.output_root, "reports")
     contract_directory = categorized_output_directory(args.output_root, "contracts")
     audit_directory = categorized_output_directory(args.output_root, "audit")
-    YOUR_API_KEY = os.environ.get("OPENAI_API_KEY")
+    YOUR_API_KEY = api_key_for_model(args.model, required=False)
     if not YOUR_API_KEY:
-        raise SystemExit("Set OPENAI_API_KEY before running this agent.")
+        api_key_for_model(args.model)
     run_spec = load_run_spec(args.run_spec)
     user_input = run_spec["user_input"]
     parameter_groups = user_input.get("parameter_groups", {})

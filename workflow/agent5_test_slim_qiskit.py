@@ -23,6 +23,7 @@ import time
 
 import numpy as np
 from openai import OpenAI
+from llm_support import api_key_for_model, llm_connection_options
 from vqe_experience_store import DEFAULT_DATABASE_PATH
 
 from circuit_design_support import (
@@ -668,7 +669,7 @@ def _read(path):
 
 class QiskitAdapterAgent:
     def __init__(self, api_key, base_url="https://api.openai.com/v1", model_name="gpt-5.6-sol"):
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(**llm_connection_options(model_name, api_key=api_key, base_url=base_url))
         self.model_name = model_name
         self.logger = setup_logger("Agent5_QiskitTranslator")
 
@@ -1127,9 +1128,9 @@ def main():
         expected_parameter_contract=parameter_contract,
     )
     timestamp = output_tag
-    api_key = os.environ.get("OPENAI_API_KEY")
+    api_key = api_key_for_model(args.model, required=False)
     if not args.reuse_adapter and not api_key:
-        raise SystemExit("Set OPENAI_API_KEY before calling Agent 5.")
+        api_key_for_model(args.model)
     agent = (
         QiskitAdapterAgent(api_key=api_key, model_name=args.model)
         if not args.reuse_adapter else None

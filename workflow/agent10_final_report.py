@@ -21,6 +21,7 @@ import numpy as np
 from matplotlib.colors import LogNorm
 
 from openai import OpenAI
+from llm_support import api_key_for_model, llm_connection_options
 
 from pipeline_support import atomic_json_write
 
@@ -481,10 +482,8 @@ def _strip_outer_fence(text: str) -> str:
 
 class FinalReportAgent:
     def __init__(self, model_name: str, base_url: str) -> None:
-        api_key = os.environ.get("OPENAI_API_KEY")
-        if not api_key:
-            raise RuntimeError("Set OPENAI_API_KEY before invoking Agent 10.")
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        api_key = api_key_for_model(model_name)
+        self.client = OpenAI(**llm_connection_options(model_name, api_key=api_key, base_url=base_url))
         self.model_name = model_name
 
     def write(self, evidence: Mapping[str, Any]) -> str:
@@ -677,7 +676,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--hardware-result")
     parser.add_argument("--model", default="gpt-5.6-sol")
     parser.add_argument(
-        "--base-url", default=os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
+        "--base-url", default=None
     )
     return parser.parse_args()
 

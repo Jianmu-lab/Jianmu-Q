@@ -18,6 +18,7 @@ import sys
 from typing import Any, Dict
 
 from openai import OpenAI
+from llm_support import api_key_for_model, llm_connection_options
 
 from parameter_contract import (
     format_parameter_contract,
@@ -159,10 +160,8 @@ def validate_itensor_reference_source(source: str) -> str:
 
 class ModelAgent:
     def __init__(self, name: str, model: str) -> None:
-        api_key = os.environ.get("OPENAI_API_KEY")
-        if not api_key:
-            raise RuntimeError("Set OPENAI_API_KEY before invoking an Agent.")
-        self.client = OpenAI(api_key=api_key, base_url="https://api.openai.com/v1")
+        api_key = api_key_for_model(model)
+        self.client = OpenAI(**llm_connection_options(model, api_key=api_key))
         self.model = model
         self.logger = setup_logger(name)
 

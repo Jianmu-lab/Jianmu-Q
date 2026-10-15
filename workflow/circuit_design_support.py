@@ -132,8 +132,9 @@ def call_model_once(
         with open(raw_response_path, "r", encoding="utf-8") as handle:
             return handle.read()
     from openai import OpenAI
+    from llm_support import llm_connection_options
 
-    client = OpenAI(api_key=api_key, base_url=base_url)
+    client = OpenAI(**llm_connection_options(model_name, api_key=api_key, base_url=base_url))
     response = client.chat.completions.create(
         model=model_name,
         messages=[

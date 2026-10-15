@@ -20,6 +20,10 @@ from pipeline_runtime import (
     validate_config,
 )
 from pipeline_support import atomic_json_write
+from llm_support import (
+    DEFAULT_UI_MODEL, MODEL_PRESETS_BY_PROVIDER,
+    api_key_for_model, api_key_variable, provider_for_model,
+)
 
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -65,15 +69,15 @@ DEFAULT_TRANSPORTERS = [
 ]
 
 LIGHTCONE_CONVENTIONS = {
-    "不涉及光锥坐标": {},
-    "归一化：x±=(x0±x1)/√2": {
+    'No light-cone coordinates': {},
+    'Normalized: x±=(x0±x1)/√2': {
         "lightcone": {
             "coordinate_definition": "x^plus/minus=(x^0 plus/minus x^1)/sqrt(2)",
             "gamma_definition": "gamma^plus/minus=(gamma^0 plus/minus gamma^1)/sqrt(2)",
             "normalization": 0.7071067811865476,
         }
     },
-    "非归一化：x±=x0±x1": {
+    'Unnormalized: x±=x0±x1': {
         "lightcone": {
             "coordinate_definition": "x^plus/minus=x^0 plus/minus x^1",
             "gamma_definition": "gamma^plus/minus=gamma^0 plus/minus gamma^1",
@@ -475,7 +479,7 @@ def _state_editor_row(label: str, value: Any) -> Dict[str, Any]:
 def _single_state_defaults(value: Any) -> Dict[str, Any]:
     if isinstance(value, Mapping) and value.get("kind") == "sector_eigenstate":
         return {
-            "choice": "量子数扇区本征态",
+            "choice": 'Sector eigenstate',
             "custom": "",
             "level": int(value.get("level_index", 0)),
             "quantum_numbers": json.dumps(
@@ -485,11 +489,11 @@ def _single_state_defaults(value: Any) -> Dict[str, Any]:
     text = str(value or "")
     lowered = text.lower()
     if "vacuum" in lowered or "ground" in lowered:
-        choice = "全空间基态／真空"
+        choice = 'Global ground state / vacuum'
     else:
-        choice = "自定义"
+        choice = 'Custom'
     return {
-        "choice": choice, "custom": text if choice == "自定义" else "",
+        "choice": choice, "custom": text if choice == 'Custom' else "",
         "level": 0, "quantum_numbers": '{"charge": 0}',
     }
 
@@ -500,7 +504,7 @@ def config_to_ui_defaults(config: Mapping[str, Any] | None) -> Dict[str, Any]:
     has_saved_config = bool(config)
     model = str(config.get("model", "Schwinger model"))
     observable = dict(config.get("observable", {}))
-    model_choice = model if model in MODEL_PRESETS else "自定义"
+    model_choice = model if model in MODEL_PRESETS else 'Custom'
     parameters = config.get("parameters")
     parameter_rows = (
         [{"name": canonical_name, "value": _editable_text(canonical_value)}
@@ -530,28 +534,29 @@ def config_to_ui_defaults(config: Mapping[str, Any] | None) -> Dict[str, Any]:
     conventions = config.get("continuum_conventions", {})
     lightcone_choice = next(
         (label for label, value in LIGHTCONE_CONVENTIONS.items() if value == conventions),
-        "由 Agent1 检查 / 自行说明",
+        'Agent1 defaults / custom conventions',
     )
     coordinate = observable.get("coordinate_convention", "lattice_indices")
     if isinstance(coordinate, Mapping):
         coordinate = coordinate.get("mode", "lattice_indices")
-    llm = str(config.get("llm", "gpt-5.6-sol"))
-    llm_options = ["gpt-5.6-luna", "gpt-5.6-terra", "gpt-5.6-sol"]
+    llm = str(config.get("llm", DEFAULT_UI_MODEL))
+    llm_provider = provider_for_model(llm)
+    llm_options = MODEL_PRESETS_BY_PROVIDER[llm_provider]
     through = str(config.get("through", "crosscheck"))
     run_scope = {
-        "agent5_observable": "仅验证 Agent1–5 接口",
-        "crosscheck": "运行到经典 cross-check",
-        "final_report": "运行到最终学术报告",
-    }.get(through, "运行到经典 cross-check")
+        "agent5_observable": 'Generate Agent1–5 interfaces only',
+        "crosscheck": 'Run through classical cross-check',
+        "final_report": 'Run through final academic report',
+    }.get(through, 'Run through classical cross-check')
     states = config.get("states")
     if isinstance(states, Mapping) and states:
-        state_mode = "矩阵元线性组合"
+        state_mode = 'Linear combination of matrix elements'
         state_rows = [_state_editor_row(label, value) for label, value in states.items()]
         matrix_rows = [dict(item) for item in observable.get("matrix_elements", [])]
         bra_defaults = _single_state_defaults(None)
         ket_defaults = _single_state_defaults(None)
     else:
-        state_mode = "单个矩阵元"
+        state_mode = 'Single matrix element'
         state_rows = []
         matrix_rows = []
         bra_defaults = _single_state_defaults(config.get("bra", "Vacuum state <Omega|"))
@@ -559,7 +564,7 @@ def config_to_ui_defaults(config: Mapping[str, Any] | None) -> Dict[str, Any]:
     constraints = observable.get("constraints", [])
     return {
         "model_choice": model_choice,
-        "custom_model": model if model_choice == "自定义" else "",
+        "custom_model": model if model_choice == 'Custom' else "",
         "parameter_rows": parameter_rows,
         "expression": str(observable.get(
             "expression", r"\bar{\psi}(z n) W(z n,0) \psi(0), n^mu=(1,1)"
@@ -573,7 +578,7 @@ def config_to_ui_defaults(config: Mapping[str, Any] | None) -> Dict[str, Any]:
             conventions.get("user_notes", "") if isinstance(conventions, Mapping) else ""
         ),
         "coordinate_label": (
-            "格点索引（推荐）" if coordinate == "lattice_indices" else "直接物理坐标"
+            'Lattice indices (recommended)' if coordinate == "lattice_indices" else 'Physical coordinates'
         ),
         "ordering": str(observable.get("ordering", "as_written")),
         "components": list(observable.get("components", ["real", "imag"])),
@@ -584,7 +589,8 @@ def config_to_ui_defaults(config: Mapping[str, Any] | None) -> Dict[str, Any]:
         "matrix_rows": matrix_rows,
         "bra": bra_defaults,
         "ket": ket_defaults,
-        "llm_choice": llm if llm in llm_options else "自定义",
+        "llm_provider": llm_provider,
+        "llm_choice": llm if llm in llm_options else 'Custom',
         "custom_llm": llm if llm not in llm_options else "",
         "run_scope": run_scope,
         "hardware_validation": bool(config.get("hardware_validation", False)),
@@ -675,13 +681,13 @@ def apply_clarification_answers(
 ) -> Dict[str, Any]:
     """Add user-owned clarification answers without changing original inputs."""
     if len(questions) != len(answers) or not questions:
-        raise UIInputError("澄清问题和回答数量不一致")
+        raise UIInputError('Clarification questions and answers must have matching counts')
     additions = []
     for question, answer in zip(questions, answers):
         question_text = _text(question.get("question", ""))
         answer_text = _text(answer)
         if not question_text or not answer_text:
-            raise UIInputError("请回答全部澄清问题后再继续")
+            raise UIInputError('Answer every clarification question before continuing')
         additions.append({"question": question_text, "answer": answer_text})
     updated = json.loads(json.dumps(config, ensure_ascii=False))
     old = updated.get("clarifications", [])
@@ -703,7 +709,7 @@ def _records(value: Any) -> List[Dict[str, Any]]:
 
 def _state_text(selection: str, custom: str, bra: bool) -> str:
     del bra  # Retained only for compatibility with the former Bra/Ket wording.
-    if selection in {"全空间基态／真空", "Vacuum", "Ground state"}:
+    if selection in {'Global ground state / vacuum', "Vacuum", "Ground state"}:
         return "Ground state / vacuum"
     return custom.strip()
 
@@ -713,11 +719,11 @@ def build_sector_state(name: str, level_index: int, quantum_numbers_text: str) -
     try:
         quantum_numbers = json.loads(quantum_numbers_text)
     except json.JSONDecodeError as error:
-        raise UIInputError("量子数必须是合法 JSON 对象：{}".format(error.msg)) from error
+        raise UIInputError('Quantum numbers must be a valid JSON object: {}'.format(error.msg)) from error
     if not isinstance(quantum_numbers, dict) or not quantum_numbers:
-        raise UIInputError("量子数必须是非空 JSON 对象，例如 {\"charge\": 0}")
+        raise UIInputError('Quantum numbers must be a nonempty JSON object, for example {"charge": 0}')
     if not isinstance(level_index, int) or isinstance(level_index, bool) or level_index < 0:
-        raise UIInputError("扇区内能级序号必须是非负整数")
+        raise UIInputError('The sector level index must be a nonnegative integer')
     target: Dict[str, Any] = {
         "kind": "sector_eigenstate",
         "level_index": level_index,
@@ -773,32 +779,32 @@ def render_app() -> None:
     st.set_page_config(page_title="Jianmu-Q Pipeline", layout="wide")
     saved_default = load_default_config()
     defaults = config_to_ui_defaults(saved_default)
-    st.title("Jianmu-Q 本地实验输入")
-    st.caption("填写物理问题，生成可复现 JSON；规范场截断由 Agent2 选择。")
+    st.title('Jianmu-Q Simulation Workflow')
+    st.caption('Define a physics problem and generate a reproducible workflow. Agent2 selects the gauge-field treatment and truncation.')
     if saved_default is not None:
-        st.info("已自动载入上次保存的默认输入；可直接修改后再次运行。")
+        st.info('Your saved default inputs have been loaded. You can edit them before running.')
 
-    with st.expander("人工批准程序复用"):
+    with st.expander('Human-approved program reuse'):
         st.write(
-            "只有你审阅过最终报告并在这里批准的 run 才能成为复用来源。"
-            "批准只记录在原 run 的 manifest 中，不建立额外数据库。"
+            'Only runs whose final reports you have reviewed and approved here can supply reusable programs. '
+            'Approval is recorded in the source run manifest.'
         )
         final_runs = _final_run_manifests()
         if final_runs:
             labels = [
-                "{}{}".format(run_id, "（已批准）" if approved else "")
+                "{}{}".format(run_id, ' (approved)' if approved else "")
                 for run_id, _, approved in final_runs
             ]
-            selected_label = st.selectbox("已有 Final Report 的 run", labels)
+            selected_label = st.selectbox('Run with a final report', labels)
             selected_index = labels.index(selected_label)
             selected_id, selected_manifest_path, selected_approved = final_runs[
                 selected_index
             ]
             with st.container(horizontal=True):
                 if st.button(
-                    "批准复用",
+                    'Approve reuse',
                     disabled=selected_approved,
-                    help="表示你已审阅该 run，允许相同 UI 物理目标复用其程序。",
+                    help='Confirm that you reviewed this run and allow its programs to be reused for the same physical target.',
                 ):
                     selected_manifest = _load_json_object(selected_manifest_path)
                     if selected_manifest is not None:
@@ -807,55 +813,40 @@ def render_app() -> None:
                                 selected_manifest, selected_manifest_path, True
                             )
                         except PipelineError as error:
-                            st.error("该 run 不能作为程序模板：{}".format(error))
+                            st.error('This run cannot be used as a program template: {}'.format(error))
                         else:
-                            st.success("已批准：{}".format(selected_id))
+                            st.success('Approved: {}'.format(selected_id))
                             st.rerun()
-                if st.button("撤销批准", disabled=not selected_approved):
+                if st.button('Revoke approval', disabled=not selected_approved):
                     selected_manifest = _load_json_object(selected_manifest_path)
                     if selected_manifest is not None:
                         set_program_reuse_approval(
                             selected_manifest, selected_manifest_path, False
                         )
-                        st.success("已撤销：{}".format(selected_id))
+                        st.success('Approval revoked: {}'.format(selected_id))
                         st.rerun()
         else:
-            st.caption("目前没有可审核的 Final Report。")
+            st.caption('No final reports are available for review yet.')
 
-    with st.expander("输入格式速查"):
+    with st.expander('Input format guide'):
         st.markdown(
-            """
-- **模型参数**：每行填写唯一参数名和值；值支持数字、JSON 数组或普通文本。
-- **多维格点大小**：填写 `spatial_lattice_shape`，值写成 JSON 数组，例如二维
-  ` [4, 4]`；不要把 `L*L = 4*4 = 16` 同时写进参数名和值。
-- **观测量**：表达式用于描述完整物理量；下方算符表逐项定义算符及位置。
-- **连续理论约定**：若使用光锥坐标或 Gamma±，在高级选项选择物理定义。
-- **位置**：可写 `t_index=z_index, x_index=0`，也可写 JSON 对象。
-- **网格**：离散值写 `0,1,2`；参数范围写 `0:L-1`；带步长写 `1:L-1:2`。
-- **态与量子数**：全空间基态就是本流程中的真空；指定扇区态需填写从 0 开始的能级和量子数 JSON。
-- **状态标签**：只是矩阵元表引用该状态的唯一名称，例如 `hadron`、`vacuum`。
-- **矩阵元线性组合**：每行表示 `coefficient × <bra|O|ket>`；例如强子项系数 `1`、真空项系数 `-1`。
-- **自定义名称**：模型和 LLM 均填写其正式名称；自定义态应明确说明目标态。
-
-网格中的符号必须对应一个整数模型参数。参数名可直接写 `L`，或写成
-`number of lattice sites: L`，此时都可在网格中使用 `L`。
-            """
+            '\n- **Parameters:** Use unique names and numerical values, JSON arrays or plain text.\n- **Lattice shape:** Use `spatial_lattice_shape` with a JSON array such as `[4, 4]`.\n- **Observable:** Describe the complete quantity, then define each insertion and position.\n- **Conventions:** Select light-cone and gamma-matrix definitions in advanced options.\n- **Positions:** Use `t_index=z_index, x_index=0` or a JSON object.\n- **Grids:** Use `0,1,2`, inclusive ranges such as `0:L-1`, or `1:L-1:2` with a step.\n- **States:** A global ground state is the vacuum; sector states need a zero-based level and quantum numbers.\n- **State labels:** Unique references such as `hadron` and `vacuum` in the matrix-element table.\n- **Linear combinations:** Each row is `coefficient × <bra|O|ket>`; use -1 for vacuum subtraction.\n- **Custom entries:** Use the complete model definition and exact API model ID.\n\nGrid symbols must match integer parameters. Both `L` and `number of lattice sites: L` allow `L` in a range.\n'
         )
 
-    st.subheader("1. 模型与参数")
+    st.subheader('1. Model and parameters')
     model_choice = st.selectbox(
-        "模型",
-        list(MODEL_PRESETS) + ["自定义"],
-        index=(list(MODEL_PRESETS) + ["自定义"]).index(defaults["model_choice"]),
-        help="选择预设模型，或选择“自定义”后填写正式模型名称。",
+        'Model',
+        list(MODEL_PRESETS) + ['Custom'],
+        index=(list(MODEL_PRESETS) + ['Custom']).index(defaults["model_choice"]),
+        help='Choose a preset or select Custom and enter the full model definition.',
     )
     custom_model = st.text_input(
-        "自定义模型名称",
+        'Custom model definition',
         value=defaults["custom_model"],
-        disabled=model_choice != "自定义",
-        help="自由文本，例如 NJL model；仅在模型选择“自定义”时生效。",
+        disabled=model_choice != 'Custom',
+        help='Enter a model name or formula, such as the NJL model. Used only when Custom is selected.',
     )
-    model = custom_model if model_choice == "自定义" else model_choice
+    model = custom_model if model_choice == 'Custom' else model_choice
     preset = (
         defaults["parameter_rows"]
         if model_choice == defaults["model_choice"]
@@ -870,31 +861,31 @@ def render_app() -> None:
         key="model_parameters_{}".format(model_choice),
         column_config={
             "name": st.column_config.TextColumn(
-                "参数名",
+                'Parameter name',
                 required=True,
                 help=(
-                    "每行唯一。一维格点可用 spatial_site_count；多维格点使用 "
-                    "spatial_lattice_shape。网格范围所需的标量可使用简单符号 L。"
+                    'Use a unique name per row. Use spatial_site_count in 1D, or '
+                    'spatial_lattice_shape in multiple dimensions. Use a scalar such as L in grid ranges.'
                 ),
             ),
             "value": st.column_config.TextColumn(
-                "值",
+                'Value',
                 required=True,
                 help=(
-                    "数字直接填写；多维格点写合法 JSON 数组，例如 [4, 4]；"
-                    "其余内容按文本处理。"
+                    'Enter a number, a valid JSON array such as [4, 4] for a multidimensional lattice, '
+                    'or plain text.'
                 ),
             ),
         },
     )
-    st.info("格点数可以在这里指定；规范场截断不要填写，由 Agent2 决定。")
+    st.info('Specify the lattice size here. Agent2 selects any gauge-field truncation.')
 
     st.subheader("2. Observable")
     expression = st.text_area(
-        "观测量表达式",
+        'Observable expression',
         value=defaults["expression"],
         help=(
-            "自由文本或 LaTeX 记号，描述完整观测量；例如 "
+            'Describe the complete observable using text or LaTeX, for example '
             r"\bar{\psi}(z)W(z,0)\psi(0)。"
         ),
     )
@@ -905,18 +896,18 @@ def render_app() -> None:
         key="observable_operators",
         column_config={
             "id": st.column_config.TextColumn(
-                "ID（可留空）",
-                help="本表内唯一的标签；transporter 的 from/to 使用该标签。",
+                'ID (optional)',
+                help='Unique operator label. Transporter endpoints refer to these labels.',
             ),
             "operator": st.column_config.TextColumn(
-                "算符",
+                'Operator',
                 required=True,
-                help=r"算符名称或 LaTeX 记号，例如 \psi、\bar{\psi} 或 O_1。",
+                help='Operator name or LaTeX expression, for example \\psi, \\bar{\\psi} or O_1.',
             ),
             "position": st.column_config.TextColumn(
-                "位置", required=True,
+                'Position', required=True,
                 help=(
-                    "可写 t_index=z_index, x_index=0；也可写 "
+                    'Use t_index=z_index, x_index=0 or a JSON object such as '
                     '{"t_index":"z_index","x_index":0}。'
                 ),
             ),
@@ -929,99 +920,99 @@ def render_app() -> None:
         key="position_grid",
         column_config={
             "variable": st.column_config.TextColumn(
-                "网格变量",
-                help="应与算符位置中使用的变量名一致，例如 z_index。",
+                'Grid variable',
+                help='Match a variable used in operator positions, for example z_index.',
             ),
             "values": st.column_config.TextColumn(
-                "取值",
-                help="范围可写 0:L-1；离散点可写 1,3,5。范围端点包含在内。",
+                'Values',
+                help='Use a range such as 0:L-1 or discrete points such as 1,3,5. Range endpoints are inclusive.',
             ),
         },
     )
     st.caption(
-        "网格端点包含在内。`0:L-1` 会使用整数模型参数 L 自动展开；"
-        "符号必须与参数名或参数名冒号后的别名一致。像 Hamiltonian 这样的"
-        "全局无网格观测量，可将算符位置填写为 `global`，并把网格表留空；"
-        "空白模板行不会保存，系统会把它作为唯一的空参数采样点运行。"
+        'Grid endpoints are inclusive. `0:L-1` expands using the integer model parameter L. '
+        'Symbols must match parameter names or aliases following a colon. For '
+        'global observables such as the Hamiltonian, use `global` as the position and leave the grid empty. '
+        'Blank template rows are omitted; an empty grid gives one sample with no coordinates.'
     )
 
-    with st.expander("Observable 高级选项"):
+    with st.expander('Advanced observable options'):
         lightcone_choice = st.selectbox(
-            "光锥坐标与 Gamma 矩阵约定",
-            list(LIGHTCONE_CONVENTIONS) + ["由 Agent1 检查 / 自行说明"],
-            index=(list(LIGHTCONE_CONVENTIONS) + ["由 Agent1 检查 / 自行说明"]).index(
+            'Light-cone and gamma-matrix conventions',
+            list(LIGHTCONE_CONVENTIONS) + ['Agent1 defaults / custom conventions'],
+            index=(list(LIGHTCONE_CONVENTIONS) + ['Agent1 defaults / custom conventions']).index(
                 defaults["lightcone_choice"]
             ),
             help=(
-                "若观测量含 x± 或 gamma±，请选择定义；这会由 Agent1 转换为"
-                "下游机器参数，不需要手写归一化常数。"
+                'If the observable uses x± or gamma±, choose a definition. Agent1 converts it into '
+                'explicit downstream conventions.'
             ),
         )
         convention_notes = st.text_area(
-            "其他连续理论约定",
+            'Other continuum conventions',
             value=defaults["convention_notes"],
-            disabled=lightcone_choice != "由 Agent1 检查 / 自行说明",
+            disabled=lightcone_choice != 'Agent1 defaults / custom conventions',
             help=(
-                "可用物理语言覆盖默认约定。留空时 Agent1 自动统一采用"
-                "η=diag(1,-1)、γ±=γ0±γ1 和自然单位，不会因此中断询问。"
+                'Describe any overrides. If left empty, Agent1 uses '
+                'a mostly-minus metric in the model dimension, gamma±=gamma0±gamma1, and natural units.'
             ),
         )
         continuum_conventions = dict(
             LIGHTCONE_CONVENTIONS.get(lightcone_choice, {})
         )
-        if lightcone_choice == "由 Agent1 检查 / 自行说明":
+        if lightcone_choice == 'Agent1 defaults / custom conventions':
             continuum_conventions = {
                 "user_notes": convention_notes.strip(),
             }
         coordinate_mode_label = st.selectbox(
-            "位置坐标约定",
-            ["格点索引（推荐）", "直接物理坐标"],
-            index=["格点索引（推荐）", "直接物理坐标"].index(
+            'Coordinate convention',
+            ['Lattice indices (recommended)', 'Physical coordinates'],
+            index=['Lattice indices (recommended)', 'Physical coordinates'].index(
                 defaults["coordinate_label"]
             ),
             help=(
-                "格点索引会用 lattice spacing 把 t_index/x_index 转成物理坐标；"
-                "直接物理坐标表示网格值已经带有所选模型的物理单位。"
+                'Lattice indices are converted to physical coordinates using the lattice spacing. '
+                'Physical coordinates are already expressed in the units of the selected model.'
             ),
         )
         coordinate_mode = (
             "lattice_indices"
-            if coordinate_mode_label == "格点索引（推荐）"
+            if coordinate_mode_label == 'Lattice indices (recommended)'
             else "physical_coordinates"
         )
         ordering = st.selectbox(
-            "排序",
+            'Ordering',
             ["as_written", "time_ordered", "path_ordered"],
             index=["as_written", "time_ordered", "path_ordered"].index(
                 defaults["ordering"]
             ),
             help=(
-                "as_written：按表达式顺序；time_ordered：时间排序；"
-                "path_ordered：沿指定路径排序。"
+                'as_written: expression order; time_ordered: time ordering; '
+                'path_ordered: ordering along the specified path.'
             ),
         )
         components = st.multiselect(
-            "输出分量",
+            'Output components',
             ["real", "imag"],
             default=defaults["components"],
-            help="选择保存关联函数的实部、虚部或两者。",
+            help='Select the real part, imaginary part, or both.',
         )
         maximum_points = st.number_input(
-            "最大采样点数",
+            'Maximum sampling points',
             min_value=1,
             value=defaults["maximum_points"],
             step=1,
-            help="所有网格变量做笛卡尔积后的安全上限。",
+            help='Upper limit for the Cartesian product of grid variables.',
         )
         constraints = st.text_area(
-            "约束（每行一条）",
+            'Constraints (one per line)',
             value=defaults["constraints"],
-            help="可选的物理或采样限制；一行一条，例如 t_index >= 0。",
+            help='Optional physical or sampling constraints, such as t_index >= 0. Enter one per line.',
         )
         include_transporters = st.checkbox(
-            "包含规范平行输运算符 / Wilson line",
+            'Include gauge transporters / Wilson lines',
             value=defaults["include_transporters"],
-            help="仅在观测量需要连接不同位置的规范协变 transporter 时开启。",
+            help='Enable when the observable requires gauge-covariant transport between positions.',
         )
         if include_transporters:
             transporter_rows = st.data_editor(
@@ -1033,104 +1024,104 @@ def render_app() -> None:
                 key="observable_transporters",
                 column_config={
                     "id": st.column_config.TextColumn(
-                        "ID", required=True, help="该 transporter 的唯一标签。"
+                        "ID", required=True, help='Unique transporter label.'
                     ),
                     "from": st.column_config.TextColumn(
-                        "起点算符 ID",
+                        'Source operator ID',
                         required=True,
-                        help="填写算符表中的一个 ID。",
+                        help='Use an ID from the operator table.',
                     ),
                     "to": st.column_config.TextColumn(
-                        "终点算符 ID",
+                        'Target operator ID',
                         required=True,
-                        help="填写算符表中的一个 ID。",
+                        help='Use an ID from the operator table.',
                     ),
                     "path": st.column_config.TextColumn(
-                        "路径",
+                        'Path',
                         required=True,
-                        help="自由文本描述，例如 straight lattice path。",
+                        help='Describe the path, for example straight lattice path.',
                     ),
                 },
             )
-            st.caption("空白模板行不会保存；填写四项后才会加入观测量。")
+            st.caption('Blank template rows are omitted. Complete all four fields to include a transporter.')
         else:
             transporter_rows = []
 
-    st.subheader("3. 外态与矩阵元")
+    st.subheader('3. External states and matrix elements')
     state_mode = st.segmented_control(
-        "计算形式",
-        ["单个矩阵元", "矩阵元线性组合"],
+        'Calculation type',
+        ['Single matrix element', 'Linear combination of matrix elements'],
         default=defaults["state_mode"],
         help=(
-            "单个矩阵元计算 <bra|O|ket>；线性组合计算若干个 "
-            "coefficient × <bra|O|ket> 的总和。"
+            'A single matrix element evaluates <bra|O|ket>. A linear combination sums '
+            'terms of the form coefficient × <bra|O|ket>.'
         ),
     )
     named_state_rows = None
     matrix_element_rows = None
     bra = ket = None
-    if state_mode == "单个矩阵元":
+    if state_mode == 'Single matrix element':
         bra_column, ket_column = st.columns(2)
         with bra_column:
             bra_choice = st.selectbox(
-                "Bra", ["全空间基态／真空", "量子数扇区本征态", "自定义"],
-                index=["全空间基态／真空", "量子数扇区本征态", "自定义"].index(
+                "Bra", ['Global ground state / vacuum', 'Sector eigenstate', 'Custom'],
+                index=['Global ground state / vacuum', 'Sector eigenstate', 'Custom'].index(
                     defaults["bra"]["choice"]
                 ),
-                help="选择左外态类型；Bra 与 Ket 完全独立。",
+                help='Choose the bra state. Bra and ket are independent.',
             )
             custom_bra = st.text_input(
-                "自定义 Bra", value=defaults["bra"]["custom"],
-                disabled=bra_choice != "自定义",
-                help="明确描述目标态及必要量子数；仅在选择“自定义”时生效。",
+                'Custom bra', value=defaults["bra"]["custom"],
+                disabled=bra_choice != 'Custom',
+                help='Describe the target state and required quantum numbers. Used only for Custom.',
             )
-            if bra_choice == "量子数扇区本征态":
+            if bra_choice == 'Sector eigenstate':
                 bra_level = int(st.number_input(
-                    "Bra 在该扇区内的能级序号 k", min_value=0,
+                    'Bra sector level index k', min_value=0,
                     value=defaults["bra"]["level"],
                     step=1, key="bra_sector_level",
                 ))
                 bra_quantum_numbers = st.text_area(
-                    "Bra 量子数（JSON）", value=defaults["bra"]["quantum_numbers"],
+                    'Bra quantum numbers (JSON)', value=defaults["bra"]["quantum_numbers"],
                     key="bra_quantum_numbers",
                 )
         with ket_column:
             ket_choice = st.selectbox(
-                "Ket", ["全空间基态／真空", "量子数扇区本征态", "自定义"],
-                index=["全空间基态／真空", "量子数扇区本征态", "自定义"].index(
+                "Ket", ['Global ground state / vacuum', 'Sector eigenstate', 'Custom'],
+                index=['Global ground state / vacuum', 'Sector eigenstate', 'Custom'].index(
                     defaults["ket"]["choice"]
                 ),
-                help="选择右外态类型；可与 Bra 不同。",
+                help='Choose the ket state; it can differ from the bra.',
             )
             custom_ket = st.text_input(
-                "自定义 Ket", value=defaults["ket"]["custom"],
-                disabled=ket_choice != "自定义",
-                help="明确描述目标态及必要量子数；仅在选择“自定义”时生效。",
+                'Custom ket', value=defaults["ket"]["custom"],
+                disabled=ket_choice != 'Custom',
+                help='Describe the target state and required quantum numbers. Used only for Custom.',
             )
-            if ket_choice == "量子数扇区本征态":
+            if ket_choice == 'Sector eigenstate':
                 ket_level = int(st.number_input(
-                    "Ket 在该扇区内的能级序号 k", min_value=0,
+                    'Ket sector level index k', min_value=0,
                     value=defaults["ket"]["level"],
                     step=1, key="ket_sector_level",
                 ))
                 ket_quantum_numbers = st.text_area(
-                    "Ket 量子数（JSON）", value=defaults["ket"]["quantum_numbers"],
+                    'Ket quantum numbers (JSON)', value=defaults["ket"]["quantum_numbers"],
                     key="ket_quantum_numbers",
                 )
         bra = (
             build_sector_state("", bra_level, bra_quantum_numbers)
-            if bra_choice == "量子数扇区本征态"
+            if bra_choice == 'Sector eigenstate'
             else _state_text(bra_choice, custom_bra, True)
         )
         ket = (
             build_sector_state("", ket_level, ket_quantum_numbers)
-            if ket_choice == "量子数扇区本征态"
+            if ket_choice == 'Sector eigenstate'
             else _state_text(ket_choice, custom_ket, False)
         )
     else:
         st.caption(
-            "状态标签供下面的矩阵元表引用。全空间基态就是本流程中的真空；"
-            "Sector eigenstate 的 level_index=0 表示指定量子数扇区的最低态。"
+            'The matrix-element table refers to the state labels below. The global ground state is the vacuum in this workflow. '
+            'For a sector eigenstate, level_index=0 denotes the lowest state in that sector.'
         )
         named_state_rows = st.data_editor(
             defaults["state_rows"] or [
@@ -1142,21 +1133,21 @@ def render_app() -> None:
             num_rows="dynamic", width="stretch", key="named_external_states",
             column_config={
                 "label": st.column_config.TextColumn(
-                    "状态标签", required=True,
-                    help="本表内唯一，例如 hadron、vacuum。矩阵元表用该标签。",
+                    'State label', required=True,
+                    help='Unique label, such as hadron or vacuum, referenced by the matrix-element table.',
                 ),
                 "kind": st.column_config.SelectboxColumn(
-                    "状态类型",
+                    'State type',
                     options=["Ground state / Vacuum", "Sector eigenstate"],
                     required=True,
                 ),
                 "level_index": st.column_config.NumberColumn(
-                    "扇区能级 k", min_value=0, step=1,
-                    help="仅 Sector eigenstate 使用，从 0 开始。",
+                    'Sector level k', min_value=0, step=1,
+                    help='Used only for sector eigenstates; starts at zero.',
                 ),
                 "quantum_numbers": st.column_config.TextColumn(
-                    "量子数 JSON",
-                    help='仅 Sector eigenstate 使用，例如 {"charge": 0}。',
+                    'Quantum numbers (JSON)',
+                    help='Used only for sector eigenstates, for example {"charge": 0}.',
                 ),
             },
         )
@@ -1173,99 +1164,110 @@ def render_app() -> None:
             ],
             num_rows="dynamic", width="stretch", key="matrix_element_combination",
             column_config={
-                "id": st.column_config.TextColumn("项 ID（可选）"),
+                "id": st.column_config.TextColumn('Term ID (optional)'),
                 "coefficient": st.column_config.NumberColumn(
-                    "系数", required=True,
-                    help="有限实数；真空减除项填写 -1。",
+                    'Coefficient', required=True,
+                    help='Finite real number. Use -1 for a vacuum-subtraction term.',
                 ),
                 "bra": st.column_config.SelectboxColumn(
-                    "Bra 状态", options=visible_labels or ["请先定义状态"], required=True,
+                    'Bra state', options=visible_labels or ['Define states first'], required=True,
                 ),
                 "ket": st.column_config.SelectboxColumn(
-                    "Ket 状态", options=visible_labels or ["请先定义状态"], required=True,
+                    'Ket state', options=visible_labels or ['Define states first'], required=True,
                 ),
             },
         )
     st.caption(
-        "扇区能级采用从 0 开始的编号；量子数名称和值由具体模型决定，"
-        "Agent2/3 必须给出对应离散化与计算基子空间。"
+        'Sector levels start at zero. Quantum-number names and values depend on the model; '
+        'Agent2/3 specify their lattice representation and sector basis.'
     )
 
     st.subheader("4. LLM")
+    llm_provider = st.selectbox(
+        "LLM provider", list(MODEL_PRESETS_BY_PROVIDER),
+        index=list(MODEL_PRESETS_BY_PROVIDER).index(defaults["llm_provider"]),
+    )
+    llm_options = list(MODEL_PRESETS_BY_PROVIDER[llm_provider]) + ["Custom"]
+    default_llm = defaults["llm_choice"] if llm_provider == defaults["llm_provider"] else llm_options[0]
     llm_choice = st.selectbox(
-        "全流程模型",
-        ["gpt-5.6-luna", "gpt-5.6-terra", "gpt-5.6-sol", "自定义"],
-        index=["gpt-5.6-luna", "gpt-5.6-terra", "gpt-5.6-sol", "自定义"].index(
-            defaults["llm_choice"]
-        ),
-        help="选择 Agent1–5 使用的模型；Luna 成本较低，Sol 通常更稳健。",
+        'Workflow model',
+        llm_options, index=llm_options.index(default_llm),
+        key="llm_model_{}".format(llm_provider),
+        help='Select the model used by all LLM stages in the workflow.',
     )
     custom_llm = st.text_input(
-        "自定义 LLM",
-        value=defaults["custom_llm"],
-        disabled=llm_choice != "自定义",
-        help="填写 API 可识别的完整模型 ID；仅在选择“自定义”时生效。",
+        'Custom model ID',
+        value=defaults["custom_llm"] if llm_provider == defaults["llm_provider"] else "",
+        key="custom_llm_{}".format(llm_provider),
+        disabled=llm_choice != 'Custom',
+        help='Enter the exact API model ID. Gemini IDs must start with gemini-.',
     )
-    llm = custom_llm if llm_choice == "自定义" else llm_choice
+    llm = custom_llm if llm_choice == 'Custom' else llm_choice
+    st.caption(
+        "Credentials: {}. Model availability depends on your API account.".format(api_key_variable(llm))
+        if llm.strip() else "Enter a model ID to configure credentials."
+    )
     run_scope = st.selectbox(
-        "运行范围",
+        'Run scope',
         [
-            "仅验证 Agent1–5 接口",
-            "运行到经典 cross-check",
-            "运行到最终学术报告",
+            'Generate Agent1–5 interfaces only',
+            'Run through classical cross-check',
+            'Run through final academic report',
         ],
         index=[
-            "仅验证 Agent1–5 接口",
-            "运行到经典 cross-check",
-            "运行到最终学术报告",
+            'Generate Agent1–5 interfaces only',
+            'Run through classical cross-check',
+            'Run through final academic report',
         ].index(defaults["run_scope"]),
         help=(
-            "选择流水线停止点。最终报告会包含量子算法、经典对照和已有硬件结果。"
+            'Choose the final stage. The academic report includes the quantum algorithm, classical references and available hardware results.'
         ),
     )
     through = {
-        "仅验证 Agent1–5 接口": "agent5_observable",
-        "运行到经典 cross-check": "crosscheck",
-        "运行到最终学术报告": "final_report",
+        'Generate Agent1–5 interfaces only': "agent5_observable",
+        'Run through classical cross-check': "crosscheck",
+        'Run through final academic report': "final_report",
     }[run_scope]
     hardware_validation = st.toggle(
-        "进行 IBM 真机验证（自动提交）",
+        'Enable IBM hardware validation (automatic submission)',
         value=defaults["hardware_validation"],
         help=(
-            "开启即授权流水线自动规划并提交 D_ans=N_T=1 的最浅演示线路。"
-            "若当前硬件资源门限不通过，则不会提交，也不会产生真机费用。"
+            'Authorize planning and submission of shallow D_ans=1 demonstrations, with N_T=1 when evolution is required. '
+            'No submission occurs if hardware resource checks fail.'
         ),
     )
     hardware_mode = "representative"
     if hardware_validation:
         through = "final_report"
         hardware_mode_label = st.segmented_control(
-            "真机验证范围",
-            ["快速代表线路", "完整 D=1, N_T=1 关联函数"],
+            'Hardware validation scope',
+            ['Representative circuits', 'Full D=1, N_T=1 observable'],
             default=(
-                "完整 D=1, N_T=1 关联函数"
+                'Full D=1, N_T=1 observable'
                 if defaults["hardware_mode"] == "full_d1_nt1"
-                else "快速代表线路"
+                else 'Representative circuits'
             ),
             help=(
-                "快速模式只提交信号最好的少量 recipe；完整模式提交所有位置点"
-                "及重构关联函数所需的全部 recipe，机时消耗会明显增加。"
+                'Representative mode submits a few selected recipes. Full mode submits every position '
+                'and every recipe needed for reconstruction, using more hardware time.'
             ),
         )
         hardware_mode = (
             "full_d1_nt1"
-            if hardware_mode_label == "完整 D=1, N_T=1 关联函数"
+            if hardware_mode_label == 'Full D=1, N_T=1 observable'
             else "representative"
         )
         st.info(
-            "已选择真机验证：流水线将自动运行到最终报告。只有剩余机时严格"
-            "大于十分钟的 IBM 实例才会进入候选名单。"
+            'Hardware validation runs through the final report. Only IBM instances with '
+            'more than ten minutes of confirmed remaining allocation are eligible.'
         )
 
     try:
+        if llm.strip() and provider_for_model(llm) != llm_provider:
+            raise UIInputError("The model ID does not match the selected LLM provider.")
         named_states = None
         matrix_elements = None
-        if state_mode == "矩阵元线性组合":
+        if state_mode == 'Linear combination of matrix elements':
             named_states = rows_to_states(_records(named_state_rows))
             matrix_elements = rows_to_matrix_elements(
                 _records(matrix_element_rows), named_states
@@ -1295,111 +1297,116 @@ def render_app() -> None:
         )
         normalized_config = validate_config(config, PROJECT_ROOT)
         config_text = json.dumps(config, ensure_ascii=False, indent=2) + "\n"
-        st.success("输入已通过现有 pipeline contract 验证。")
+        st.success('Inputs passed workflow contract validation.')
         reusable = find_approved_reuse_source_for_config(
             normalized_config, PROJECT_ROOT
         )
         if reusable is not None:
             reusable_manifest, _ = reusable
             st.info(
-                "已在启动前找到人工批准的同一物理目标：{}。本轮可复用"
-                " 已批准的完整程序包，直接跳过 Agent1--7；新的参数和"
-                "位置网格仍会重新计算。".format(
+                'An approved run matches this physical target: {}. This run can reuse '
+                'its program bundle and skip Agents 1–7. Numerical results are recalculated for the new parameters and '
+                'sampling grid.'.format(
                     reusable_manifest.get("run_id", "unknown")
                 )
             )
         else:
             st.caption(
-                "当前没有人工批准且物理目标相同的 run；本轮会正常生成程序。"
+                'No approved run matches this physical target. New programs will be generated.'
             )
-        with st.expander("预览生成的 JSON"):
+        with st.expander('Preview configuration JSON'):
             st.code(config_text, language="json")
         st.download_button(
-            "下载 JSON",
+            'Download JSON',
             data=config_text,
             file_name="{}_pipeline.json".format(_safe_stem(model)),
             mime="application/json",
         )
         with st.container(horizontal=True):
-            if st.button("保存本次配置"):
+            if st.button('Save configuration'):
                 saved = save_user_config(config)
                 st.session_state["saved_config_path"] = saved
-                st.success("已保存：{}".format(saved))
+                st.success('Saved: {}'.format(saved))
             if st.button(
-                "保存为下次默认输入",
-                help="下次打开 UI 时自动回填当前全部输入，仍可继续编辑。",
+                'Save as default inputs',
+                help='Load these inputs automatically next time; all fields remain editable.',
             ):
                 saved_default_path = save_default_config(config)
-                st.success("已设为默认输入：{}".format(saved_default_path))
+                st.success('Default inputs saved: {}'.format(saved_default_path))
 
-        st.subheader("5. 启动")
-        key_present = bool(os.environ.get("OPENAI_API_KEY"))
-        st.write("OPENAI_API_KEY：{}".format("已检测到" if key_present else "未检测到"))
+        st.subheader('5. Launch')
+        key_present = bool(api_key_for_model(llm, required=False))
+        st.write("{}: {}".format(api_key_variable(llm), 'detected' if key_present else 'not detected'))
         st.caption(
-            "若 VQE 明确判定 ansatz 不足，总控会自动重新设计最多 2 次；"
-            "包括首次方案在内，一次运行最多尝试 3 个 ansatz。"
+            'If VQE identifies an insufficient ansatz, the controller allows up to two redesigns, '
+            'for at most three ansatz attempts including the initial design.'
         )
         confirmation = (
-            "我确认这会调用付费 Agent，并授权提交 IBM 真机作业。"
+            'I confirm paid LLM calls and authorize IBM hardware submission.'
             if hardware_validation else
-            "我确认这会调用付费 Agent，并希望启动完整 pipeline。"
+            'I confirm paid LLM calls and want to launch this workflow.'
         )
         confirmed = st.checkbox(
             confirmation,
-            help="启动前的费用与外部提交确认；未勾选时不会启动。",
+            help='Confirm API usage and any authorized hardware submission before launching.',
         )
-        if st.button("启动 Pipeline", disabled=not confirmed or not key_present):
+        if st.button('Launch workflow', disabled=not confirmed or not key_present):
             saved = save_user_config(config)
             launch = launch_pipeline(saved)
             st.session_state["last_launch"] = launch
-            st.success("Pipeline 已在后台启动，PID={}".format(launch["pid"]))
+            st.success('Workflow launched in the background, PID={}'.format(launch["pid"]))
     except (UIInputError, PipelineError, ValueError) as error:
-        st.error("输入尚未通过验证：{}".format(error))
+        st.error('Input validation failed: {}'.format(error))
 
     launch = st.session_state.get("last_launch")
     if launch:
-        st.subheader("最近一次 UI 启动")
+        st.subheader('Most recent UI launch')
         st.json(launch)
-        if st.button("刷新运行状态", icon=":material/refresh:"):
+        if st.button('Refresh run status', icon=":material/refresh:"):
             pass
         manifest = _load_json_object(str(launch.get("manifest_path", "")))
         if manifest is not None:
             status = manifest.get("status", "unknown")
-            st.write("流水线状态：**{}**".format(status))
-        st.code(_tail(launch["log_path"]) or "日志尚无输出", language="text")
+            st.write('Workflow status: **{}**'.format(status))
+        st.code(_tail(launch["log_path"]) or 'No log output yet', language="text")
         clarification = find_clarification(launch)
         if clarification is not None:
             questions = clarification.get("questions", [])
             if isinstance(questions, list) and questions:
                 with st.container(border=True):
-                    st.warning("流水线正在等待你补充物理定义，尚未进入 Agent2。")
+                    st.warning('The workflow needs additional physical definitions before Agent2 can start.')
                     st.write(
-                        "请用自然语言回答下面的问题。系统会保留原输入和回答，"
-                        "然后从 Agent1 重新开始并继续后续流程。"
+                        'Answer the questions below. The original inputs and your answers will be retained, '
+                        'then the workflow will restart from Agent1.'
                     )
                     answers = []
                     for index, item in enumerate(questions, start=1):
                         question = _text(item.get("question", ""))
                         reason = _text(item.get("reason", ""))
-                        st.markdown("**问题 {}：** {}".format(index, question))
+                        st.markdown('**Question {}:** {}'.format(index, question))
                         if reason:
-                            st.caption("为什么需要补充：{}".format(reason))
+                            st.caption('Why this is needed: {}'.format(reason))
                         answers.append(st.text_area(
-                            "你的补充说明 {}".format(index),
+                            'Your answer {}'.format(index),
                             key="clarification_answer_{}_{}".format(
                                 launch.get("run_id", "legacy"), index
                             ),
-                            placeholder="例如：采用一味 1+1 维手征 NJL2，四费米项系数定义为……",
+                            placeholder='For example: use the one-flavor 1+1D chiral NJL model, with the four-fermion coefficient defined as ...',
                         ))
                     ready = all(_text(answer) for answer in answers)
+                    original = _load_json_object(str(launch.get("config_path", "")))
+                    resume_model = str((original or {}).get("llm", DEFAULT_UI_MODEL))
+                    resume_key_present = bool(api_key_for_model(resume_model, required=False))
+                    if not resume_key_present:
+                        st.caption("Set {} to continue this run.".format(api_key_variable(resume_model)))
                     if st.button(
-                        "提交补充并继续运行",
+                        'Submit answers and continue',
                         type="primary",
-                        disabled=not ready or not bool(os.environ.get("OPENAI_API_KEY")),
+                        disabled=not ready or not resume_key_present,
                     ):
                         original = _load_json_object(str(launch.get("config_path", "")))
                         if original is None:
-                            st.error("找不到本次运行的原始输入配置，无法继续。")
+                            st.error('The original run configuration could not be found.')
                         else:
                             updated = apply_clarification_answers(
                                 original, questions, answers
@@ -1410,7 +1417,7 @@ def render_app() -> None:
                             continued = launch_pipeline(updated_path)
                             st.session_state["last_launch"] = continued
                             st.success(
-                                "补充信息已保存，新运行已从 Agent1 启动，PID={}".format(
+                                'Answers saved. A new run started from Agent1, PID={}'.format(
                                     continued["pid"]
                                 )
                             )

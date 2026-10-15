@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Agent 4.2: observable-measurement and time-evolution circuit designer."""
 
+from llm_support import api_key_for_model
+
 import argparse
 import json
 import os
@@ -544,7 +546,7 @@ def parse_arguments():
     parser.add_argument("--observable-spec", required=True)
     parser.add_argument("--library", default="A4_library")
     parser.add_argument("--model", default="gpt-5.6-sol")
-    parser.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1"))
+    parser.add_argument("--base-url", default=None)
     parser.add_argument("--output-manifest")
     parser.add_argument("--output-tag")
     parser.add_argument("--output-root")
@@ -561,9 +563,9 @@ def main():
     report_directory = categorized_output_directory(args.output_root, "reports")
     contract_directory = categorized_output_directory(args.output_root, "contracts")
     audit_directory = categorized_output_directory(args.output_root, "audit")
-    api_key = os.environ.get("OPENAI_API_KEY")
+    api_key = api_key_for_model(args.model, required=False)
     if not api_key:
-        raise SystemExit("Set OPENAI_API_KEY before calling Agent 4.2.")
+        api_key_for_model(args.model)
     agent3_report, parameter_contract = load_agent3_inputs(
         args.parameter_contract, args.mapping_contract
     )
